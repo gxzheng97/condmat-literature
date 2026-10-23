@@ -71,6 +71,19 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python update_daily.py
+      - name: Re-screen October 23 archive once
+        id: rescreen
+        if: github.event_name == 'push'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -f rescreen-2026-10-23.request ]; then
+            test -n "$OPENAI_API_KEY" || { echo "AI API key missing"; exit 1; }
+            git fetch --depth=1 origin 6817bab144768962534751c5bc2ece728de34ecc
+            python rescreen_issue.py
+            rm rescreen-2026-10-23.request
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
       - name: Refresh complete author bibliographies
         run: python fill_authors.py
       - name: Generate bilingual PDF reports
@@ -82,13 +95,14 @@ jobs:
       - name: Build site
         run: python build.py
       - name: Commit daily issue
-        if: github.event_name != 'push'
+        if: github.event_name != 'push' || steps.rescreen.outputs.changed == 'true'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add issues/ index.html
+          git add -u rescreen-2026-10-23.request || true
           if ! git diff --cached --quiet; then
-            git commit -m "Daily literature update"
+            git commit -m "Daily literature update and AI editorial screening"
             git push
           fi
       - uses: actions/configure-pages@v5
