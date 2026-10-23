@@ -12,7 +12,7 @@ permissions:
   id-token: write
 concurrency:
   group: condensed-matter-pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   deploy:
     runs-on: ubuntu-latest
