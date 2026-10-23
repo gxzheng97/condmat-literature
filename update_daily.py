@@ -10,8 +10,7 @@ NS={"a":"http://www.w3.org/2005/Atom","x":"http://arxiv.org/schemas/atom"}
 ISSN={"Science":"0036-8075","Science Advances":"2375-2548","Nature":"0028-0836",
 "Nature Physics":"1745-2473","Nature Materials":"1476-1122",
 "Nature Communications":"2041-1723","PRL":"0031-9007","PRX":"2160-3308",
-"PNAS":"0027-8424","PRB":"2469-9950","Physical Review Materials":"2475-9953",
-"npj Quantum Materials":"2397-4648","Advanced Materials":"0935-9648"}
+"PNAS":"0027-8424"}
 PAT=re.compile(r"superconduct|magnet|spin|kagome|quantum|fermi|hall|nematic|phonon|transport|thermo|electron|crystal|growth|synthe|correlat|topolog|excitat|seebeck|nernst|valence|diffraction|semimetal|structure|lattice|spectroscop|anisotrop|moire|strain|pressure|ferroelectric|oxide|thin film|materials|phase transi",re.I)
 TOPICS=[("Superconductivity",r"superconduct|josephson|pairing|vortex"),
 ("Thermal & Thermoelectric",r"thermal|thermoelectric|seebeck|nernst|heat capacity|elastocaloric"),
@@ -69,7 +68,7 @@ def journals(today):
   for x in items:
    if x.get("type")!="journal-article":continue
    title=clean((x.get("title") or [""])[0]);ab=clean(x.get("abstract",""))
-   if not title or not (name in ("PRL","PRX","PRB","Physical Review Materials","npj Quantum Materials") or PAT.search(title+" "+ab)):continue
+   if not title or not (name in ("PRL","PRX") or PAT.search(title+" "+ab)):continue
    authors=[clean((a.get("given","")+" "+a.get("family",""))) for a in x.get("author",[])]
    doi=x.get("DOI","").lower()
    out.append({"id":"doi-"+re.sub("[^a-z0-9-]","-",doi),"doi":doi,"type":"Journal",
