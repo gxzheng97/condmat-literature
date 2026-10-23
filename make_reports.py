@@ -37,6 +37,23 @@ p {margin:4pt 0}
 .note {color:#55616c;font-size:7.6pt;margin-top:5pt}
 """
 
+# 2025 Journal Impact Factors, published in 2026 (same order as the website).
+JOURNAL_JIF_2025 = {
+    'nature': 56.1, 'science': 47.3, 'nature materials': 38.0,
+    'nature communications': 18.1, 'nature physics': 18.0,
+    'physical review x': 16.8, 'prx': 16.8, 'science advances': 13.9,
+    'pnas': 9.5, 'proceedings of the national academy of sciences': 9.5,
+    'physical review letters': 9.4, 'prl': 9.4,
+}
+
+def paper_sort_key(p):
+    journal = str(p.get('journal') or '').strip().lower()
+    is_arxiv = (str(p.get('type') or '').lower() == 'arxiv'
+                or bool(p.get('arxiv_id')) or journal.startswith('arxiv'))
+    # Keep Featured Reading and Literature Index separate; arXiv last in each.
+    return (p.get('level') != 'Feature', is_arxiv,
+            -JOURNAL_JIF_2025.get(journal, 0), str(p.get('title') or '').casefold())
+
 def v(p, field, lang):
     return p.get(f'{field}_{lang}') or p.get(field) or ''
 
@@ -48,7 +65,7 @@ def link(url, text):
 
 def document(issue, lang):
     zh = lang == 'zh'
-    papers = issue.get('papers', [])
+    papers = sorted(issue.get('papers', []), key=paper_sort_key)
     features = [p for p in papers if p.get('level') == 'Feature']
     others = [p for p in papers if p not in features]
     headline = '凝聚态物理文献精选' if zh else 'Daily Condensed Matter Literature'
@@ -61,7 +78,7 @@ def document(issue, lang):
         ('论文与作者' if zh else 'Paper and authors') + '</th><th class="venue">' +
         ('来源' if zh else 'Source') + '</th></tr></thead><tbody>')
     for i, p in enumerate(papers, 1):
-        status = p.get('published_journal') or p.get('journal') or 'arXiv'
+        status = p.get('journal') or p.get('published_journal') or 'arXiv'
         lines.append(f'<tr><td>{i:02d}</td><td><div class="name">{link(p.get("url",""),p.get("title",""))}</div>' +
             f'<div class="small">{safe(p.get("authors"))} · {"通讯" if zh else "Corresponding"}: {safe(p.get("corresponding") or "—")}</div></td>' +
             f'<td>{safe(status)}</td></tr>')
