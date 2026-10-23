@@ -9,6 +9,7 @@ import json
 import os
 import re
 import urllib.request
+import urllib.error
 
 
 # Signals represent physical QUESTIONS rather than generic publication keywords.
@@ -143,7 +144,15 @@ def _ai_batch(papers, key):
       "https://api.openai.com/v1/responses",
       data=json.dumps(payload).encode(),method="POST",
       headers={"Authorization":"Bearer "+key,"Content-Type":"application/json"})
-    response=json.loads(urllib.request.urlopen(req,timeout=110).read())
+    try:
+        response=json.loads(urllib.request.urlopen(req,timeout=110).read())
+    except urllib.error.HTTPError as exc:
+        try:
+            details=json.loads(exc.read().decode("utf-8","replace")).get("error",{})
+            reason=details.get("code") or details.get("type") or "unknown"
+        except Exception:
+            reason="unknown"
+        raise RuntimeError(f"OpenAI API HTTP {exc.code}: {reason}") from None
     raw="".join(part.get("text","") for msg in response.get("output",[])
                 for part in msg.get("content",[]) if part.get("type")=="output_text")
     result=json.loads(raw)
