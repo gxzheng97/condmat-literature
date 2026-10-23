@@ -58,13 +58,26 @@ jobs:
                   "id": "qa-optics",
                   "title": "High-numerical-aperture extreme ultraviolet flat optics via a cascaded momentum relay",
                   "abstract": "A lens design improves numerical aperture and projection performance through two cascaded diffractive elements."
+              },
+              {
+                  "id": "qa-qec",
+                  "title": "Autonomous quantum error correction on a superconducting quantum processor",
+                  "abstract": "Improved logical-qubit lifetime and quantum computing reliability through a superconducting circuit protocol, without studying a new state of matter."
+              },
+              {
+                  "id": "qa-review",
+                  "title": "An advanced piezoelectric thin-film material for memory devices: mechanisms and applications",
+                  "abstract": "This review surveys device switching performance, fabrication, high-yield integration and emerging sensor applications."
               }
           ]
           selected, stats = screen(candidates, use_ai=True)
           print(f"Semantic screening smoke test: {stats['ai_assessed']} AI-assessed papers, {len(selected)} retained")
           if stats["ai_assessed"] != len(candidates):
               raise SystemExit("AI model call did not complete for all smoke-test abstracts; inspect relevance logs.")
-          print("OpenAI API connection and JSON semantic screening: OK")
+          selected_ids = {p["id"] for p in selected}
+          assert "qa-spin" in selected_ids, "Missed real magnetic-structure physics"
+          assert not ({"qa-optics","qa-qec","qa-review"} & selected_ids), "Included a primarily technological/non-condensed-matter article"
+          print("OpenAI API connection and scientific-scope gate: OK")
           PY
       - name: Update daily literature
         if: github.event_name != 'push'
