@@ -50,7 +50,7 @@ def arxiv():
    authors=[clean(a.findtext("a:name","",NS)) for a in e.findall("a:author",NS)]
    journal=clean(e.findtext("x:journal_ref","",NS))
    out.append({"id":"arxiv-"+pid.replace(".","-"),"arxiv_id":pid,"type":"arXiv",
-   "journal":journal or "arXiv:"+pid,"journal_ref":journal,"title":title,
+   "journal":"arXiv:"+pid,"journal_ref":journal,"title":title,
    "authors":", ".join(authors[:3])+(" et al." if len(authors)>3 else ""),
    "corresponding":"","url":"https://arxiv.org/abs/"+pid,
    "topic":topic(title+" "+abstract),"level":"Brief",
