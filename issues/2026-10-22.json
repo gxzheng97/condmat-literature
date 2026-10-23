@@ -47,7 +47,10 @@
       "result_zh": "作者识别 ~70 K 的 crossover 和 ~20–25 K 热电极值，并讨论重费米子标度及声子贡献。",
       "result_en": "The authors identify a crossover near 70 K and thermoelectric extrema around 20–25 K, and discuss heavy-fermion scaling and phonon contributions.",
       "future_zh": "同样品测 Sxx、Syx、Hall、ρxx，加入角分辨和应变调控。",
-      "future_en": "Measure longitudinal and transverse thermopower, Hall response, and resistivity on the same crystal, with angle-resolved and strain-dependent follow-ups."
+      "future_en": "Measure longitudinal and transverse thermopower, Hall response, and resistivity on the same crystal, with angle-resolved and strain-dependent follow-ups.",
+      "tier": "PRB / Physical Review Materials",
+      "tier_reason_en": "Detailed thermoelectric, Nernst, Hall, and thermal-transport characterization connects band hybridization to a correlated kagome metal; the central advance is a material-specific transport interpretation rather than a new universal effect.",
+      "tier_reason_zh": "系统的 Seebeck、Nernst、Hall 与热输运实验把能带杂化和 Kagome 关联行为联系起来；亮点是材料体系中的输运物理，而非全新的普适效应。"
     },
     {
       "id": "fetse-jde",
@@ -70,7 +73,10 @@
       "result_zh": "非互易临界电流与界面磁化和 Josephson 相位耦合相关。",
       "result_en": "Nonreciprocal critical current is attributed to the coupling between interfacial magnetization and the Josephson phase.",
       "future_zh": "在可加工材料中比较 Ic+ / Ic−、场历史、Fraunhofer 和微波响应。",
-      "future_en": "Compare positive and negative critical currents, magnetic-field training, Fraunhofer patterns, and microwave response in device-compatible superconductors."
+      "future_en": "Compare positive and negative critical currents, magnetic-field training, Fraunhofer patterns, and microwave response in device-compatible superconductors.",
+      "tier": "PRL",
+      "tier_reason_en": "Combines zero-field Josephson diode behavior, hysteretic Fraunhofer interference, half-integer Shapiro steps, and coupled dynamical modeling to identify a specific interfacial mechanism.",
+      "tier_reason_zh": "结合零场 Josephson diode、磁滞 Fraunhofer、半整数 Shapiro 台阶及动力学模拟，建立界面磁化与 Josephson 电流耦合的机制。"
     },
     {
       "id": "folded-chain",
@@ -139,7 +145,10 @@
       "result_zh": "在 8 K、10 T 条件下报告约 −33% AMR。",
       "result_en": "An anisotropic magnetoresistance of approximately −33% is reported at 8 K and 10 T.",
       "future_zh": "同步测量 M(B,θ)、torque 和 MR(B,θ)。",
-      "future_en": "Combine angle-dependent magnetization, torque, and magnetoresistance on the same crystal."
+      "future_en": "Combine angle-dependent magnetization, torque, and magnetoresistance on the same crystal.",
+      "tier": "PRB / Physical Review Materials",
+      "tier_reason_en": "Substantial paramagnetic AMR is demonstrated with magnetization anisotropy and a spin-disorder description in one well-characterized material system.",
+      "tier_reason_zh": "在单一材料体系中展示了较大的顺磁态 AMR，并用磁化各向异性和 spin-disorder 模型进行解释，属于扎实的材料输运研究。"
     },
     {
       "id": "yfe3sn3",
@@ -162,7 +171,9 @@
       "result_zh": "报告高温共线 AFM 有序、Y-shaped spin excitations 和双能隙特征。",
       "result_en": "The authors report high-temperature collinear antiferromagnetic order, Y-shaped spin excitations, and two spin-gap scales.",
       "future_zh": "单晶磁输运与 torque 测量可补充磁各向异性信息。",
-      "future_en": "Use angle-dependent magnetic transport and torque magnetometry to map anisotropy and field-induced magnetic responses in single crystals."
+      "future_en": "Use angle-dependent magnetic transport and torque magnetometry to map anisotropy and field-induced magnetic responses in single crystals.",
+      "published_journal": "Physical Review B 114, 204418 (2026)",
+      "published_doi": "https://doi.org/10.1103/PhysRevB.114.204418"
     },
     {
       "id": "eupd2si2",
@@ -185,7 +196,9 @@
       "result_zh": "报道 Ge 替代对价态转变温度和结构相共存的影响。",
       "result_en": "Ge substitution changes the valence-transition temperature and the coexistence of structural phases.",
       "future_zh": "适用于联合热容、电阻、磁化与应变响应追踪价态相变。",
-      "future_en": "Combine heat capacity, resistivity, magnetization, and strain measurements to track valence-driven transitions."
+      "future_en": "Combine heat capacity, resistivity, magnetization, and strain measurements to track valence-driven transitions.",
+      "published_journal": "Physical Review Materials (accepted October 16, 2026)",
+      "published_doi": "https://doi.org/10.1103/xmz9-1mb4"
     }
   ],
   "title_zh": "每日凝聚态物理文献"
