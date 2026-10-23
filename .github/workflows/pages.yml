@@ -37,6 +37,34 @@ jobs:
           else
             echo "::warning::AI semantic screening key missing. Add OPENAI_API_KEY in repository Actions secrets."
           fi
+      - name: Smoke test live AI semantic screening
+        if: github.event_name == 'push'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python - <<'PY'
+          import os
+          from relevance import screen
+          if not os.environ.get("OPENAI_API_KEY"):
+              raise SystemExit("OPENAI_API_KEY is not configured as an Actions repository secret.")
+          candidates = [
+              {
+                  "id": "qa-spin",
+                  "title": "Spin order and excitations in a collinear kagome antiferromagnet",
+                  "abstract": "Elastic and inelastic neutron scattering resolve the magnetic structure and spin excitation spectrum. The authors identify exchange interactions and anisotropy of a bulk quantum material."
+              },
+              {
+                  "id": "qa-optics",
+                  "title": "High-numerical-aperture extreme ultraviolet flat optics via a cascaded momentum relay",
+                  "abstract": "A lens design improves numerical aperture and projection performance through two cascaded diffractive elements."
+              }
+          ]
+          selected, stats = screen(candidates, use_ai=True)
+          print(f"Semantic screening smoke test: {stats['ai_assessed']} AI-assessed papers, {len(selected)} retained")
+          if stats["ai_assessed"] != len(candidates):
+              raise SystemExit("AI model call did not complete for all smoke-test abstracts; inspect relevance logs.")
+          print("OpenAI API connection and JSON semantic screening: OK")
+          PY
       - name: Update daily literature
         if: github.event_name != 'push'
         env:
