@@ -4,6 +4,7 @@ import datetime as dt, json, os, re, time, urllib.parse, urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from zoneinfo import ZoneInfo
+from relevance import screen
 
 ROOT=Path(__file__).resolve().parent
 NS={"a":"http://www.w3.org/2005/Atom","x":"http://arxiv.org/schemas/atom"}
@@ -130,11 +131,21 @@ def main():
   key=re.sub("[^a-z0-9]","",p["title"].lower())
   if p["id"] in old or key in seen:continue
   seen.add(key);kept.append(p)
- if not kept:raise RuntimeError("No papers: preserving previous issue")
+ if not kept:
+  print("No new papers from this run")
+  return
+ kept,stats=screen(kept)
+ if not kept:
+  print("Screening found no sufficiently relevant new papers:",stats)
+  return
+ # Deep reads prioritize scientific relevance rather than journal prestige.
+ ranked=sorted(kept,key=lambda p:float(p.get("relevance_score") or 0),reverse=True)
+ for p in ranked[:min(3,len(ranked))]:
+  p["level"]="Feature"
  enrich(kept)
  kept.sort(key=lambda p:(p["type"]!="Journal",p["topic"],p["title"]))
  dest.parent.mkdir(exist_ok=True)
  dest.write_text(json.dumps({"date":date,"title":"Daily Condensed Matter Literature",
-    "papers":kept,"stats":{"total":len(kept)}},ensure_ascii=False,indent=2),encoding="utf8")
- print("Saved",date,len(kept),"papers")
+    "papers":kept,"stats":stats},ensure_ascii=False,indent=2),encoding="utf8")
+ print("Saved",date,len(kept),"papers after physics-relevance screening:",stats)
 if __name__=="__main__":main()
