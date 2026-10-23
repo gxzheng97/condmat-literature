@@ -14,9 +14,9 @@ import urllib.request
 # Signals represent physical QUESTIONS rather than generic publication keywords.
 CONCEPTS = (
  (r"superconduct|josephson|cooper pair|vortex|meissner|andreev|shapiro", 3.0),
- (r"altermagnet|antiferromagnet|ferromagnet|ferrimagnet|spin order|spin excitation|spin wave|magnon|skyrmion|spin liquid|chirality|magnetic anisotrop|metamagnet", 2.9),
+ (r"altermagnet|antiferromagnet|ferromagnet|ferrimagnet|magnetic (structure|order|phase|excitation|anisotrop)|spin order|spin excitation|spin wave|magnon|skyrmion|spin liquid|chirality|metamagnet", 2.9),
  (r"kondo|mott|heavy.fermion|strongly correlat|hubbard|flat.band|quantum critical|non.fermi|density.wave|excitonic insulat", 3.0),
- (r"anomalous hall|thermal hall|nernst|seebeck|quantum oscillat|magnetoresist|quantum transport|berry curvature|spin hall|magnetocaloric|elastocaloric", 2.8),
+ (r"anomalous hall|thermal hall|nernst|seebeck|thermoelectric (transport|effect|response)|quantum oscillat|magnetoresist|quantum transport|berry curvature|spin hall|magnetocaloric|elastocaloric", 2.8),
  (r"weyl|dirac semimetal|topological (phase|state|insulat|semimetal)|chern insulat|quantum hall|nontrivial topology", 2.8),
  (r"valence (transit|instab|fluctuat)|mixed valence|phase coexist|structural (phase )?transit|ferroelectric (order|transition|switch)|orbital order|nematic|symmetry break|spin.polarized", 2.6),
  (r"neutron scatter|muon spin|\bmuSR\b|torque magnet|heat capacity|specific heat|inelastic x.ray|angle.resolved photo|quantum capacit|spectroscop", 1.5),
