@@ -3,7 +3,8 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: '15 16 * * *'
+    - cron: '0 8 * * *'
+      timezone: 'America/Los_Angeles'
   workflow_dispatch:
 permissions:
   contents: write
