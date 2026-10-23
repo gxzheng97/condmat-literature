@@ -106,31 +106,52 @@ def fallback_score(paper):
 def _ai_batch(papers, key):
     """Read and assess every candidate using its physical question and claims."""
     rubric = (
-      "You are an editor of a broad experimental CONDENSED MATTER PHYSICS "
-      "literature digest, not a specialist in the user's current projects. "
-      "Judge the physical SCIENCE QUESTION and new understanding, not journal "
-      "prestige or matching a few topics. Include original discoveries on "
-      "electronic, magnetic, lattice, superconducting, topological, quantum "
-      "and thermal behavior of solids, material-specific phase transitions, "
-      "well-grounded experimentally actionable theory, and novel synthesis "
-      "revealing physical phenomena. Include compelling low-dimensional or "
-      "interdisciplinary condensed matter. Be open to unfamiliar materials "
-      "and techniques, not just known fashionable subjects. "
-      "Reject work whose central contribution is device performance, "
-      "implementation, general application, generic engineering or a survey "
-      "without substantial new condensed-matter physics. Device/optical "
-      "research CAN qualify if it probes or demonstrates a new physical state "
-      "or mechanism. Materials synthesis CAN qualify for novel accessible "
-      "quantum matter, new electronic/magnetic state, or substantial experimental "
-      "opportunity. Do NOT blacklist fields or named topics. "
-      "Grade score 0-100: 80-100 exceptional strong fit, 65-79 substantive "
-      "fit, 55-64 borderline but potentially useful, <55 mostly unrelated. "
-      "Bias toward retaining borderline work with substantive physics; keep "
-      "if score>=55. Select feature_candidate true for a few standout papers "
-      "whose science is distinctive or experimentally promising; no requirement "
-      "to distribute scores by journal. "
-      "Return a JSON object: {assessments:[{id,score,feature_candidate,reason}]}. "
-      "Keep reasons short, grounded in the supplied title/abstract, in English."
+      "You are making INCLUSION decisions for a serious, broad experimental "
+      "CONDENSED-MATTER PHYSICS journal club. Be an exacting research editor: "
+      "judge the paper's PRIMARY SCIENTIFIC ADVANCE, not just the occurrence "
+      "of physics terms, its journal prestige, novelty claims, or a clever device. "
+      "Ask: What new thing does this paper TEACH US ABOUT THE PHYSICS OF MATTER "
+      "(electrons, spins, lattices, collective states, low-dimensional solid-state "
+      "materials, or their transport, thermodynamics, symmetry or excitations)? "
+      "Why would a broadly curious condensed-matter experimental physicist want "
+      "to read it? Include new experimentally evidenced states, distinctive "
+      "mechanisms, phase diagrams, unusual materials with important physics "
+      "or credible experimentally testable theoretical predictions. "
+      "Do not require known material names or a fashionable subfield. "
+      "Theory, optical probes, synthesis, and devices can qualify WHEN the "
+      "central contribution is a new fundamental material phenomenon. "
+      "In contrast, do NOT include studies primarily about higher optical "
+      "resolution, device speed/efficiency, sensor sensitivity, fabrication or "
+      "integration, conventional materials optimization, general-purpose "
+      "computational methodology, or survey of applications, unless they also "
+      "establish an independent substantial discovery about condensed-matter "
+      "physics. Ordinary superconducting-qubit quantum error correction, "
+      "quantum algorithms, and quantum-information protocols are not condensed-"
+      "matter discoveries solely because they use superconductors. "
+      "Optical-system engineering is not a condensed-matter discovery solely "
+      "because it uses diffraction or a nanostructured material. "
+      "Ultracold-gas demonstrations and continuum fluids generally fall outside "
+      "this solid-state-focused digest unless they answer a distinctly "
+      "transferable condensed-matter question. Reviews and technology roadmaps "
+      "generally do not report original physics and should not enter. "
+      "Do not blacklist entire research areas: the fundamental-physics content "
+      "overrides subject labels when compelling. "
+      "For EVERY paper independently return in_scope true ONLY if a concrete "
+      "new condensed-matter physical understanding or experimentally useful "
+      "insight is central. Reject superficially adjacent papers. "
+      "Provide a calibrated score: 85-100 landmark/broadly exciting new "
+      "condensed-matter physics; 70-84 strong original CM result; 55-69 "
+      "credible narrower CM physical advance; 40-54 tangential science; "
+      "0-39 chiefly engineering/application/quantum information/general methods. "
+      "There is no target number of inclusions; be selective when the "
+      "candidate pool mixes many adjacent domains. "
+      "Set feature_candidate true ONLY for substantial research discoveries "
+      "or readily actionable predictions, never mainly for technology performance. "
+      "Reply JSON exactly: {assessments:[{id,in_scope,score,feature_candidate,"
+      "reason,physics_advance}]}. Reason must say why relevant or not in "
+      "one sentence. physics_advance names the concrete NEW physical insight "
+      "established, or empty string if there is none. All decisions must be "
+      "based only on the supplied title and abstract; do not invent claims."
     )
     docs = [
       {"id":p.get("id"),"title":p.get("title"),"abstract":(p.get("abstract") or p.get("summary_en") or "")[:3300]}
@@ -156,7 +177,17 @@ def _ai_batch(papers, key):
     raw="".join(part.get("text","") for msg in response.get("output",[])
                 for part in msg.get("content",[]) if part.get("type")=="output_text")
     result=json.loads(raw)
-    return {str(x.get("id")):x for x in result.get("assessments",[]) if "id" in x}
+    assessments = result.get("assessments", [])
+    if not isinstance(assessments,list):
+        raise ValueError("Missing AI assessments")
+    found={}
+    for x in assessments:
+        if not isinstance(x,dict) or "id" not in x or not isinstance(x.get("in_scope"),bool):
+            raise ValueError("AI must provide a binary in_scope decision for every paper")
+        found[str(x["id"])]=x
+    if any(str(p["id"]) not in found for p in papers):
+        raise ValueError("Incomplete AI assessment; rejecting partial batch")
+    return found
 
 
 def screen(papers, use_ai=True):
@@ -187,10 +218,13 @@ def screen(papers, use_ai=True):
             reason="Physics-focused local screening"
             method="local"
         else:
-            ok=score>=55
-            feature=bool(ai.get("feature_candidate")) and score>=65
+            # Both scientific scope AND a minimum paper-level result are needed.
+            ok=(ai.get("in_scope") is True and score>=55)
+            feature=ok and bool(ai.get("feature_candidate")) and score>=70
             reason=str(ai.get("reason") or "")[:240]
             method="semantic"
+            p["physics_advance"]=str(ai.get("physics_advance") or "")[:260]
+            p["ai_in_scope"]=ai.get("in_scope") is True
         p["relevance_score"]=score
         p["relevance_method"]=method
         if reason: p["relevance_reason"]=reason
