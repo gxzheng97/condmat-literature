@@ -30,6 +30,8 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python update_daily.py
+      - name: Refresh complete author bibliographies
+        run: python fill_authors.py
       - name: Generate bilingual PDF reports
         run: |
           sudo apt-get update -qq
