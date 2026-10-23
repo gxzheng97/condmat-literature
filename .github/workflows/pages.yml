@@ -28,6 +28,15 @@ jobs:
           python-version: '3.12'
       - name: Validate physics relevance screen
         run: python -m unittest -q test_relevance
+      - name: Check AI semantic screening configuration
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -n "$OPENAI_API_KEY" ]; then
+            echo "::notice::AI semantic screening key is configured."
+          else
+            echo "::warning::AI semantic screening key missing. Add OPENAI_API_KEY in repository Actions secrets."
+          fi
       - name: Update daily literature
         if: github.event_name != 'push'
         env:
