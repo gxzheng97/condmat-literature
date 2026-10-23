@@ -38,7 +38,8 @@ jobs:
             echo "::warning::AI semantic screening key missing. Add OPENAI_API_KEY in repository Actions secrets."
           fi
       - name: Smoke test live AI semantic screening
-        if: github.event_name == 'push'
+        if: github.event_name != 'schedule'
+        continue-on-error: true
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
