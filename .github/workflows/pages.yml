@@ -30,6 +30,12 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python update_daily.py
+      - name: Generate bilingual PDF reports
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk
+          python -m pip install -q weasyprint
+          python make_reports.py
       - name: Build site
         run: python build.py
       - name: Commit daily issue
