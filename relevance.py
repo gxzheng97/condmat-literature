@@ -19,7 +19,7 @@ CONCEPTS = (
  (r"anomalous hall|thermal hall|nernst|seebeck|quantum oscillat|magnetoresist|quantum transport|berry curvature|spin hall|magnetocaloric|elastocaloric", 2.8),
  (r"weyl|dirac semimetal|topological (phase|state|insulat|semimetal)|chern insulat|quantum hall|nontrivial topology", 2.8),
  (r"valence (transit|instab|fluctuat)|mixed valence|phase coexist|structural (phase )?transit|ferroelectric (order|transition|switch)|orbital order|nematic|symmetry break|spin.polarized", 2.6),
- (r"neutron scatter|muon spin|\\bmuSR\\b|torque magnet|heat capacity|specific heat|inelastic x.ray|angle.resolved photo|quantum capacit|spectroscop", 1.5),
+ (r"neutron scatter|muon spin|\bmuSR\b|torque magnet|heat capacity|specific heat|inelastic x.ray|angle.resolved photo|quantum capacit|spectroscop", 1.5),
  (r"spin.orbit (coupling|torque)|nonreciprocal|nonlinear hall|magneto.optical|kerr effect|strain.tuned|pressure.tuned|ferroelastic", 2.2),
  (r"quantum geometry|moire|moiré|landau level|exciton condens|valley polariz|polar chain|orbital magnet", 2.0),
  (r"thermal transport|thermal conduct|phonon transport|heat pulse|phonon hydrodynam|electron.phonon|thermal expansion", 1.4),
@@ -32,7 +32,7 @@ METHODS = (
  r"thermoelectric|angle.depend|spin dynamics|raman|scanning tunneling|"
  r"domain wall|strain|uniaxial|pressure|crystal growth|synthes|inelastic"
 )
-MATERIALS = r"\\b[A-Z][a-z]?(?:[A-Z][a-z]?|[0-9]){2,}\\b|\\bkagome\\b|\\bvdW\\b|\\bvan der Waals\\b|\\btransition.metal\\b"
+MATERIALS = r"\b[A-Z][a-z]?(?:[A-Z][a-z]?|[0-9]){2,}\b|\bkagome\b|\bvdW\b|\bvan der Waals\b|\btransition.metal\b"
 NOVEL_PHYSICS = (
  r"phase transition|ground state|quantum phase|novel (state|phase|mechanism)|"
  r"emergent|first.observ|experimental evidence|observ(e|ed|ation)|"
@@ -46,7 +46,7 @@ APPLIED = (
  r"power efficiency|optoelectronic|high.electron.mobility transistor|"
  r"modulat|frequency converter|amplifier|engineering application)"
 )
-REVIEW = r"\\b(review|perspective|tutorial|roadmap|overview|survey|benchmark|state.of.the.art)\\b"
+REVIEW = r"\b(review|perspective|tutorial|roadmap|overview|survey|benchmark|state.of.the.art)\b"
 
 
 def _hits(pattern, text):
