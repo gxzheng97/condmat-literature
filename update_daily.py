@@ -140,10 +140,14 @@ def main():
  if not kept:
   print("Screening found no sufficiently relevant new papers:",stats)
   return
- # Deep reads prioritize scientific relevance rather than journal prestige.
- ranked=sorted(kept,key=lambda p:float(p.get("relevance_score") or 0),reverse=True)
- for p in ranked[:min(4,len(ranked))]:
-  p["level"]="Feature"
+ # Select Featured Reading by global editorial judgment, not local
+ # uncalibrated relevance scores or impact factor.
+ featured=[p for p in kept if p.get("feature_candidate")]
+ if not featured:
+  featured=kept[:min(3,len(kept))]
+ feature_ids={p["id"] for p in featured[:4]}
+ for p in kept:
+  p["level"]="Feature" if p["id"] in feature_ids else "Brief"
  enrich(kept)
  kept.sort(key=lambda p:(p["type"]!="Journal",p["topic"],p["title"]))
  dest.parent.mkdir(exist_ok=True)
