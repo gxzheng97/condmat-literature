@@ -83,13 +83,15 @@ def enrich(records):
  if not key:return
  for k in range(0,len(records),7):
   batch=records[k:k+7]
-  docs=[{"id":p["id"],"title":p["title"],"abstract":p["abstract"][:2400],"type":p["type"],
+  docs=[{"id":p["id"],"title":p["title"],"abstract":p["abstract"][:2400],"featured":p.get("level")=="Feature","type":p["type"],
          "journal":p["journal"],"published":bool(p.get("journal_ref"))} for p in batch]
   instructions=("Create faithful bilingual scholarly literature notes using only titles and abstracts. "
    "Return JSON object {papers:[{id,summary_en,summary_zh,method_en,method_zh,result_en,"
    "result_zh,future_en,future_zh,tier,tier_reason_en,tier_reason_zh}]}. "
-   "Write 1-2 concise sentences per summary, one concise sentence for methods, findings, "
-   "and potential experimental follow-up. Do not invent figures, data, or mechanisms. "
+   "Write 1-2 precise sentences per summary. For featured papers write 3-5 substantive "
+   "sentences in the findings, 2-3 in methods and 2-3 in experimental follow-up; "
+   "for other papers use one accurate sentence per field. Preserve quantitative "
+   "claims from abstracts. Do not invent figure numbers, data, or mechanisms. "
    "For UNPUBLISHED arXiv only, assess possible journal tier: Nature/Science, "
    "Nature Physics/Nature Materials, Nature Communications/Science Advances/PRX, "
    "PRL, PRB/Physical Review Materials, Below PRB, or Uncertain, with a reason. "
@@ -140,7 +142,7 @@ def main():
   return
  # Deep reads prioritize scientific relevance rather than journal prestige.
  ranked=sorted(kept,key=lambda p:float(p.get("relevance_score") or 0),reverse=True)
- for p in ranked[:min(3,len(ranked))]:
+ for p in ranked[:min(4,len(ranked))]:
   p["level"]="Feature"
  enrich(kept)
  kept.sort(key=lambda p:(p["type"]!="Journal",p["topic"],p["title"]))
