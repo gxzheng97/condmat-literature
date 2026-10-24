@@ -80,7 +80,6 @@ jobs:
           print("OpenAI API connection and scientific-scope gate: OK")
           PY
       - name: Update daily literature
-        if: github.event_name != 'push'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python update_daily.py
@@ -117,7 +116,6 @@ jobs:
       - name: Build site
         run: python build.py
       - name: Commit daily issue
-        if: github.event_name != 'push' || steps.rescreen.outputs.changed == 'true'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
