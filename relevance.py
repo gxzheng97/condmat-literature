@@ -185,9 +185,12 @@ def _ai_batch(papers, key):
         if not isinstance(x,dict) or "id" not in x or not isinstance(x.get("in_scope"),bool):
             raise ValueError("AI must provide a binary in_scope decision for every paper")
         found[str(x["id"])]=x
-    if any(str(p["id"]) not in found for p in papers):
+    expected={str(p["id"]) for p in papers}
+    if any(pid not in found for pid in expected):
         raise ValueError("Incomplete AI assessment; rejecting partial batch")
-    return found
+    # The model may emit an extra (hallucinated) identifier. Ignore extras:
+    # only actual input paper IDs can enter the editorial pipeline.
+    return {pid:found[pid] for pid in expected}
 
 
 def _ai_shortlist(papers, key, max_papers=30):
