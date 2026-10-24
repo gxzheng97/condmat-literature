@@ -1,6 +1,6 @@
 """Regression checks for broad relevance without hand-made title blacklists."""
 import unittest
-from relevance import fallback_score
+from relevance import fallback_score, has_substantive_cm_evidence
 
 def record(title, abstract=""):
     return {"title":title, "abstract":abstract}
@@ -42,6 +42,30 @@ class EditorialScreenTests(unittest.TestCase):
         self.check(
             "How good are universal MLIPs for alloys? A benchmark is only as trustworthy as its controls",
             "Assessment of computational metrics for atomic machine-learning interatomic potentials.",False)
+
+class IndependentScopeTests(unittest.TestCase):
+    def test_condensed_matter_discoveries_pass(self):
+        for title,abstract in [
+            ("Magnetic order, magnons, and crystal fields in van der Waals CeSiI",""),
+            ("Optical switching of two-dimensional charge-density-wave chirality",""),
+            ("High-resolution search for thermal Hall in La2CuO4",""),
+            ("Kondo screening and random-singlet formation in disordered systems",""),
+            ("Selective strain tuning of multiferroic dynamics in BiFeO3",""),
+            ("Unexpected synthesis of a new electronic phase",
+             "Single crystal structure and strongly correlated electrons reveal a new quantum material."),
+        ]:
+            self.assertTrue(has_substantive_cm_evidence(record(title,abstract)),title)
+    def test_non_condensed_matter_does_not_pass(self):
+        for title,abstract in [
+            ("A functional two-pore-domain K+ channel from a large DNA virus",
+             "Virology reveals cellular transport pathways for viral proteins."),
+            ("Supercoiling Drives DNA-Protein Co-Condensation","Protein condensation."),
+            ("Local growth laws determine global shape of molluscan shells","Shell growth physics."),
+            ("Entropy-production cost limits hierarchical decision-making in homing pigeon flocks","Biological flock decision-making."),
+            ("High-numerical-aperture extreme ultraviolet flat optics","Two cascaded lenses increase optical resolution."),
+            ("A new quantum feedback algorithm for error correction","Logical qubit fidelity increases."),
+        ]:
+            self.assertFalse(has_substantive_cm_evidence(record(title,abstract)),title)
 
 if __name__=="__main__":
     unittest.main()
