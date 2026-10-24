@@ -105,6 +105,36 @@ jobs:
           git add -u rescreen-2026-10-23.request
           git commit -m "Publish complete AI semantic re-screen of October 23"
           git push
+      - name: Strictly re-screen October 24 archive
+        id: rescreen24
+        if: github.event_name == 'push'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -f rescreen-2026-10-24.request ]; then
+            test -n "$OPENAI_API_KEY" || { echo "AI API key missing"; exit 1; }
+            python rescreen_oct24.py
+            rm rescreen-2026-10-24.request
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Validate daily publication size and AI completion
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          day=datetime.now(ZoneInfo("America/Los_Angeles")).date().isoformat()
+          path=Path("issues")/(day+".json")
+          if path.exists():
+              issue=json.loads(path.read_text(encoding="utf-8"))
+              n=len(issue.get("papers",[]))
+              assert n<=30, f"Refusing to publish an uncurated {n}-paper index"
+              if day >= "2026-10-24":
+                  stats=issue.get("stats",{})
+                  assert stats.get("global_editorial"), "Missing global editorial review; refusing publication"
+              print(f"Editorial release gate passed: {n} papers")
+          PY
       - name: Refresh complete author bibliographies
         run: python fill_authors.py
       - name: Generate bilingual PDF reports
@@ -121,6 +151,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add issues/ index.html
           git add -u rescreen-2026-10-23.request || true
+          git add -u rescreen-2026-10-24.request || true
           if ! git diff --cached --quiet; then
             git commit -m "Daily literature update and AI editorial screening"
             git push
