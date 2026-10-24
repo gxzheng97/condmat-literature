@@ -193,6 +193,57 @@ def _ai_batch(papers, key):
     return {pid:found[pid] for pid in expected}
 
 
+# Independent, high-recall scope check: require evidence that the PAPER
+# actually concerns an emergent physical property of condensed matter.
+# This is not a topic blacklist or the main ranking mechanism; it is a
+# sanity check to stop generic uses of "quantum"/"phase"/"transport"
+# from admitting biology, fluid mechanics, optics engineering, etc.
+CM_PHYSICS_TITLE = re.compile(
+    r"superconduct|josephson|vort(ex|ices)|andreev|"
+    r"(anti)?ferromagnet|ferrimagnet|altermagnet|magnetic order|"
+    r"magnon|spin[- ]?(wave|liquid|order|splitt|polariz|excitat|resonan)|"
+    r"kondo|mott|hubbard|strange metal|fermi|"
+    r"quantum critical|chern|quantum (spin )?hall|topological (insulat|semimetal|phase|pump)|"
+    r"charge[- ]density[- ]wave|moire|moiré|graphene|"
+    r"ferroelectric|multiferroic|orbital order|"
+    r"(anomalous|thermal|spin|quantum) hall|nernst|seebeck|"
+    r"magnetoresist|magneto.?electric|elastocaloric|"
+    r"electronic (transport|correlat|phase|state|structure)|"
+    r"electron[- ]phonon|phonon|lattice dynamics|"
+    r"quantum oscillat|valence (transit|fluctuat|instab)|"
+    r"neutron scatter|quantum capacitance|"
+    r"metal[- ]insulator transition|superfluid (phase|density)",
+    re.I)
+CM_ABSTRACT_EVIDENCE = re.compile(
+    r"superconduct|magnetic order|magnon|spin excitation|"
+    r"quantum hall|chern insulator|topological electronic|"
+    r"strongly correlated electron|kondo|mott|hubbard|"
+    r"charge density wave|orbital order|ferroelectric|"
+    r"ferrimagnet|antiferromagnet|spin transport|"
+    r"anomalous hall|thermal hall|nernst|seebeck|"
+    r"neutron scatter|specific heat|heat capacity|"
+    r"electronic band structure|first.principles electronic|"
+    r"electron.phonon|spin.orbit|electron correlation|"
+    r"lattice dynamics|magnetoresistance|"
+    r"superconducting phase|quantum material",
+    re.I)
+CM_MATERIAL_SYSTEM = re.compile(
+    r"crystal|semiconductor|solid.state|solid|bulk|lattice|"
+    r"layered|monolayer|heterostructure|van der waals|"
+    r"condensed.matter|electronic band|ferromagnet|"
+    r"oxide|pnictide|chalcogenide|metal|ferroelectric|"
+    r"spin.system|strongly.correlated|quantum material",
+    re.I)
+
+def has_substantive_cm_evidence(p):
+    title=str(p.get("title") or "")
+    abstract=str(p.get("abstract") or p.get("summary_en") or "")
+    if CM_PHYSICS_TITLE.search(title):
+        return True
+    return bool(CM_ABSTRACT_EVIDENCE.search(abstract)
+                and CM_MATERIAL_SYSTEM.search(title+" "+abstract))
+
+
 def _ai_shortlist(papers, key, max_papers=30):
     """Comparative editorial choice across the *entire day's* candidates.
 
@@ -322,6 +373,11 @@ def screen(papers, use_ai=True, max_papers=30):
         p["relevance_score"]=score
         p["feature_candidate"]=False
         if ok:initial.append(p)
+    # Separate from the LLM's in_scope label. Generic scientific papers
+    # should not enter the global shortlist solely on an inflated score.
+    field_screened=[p for p in initial if has_substantive_cm_evidence(p)]
+    dropped_for_scope=len(initial)-len(field_screened)
+    initial=field_screened
     if key and initial:
         ranked,features=_ai_shortlist(initial,key,max_papers=max_papers)
         byid={p["id"]:p for p in initial}
@@ -334,4 +390,5 @@ def screen(papers, use_ai=True, max_papers=30):
         raise RuntimeError("Issue exceeds editorial size limit")
     return kept, {"scanned":len(papers),"first_pass_selected":len(initial),
                   "selected":len(kept),"rejected":len(papers)-len(kept),
-                  "ai_assessed":len(judged),"global_editorial":bool(key)}
+                  "ai_assessed":len(judged),"global_editorial":bool(key),
+                  "field_scope_excluded":dropped_for_scope}
