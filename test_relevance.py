@@ -91,7 +91,7 @@ class JournalRecallTests(unittest.TestCase):
         self.assertFalse(journal_candidate_scope("Communications Materials",
             "High numerical aperture flat optics for lithography"))
         self.assertFalse(journal_candidate_scope("PRL",
-            "Entangling Ions with Engineered Light Gradients"))
+            "Quantum error correction on a superconducting processor"))
 
     def test_cursor_pagination_reads_all_results(self):
         calls=[]
