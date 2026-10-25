@@ -57,6 +57,14 @@ class IndependentScopeTests(unittest.TestCase):
             self.assertTrue(has_substantive_cm_evidence(record(title,abstract)),title)
     def test_non_condensed_matter_does_not_pass(self):
         for title,abstract in [
+            ("Ultracold atom quantum simulation of the Hubbard model",
+             "Atomic gases in an optical lattice reproduce magnetic correlations."),
+            ("Topological photonic crystal for robust optical guiding",
+             "A topological photonic bandgap supports an edge mode."),
+            ("Superconducting quantum computing with error correction",
+             "Scalable superconducting circuits demonstrate a quantum algorithm."),
+            ("Magnetic structure of an astrophysical plasma jet",
+             "Magnetized plasma turbulence is observed in an astrophysical jet."),
             ("A functional two-pore-domain K+ channel from a large DNA virus",
              "Virology reveals cellular transport pathways for viral proteins."),
             ("Supercoiling Drives DNA-Protein Co-Condensation","Protein condensation."),
