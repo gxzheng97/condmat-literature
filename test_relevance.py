@@ -1,6 +1,11 @@
 """Regression checks for broad relevance without hand-made title blacklists."""
 import unittest
 from relevance import fallback_score, has_substantive_cm_evidence
+from update_daily import journal_candidate_scope, crossref_records, journals
+from unittest.mock import patch
+import datetime as dt
+import json
+import urllib.parse
 
 def record(title, abstract=""):
     return {"title":title, "abstract":abstract}
@@ -74,6 +79,52 @@ class IndependentScopeTests(unittest.TestCase):
             ("A new quantum feedback algorithm for error correction","Logical qubit fidelity increases."),
         ]:
             self.assertFalse(has_substantive_cm_evidence(record(title,abstract)),title)
+
+class JournalRecallTests(unittest.TestCase):
+    def test_theory_and_flat_band_not_killed_by_premature_keyword_gate(self):
+        self.assertTrue(journal_candidate_scope("PRX",
+            "Toward Complete Characterization of Topological Insulators and Superconductors"))
+        self.assertTrue(journal_candidate_scope("PRL",
+            "Cluster-Decorated Lieb Lattice: A Convenient Platform for Tuning Flat-Band Energy"))
+        self.assertTrue(journal_candidate_scope("Communications Materials",
+            "Strain-driven magnetostructural relaxation revealed in Heusler alloys"))
+        self.assertFalse(journal_candidate_scope("Communications Materials",
+            "High numerical aperture flat optics for lithography"))
+        self.assertFalse(journal_candidate_scope("PRL",
+            "Entangling Ions with Engineered Light Gradients"))
+
+    def test_cursor_pagination_reads_all_results(self):
+        calls=[]
+        def fake_fetch(url):
+            q=urllib.parse.parse_qs(urllib.parse.urlsplit(url).query)
+            calls.append(q)
+            return json.dumps({"message":{
+                "items":[{"DOI":"a"},{"DOI":"b"}] if len(calls)==1 else [{"DOI":"c"}],
+                "next-cursor":"page2"}})
+        with patch("update_daily.fetch", side_effect=fake_fetch):
+            found=list(crossref_records("0031-9007","2026-10-18","2026-10-25",page_size=2))
+        self.assertEqual([x["DOI"] for x in found],["a","b","c"])
+        self.assertEqual(len(calls),2)
+        self.assertEqual(calls[0]["cursor"],["*"])
+        self.assertEqual(calls[1]["cursor"],["page2"])
+        self.assertEqual(calls[0]["rows"],["2"])
+
+    def test_weeklong_backfill_and_per_journal_audit(self):
+        seen=[]
+        def fake_records(issn,first,last):
+            seen.append((issn,first,last))
+            if issn=="2662-4443":
+                yield {"type":"journal-article",
+                       "DOI":"10.1038/s43246-026-01390-9",
+                       "title":["Strain-driven magnetostructural relaxation revealed in Heusler alloys"],
+                       "abstract":""}
+        audit=[]
+        with patch("update_daily.crossref_records",side_effect=fake_records):
+            found=journals(dt.datetime(2026,10,25),audit)
+        self.assertEqual(len(found),1)
+        self.assertEqual(len(seen),12)
+        self.assertTrue(all(x[1]=="2026-10-18" and x[2]=="2026-10-25" for x in seen))
+        self.assertEqual(audit[0]["prefilter"],"candidate")
 
 if __name__=="__main__":
     unittest.main()
