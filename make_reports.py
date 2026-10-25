@@ -63,6 +63,12 @@ def safe(value):
 def link(url, text):
     return f'<a href="{safe(url)}">{safe(text)}</a>'
 
+def score_text(p, zh):
+    value = p.get('relevance_score')
+    if value is None:
+        return ''
+    return f'{"科学评分" if zh else "Physics score"}: {safe(value)}/100'
+
 def document(issue, lang):
     zh = lang == 'zh'
     papers = sorted(issue.get('papers', []), key=paper_sort_key)
@@ -81,12 +87,12 @@ def document(issue, lang):
         status = p.get('journal') or p.get('published_journal') or 'arXiv'
         lines.append(f'<tr><td>{i:02d}</td><td><div class="name">{link(p.get("url",""),p.get("title",""))}</div>' +
             f'<div class="small">{safe(p.get("authors"))} · {"通讯" if zh else "Corresponding"}: {safe(p.get("corresponding") or "—")}</div></td>' +
-            f'<td>{safe(status)}</td></tr>')
+            f'<td>{safe(status)}<div class="small">{score_text(p,zh)}</div></td></tr>')
     lines.append('</tbody></table>')
     lines.append(f'<h2>{"重点论文解读" if zh else "Featured Papers"}</h2>')
     for i, p in enumerate(features, 1):
         venue = p.get('journal') or p.get('published_journal') or ''
-        lines.append(f'<section class="paper"><div class="pub">{i:02d} · {safe(venue)} · {link(p.get("url",""), "arXiv / DOI ↗")}</div>')
+        lines.append(f'<section class="paper"><div class="pub">{i:02d} · {safe(venue)} · {score_text(p,zh)} · {link(p.get("url",""), "arXiv / DOI ↗")}</div>')
         lines.append(f'<h3>{safe(p.get("title"))}</h3><div class="authors">{safe(p.get("authors"))} · ' +
                      f'{"通讯" if zh else "Corresponding"}: {safe(p.get("corresponding") or "—")}</div>')
         fields = [('summary', '研究概述' if zh else 'Overview'),
@@ -106,7 +112,7 @@ def document(issue, lang):
         lines.append(f'<h2>{"其他相关论文" if zh else "Additional Papers"}</h2>')
         for p in others:
             venue = p.get('journal') or p.get('published_journal') or ''
-            lines.append(f'<section class="brief"><div class="pub">{safe(venue)}</div>' +
+            lines.append(f'<section class="brief"><div class="pub">{safe(venue)} · {score_text(p,zh)}</div>' +
                 f'<h3>{link(p.get("url",""),p.get("title",""))}</h3>')
             lines.append(f'<div class="small">{safe(p.get("authors"))} · ' +
                 f'{"通讯" if zh else "Corresponding"}: {safe(p.get("corresponding") or "—")}</div>')
