@@ -1,7 +1,7 @@
 """Regression checks for broad relevance without hand-made title blacklists."""
 import unittest
 from relevance import fallback_score, has_substantive_cm_evidence
-from update_daily import journal_candidate_scope, crossref_records, journals
+from update_daily import journal_candidate_scope, crossref_records, journals, _PublisherAbstractParser
 from unittest.mock import patch
 import datetime as dt
 import json
@@ -81,6 +81,13 @@ class IndependentScopeTests(unittest.TestCase):
             self.assertFalse(has_substantive_cm_evidence(record(title,abstract)),title)
 
 class JournalRecallTests(unittest.TestCase):
+    def test_publisher_metadata_abstract_recovery(self):
+        parser=_PublisherAbstractParser()
+        parser.feed('<html><head><meta name="citation_abstract" content="' +
+                    'This is an original condensed-matter study of flat bands. '*5 +
+                    '"></head></html>')
+        self.assertIn("condensed-matter study",parser.extract())
+
     def test_theory_and_flat_band_not_killed_by_premature_keyword_gate(self):
         self.assertTrue(journal_candidate_scope("PRX",
             "Toward Complete Characterization of Topological Insulators and Superconductors"))
