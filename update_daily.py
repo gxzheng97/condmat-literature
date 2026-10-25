@@ -210,10 +210,10 @@ def metadata_abstract(doi):
 def journals(today, audit=None, skip_ids=None):
  out=[]
  skip_ids=skip_ids or {}
- # The previous midnight-only window missed Friday and delayed indexing.
- # A rolling week rescans recent journal publications; prior published DOIs
- # are excluded in main(), but arXiv->journal duplicates remain eligible.
- first=(today-dt.timedelta(days=7)).date().isoformat()
+ # Restrict every daily issue to the most recent 24-hour publication window.
+ # Crossref publication filters are DATE-level, so query only the two dates
+ # touched by the last 24 hours; never backfill prior days.
+ first=(today-dt.timedelta(hours=24)).date().isoformat()
  last=today.date().isoformat()
  for name,issn in ISSN.items():
   total=0
@@ -329,9 +329,8 @@ def main():
   try:
    for x in json.loads(p.read_text()).get("papers",[]):old.add(x["id"])
   except Exception:pass
- # Papers assessed by this rubric in previous rolling-window runs do not
- # need new paid AI scoring every morning. This does NOT deduplicate
- # an arXiv paper against a later journal publication.
+ # Avoid repeated paid assessments for papers previously seen at a date
+ # boundary; arXiv papers and later journal publications remain independent.
  already_processed={pid:"previous_issue" for pid in old
                     if pid.startswith("doi-")}
  for archive in (ROOT/"audits").glob("*.json"):
