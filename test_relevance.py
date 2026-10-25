@@ -116,7 +116,7 @@ class JournalRecallTests(unittest.TestCase):
                 "items":[{"DOI":"a"},{"DOI":"b"}] if len(calls)==1 else [{"DOI":"c"}],
                 "next-cursor":"page2"}})
         with patch("update_daily.fetch", side_effect=fake_fetch):
-            found=list(crossref_records("0031-9007","2026-10-18","2026-10-25",page_size=2))
+            found=list(crossref_records("0031-9007","2026-10-24","2026-10-25",page_size=2))
         self.assertEqual([x["DOI"] for x in found],["a","b","c"])
         self.assertEqual(len(calls),2)
         self.assertEqual(calls[0]["cursor"],["*"])
@@ -139,7 +139,7 @@ class JournalRecallTests(unittest.TestCase):
         metadata.assert_not_called()
         self.assertEqual(audit[0]["decision"],"previous_issue")
 
-    def test_weeklong_backfill_and_per_journal_audit(self):
+    def test_24_hour_publication_window_and_per_journal_audit(self):
         seen=[]
         def fake_records(issn,first,last):
             seen.append((issn,first,last))
@@ -153,7 +153,7 @@ class JournalRecallTests(unittest.TestCase):
             found=journals(dt.datetime(2026,10,25),audit)
         self.assertEqual(len(found),1)
         self.assertEqual(len(seen),12)
-        self.assertTrue(all(x[1]=="2026-10-18" and x[2]=="2026-10-25" for x in seen))
+        self.assertTrue(all(x[1]=="2026-10-24" and x[2]=="2026-10-25" for x in seen))
         self.assertEqual(audit[0]["prefilter"],"candidate")
 
 if __name__=="__main__":
