@@ -2,7 +2,7 @@
 import datetime as dt
 import urllib.parse
 from zoneinfo import ZoneInfo
-from update_daily import crossref_records, journal_candidate_scope, clean
+from update_daily import crossref_records, journal_candidate_scope, clean, publisher_abstract
 
 now=dt.datetime.now(ZoneInfo("America/Los_Angeles"))
 first=(now-dt.timedelta(days=7)).date().isoformat()
@@ -23,7 +23,10 @@ for name,(issn,expected) in targets.items():
             if doi in expected:
                 title=clean((x.get("title") or [""])[0])
                 abstract=clean(x.get("abstract",""))
+                if not abstract and name in ("PRL","PRX"):
+                    abstract=publisher_abstract(name,doi)
                 found[doi]={"title":title,"has_abstract":bool(abstract),
+                            "abstract_preview":abstract[:120],
                             "passes_source_gate":journal_candidate_scope(name,title,abstract)}
         for doi in sorted(expected):
             if doi in found:
