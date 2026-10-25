@@ -124,6 +124,10 @@ def _ai_batch(papers, key):
       "Do not require known material names or a fashionable subfield. "
       "Theory, optical probes, synthesis, and devices can qualify WHEN the "
       "central contribution is a new fundamental material phenomenon. "
+      "Original condensed-matter theoretical classification of electronic "
+      "or Bogoliubov-de Gennes phases, topology, symmetry indicators and "
+      "topological invariants is genuine CM theory, NOT generic computing "
+      "methodology; evaluate its scientific advance normally. "
       "In contrast, do NOT include studies primarily about higher optical "
       "resolution, device speed/efficiency, sensor sensitivity, fabrication or "
       "integration, conventional materials optimization, general-purpose "
@@ -235,6 +239,9 @@ CM_PHYSICS_TITLE = re.compile(
     r"magnon|spin[- ]?(wave|liquid|order|splitt|polariz|excitat|resonan)|"
     r"kondo|mott|hubbard|strange metal|fermi|"
     r"quantum critical|chern|quantum (spin )?hall|topological (insulat|semimetal|phase|pump)|"
+    r"flat[-. ]band|lieb lattice|electronic (band|structure)|orbital magnet|"
+    r"magnetocaloric|magnetostructural|ferroelastic|coupled order paramet|"
+    r"quantum (geometry|paramagnet)|kitaev|frustrat(ed|ion)|"
     r"charge[- ]density[- ]wave|moire|moiré|graphene|"
     r"ferroelectric|multiferroic|orbital order|"
     r"(anomalous|thermal|spin|quantum) hall|nernst|seebeck|"
@@ -255,6 +262,9 @@ CM_ABSTRACT_EVIDENCE = re.compile(
     r"neutron scatter|specific heat|heat capacity|"
     r"electronic band structure|first.principles electronic|"
     r"electron.phonon|spin.orbit|electron correlation|"
+    r"flat[-. ]band|magnetostructural|magnetocaloric|"
+    r"orbital magnet|spin splitting|order parameter|"
+    r"valence bond|magnetic (phase|transition)|"
     r"lattice dynamics|magnetoresistance|"
     r"superconducting phase|quantum material",
     re.I)
@@ -310,8 +320,9 @@ def _ai_shortlist(papers, key, max_papers=30):
       "topological electronic states, magnetic/transport/thermodynamic "
       "measurements, crystal growth with novel physical properties, symmetry "
       "and phase transitions, and original condensed-matter theory. "
-      "Keep a broad range of new physical discoveries and valuable "
-      "experimentally testable theory, not only fashionable materials. "
+      "Keep a broad range of new physical discoveries and original "
+      "condensed-matter theory, including phase/topology classification "
+      "and experimentally testable predictions; not only fashionable materials. "
       "Prefer specific new measurements or a well-defined unexpected physical "
       "effect to abstract algorithmic advances, generic computation, materials "
       "optimization, performance-only devices, optics-system design, applied "
@@ -479,7 +490,11 @@ def screen(papers, use_ai=True, max_papers=30):
         if ok:initial.append(p)
     # Separate from the LLM's in_scope label. Generic scientific papers
     # should not enter the global shortlist solely on an inflated score.
-    field_screened=[p for p in initial if has_substantive_cm_evidence(p)]
+    # The AI has already read the entire abstract and assigned a strict
+    # in_scope=True decision. Do not reject it again by an incomplete keyword
+    # vocabulary. Retain only the unmistakable non-CM subject safeguard.
+    field_screened=[p for p in initial if not CLEAR_NON_CM_TITLE.search(
+        str(p.get("title") or ""))]
     dropped_for_scope=len(initial)-len(field_screened)
     initial=field_screened
     if key and initial:
