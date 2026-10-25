@@ -317,7 +317,8 @@ def _ai_shortlist(papers, key, max_papers=30):
     if len(ids)!=len(set(ids)) or any(x not in allowed for x in ids):
         raise RuntimeError("Global editorial review returned invalid identifiers")
     if len(ids)>max_papers:
-        raise RuntimeError(f"Global review ignored maximum {max_papers} articles")
+        print(f"Global editorial shortlist has {len(ids)} papers; retaining the top {max_papers} by relevance")
+        ids=ids[:max_papers]
     features=decision.get("featured_ids",[])
     if not isinstance(features,list) or any(str(x) not in ids for x in features):
         raise RuntimeError("Global review returned invalid featured identifiers")
@@ -387,7 +388,7 @@ def screen(papers, use_ai=True, max_papers=30):
         kept=sorted(initial,key=lambda p:p["relevance_score"],reverse=True)[:max_papers]
         for p in kept[:min(3,len(kept))]:p["feature_candidate"]=True
     if len(kept)>max_papers:
-        raise RuntimeError("Issue exceeds editorial size limit")
+        kept=sorted(kept,key=lambda p:p["relevance_score"],reverse=True)[:max_papers]
     return kept, {"scanned":len(papers),"first_pass_selected":len(initial),
                   "selected":len(kept),"rejected":len(papers)-len(kept),
                   "ai_assessed":len(judged),"global_editorial":bool(key),
