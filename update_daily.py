@@ -9,6 +9,9 @@ from zoneinfo import ZoneInfo
 from relevance import screen, has_substantive_cm_evidence, CLEAR_NON_CM_TITLE
 
 ROOT=Path(__file__).resolve().parent
+# Bump when screening criteria change substantially, so excluded-paper caches
+# are reevaluated under new rules rather than becoming permanent blind spots.
+SCREENING_VERSION="cm-theory-experiment-v2"
 NS={"a":"http://www.w3.org/2005/Atom","x":"http://arxiv.org/schemas/atom"}
 ISSN={"Science":"0036-8075","Science Advances":"2375-2548","Nature":"0028-0836",
 "Nature Physics":"1745-2473","Nature Materials":"1476-1122",
@@ -192,7 +195,7 @@ def metadata_abstract(doi):
  for name,url in sources:
   try:
    req=urllib.request.Request(url,headers={"User-Agent":"CondMatLiteratureMonitor/1.0"})
-   with urllib.request.urlopen(req,timeout=12) as response:
+   with urllib.request.urlopen(req,timeout=6) as response:
     obj=json.loads(response.read())
    if name=="OpenAlex":
     abstract=_openalex_abstract(obj.get("abstract_inverted_index"))
@@ -204,8 +207,9 @@ def metadata_abstract(doi):
    print(f"NOTICE: {name} abstract unavailable {doi}: {type(exc).__name__}")
  return ""
 
-def journals(today, audit=None):
+def journals(today, audit=None, skip_ids=None):
  out=[]
+ skip_ids=skip_ids or {}
  # The previous midnight-only window missed Friday and delayed indexing.
  # A rolling week rescans recent journal publications; prior published DOIs
  # are excluded in main(), but arXiv->journal duplicates remain eligible.
@@ -215,6 +219,7 @@ def journals(today, audit=None):
   total=0
   candidates=0
   excluded=0
+  previously_seen=0
   try:
    for x in crossref_records(issn,first,last):
     if x.get("type")!="journal-article":continue
@@ -223,14 +228,20 @@ def journals(today, audit=None):
     doi=x.get("DOI","").lower().strip()
     if not title or not doi:continue
     total+=1
+    pid="doi-"+re.sub("[^a-z0-9-]","-",doi)
+    if pid in skip_ids:
+     previously_seen+=1
+     if audit is not None:
+      audit.append({"doi":doi,"title":title,"journal":name,
+                    "prefilter":"previously_processed",
+                    "has_abstract":bool(ab),"decision":skip_ids[pid]})
+     continue
     scope_ok=journal_candidate_scope(name,title,ab)
-    # Missing Crossref abstracts are common for APS and some publishers.
-    # Prefer DOI-keyed academic records, then publisher HTML as a fallback.
-    # All failed lookups stay explicitly title-only; do not invent abstracts.
+    # Missing Crossref abstracts are common for APS.
+    # DOI-based metadata is attempted before AI; the APS website itself
+    # returned HTTP 403 in Actions and is not called in the hot path.
     if scope_ok and not ab:
      ab=metadata_abstract(doi)
-     if not ab and name in ("PRL","PRX"):
-      ab=publisher_abstract(name,doi)
     if audit is not None:
      audit.append({"doi":doi,"title":title,"journal":name,
                    "prefilter":"candidate" if scope_ok else "excluded",
@@ -250,7 +261,8 @@ def journals(today, audit=None):
   except Exception as ex:
    print(f"WARNING: Crossref {name} retrieval failed; journal results incomplete: {ex}")
   print(f"Journal harvesting {name}: fetched={total}, preselected={candidates}, "
-        f"excluded_by_scope={excluded}, window={first}..{last}")
+        f"excluded_by_scope={excluded}, already_reviewed={previously_seen}, "
+        f"window={first}..{last}")
  return out
 def enrich(records):
  key=os.getenv("OPENAI_API_KEY")
@@ -317,9 +329,24 @@ def main():
   try:
    for x in json.loads(p.read_text()).get("papers",[]):old.add(x["id"])
   except Exception:pass
+ # Papers assessed by this rubric in previous rolling-window runs do not
+ # need new paid AI scoring every morning. This does NOT deduplicate
+ # an arXiv paper against a later journal publication.
+ already_processed={pid:"previous_issue" for pid in old
+                    if pid.startswith("doi-")}
+ for archive in (ROOT/"audits").glob("*.json"):
+  try:
+   saved=json.loads(archive.read_text(encoding="utf8"))
+   if saved.get("screening_version")!=SCREENING_VERSION:continue
+   for a in saved.get("journal_candidates",[]):
+    if a.get("decision")=="AI_or_global_rejected" and a.get("score") is not None:
+     pid="doi-"+re.sub("[^a-z0-9-]","-",str(a["doi"]))
+     already_processed[pid]="previously_scored"
+  except Exception as exc:
+   print("NOTICE: unable to reuse editorial audit:",type(exc).__name__)
  papers=[];failures=0
  journal_audit=[]
- for fn in (arxiv,lambda:journals(today,journal_audit)):
+ for fn in (arxiv,lambda:journals(today,journal_audit,already_processed)):
   try:papers+=fn()
   except Exception as e:print("Source failure:",str(e));failures+=1
  print(f"Initial subject-filtered sources: {sum(p['type']=='arXiv' for p in papers)} arXiv, "
@@ -344,6 +371,7 @@ def main():
   p=input_by_id.get(pid)
   if pid in selected_ids:a["decision"]="selected"
   elif pid in old_ids:a["decision"]="previous_issue"
+  elif a.get("decision")=="previously_scored":pass
   elif a["prefilter"]=="excluded":a["decision"]="prefilter_excluded"
   elif p is not None:
    a["decision"]="AI_or_global_rejected"
@@ -353,7 +381,8 @@ def main():
   else:a["decision"]="duplicate_or_unprocessed"
  (ROOT/"audits").mkdir(exist_ok=True)
  (ROOT/"audits"/(date+".json")).write_text(
-    json.dumps({"date":date,"journal_candidates":journal_audit},
+    json.dumps({"date":date,"screening_version":SCREENING_VERSION,
+                "journal_candidates":journal_audit},
                ensure_ascii=False,indent=1),encoding="utf8")
  if not kept:
   print("Screening found no sufficiently relevant new papers:",stats)
