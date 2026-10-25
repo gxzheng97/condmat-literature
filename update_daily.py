@@ -4,14 +4,17 @@ import datetime as dt, json, os, re, time, urllib.parse, urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from zoneinfo import ZoneInfo
-from relevance import screen, has_substantive_cm_evidence
+from relevance import screen, has_substantive_cm_evidence, CLEAR_NON_CM_TITLE
 
 ROOT=Path(__file__).resolve().parent
 NS={"a":"http://www.w3.org/2005/Atom","x":"http://arxiv.org/schemas/atom"}
 ISSN={"Science":"0036-8075","Science Advances":"2375-2548","Nature":"0028-0836",
 "Nature Physics":"1745-2473","Nature Materials":"1476-1122",
 "Nature Communications":"2041-1723","PRL":"0031-9007","PRX":"2160-3308",
-"PNAS":"0027-8424"}
+"PNAS":"0027-8424",
+"Communications Materials":"2662-4443",
+"Communications Physics":"2399-3650",
+"npj Quantum Materials":"2397-4648"}
 TOPICS=[("Superconductivity",r"superconduct|josephson|pairing|vortex"),
 ("Thermal & Thermoelectric",r"thermal|thermoelectric|seebeck|nernst|heat capacity|elastocaloric"),
 ("Magnetism",r"magnet|spin|magnon|skyrmion|kagome|altermagnet"),
@@ -62,26 +65,88 @@ def arxiv():
    "method":"","result":"","future":""})
   if start+75<len(ids):time.sleep(3)
  return out
-def journals(today):
- out=[];first=(today-dt.timedelta(days=1)).date().isoformat();last=today.date().isoformat()
+# A broad collection gate, NOT an inclusion decision. All papers entering
+# the digest still need an explicit AI in_scope and relevance score.
+def journal_candidate_scope(name, title, abstract=""):
+ if CLEAR_NON_CM_TITLE.search(title):
+  return False
+ # PRL and PRX publish across physics. Let the AI inspect every original
+ # research paper: title keywords alone miss real condensed-matter theory.
+ if name in ("PRL", "PRX"):
+  return True
+ return has_substantive_cm_evidence({"title":title,"abstract":abstract})
+
+def crossref_records(issn, first, last, page_size=200):
+ """Return all Crossref pages, not merely the first 100 records.
+
+ Use cursor pagination for journals that publish >100 papers in a week.
+ If a later page fails, propagate the failure rather than silently calling
+ a truncated partial harvest complete.
+ """
+ cursor="*"
+ seen_cursors=set()
+ while cursor and cursor not in seen_cursors:
+  seen_cursors.add(cursor)
+  query=urllib.parse.urlencode({
+    "filter":f"from-online-pub-date:{first},until-online-pub-date:{last}",
+    "rows":page_size,"cursor":cursor,
+    "select":"DOI,title,author,abstract,type"})
+  url="https://api.crossref.org/journals/"+issn+"/works?"+query
+  for attempt in range(3):
+   try:
+    response=json.loads(fetch(url))["message"]
+    break
+   except Exception:
+    if attempt==2:raise
+    time.sleep(2**attempt*2)
+  items=response.get("items",[])
+  yield from items
+  if len(items)<page_size:
+   return
+  cursor=response.get("next-cursor")
+ if cursor in seen_cursors:
+  raise RuntimeError("Crossref pagination repeated cursor")
+
+def journals(today, audit=None):
+ out=[]
+ # The previous midnight-only window missed Friday and delayed indexing.
+ # A rolling week rescans recent journal publications; prior published DOIs
+ # are excluded in main(), but arXiv->journal duplicates remain eligible.
+ first=(today-dt.timedelta(days=7)).date().isoformat()
+ last=today.date().isoformat()
  for name,issn in ISSN.items():
-  query=urllib.parse.urlencode({"filter":f"from-online-pub-date:{first},until-online-pub-date:{last}",
-    "rows":100,"select":"DOI,title,author,abstract,type"})
-  try:items=json.loads(fetch("https://api.crossref.org/journals/"+issn+"/works?"+query))["message"]["items"]
-  except Exception as ex:print("Crossref:",name,str(ex));continue
-  for x in items:
-   if x.get("type")!="journal-article":continue
-   title=clean((x.get("title") or [""])[0]);ab=clean(x.get("abstract",""))
-   # Every journal, including PRL/PRX, must pass a CM-physics scope gate.
-   # Journal prestige and generic 'quantum/materials' keywords are not enough.
-   if not title or not has_substantive_cm_evidence({"title":title,"abstract":ab}):continue
-   authors=[clean((a.get("given","")+" "+a.get("family",""))) for a in x.get("author",[])]
-   doi=x.get("DOI","").lower()
-   out.append({"id":"doi-"+re.sub("[^a-z0-9-]","-",doi),"doi":doi,"type":"Journal",
-     "journal":name,"title":title,"authors":", ".join(authors[:3])+(" et al." if len(authors)>3 else ""),
-     "corresponding":"","url":"https://doi.org/"+doi,"topic":topic(title+" "+ab),
-     "level":"Brief","summary_en":summary(ab or title),"summary":summary(ab or title),
-     "abstract":ab,"method":"","result":"","future":""})
+  total=0
+  candidates=0
+  excluded=0
+  try:
+   for x in crossref_records(issn,first,last):
+    if x.get("type")!="journal-article":continue
+    title=clean((x.get("title") or [""])[0])
+    ab=clean(x.get("abstract",""))
+    doi=x.get("DOI","").lower().strip()
+    if not title or not doi:continue
+    total+=1
+    scope_ok=journal_candidate_scope(name,title,ab)
+    if audit is not None:
+     audit.append({"doi":doi,"title":title,"journal":name,
+                   "prefilter":"candidate" if scope_ok else "excluded",
+                   "has_abstract":bool(ab)})
+    if not scope_ok:
+     excluded+=1
+     continue
+    candidates+=1
+    authors=[clean((a.get("given","")+" "+a.get("family",""))) for a in x.get("author",[])]
+    out.append({"id":"doi-"+re.sub("[^a-z0-9-]","-",doi),"doi":doi,"type":"Journal",
+      "journal":name,"title":title,
+      "authors":", ".join(authors[:3])+(" et al." if len(authors)>3 else ""),
+      "corresponding":"","url":"https://doi.org/"+doi,
+      "topic":topic(title+" "+ab),"level":"Brief",
+      "summary_en":summary(ab or title),"summary":summary(ab or title),
+      "abstract":ab,"method":"","result":"","future":""})
+  except Exception as ex:
+   print(f"WARNING: Crossref {name} retrieval failed; journal results incomplete: {ex}")
+  print(f"Journal harvesting {name}: fetched={total}, preselected={candidates}, "
+        f"excluded_by_scope={excluded}, window={first}..{last}")
  return out
 def enrich(records):
  key=os.getenv("OPENAI_API_KEY")
@@ -149,7 +214,8 @@ def main():
    for x in json.loads(p.read_text()).get("papers",[]):old.add(x["id"])
   except Exception:pass
  papers=[];failures=0
- for fn in (arxiv,lambda:journals(today)):
+ journal_audit=[]
+ for fn in (arxiv,lambda:journals(today,journal_audit)):
   try:papers+=fn()
   except Exception as e:print("Source failure:",str(e));failures+=1
  print(f"Initial subject-filtered sources: {sum(p['type']=='arXiv' for p in papers)} arXiv, "
@@ -162,7 +228,29 @@ def main():
  if not kept:
   print("No new papers from this run")
   return
+ screened_candidates=kept[:]
  kept,stats=screen(kept)
+ # Record all discovered journal candidates, including scope exclusions and
+ # AI rejections, so a later manual-vs-automatic comparison has an audit trail.
+ input_by_id={p["id"]:p for p in screened_candidates}
+ selected_ids={p["id"] for p in kept}
+ old_ids=set(old)
+ for a in journal_audit:
+  pid="doi-"+re.sub("[^a-z0-9-]","-",a["doi"])
+  p=input_by_id.get(pid)
+  if pid in selected_ids:a["decision"]="selected"
+  elif pid in old_ids:a["decision"]="previous_issue"
+  elif a["prefilter"]=="excluded":a["decision"]="prefilter_excluded"
+  elif p is not None:
+   a["decision"]="AI_or_global_rejected"
+   a["score"]=p.get("relevance_score")
+   a["in_scope"]=p.get("ai_in_scope")
+   a["reason"]=p.get("relevance_reason","")
+  else:a["decision"]="duplicate_or_unprocessed"
+ (ROOT/"audits").mkdir(exist_ok=True)
+ (ROOT/"audits"/(date+".json")).write_text(
+    json.dumps({"date":date,"journal_candidates":journal_audit},
+               ensure_ascii=False,indent=1),encoding="utf8")
  if not kept:
   print("Screening found no sufficiently relevant new papers:",stats)
   return
