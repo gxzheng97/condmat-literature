@@ -163,6 +163,47 @@ def publisher_abstract(journal,doi):
   print(f"NOTICE: APS abstract not available for {doi}: {type(exc).__name__}")
   return ""
 
+def _openalex_abstract(inverted):
+ """Reconstruct an abstract supplied as OpenAlex word->position arrays."""
+ if not isinstance(inverted,dict):
+  return ""
+ tokens={}
+ for word,places in inverted.items():
+  if not isinstance(places,list):continue
+  for i in places:
+   if isinstance(i,int) and 0<=i<5000:
+    tokens[i]=word
+ if len(tokens)<25:
+  return ""
+ words=[tokens.get(i,"") for i in range(max(tokens)+1)]
+ return clean(" ".join(words))[:3300]
+
+def metadata_abstract(doi):
+ """Use other free scholarly metadata sources when Crossref has no abstract.
+
+ Never synthesize one: if none is available, leave the field empty and
+ record that AI only evaluated the title.
+ """
+ enc=urllib.parse.quote(doi,safe="")
+ sources=[
+   ("OpenAlex","https://api.openalex.org/works/https://doi.org/"+doi),
+   ("SemanticScholar","https://api.semanticscholar.org/graph/v1/paper/DOI:"+enc+"?fields=title,abstract")
+ ]
+ for name,url in sources:
+  try:
+   req=urllib.request.Request(url,headers={"User-Agent":"CondMatLiteratureMonitor/1.0"})
+   with urllib.request.urlopen(req,timeout=12) as response:
+    obj=json.loads(response.read())
+   if name=="OpenAlex":
+    abstract=_openalex_abstract(obj.get("abstract_inverted_index"))
+   else:
+    abstract=clean(obj.get("abstract",""))
+   if len(abstract)>=140:
+    return abstract[:3300]
+  except Exception as exc:
+   print(f"NOTICE: {name} abstract unavailable {doi}: {type(exc).__name__}")
+ return ""
+
 def journals(today, audit=None):
  out=[]
  # The previous midnight-only window missed Friday and delayed indexing.
@@ -183,10 +224,13 @@ def journals(today, audit=None):
     if not title or not doi:continue
     total+=1
     scope_ok=journal_candidate_scope(name,title,ab)
-    # For PRL/PRX, all primary research receives AI consideration.
-    # Crossref often omits their abstracts. Fetch it before AI scoring.
-    if scope_ok and not ab and name in ("PRL","PRX"):
-     ab=publisher_abstract(name,doi)
+    # Missing Crossref abstracts are common for APS and some publishers.
+    # Prefer DOI-keyed academic records, then publisher HTML as a fallback.
+    # All failed lookups stay explicitly title-only; do not invent abstracts.
+    if scope_ok and not ab:
+     ab=metadata_abstract(doi)
+     if not ab and name in ("PRL","PRX"):
+      ab=publisher_abstract(name,doi)
     if audit is not None:
      audit.append({"doi":doi,"title":title,"journal":name,
                    "prefilter":"candidate" if scope_ok else "excluded",
