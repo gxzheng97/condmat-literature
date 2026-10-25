@@ -150,6 +150,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add issues/ index.html
+          if [ -d audits ]; then git add audits/; fi
           git add -u rescreen-2026-10-23.request || true
           git add -u rescreen-2026-10-24.request || true
           if ! git diff --cached --quiet; then
