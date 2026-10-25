@@ -123,6 +123,22 @@ class JournalRecallTests(unittest.TestCase):
         self.assertEqual(calls[1]["cursor"],["page2"])
         self.assertEqual(calls[0]["rows"],["2"])
 
+    def test_archive_skips_old_journal_before_abstract_requests(self):
+        original="10.1103/rm6q-k54p"
+        def fake_records(issn,first,last):
+            if issn=="0031-9007":
+                yield {"type":"journal-article","DOI":original,
+                       "title":["Cluster-Decorated Lieb Lattice: Tuning Flat Band"],
+                       "abstract":""}
+        pid="doi-"+original.replace("/","-").replace(".","-")
+        audit=[]
+        with patch("update_daily.crossref_records",side_effect=fake_records), \
+             patch("update_daily.metadata_abstract") as metadata:
+            found=journals(dt.datetime(2026,10,25),audit,{pid:"previous_issue"})
+        self.assertFalse(found)
+        metadata.assert_not_called()
+        self.assertEqual(audit[0]["decision"],"previous_issue")
+
     def test_weeklong_backfill_and_per_journal_audit(self):
         seen=[]
         def fake_records(issn,first,last):
