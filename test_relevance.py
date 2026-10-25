@@ -1,7 +1,7 @@
 """Regression checks for broad relevance without hand-made title blacklists."""
 import unittest
 from relevance import fallback_score, has_substantive_cm_evidence
-from update_daily import journal_candidate_scope, crossref_records, journals, _PublisherAbstractParser
+from update_daily import journal_candidate_scope, crossref_records, journals, _PublisherAbstractParser, _openalex_abstract
 from unittest.mock import patch
 import datetime as dt
 import json
@@ -81,6 +81,13 @@ class IndependentScopeTests(unittest.TestCase):
             self.assertFalse(has_substantive_cm_evidence(record(title,abstract)),title)
 
 class JournalRecallTests(unittest.TestCase):
+    def test_openalex_inverted_index_recovery(self):
+        words="The magnetic order reveals unexpectedly large thermal Hall response in this correlated material and provides a microscopic explanation of the signal".split()
+        inverted={}
+        for i,w in enumerate(words*3):inverted.setdefault(w,[]).append(i)
+        self.assertIn("thermal Hall",_openalex_abstract(inverted))
+        self.assertEqual(_openalex_abstract({}),"")
+
     def test_publisher_metadata_abstract_recovery(self):
         parser=_PublisherAbstractParser()
         parser.feed('<html><head><meta name="citation_abstract" content="' +
