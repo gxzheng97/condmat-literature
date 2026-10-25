@@ -94,7 +94,12 @@ def enrich(records):
    "claims from abstracts. Do not invent figure numbers, data, or mechanisms. "
    "For UNPUBLISHED arXiv only, assess possible journal tier: Nature/Science, "
    "Nature Physics/Nature Materials, Nature Communications/Science Advances/PRX, "
-   "PRL, PRB/Physical Review Materials, Below PRB, or Uncertain, with a reason. "
+   "PRL, PRB/Physical Review Materials, or Below PRB, with a reason. "
+   "For every unpublished arXiv paper, choose ONE concrete tier even when "
+   "the evidence is incomplete: make your best scientific judgment, do NOT "
+   "abstain, hedge with Uncertain, or leave tier blank. Be willing to assign "
+   "high tiers when the work is genuinely strong, without inflating weak work. "
+   "This is a subjective quality assessment, NOT a literal venue prediction. "
    "Already published papers must have empty tier.")
   schema={"type":"object","properties":{"papers":{"type":"array","items":{
    "type":"object","properties":{name:{"type":"string"} for name in
