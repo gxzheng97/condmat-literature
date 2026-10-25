@@ -37,6 +37,10 @@ jobs:
           else
             echo "::warning::AI semantic screening key missing. Add OPENAI_API_KEY in repository Actions secrets."
           fi
+      - name: Diagnose recent journal recall (no AI calls)
+        if: github.event_name == 'push'
+        continue-on-error: true
+        run: python probe_journal_recall.py
       - name: Smoke test live AI semantic screening
         if: github.event_name != 'schedule'
         continue-on-error: true
