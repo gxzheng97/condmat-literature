@@ -10,6 +10,7 @@ import os
 import re
 import urllib.request
 import urllib.error
+import time
 
 
 # Signals represent physical QUESTIONS rather than generic publication keywords.
@@ -143,8 +144,12 @@ def _ai_batch(papers, key):
       "condensed-matter physics; 70-84 strong original CM result; 55-69 "
       "credible narrower CM physical advance; 40-54 tangential science; "
       "0-39 chiefly engineering/application/quantum information/general methods. "
-      "There is no target number of inclusions; favor high recall when the "
-      "candidate pool mixes many adjacent domains; retain borderline papers with substantive original condensed-matter physics. "
+      "Apply a STRICT and consistent scientific relevance standard: do not "
+      "relax inclusion for merely adjacent subjects or weak novelty. "
+      "Assign every paper a decisive 0-100 score, spanning the full scale "
+      "when justified. Avoid reflexive middle scores, hedging, or artificially "
+      "low scores for genuinely important discoveries. Score scientific merit "
+      "and experimental interest, NOT how confidently the abstract is written. "
       "Set feature_candidate true ONLY for substantial research discoveries "
       "or readily actionable predictions, never mainly for technology performance. "
       "Reply JSON exactly: {assessments:[{id,in_scope,score,feature_candidate,"
@@ -157,10 +162,18 @@ def _ai_batch(papers, key):
       {"id":p.get("id"),"title":p.get("title"),"abstract":(p.get("abstract") or p.get("summary_en") or "")[:3300]}
       for p in papers
     ]
-    payload={"model":"gpt-4.1-mini",
+    payload={"model":"gpt-6-luna","reasoning":{"effort":"medium"},
              "input":[{"role":"system","content":rubric},
                       {"role":"user","content":json.dumps(docs,ensure_ascii=False)}],
-             "text":{"format":{"type":"json_object"}},"max_output_tokens":4500}
+             "text":{"format":{"type":"json_schema","name":"paper_assessments","strict":True,
+               "schema":{"type":"object","properties":{"assessments":{
+                 "type":"array","items":{"type":"object","properties":{
+                   "id":{"type":"string"},"in_scope":{"type":"boolean"},
+                   "score":{"type":"integer"},"feature_candidate":{"type":"boolean"},
+                   "reason":{"type":"string"},"physics_advance":{"type":"string"}},
+                 "required":["id","in_scope","score","feature_candidate","reason","physics_advance"],
+                 "additionalProperties":False}}},
+                 "required":["assessments"],"additionalProperties":False}}},"max_output_tokens":8000}
     req=urllib.request.Request(
       "https://api.openai.com/v1/responses",
       data=json.dumps(payload).encode(),method="POST",
@@ -176,6 +189,9 @@ def _ai_batch(papers, key):
         raise RuntimeError(f"OpenAI API HTTP {exc.code}: {reason}") from None
     raw="".join(part.get("text","") for msg in response.get("output",[])
                 for part in msg.get("content",[]) if part.get("type")=="output_text")
+    if response.get("status") != "completed":
+        raise RuntimeError(f"AI response {response.get('status')}: {response.get('incomplete_details')}")
+    print("AI assessment usage:",response.get("usage",{}))
     result=json.loads(raw)
     assessments = result.get("assessments", [])
     if not isinstance(assessments,list):
@@ -184,13 +200,15 @@ def _ai_batch(papers, key):
     for x in assessments:
         if not isinstance(x,dict) or "id" not in x or not isinstance(x.get("in_scope"),bool):
             raise ValueError("AI must provide a binary in_scope decision for every paper")
+        score=x.get("score")
+        if isinstance(score,bool) or not isinstance(score,int) or not (0 <= score <= 100):
+            continue  # Invalid scores are treated as missing and retried.
         found[str(x["id"])]=x
     expected={str(p["id"]) for p in papers}
-    if any(pid not in found for pid in expected):
-        raise ValueError("Incomplete AI assessment; rejecting partial batch")
-    # The model may emit an extra (hallucinated) identifier. Ignore extras:
-    # only actual input paper IDs can enter the editorial pipeline.
-    return {pid:found[pid] for pid in expected}
+    missing=expected-set(found)
+    if missing:
+        print(f"AI assessment partial: {len(found)}/{len(expected)} valid; missing={sorted(missing)}")
+    return {pid:found[pid] for pid in expected if pid in found}
 
 
 # Independent, high-recall scope check: require evidence that the PAPER
@@ -274,6 +292,9 @@ def _ai_shortlist(papers, key, max_papers=30):
       "Reviews, quantum algorithm benchmarks and generic methodological "
       "improvements generally do not merit space here without new material "
       "physics. "
+      "Keep selection criteria STRICT: scoring must be decisive, but high "
+      "scores are not permission to include tangential papers. Do not pad "
+      "the reading list to 30. "
       "Select only those papers a broad experimental quantum-materials "
       "researcher would reasonably want to CLICK to learn the physical "
       "result. Avoid filling the index: it is fine to have 15-25 papers "
@@ -290,10 +311,15 @@ def _ai_shortlist(papers, key, max_papers=30):
     docs = [{"id":p.get("id"),"title":p.get("title"),
              "abstract":(p.get("abstract") or p.get("summary_en") or "")[:1800],
              "journal":p.get("journal")} for p in papers]
-    payload = {"model":"gpt-4.1-mini",
+    payload = {"model":"gpt-6-luna","reasoning":{"effort":"high"},
       "input":[{"role":"system","content":instructions},
                {"role":"user","content":json.dumps(docs,ensure_ascii=False)}],
-      "text":{"format":{"type":"json_object"}},"max_output_tokens":3500}
+      "text":{"format":{"type":"json_schema","name":"global_shortlist","strict":True,
+             "schema":{"type":"object","properties":{
+               "selected_ids":{"type":"array","items":{"type":"string"}},
+               "featured_ids":{"type":"array","items":{"type":"string"}}},
+               "required":["selected_ids","featured_ids"],
+               "additionalProperties":False}}},"max_output_tokens":12000}
     req = urllib.request.Request(
         "https://api.openai.com/v1/responses",
         data=json.dumps(payload).encode(),method="POST",
@@ -308,6 +334,9 @@ def _ai_shortlist(papers, key, max_papers=30):
         raise RuntimeError(f"OpenAI global editorial review HTTP {exc.code}: {reason}") from None
     raw="".join(c.get("text","") for o in response.get("output",[])
                 for c in o.get("content",[]) if c.get("type")=="output_text")
+    if response.get("status") != "completed":
+        raise RuntimeError(f"Global review response {response.get('status')}: {response.get('incomplete_details')}")
+    print("AI global review usage:",response.get("usage",{}))
     decision=json.loads(raw)
     allowed={str(p["id"]) for p in papers}
     ids=decision.get("selected_ids")
@@ -334,26 +363,40 @@ def screen(papers, use_ai=True, max_papers=30):
     if use_ai and not key:
         raise RuntimeError("OpenAI API key missing: refusing to publish unreviewed issue")
     judged={}
+    unscored=[]
     if key:
-        for k in range(0,len(papers),10):
-            subset=papers[k:k+10]
-            # Retry only transient model failures; never quietly use local
-            # scores as if they were the model's editorial judgment.
-            last_error=None
+        for k in range(0,len(papers),5):
+            subset=papers[k:k+5]
+            pending=subset[:]
+            # Retry only missing papers: never discard successful assessments.
             for attempt in range(3):
-                try:
-                    judged.update(_ai_batch(subset,key))
-                    last_error=None
+                if not pending:
                     break
+                try:
+                    completed=_ai_batch(pending,key)
+                    judged.update(completed)
+                    pending=[p for p in pending if str(p["id"]) not in completed]
                 except Exception as exc:
-                    last_error=exc
+                    print(f"AI batch {k//5+1} attempt {attempt+1}: {exc}")
+                if pending and attempt<2:
+                    time.sleep(2**attempt*4)
+            # A failed batch is split into single-paper requests.
+            for p in pending:
+                pid=str(p["id"])
+                for attempt in range(3):
+                    try:
+                        one=_ai_batch([p],key)
+                        if pid in one:
+                            judged[pid]=one[pid]
+                            break
+                    except Exception as exc:
+                        print(f"AI single-paper retry for {pid}: {exc}")
                     if attempt<2:
-                        import time
                         time.sleep(2**attempt*4)
-            if last_error is not None:
-                raise RuntimeError(f"AI assessment failed for batch {k//10+1}: {last_error}")
-        if len(judged)!=len(papers):
-            raise RuntimeError(f"Only {len(judged)}/{len(papers)} papers assessed: aborting")
+                if pid not in judged:
+                    unscored.append(pid)
+                    print(f"WARNING: paper {pid} could not be scored; excluding rather than fabricating a score")
+        print(f"AI scored {len(judged)}/{len(papers)} candidates; unscored={unscored}")
     initial=[]
     for p in papers:
         ai=judged.get(str(p.get("id")))
@@ -366,6 +409,12 @@ def screen(papers, use_ai=True, max_papers=30):
             p["ai_in_scope"]=ai.get("in_scope") is True
             p["relevance_reason"]=str(ai.get("reason") or "")[:240]
             p["relevance_method"]="semantic"
+        elif key:
+            # API failure must not turn into a fabricated AI score or a failure for all papers.
+            p["relevance_score"]=None
+            p["relevance_method"]="unscored_api_failure"
+            p["relevance_reason"]="AI score unavailable after targeted retries"
+            continue
         else:
             score=fallback_score(p)
             ok=score>=3.0
@@ -391,5 +440,6 @@ def screen(papers, use_ai=True, max_papers=30):
         kept=sorted(kept,key=lambda p:p["relevance_score"],reverse=True)[:max_papers]
     return kept, {"scanned":len(papers),"first_pass_selected":len(initial),
                   "selected":len(kept),"rejected":len(papers)-len(kept),
-                  "ai_assessed":len(judged),"global_editorial":bool(key),
+                  "ai_assessed":len(judged),"ai_unscored":len(unscored),
+                  "global_editorial":bool(key),
                   "field_scope_excluded":dropped_for_scope}
