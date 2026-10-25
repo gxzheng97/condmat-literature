@@ -2,6 +2,8 @@
 """Daily condensed matter literature index, arXiv + Crossref."""
 import datetime as dt, json, os, re, time, urllib.parse, urllib.request
 import xml.etree.ElementTree as ET
+from html.parser import HTMLParser
+from html import unescape
 from pathlib import Path
 from zoneinfo import ZoneInfo
 from relevance import screen, has_substantive_cm_evidence, CLEAR_NON_CM_TITLE
@@ -107,6 +109,60 @@ def crossref_records(issn, first, last, page_size=200):
  if cursor in seen_cursors:
   raise RuntimeError("Crossref pagination repeated cursor")
 
+class _PublisherAbstractParser(HTMLParser):
+ """Extract an article abstract from scholarly HTML without extra packages."""
+ def __init__(self):
+  super().__init__()
+  self.metadata={}
+  self.depth=0
+  self.parts=[]
+ def handle_starttag(self,tag,attrs):
+  attrs=dict(attrs)
+  if tag=="meta":
+   name=(attrs.get("name") or attrs.get("property") or "").lower()
+   if name in ("citation_abstract","dc.description","description",
+               "og:description") and attrs.get("content"):
+    self.metadata[name]=unescape(attrs["content"])
+  if self.depth:
+   self.depth+=1
+  elif tag in ("div","section","article","span") and (
+    "abstract" in (attrs.get("class") or "").lower().split()
+    or (attrs.get("id") or "").lower() in ("abstract","article-abstract")):
+   self.depth=1
+ def handle_startendtag(self,tag,attrs):
+  if tag=="meta":
+   self.handle_starttag(tag,attrs)
+ def handle_endtag(self,tag):
+  if self.depth:self.depth-=1
+ def handle_data(self,value):
+  if self.depth:self.parts.append(value)
+ def extract(self):
+  for key in ("citation_abstract","dc.description","description","og:description"):
+   candidate=clean(self.metadata.get(key,""))
+   # Short generic SEO descriptions are not paper abstracts.
+   if len(candidate)>=140 and not candidate.lower().startswith("physical review"):
+    return candidate
+  candidate=clean(" ".join(self.parts))
+  return candidate if len(candidate)>=140 else ""
+
+def publisher_abstract(journal,doi):
+ """Enrich APS papers whose Crossref records omit the scientific abstract."""
+ slug={"PRL":"prl","PRX":"prx"}.get(journal)
+ if not slug or not doi.startswith("10.1103/"):
+  return ""
+ url="https://journals.aps.org/"+slug+"/abstract/"+doi
+ try:
+  # A normal browser user-agent is more compatible with journal HTML.
+  req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0"})
+  with urllib.request.urlopen(req,timeout=18) as response:
+   html=response.read(750000).decode("utf8","replace")
+  parser=_PublisherAbstractParser()
+  parser.feed(html)
+  return parser.extract()[:3300]
+ except Exception as exc:
+  print(f"NOTICE: APS abstract not available for {doi}: {type(exc).__name__}")
+  return ""
+
 def journals(today, audit=None):
  out=[]
  # The previous midnight-only window missed Friday and delayed indexing.
@@ -127,6 +183,10 @@ def journals(today, audit=None):
     if not title or not doi:continue
     total+=1
     scope_ok=journal_candidate_scope(name,title,ab)
+    # For PRL/PRX, all primary research receives AI consideration.
+    # Crossref often omits their abstracts. Fetch it before AI scoring.
+    if scope_ok and not ab and name in ("PRL","PRX"):
+     ab=publisher_abstract(name,doi)
     if audit is not None:
      audit.append({"doi":doi,"title":title,"journal":name,
                    "prefilter":"candidate" if scope_ok else "excluded",
