@@ -107,8 +107,11 @@ def fallback_score(paper):
 def _ai_batch(papers, key):
     """Read and assess every candidate using its physical question and claims."""
     rubric = (
-      "You are making INCLUSION decisions for a serious, broad experimental "
-      "CONDENSED-MATTER PHYSICS journal club. Be an exacting research editor: "
+      "You are screening a STRICT CONDENSED-MATTER PHYSICS literature digest "
+      "covering ORIGINAL THEORETICAL AND EXPERIMENTAL research equally. "
+      "Research primarily belonging to any OTHER discipline or branch of "
+      "physics is OUT OF SCOPE, regardless of journal prestige, novelty, "
+      "shared vocabulary, or score. Be an exacting research editor: "
       "judge the paper's PRIMARY SCIENTIFIC ADVANCE, not just the occurrence "
       "of physics terms, its journal prestige, novelty claims, or a clever device. "
       "Ask: What new thing does this paper TEACH US ABOUT THE PHYSICS OF MATTER "
@@ -131,15 +134,22 @@ def _ai_batch(papers, key):
       "matter discoveries solely because they use superconductors. "
       "Optical-system engineering is not a condensed-matter discovery solely "
       "because it uses diffraction or a nanostructured material. "
-      "Ultracold-gas demonstrations and continuum fluids may qualify for "
-      "this broad physics digest when they answer a distinctly "
-      "transferable condensed-matter question. Reviews and technology roadmaps "
-      "generally do not report original physics and should not enter. "
-      "Do not blacklist entire research areas: the fundamental-physics content "
-      "overrides subject labels when compelling. "
-      "For EVERY paper independently return in_scope true ONLY if a concrete "
-      "new condensed-matter physical understanding or experimentally useful "
-      "insight is central. Reject superficially adjacent papers. "
+      "Exclude AMO, ultracold atoms/gases and quantum simulators, quantum "
+      "optics and photonics platforms, quantum computing/information, "
+      "particle/high-energy/nuclear physics, astrophysics/cosmology/gravity, "
+      "plasma physics, non-condensed-matter fluid dynamics, biology, "
+      "chemistry and general engineering. A similar Hamiltonian or borrowed "
+      "term (spin, topology, Hubbard, quantum, materials) does NOT make "
+      "research in another field condensed-matter physics. Genuine "
+      "condensed-matter theory of electrons, spins, lattices, defects, "
+      "collective states, materials and phase transitions DOES qualify even "
+      "without an experiment. Optical measurements of material physics "
+      "qualify, but optics device engineering does not. Reviews, roadmaps "
+      "and generic method benchmarks do not report original CM physics. "
+      "For EVERY paper independently return in_scope true ONLY when the "
+      "PRIMARY research question and contribution are themselves condensed-"
+      "matter physics (theory OR experiment). Reject every superficially "
+      "adjacent or non-CM paper even when the result sounds exciting. "
       "Provide a calibrated score: 85-100 landmark/broadly exciting new "
       "condensed-matter physics; 70-84 strong original CM result; 55-69 "
       "credible narrower CM physical advance; 40-54 tangential science; "
@@ -256,9 +266,27 @@ CM_MATERIAL_SYSTEM = re.compile(
     r"spin.system|strongly.correlated|quantum material",
     re.I)
 
+# Reject clearly non-CM primary research even if the title contains terms
+# such as Hubbard, superconducting, magnetism, or topology. Unclear cases
+# still receive a semantic judgment rather than relying on a keyword blacklist.
+CLEAR_NON_CM_TITLE = re.compile(
+    r"ultracold (atom|gas)|cold.atom|atomic gas|trapped.ion|"
+    r"quantum error correction|quantum comput(ing|er)|"
+    r"quantum algorithm|quantum cryptograph|quantum optics|"
+    r"photonic (quantum|topological|circuit|crystal)|"
+    r"lithograph|flat optics|optical lens|"
+    r"astrophys|cosmolog|gravitational wave|"
+    r"nuclear (reaction|decay|collis)|particle collider|"
+    r"plasma (turbulence|physics|jet)|"
+    r"protein|genom|neuroscien",
+    re.I,
+)
+
 def has_substantive_cm_evidence(p):
     title=str(p.get("title") or "")
     abstract=str(p.get("abstract") or p.get("summary_en") or "")
+    if CLEAR_NON_CM_TITLE.search(title):
+        return False
     if CM_PHYSICS_TITLE.search(title):
         return True
     return bool(CM_ABSTRACT_EVIDENCE.search(abstract)
@@ -273,15 +301,15 @@ def _ai_shortlist(papers, key, max_papers=30):
     """
     instructions = (
       "You are the science editor preparing ONE compact daily literature index "
-      "for a working EXPERIMENTAL CONDENSED-MATTER / QUANTUM MATERIALS physicist. "
-      "Below is the complete candidate pool surviving a loose first assessment. "
+      "for a researcher of CONDENSED-MATTER PHYSICS, theory and experiment. "
+      "Below is the pool passing a first condensed-matter assessment. "
       "Make one global and RELATIVE comparison, using the science of a paper "
       "rather than prestige or keyword overlap. "
       "Your readership studies emergent physical properties of SOLIDS, "
       "magnetism, superconductivity, electron correlations, quantum materials, "
       "topological electronic states, magnetic/transport/thermodynamic "
       "measurements, crystal growth with novel physical properties, symmetry "
-      "and phase transitions, and experimentally actionable theory. "
+      "and phase transitions, and original condensed-matter theory. "
       "Keep a broad range of new physical discoveries and valuable "
       "experimentally testable theory, not only fashionable materials. "
       "Prefer specific new measurements or a well-defined unexpected physical "
@@ -290,8 +318,12 @@ def _ai_shortlist(papers, key, max_papers=30):
       "quantum sensing without material physics, biology, biophysics, "
       "plasma astrophysics, classical fluids, purely stochastic mathematical "
       "physics, or chemical synthesis without electronic/magnetic properties. "
-      "A traditionally adjacent discipline CAN be kept when the central "
-      "discovery has a clear new quantum-materials/condensed-matter phenomenon. "
+      "HARD DOMAIN BOUNDARY: select ONLY condensed-matter physics research. "
+      "Reject all other physics, including AMO/ultracold gases, atom-based "
+      "quantum simulations, photonic analogues, quantum computing, nuclear, "
+      "particle, astrophysics and plasma research, even if they borrow "
+      "condensed-matter concepts. Original condensed-matter theory and "
+      "experimental papers are equally eligible. "
       "Reviews, quantum algorithm benchmarks and generic methodological "
       "improvements generally do not merit space here without new material "
       "physics. "
@@ -342,19 +374,38 @@ def _ai_shortlist(papers, key, max_papers=30):
     print("AI global review usage:",response.get("usage",{}))
     decision=json.loads(raw)
     allowed={str(p["id"]) for p in papers}
-    ids=decision.get("selected_ids")
-    if not isinstance(ids,list) or not ids:
-        raise RuntimeError("Global editorial review returned no selection list")
-    ids=[str(x) for x in ids]
-    if len(ids)!=len(set(ids)) or any(x not in allowed for x in ids):
-        raise RuntimeError("Global editorial review returned invalid identifiers")
+    proposed=decision.get("selected_ids")
+    if not isinstance(proposed,list):
+        proposed=[]
+    ids=[]
+    seen=set()
+    for value in proposed:
+        pid=str(value)
+        if pid in allowed and pid not in seen:
+            ids.append(pid)
+            seen.add(pid)
+    if len(ids)!=len(proposed):
+        print(f"WARNING: global review supplied {len(proposed)-len(ids)} invalid or repeated IDs; ignoring them")
+    if not ids:
+        # An imperfect LLM response must not crash the entire daily digest,
+        # or invent a score. All fallback choices passed the AI CM-scope gate.
+        print("WARNING: no valid global IDs; using highest-rated CM assessments")
+        best=sorted(papers,key=lambda p:p.get("relevance_score",0),reverse=True)
+        ids=[str(p["id"]) for p in best[:min(max_papers,20)]]
     if len(ids)>max_papers:
-        print(f"Global editorial shortlist has {len(ids)} papers; retaining the top {max_papers} by relevance")
+        print(f"Global editorial shortlist has {len(ids)} papers; retaining the top {max_papers}")
         ids=ids[:max_papers]
-    features=decision.get("featured_ids",[])
-    if not isinstance(features,list) or any(str(x) not in ids for x in features):
-        raise RuntimeError("Global review returned invalid featured identifiers")
-    return ids, [str(x) for x in features][:4]
+    proposed_features=decision.get("featured_ids",[])
+    if not isinstance(proposed_features,list):
+        proposed_features=[]
+    features=[]
+    for value in proposed_features:
+        pid=str(value)
+        if pid in ids and pid not in features:
+            features.append(pid)
+    if not features:
+        features=ids[:min(3,len(ids))]
+    return ids,features[:4]
 
 
 def screen(papers, use_ai=True, max_papers=30):
