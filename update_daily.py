@@ -4,7 +4,7 @@ import datetime as dt, json, os, re, time, urllib.parse, urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from zoneinfo import ZoneInfo
-from relevance import screen
+from relevance import screen, has_substantive_cm_evidence
 
 ROOT=Path(__file__).resolve().parent
 NS={"a":"http://www.w3.org/2005/Atom","x":"http://arxiv.org/schemas/atom"}
@@ -12,7 +12,6 @@ ISSN={"Science":"0036-8075","Science Advances":"2375-2548","Nature":"0028-0836",
 "Nature Physics":"1745-2473","Nature Materials":"1476-1122",
 "Nature Communications":"2041-1723","PRL":"0031-9007","PRX":"2160-3308",
 "PNAS":"0027-8424"}
-PAT=re.compile(r"superconduct|magnet|spin|kagome|quantum|fermi|hall|nematic|phonon|transport|thermo|electron|crystal|growth|synthe|correlat|topolog|excitat|seebeck|nernst|valence|diffraction|semimetal|structure|lattice|spectroscop|anisotrop|moire|strain|pressure|ferroelectric|oxide|thin film|materials|phase transi",re.I)
 TOPICS=[("Superconductivity",r"superconduct|josephson|pairing|vortex"),
 ("Thermal & Thermoelectric",r"thermal|thermoelectric|seebeck|nernst|heat capacity|elastocaloric"),
 ("Magnetism",r"magnet|spin|magnon|skyrmion|kagome|altermagnet"),
@@ -47,6 +46,10 @@ def arxiv():
    raw=e.findtext("a:id","",NS).split("/abs/")[-1]
    pid=re.sub(r"v\d+$","",raw)
    if pid not in ids:continue
+   categories={c.get("term","") for c in e.findall("a:category",NS)}
+   if not any(c.startswith("cond-mat.") for c in categories):continue
+   primary=e.find("x:primary_category",NS)
+   if primary is not None and primary.get("term")=="cond-mat.quant-gas":continue
    title=clean(e.findtext("a:title","",NS));abstract=clean(e.findtext("a:summary","",NS))
    authors=[clean(a.findtext("a:name","",NS)) for a in e.findall("a:author",NS)]
    journal=clean(e.findtext("x:journal_ref","",NS))
@@ -69,7 +72,9 @@ def journals(today):
   for x in items:
    if x.get("type")!="journal-article":continue
    title=clean((x.get("title") or [""])[0]);ab=clean(x.get("abstract",""))
-   if not title or not (name in ("PRL","PRX") or PAT.search(title+" "+ab)):continue
+   # Every journal, including PRL/PRX, must pass a CM-physics scope gate.
+   # Journal prestige and generic 'quantum/materials' keywords are not enough.
+   if not title or not has_substantive_cm_evidence({"title":title,"abstract":ab}):continue
    authors=[clean((a.get("given","")+" "+a.get("family",""))) for a in x.get("author",[])]
    doi=x.get("DOI","").lower()
    out.append({"id":"doi-"+re.sub("[^a-z0-9-]","-",doi),"doi":doi,"type":"Journal",
@@ -147,6 +152,8 @@ def main():
  for fn in (arxiv,lambda:journals(today)):
   try:papers+=fn()
   except Exception as e:print("Source failure:",str(e));failures+=1
+ print(f"Initial subject-filtered sources: {sum(p['type']=='arXiv' for p in papers)} arXiv, "
+       f"{sum(p['type']=='Journal' for p in papers)} journal papers")
  seen=set();kept=[]
  for p in sorted(papers,key=lambda p:p["type"]!="Journal"):
   key=re.sub("[^a-z0-9]","",p["title"].lower())
