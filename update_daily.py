@@ -81,8 +81,8 @@ def journals(today):
 def enrich(records):
  key=os.getenv("OPENAI_API_KEY")
  if not key:return
- for k in range(0,len(records),7):
-  batch=records[k:k+7]
+ for k in range(0,len(records),5):
+  batch=records[k:k+5]
   docs=[{"id":p["id"],"title":p["title"],"abstract":p["abstract"][:2400],"featured":p.get("level")=="Feature","type":p["type"],
          "journal":p["journal"],"published":bool(p.get("journal_ref"))} for p in batch]
   instructions=("Create faithful bilingual scholarly literature notes using only titles and abstracts. "
@@ -96,15 +96,29 @@ def enrich(records):
    "Nature Physics/Nature Materials, Nature Communications/Science Advances/PRX, "
    "PRL, PRB/Physical Review Materials, Below PRB, or Uncertain, with a reason. "
    "Already published papers must have empty tier.")
-  payload={"model":"gpt-4.1-mini","input":[{"role":"system","content":instructions},
-     {"role":"user","content":json.dumps(docs)}],"text":{"format":{"type":"json_object"}},
-     "max_output_tokens":6000}
+  schema={"type":"object","properties":{"papers":{"type":"array","items":{
+   "type":"object","properties":{name:{"type":"string"} for name in
+   ("id","summary_en","summary_zh","method_en","method_zh",
+    "result_en","result_zh","future_en","future_zh","tier",
+    "tier_reason_en","tier_reason_zh")},
+   "required":["id","summary_en","summary_zh","method_en","method_zh",
+    "result_en","result_zh","future_en","future_zh","tier",
+    "tier_reason_en","tier_reason_zh"],"additionalProperties":False}}},
+   "required":["papers"],"additionalProperties":False}
+  payload={"model":"gpt-6-luna","reasoning":{"effort":"medium"},
+     "input":[{"role":"system","content":instructions},
+     {"role":"user","content":json.dumps(docs,ensure_ascii=False)}],
+     "text":{"format":{"type":"json_schema","name":"paper_notes","strict":True,
+     "schema":schema}},"max_output_tokens":10000}
   req=urllib.request.Request("https://api.openai.com/v1/responses",
     data=json.dumps(payload).encode(),method="POST",
     headers={"Authorization":"Bearer "+key,"Content-Type":"application/json"})
   try:
    response=json.loads(urllib.request.urlopen(req,timeout=120).read())
    raw="".join(c.get("text","") for o in response.get("output",[]) for c in o.get("content",[]) if c.get("type")=="output_text")
+   if response.get("status") != "completed":
+    raise RuntimeError(f"Enrichment response {response.get('status')}: {response.get('incomplete_details')}")
+   print("AI enrichment usage:",response.get("usage",{}))
    byid={p["id"]:p for p in batch}
    for obj in json.loads(raw).get("papers",[]):
     p=byid.get(obj.get("id"))
