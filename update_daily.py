@@ -12,7 +12,8 @@ from relevance import screen, ARXIV_MIN_SCORE
 ROOT=Path(__file__).resolve().parent
 # Bump when screening criteria change substantially, so excluded-paper caches
 # are reevaluated under new rules rather than becoming permanent blind spots.
-SCREENING_VERSION="quantum-materials-v1-only-no-soft-v3"
+SCREENING_VERSION="quantum-materials-v1-formal-research-v4"
+ASSESSMENT_VERSION="quantum-materials-v1-only-no-soft-v3"
 NS={"a":"http://www.w3.org/2005/Atom","x":"http://arxiv.org/schemas/atom"}
 ISSN={"Science":"0036-8075","Science Advances":"2375-2548","Nature":"0028-0836",
 "Nature Physics":"1745-2473","Nature Materials":"1476-1122",
@@ -90,7 +91,8 @@ def arxiv(today=None,audit=None):
    primary=e.find("x:primary_category",NS)
    primary_category=primary.get("term","") if primary is not None else ""
    title=clean(e.findtext("a:title","",NS));abstract=clean(e.findtext("a:summary","",NS))
-   reason=("not_first_version" if version!=1 else
+   reason=("non_original_article" if is_non_original({"title":title}) else
+           "not_first_version" if version!=1 else
            "soft_matter_category" if primary_category=="cond-mat.soft" else
            "quantum_gas_category" if primary_category=="cond-mat.quant-gas" else
            "not_condensed_matter" if not any(c.startswith("cond-mat.") for c in categories) else "candidate")
@@ -101,7 +103,7 @@ def arxiv(today=None,audit=None):
    authors=[clean(a.findtext("a:name","",NS)) for a in e.findall("a:author",NS)]
    journal=clean(e.findtext("x:journal_ref","",NS))
    out.append({"id":"arxiv-"+pid.replace(".","-"),"arxiv_id":pid,"type":"arXiv",
-    "journal":"arXiv:"+pid,"journal_ref":journal,"title":title,
+    "journal":"arXiv:"+pid,"journal_ref":journal,"journal_doi":clean(e.findtext("x:doi","",NS)).lower(),"title":title,
     "arxiv_version":version,"primary_category":primary_category,"categories":sorted(categories),
     "submitted_at":e.findtext("a:published","",NS),"updated_at":e.findtext("a:updated","",NS),
     "announcement_date":announced,"announcement_section":listing.entries[pid],
@@ -161,7 +163,8 @@ class _PublisherAbstractParser(HTMLParser):
   if tag=="meta":
    name=(attrs.get("name") or attrs.get("property") or "").lower()
    if name in ("citation_abstract","dc.description","description","citation_article_type","dc.type",
-               "og:description") and attrs.get("content"):
+               "og:description","citation_online_date","citation_publication_date","prism.publicationdate",
+               "dc.date","citation_volume","citation_issue","citation_firstpage") and attrs.get("content"):
     self.metadata[name]=unescape(attrs["content"])
   if self.depth:
    self.depth+=1
@@ -205,6 +208,11 @@ def publisher_abstract(journal,doi,metadata=None):
   parser.feed(html)
   if metadata is not None:
    metadata["article_kind"]=parser.metadata.get("citation_article_type") or parser.metadata.get("dc.type","")
+   raw_date=next((parser.metadata[k] for k in ("citation_online_date","citation_publication_date","prism.publicationdate","dc.date") if parser.metadata.get(k)), "")
+   metadata["publication_date"]=publication_day(raw_date)
+   accepted=bool(re.search(r">\s*(?:accepted paper|accepted manuscript|in press)\s*<",html,re.I))
+   metadata["publication_status"]="accepted" if accepted else "published" if metadata["publication_date"] else "unverified"
+   metadata["publication_evidence"]={"source":"publisher","url":url}
   return parser.extract()[:3300]
  except Exception as exc:
   print(f"NOTICE: Publisher abstract not available for {doi}: {type(exc).__name__}")
@@ -290,23 +298,74 @@ def arxiv_metadata_abstracts(papers):
 def arxiv_metadata_abstract(doi,title):
  return arxiv_metadata_abstracts([{"doi":doi,"title":title}]).get(doi,("",""))
 
+ORIGINAL_ARTICLE_KINDS={
+ "article","researcharticle","originalarticle","originalresearch","letter","researchletter",
+ "research","report","researchreport","briefcommunication","briefreport","rapidcommunication"
+}
+
+def normalized_kind(p):
+ return re.sub(r"[^a-z]","",str(p.get("article_kind","")).lower())
+
 def is_non_original(p):
- kind=re.sub(r"[^a-z]","",str(p.get("article_kind","")).lower())
- if kind in {"newsviews","newsandviews","news","editorial","comment","commentary","perspective","review","bookreview","correction","authorcorrection","publishercorrection","erratum","retraction","researchhighlight"}:
-  return True
- return bool(re.match(r"^(author correction|publisher correction|correction|erratum|retraction)\s*:",str(p.get("title","")),re.I))
+ # A positive document-type list prevents Essay/Books & Arts/new labels from
+ # silently slipping through an ever-growing blacklist.
+ kind=normalized_kind(p)
+ if kind and kind not in ORIGINAL_ARTICLE_KINDS:return True
+ return bool(re.match(r"^(?:reply\b|comment\s+on\b|author correction\s*:|publisher correction\s*:|correction\s*:|erratum\s*:|retraction\s*:)",str(p.get("title","")),re.I))
+
+def publication_day(value):
+ m=re.search(r"\b(\d{4})[-/](\d{1,2})[-/](\d{1,2})(?!\d)",str(value or ""))
+ if not m:return ""
+ try:return dt.date(*map(int,m.groups())).isoformat()
+ except ValueError:return ""
+
+def journal_eligibility(p,date):
+ if p.get("publication_status") in ("accepted","in_press"):return "accepted_unpublished"
+ if is_non_original(p):return "non_original_article"
+ if p.get("publication_status")!="published" or (p.get("publication_evidence") or {}).get("source") not in ("publisher","APS RSS"):
+  return "publication_not_verified"
+ if normalized_kind(p) not in ORIGINAL_ARTICLE_KINDS:return "article_type_not_verified"
+ if p.get("publication_date")!=date:return "not_published_today"
+ return "candidate"
+
+def aps_publications(journal):
+ """Publisher RSS carries final volume/article number and the Published date.
+
+ Crossref's online date may actually describe an accepted manuscript. It is
+ discovery metadata, never sufficient proof of formal APS publication.
+ """
+ slug={"PRL":"prl","PRX":"prx"}[journal]
+ url="https://feeds.aps.org/rss/recent/"+slug+".xml"
+ root=ET.fromstring(fetch(url));ns={"r":"http://purl.org/rss/1.0/","dc":"http://purl.org/dc/elements/1.1/","p":"http://prismstandard.org/namespaces/basic/2.0/"}
+ out={}
+ for e in root.findall("r:item",ns):
+  doi=clean(e.findtext("p:doi","",ns)).lower()
+  volume=clean(e.findtext("p:volume","",ns))
+  number=clean(e.findtext("p:startingPage","",ns))
+  description=e.findtext("r:description","",ns)
+  date=publication_day(e.findtext("p:publicationDate","",ns) or e.findtext("dc:date","",ns))
+  if not doi or not volume or not number or not date or not re.search(r"\bPublished\b",clean(description)):continue
+  out[doi]={"DOI":doi,"type":"journal-article","title":[clean(e.findtext("r:title","",ns))],
+   "_authors_text":clean(e.findtext("dc:creator","",ns)),"abstract":"",
+   "article_kind":clean(e.findtext("dc:type","",ns)),
+   "publication_status":"published","publication_date":date,
+   "publication_evidence":{"source":"APS RSS","url":url,"volume":volume,"article_number":number}}
+ return out
 
 def journals(today,audit=None,skip_ids=None,source_status=None,pending=None):
- """Read all nine journals before any scientific scope or keyword judgment."""
+ """Only today's formally published original articles/letters reach AI."""
  skip_ids=skip_ids or {};audit=audit if audit is not None else []
  source_status=source_status if source_status is not None else []
- first=(today-dt.timedelta(hours=24)).date().isoformat()
- last=today.date().isoformat()
+ date=today.date().isoformat()
  work={}
  for name,issn in ISSN.items():
   total=0
   try:
-   for x in crossref_records(issn,first,last):
+   formal=aps_publications(name) if name in ("PRL","PRX") else {}
+   records=list(crossref_records(issn,date,date))
+   known={str(x.get("DOI","")).lower() for x in records}
+   records.extend(x for doi,x in formal.items() if x["publication_date"]==date and doi not in known)
+   for x in records:
     if x.get("type")!="journal-article":continue
     title=clean((x.get("title") or [""])[0]);doi=x.get("DOI","").lower().strip()
     if not doi or not journal_candidate_scope(name,title):continue
@@ -315,59 +374,76 @@ def journals(today,audit=None,skip_ids=None,source_status=None,pending=None):
     if pid in skip_ids:
      audit.append({"id":pid,"doi":doi,"title":title,"journal":name,"decision":skip_ids[pid]})
      continue
-    work[pid]={"id":pid,"doi":doi,"title":title,"type":"Journal","journal":name,
-     "authors":", ".join(clean(a.get("given","")+" "+a.get("family","")) for a in x.get("author",[])),
-     "abstract":clean(x.get("abstract","")),"published_online":x.get("published-online",{}).get("date-parts",[]),
+    paper={"id":pid,"doi":doi,"title":title,"type":"Journal","journal":name,
+     "authors":x.get("_authors_text") or ", ".join(clean(a.get("given","")+" "+a.get("family","")) for a in x.get("author",[])),
+     "abstract":clean(x.get("abstract","")),"crossref_online_date":x.get("published-online",{}).get("date-parts",[]),
      "corresponding":"","url":"https://doi.org/"+doi,"level":"Brief","method":"","result":"","future":""}
-   source_status.append({"source":name,"status":"ok","fetched":total,"window":[first,last]})
+    if name in ("PRL","PRX"):
+     verified=formal.get(doi,{})
+     paper.update({k:verified[k] for k in ("article_kind","publication_status","publication_date","publication_evidence") if k in verified})
+     paper.setdefault("publication_status","unverified")
+    work[pid]=paper
+   source_status.append({"source":name,"status":"ok","fetched":total,"window":[date,date],
+     "publication_proof":"publisher RSS" if name in ("PRL","PRX") else "publisher article metadata"})
   except Exception as exc:
    source_status.append({"source":name,"status":"failed","fetched":total,"error":str(exc)})
-  print(f"Journal harvesting {name}: fetched={total}, window={first}..{last}",flush=True)
- # Retry unresolved abstracts saved by an earlier attempt, even at a date boundary.
+  print(f"Journal harvesting {name}: fetched={total}, formal publication day={date}",flush=True)
  for p in pending or []:
   if p.get("journal") in ISSN and p.get("id") not in skip_ids:
    work.setdefault(p["id"],dict(p))
  def recover(p):
-  publisher_meta={}
-  publisher_ab=""
-  # Nature metadata distinguishes News & Views from research even when its
-  # generic Crossref type says journal-article and its teaser sounds experimental.
-  if p["journal"].startswith("Nature") or len(p["abstract"])<140:
-   if not is_non_original(p):
-    publisher_ab=publisher_abstract(p["journal"],p["doi"],publisher_meta)
-    p.update(publisher_meta)
+  # Known non-research types and Reply/Comment titles never enter an abstract queue.
   if is_non_original(p):
-   p["abstract_status"]="non_original_article"
-   return p
+   p["abstract_status"]="non_original_article";return p
+  publisher_meta={};publisher_ab=""
+  if p["journal"] not in ("PRL","PRX"):
+   publisher_ab=publisher_abstract(p["journal"],p["doi"],publisher_meta)
+   p.update(publisher_meta)
+  decision=journal_eligibility(p,date)
+  if decision!="candidate":
+   p["abstract_status"]=decision;return p
   p["abstract_source"]="Crossref" if len(p["abstract"])>=140 else "publisher"
   if len(p["abstract"])<140:p["abstract"]=publisher_ab
   if len(p["abstract"])<140:
-   p["abstract"]=metadata_abstract(p["doi"])
-   p["abstract_source"]="DOI metadata"
-  p["abstract_status"]="available" if len(p["abstract"])>=140 else "pending"
+   p["abstract"]=metadata_abstract(p["doi"]);p["abstract_source"]="DOI metadata"
+  p["abstract_status"]="available" if len(p["abstract"])>=140 else "pending_abstract"
   p["topic"]=topic(p["title"]+" "+p["abstract"])
   p["summary_en"]=p["summary"]=summary(p["abstract"])
   return p
- with ThreadPoolExecutor(max_workers=8) as pool:
-  recovered=list(pool.map(recover,work.values()))
- unresolved_aps=[p for p in recovered if p["abstract_status"]=="pending" and p["journal"] in ("PRL","PRX")]
+ with ThreadPoolExecutor(max_workers=8) as pool:recovered=list(pool.map(recover,work.values()))
+ unresolved_aps=[p for p in recovered if p["abstract_status"]=="pending_abstract" and p["journal"] in ("PRL","PRX")]
  preprints=arxiv_metadata_abstracts(unresolved_aps)
  out=[]
  for p in recovered:
   if p["doi"] in preprints:
    abstract,source=preprints[p["doi"]]
+   related=re.search(r"/abs/(\d{4}\.\d{4,5})",source)
    p.update(abstract=abstract,abstract_source=source,abstract_status="available",
+     related_arxiv_id=related[1] if related else "",
      summary_en=summary(abstract),summary=summary(abstract),topic=topic(p["title"]+" "+abstract))
   available=p["abstract_status"]=="available"
-  non_original=p["abstract_status"]=="non_original_article"
   audit.append({"id":p["id"],"doi":p["doi"],"title":p["title"],"journal":p["journal"],
-    "article_kind":p.get("article_kind",""),"has_abstract":available,
-    "decision":"non_original_article" if non_original else "candidate" if available else "pending_abstract"})
+    "article_kind":p.get("article_kind",""),"publication_status":p.get("publication_status","unverified"),
+    "publication_date":p.get("publication_date",""),"publication_evidence":p.get("publication_evidence",{}),
+    "has_abstract":available,"decision":"candidate" if available else p["abstract_status"]})
   if available:out.append(p)
-  elif pending is not None:
+  if pending is not None:
    pending[:]=[q for q in pending if q.get("id")!=p["id"]]
-   if not non_original:pending.append(p)
+   if p["abstract_status"]=="pending_abstract":pending.append(p)
  return out
+
+def paper_aliases(p):
+ aliases=set()
+ if p.get("id"):aliases.add("id:"+p["id"])
+ title=re.sub(r"\W+","",unescape(clean(p.get("title",""))).casefold())
+ if title:aliases.add("title:"+title)
+ for key in ("doi","journal_doi","published_doi"):
+  value=str(p.get(key) or "").lower().removeprefix("https://doi.org/").removeprefix("http://doi.org/")
+  if value:aliases.add("doi:"+value)
+ for key in ("arxiv_id","related_arxiv_id"):
+  value=re.sub(r"v\d+$","",str(p.get(key) or ""))
+  if value:aliases.add("arxiv:"+value)
+ return aliases
 
 def enrich(records):
  key=os.getenv("OPENAI_API_KEY")
@@ -430,6 +506,8 @@ def enrich(records):
 def screening_config():
  return {"arxiv_min_score":ARXIV_MIN_SCORE,"journal_min_score":55,"max_papers":30,
    "arxiv_versions":[1],"exclude_soft_matter":True,"journals":list(ISSN),
+   "journal_publication":"publisher-verified formal online publication on the issue date",
+   "journal_document_types":"research article or research letter; no accepted papers, essays, replies or comments",
    "editorial_interest":"experimental quantum materials; original theory and experiment"}
 
 def atomic_json(path,value):
@@ -458,6 +536,7 @@ def validate_issue(issue):
    assert p.get("quantum_materials") is True and p["relevance_score"]>=ARXIV_MIN_SCORE,"arXiv focus/score failed"
   else:
    assert p["type"]=="Journal" and p["journal"] in ISSN,"Source outside whitelist"
+   assert journal_eligibility(p,issue["date"])=="candidate","Journal not verified as today's formally published research"
    assert p.get("abstract_status")=="available","Journal abstract unavailable"
    assert p["relevance_score"]>=55,"Journal score failed"
 
@@ -480,18 +559,19 @@ def main(argv=None):
  historical=requested!=now.date()
  if historical and not saved:
   raise RuntimeError("Historical re-screen requires a saved candidate snapshot for that date; the live arXiv list is not a historical feed")
- old=set()
+ old=set();old_aliases=set()
  for path in (ROOT/"issues").glob("*.json"):
   if path.stem>=date:continue
-  for p in json.loads(path.read_text(encoding="utf8")).get("papers",[]):old.add(p["id"])
+  for p in json.loads(path.read_text(encoding="utf8")).get("papers",[]):
+   old.add(p["id"]);old_aliases.update(paper_aliases(p))
  cache={};pending=[]
  for path in sorted((ROOT/"audits").glob("????-??-??.json")):
   if path.stem>date:continue
   previous=json.loads(path.read_text(encoding="utf8"))
-  if previous.get("screening_version")!=SCREENING_VERSION:continue
   for p in previous.get("pending_journal_records",[]):
    if p.get("id") not in old:pending.append(p)
-  if not args.rescreen:
+  assessment_version=previous.get("assessment_version") or previous.get("screening_version")
+  if not args.rescreen and assessment_version==ASSESSMENT_VERSION:
    for p in previous.get("candidates",[]):
     if p.get("_ai_assessment"):cache[p["id"]]=p
  journal_audit=[];arxiv_audit=[];sources=[]
@@ -508,19 +588,23 @@ def main(argv=None):
   except Exception as exc:
    sources.append({"source":"arXiv","status":"failed","error":str(exc)})
   papers+=journals(now,journal_audit,{pid:"previous_issue" for pid in old},sources,pending)
-  blocked={a["id"] for a in journal_audit if a.get("decision")=="non_original_article"}
+  blocked={a["id"] for a in journal_audit if a.get("decision") not in ("candidate","pending_abstract")}
   for p in saved.get("candidates",[]):
-   if p.get("type")=="Journal" and p["id"] not in blocked:papers.append(p)
+   if p.get("type")=="Journal" and p["id"] not in blocked and journal_eligibility(p,date)=="candidate":papers.append(p)
  complete=len(sources)==10 and all(x["status"]=="ok" for x in sources)
  if not complete:
   atomic_json(ROOT/"audits"/(date+".failed.json"),{"date":date,"screening_version":SCREENING_VERSION,"sources":sources})
   raise RuntimeError("A source could not be harvested; previous published issue preserved")
- pool={};seen_titles=set()
+ pool={};seen_aliases=set();duplicates={}
  for p in sorted(papers,key=lambda p:p["type"]!="Journal"):
   if is_non_original(p):continue
-  title_key=re.sub("[^a-z0-9]","",p["title"].lower())
-  if p["id"] in old or p["id"] in pool or title_key in seen_titles:continue
-  seen_titles.add(title_key);pool[p["id"]]=p
+  if p["type"]=="Journal" and journal_eligibility(p,date)!="candidate":continue
+  aliases=paper_aliases(p)
+  if p["id"] in old or aliases & (old_aliases|seen_aliases):
+   p["screening_decision"]="duplicate_work"
+   duplicates[p["id"]]=p
+   continue
+  seen_aliases.update(aliases);pool[p["id"]]=p
  candidates=list(pool.values())
  valid_cache={}
  for p in candidates:
@@ -529,6 +613,11 @@ def main(argv=None):
    valid_cache[p["id"]]=previous["_ai_assessment"]
  print(f"Screening {date}: {len(candidates)} candidates; rules={SCREENING_VERSION}; force={args.rescreen}",flush=True)
  kept,stats=screen(candidates,cached_assessments=valid_cache)
+ for a in journal_audit:
+  if a.get("id") in duplicates:a["decision"]="duplicate_work"
+ duplicate_arxiv={p.get("arxiv_id") for p in duplicates.values() if p.get("arxiv_id")}
+ for a in arxiv_audit:
+  if a.get("arxiv_id") in duplicate_arxiv:a["decision"]="duplicate_work"
  by_arxiv={p.get("arxiv_id"):p for p in candidates if p["type"]=="arXiv"}
  for rows,lookup,key in ((journal_audit,pool,"id"),(arxiv_audit,by_arxiv,"arxiv_id")):
   for a in rows:
@@ -540,13 +629,14 @@ def main(argv=None):
  selected_ids={p["id"] for p in kept}
  pending_by_id={p["id"]:p for p in pending}
  unresolved=[p for p in pending_by_id.values() if p["id"] not in pool and p["id"] not in old]
- stats.update({"arxiv_selected":sum(p["type"]=="arXiv" for p in kept),
+ stats.update({"duplicate_work_excluded":len(duplicates),"arxiv_selected":sum(p["type"]=="arXiv" for p in kept),
    "journal_selected":sum(p["type"]=="Journal" for p in kept),
    "arxiv_harvest_excluded":sum(a.get("decision") in ("replacement_section","not_first_version","soft_matter_category","quantum_gas_category") for a in arxiv_audit),
    "pending_journal_abstracts":len(unresolved),
-   "non_original_excluded":sum(a.get("decision")=="non_original_article" for a in journal_audit)})
+   "non_original_excluded":sum(a.get("decision")=="non_original_article" for a in journal_audit),
+   "publication_not_eligible":sum(a.get("decision") in ("accepted_unpublished","publication_not_verified","article_type_not_verified","not_published_today") for a in journal_audit)})
  audit={"date":date,"generated_at":now.isoformat(),"screening_version":SCREENING_VERSION,
-   "screening_config":screening_config(),"sources":sources,"journal_candidates":journal_audit,
+   "assessment_version":ASSESSMENT_VERSION,"screening_config":screening_config(),"sources":sources,"journal_candidates":journal_audit,
    "arxiv_candidates":arxiv_audit,"candidates":candidates,
    "pending_journal_records":unresolved,"selected_ids":sorted(selected_ids),"stats":stats}
  atomic_json(audit_path,audit)

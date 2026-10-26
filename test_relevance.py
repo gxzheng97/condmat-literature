@@ -133,27 +133,31 @@ class JournalRecallTests(unittest.TestCase):
         pid="doi-"+original.replace("/","-").replace(".","-")
         audit=[]
         with patch("update_daily.crossref_records",side_effect=fake_records), \
+             patch("update_daily.aps_publications",return_value={}), \
              patch("update_daily.metadata_abstract") as metadata:
             found=journals(dt.datetime(2026,10,25),audit,{pid:"previous_issue"})
         self.assertFalse(found)
         metadata.assert_not_called()
         self.assertEqual(audit[0]["decision"],"previous_issue")
 
-    def test_24_hour_publication_window_and_per_journal_audit(self):
+    def test_today_only_publication_window_and_per_journal_audit(self):
         seen=[]
         def fake_records(issn,first,last):
             seen.append((issn,first,last))
             if issn=="0031-9007":
                 yield {"type":"journal-article",
-                       "DOI":"10.1038/s43246-026-01390-9",
+                       "DOI":"10.1103/formal-example",
                        "title":["Strain-driven magnetostructural relaxation revealed in Heusler alloys"],
                        "abstract":"This original condensed-matter study resolves the magnetic mechanism and its thermal Hall response in a solid-state quantum material. The abstract contains sufficient scientific information for assessment."}
         audit=[]
-        with patch("update_daily.crossref_records",side_effect=fake_records):
+        formal={"10.1103/formal-example":{"article_kind":"Letter","publication_status":"published",
+            "publication_date":"2026-10-25","publication_evidence":{"source":"APS RSS","volume":"137","article_number":"186001"}}}
+        with patch("update_daily.crossref_records",side_effect=fake_records), \
+             patch("update_daily.aps_publications",side_effect=lambda name:formal if name=="PRL" else {}):
             found=journals(dt.datetime(2026,10,25),audit)
         self.assertEqual(len(found),1)
         self.assertEqual(len(seen),9)
-        self.assertTrue(all(x[1]=="2026-10-24" and x[2]=="2026-10-25" for x in seen))
+        self.assertTrue(all(x[1]=="2026-10-25" and x[2]=="2026-10-25" for x in seen))
         self.assertEqual(audit[0]["decision"],"candidate")
 
 if __name__=="__main__":
