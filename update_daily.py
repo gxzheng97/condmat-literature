@@ -291,7 +291,7 @@ def enrich(records):
     "result_en","result_zh","future_en","future_zh","tier",
     "tier_reason_en","tier_reason_zh"],"additionalProperties":False}}},
    "required":["papers"],"additionalProperties":False}
-  payload={"model":"gpt-4.1-mini",
+  payload={"model":"gpt-6-luna",
      "input":[{"role":"system","content":instructions},
      {"role":"user","content":json.dumps(docs,ensure_ascii=False)}],
      "text":{"format":{"type":"json_schema","name":"paper_notes","strict":True,
