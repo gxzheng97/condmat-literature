@@ -1,6 +1,6 @@
 {
   "date": "2026-10-26",
-  "generated_at": "2026-10-26T11:39:04.776578-07:00",
+  "generated_at": "2026-10-26T11:53:03.821089-07:00",
   "screening_version": "quantum-materials-v1-formal-research-v4",
   "assessment_version": "quantum-materials-v1-only-no-soft-v3",
   "screening_config": {
@@ -55,7 +55,7 @@
     {
       "source": "Nature",
       "status": "ok",
-      "fetched": 6,
+      "fetched": 7,
       "window": [
         "2026-10-26",
         "2026-10-26"
@@ -95,7 +95,7 @@
     {
       "source": "PRL",
       "status": "ok",
-      "fetched": 23,
+      "fetched": 24,
       "window": [
         "2026-10-26",
         "2026-10-26"
@@ -210,6 +210,21 @@
       "publication_evidence": {
         "source": "publisher",
         "url": "https://www.nature.com/articles/d41586-026-03259-w"
+      },
+      "has_abstract": false,
+      "decision": "non_original_article"
+    },
+    {
+      "id": "doi-10-1038-d41586-026-03447-8",
+      "doi": "10.1038/d41586-026-03447-8",
+      "title": "Can science make your dog live longer? Longevity craze comes to pets",
+      "journal": "Nature",
+      "article_kind": "News",
+      "publication_status": "published",
+      "publication_date": "2026-10-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/d41586-026-03447-8"
       },
       "has_abstract": false,
       "decision": "non_original_article"
@@ -1028,6 +1043,18 @@
       "id": "doi-10-1103-qz6q-ztzn",
       "doi": "10.1103/qz6q-ztzn",
       "title": "Landscape of scattering universality with general dispersion relations",
+      "journal": "PRL",
+      "article_kind": "",
+      "publication_status": "unverified",
+      "publication_date": "",
+      "publication_evidence": {},
+      "has_abstract": false,
+      "decision": "publication_not_verified"
+    },
+    {
+      "id": "doi-10-1103-1rvt-4vgs",
+      "doi": "10.1103/1rvt-4vgs",
+      "title": "Twisted kagome bilayers: High-order Van Hove singularities, sublattice interference, magic angles, and possible topology",
       "journal": "PRL",
       "article_kind": "",
       "publication_status": "unverified",
@@ -1953,7 +1980,7 @@
         "cond-mat.mes-hall"
       ],
       "announcement_date": "2026-10-26",
-      "decision": "selected",
+      "decision": "global_editorial_rejected",
       "score": 72,
       "in_scope": true,
       "soft_matter": false,
@@ -2402,7 +2429,7 @@
         "cond-mat.mes-hall"
       ],
       "announcement_date": "2026-10-26",
-      "decision": "selected",
+      "decision": "global_editorial_rejected",
       "score": 72,
       "in_scope": true,
       "soft_matter": false,
@@ -2607,7 +2634,7 @@
         "cond-mat.other"
       ],
       "announcement_date": "2026-10-26",
-      "decision": "selected",
+      "decision": "global_editorial_rejected",
       "score": 76,
       "in_scope": true,
       "soft_matter": false,
@@ -4648,7 +4675,7 @@
       "relevance_reason": "This combines spectroscopy and first-principles calculations to resolve an important crystal-symmetry and lattice-mode question in the altermagnetic semiconductor α-MnTe.",
       "relevance_method": "semantic",
       "relevance_score": 77,
-      "feature_candidate": false
+      "feature_candidate": true
     },
     {
       "id": "arxiv-2610-32228",
@@ -5256,7 +5283,7 @@
       "relevance_reason": "Direct spectroscopic evidence for a persistent high-density excitonic electronic state is a substantial discovery about collective electronic matter in a solid.",
       "relevance_method": "semantic",
       "relevance_score": 88,
-      "feature_candidate": true
+      "feature_candidate": false
     },
     {
       "id": "arxiv-2610-32419",
@@ -5915,7 +5942,7 @@
       "soft_matter": false,
       "quantum_materials": true,
       "research_type": "theory",
-      "screening_decision": "selected",
+      "screening_decision": "global_editorial_rejected",
       "physics_advance": "Rashba and Dresselhaus coupling produce distinct subgap optical structures, field-dependent spin dynamics, and characteristic Landau-level shifts and splittings.",
       "ai_in_scope": true,
       "relevance_reason": "This is original theory of spin-orbit-coupled low-dimensional electrons that predicts experimentally distinguishable optical and magneto-optical signatures.",
@@ -7190,7 +7217,7 @@
       "soft_matter": false,
       "quantum_materials": true,
       "research_type": "theory",
-      "screening_decision": "selected",
+      "screening_decision": "global_editorial_rejected",
       "physics_advance": "The calculation predicts asymmetric finite-frequency heat noise and a high-voltage weak-backscattering Lorenz number approaching four times the conventional value.",
       "ai_in_scope": true,
       "relevance_reason": "This is original theory of heat transport and fluctuations in a fractional quantum Hall edge system, with interaction-dependent predictions for noise and the Wiedemann–Franz relation.",
@@ -7746,7 +7773,7 @@
       "soft_matter": false,
       "quantum_materials": true,
       "research_type": "theory",
-      "screening_decision": "selected",
+      "screening_decision": "global_editorial_rejected",
       "physics_advance": "The work identifies Zeeman shift and injection currents generated jointly by the electric and magnetic components of light, and shows they can occur in centrosymmetric systems, including noncollinear magnets.",
       "ai_in_scope": true,
       "relevance_reason": "It derives and predicts new light-induced electronic responses in magnetic and spin-orbit-coupled materials, including Mn3Sn.",
@@ -8789,11 +8816,8 @@
   "selected_ids": [
     "arxiv-2610-31676",
     "arxiv-2610-31725",
-    "arxiv-2610-31843",
-    "arxiv-2610-31893",
     "arxiv-2610-31952",
     "arxiv-2610-32097",
-    "arxiv-2610-32136",
     "arxiv-2610-32157",
     "arxiv-2610-32199",
     "arxiv-2610-32224",
@@ -8812,19 +8836,19 @@
   "stats": {
     "scanned": 112,
     "first_pass_selected": 24,
-    "selected": 21,
-    "rejected": 91,
+    "selected": 18,
+    "rejected": 94,
     "ai_assessed": 112,
-    "ai_cached": 111,
+    "ai_cached": 112,
     "ai_unscored": 0,
     "global_editorial": true,
     "field_scope_excluded": 0,
-    "duplicate_work_excluded": 1,
-    "arxiv_selected": 21,
+    "duplicate_work_excluded": 25,
+    "arxiv_selected": 18,
     "journal_selected": 0,
     "arxiv_harvest_excluded": 70,
     "pending_journal_abstracts": 0,
-    "non_original_excluded": 12,
-    "publication_not_eligible": 25
+    "non_original_excluded": 13,
+    "publication_not_eligible": 26
   }
 }
