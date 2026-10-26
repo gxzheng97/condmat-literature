@@ -251,29 +251,42 @@ def metadata_abstract(doi):
    print(f"NOTICE: {name} abstract unavailable {doi}: {type(exc).__name__}")
  return ""
 
-def arxiv_metadata_abstract(doi,title):
- """Recover a journal abstract from its matching preprint, never a search snippet.
+def arxiv_metadata_abstracts(papers):
+ """Batch metadata lookup using documented title fields, then verify identity.
 
- A known conflicting journal DOI is rejected. Without a journal DOI, require
- an exact normalized title, and preserve the provenance in the journal record.
- This is metadata enrichment of an allowed journal DOI, not new discovery.
+ Search results never become discoveries. A matching journal DOI is strongest;
+ otherwise require the exact normalized title, never a fuzzy scientific guess.
  """
- query='doi:"'+doi+'" OR ti:"'+title.replace('"',' ')+'"'
- url="https://export.arxiv.org/api/query?"+urllib.parse.urlencode({"search_query":query,"max_results":5})
- try:
-  root=ET.fromstring(fetch(url))
-  fingerprint=lambda value:re.sub(r"[^a-z0-9]","",clean(value).lower())
-  for e in root.findall("a:entry",NS):
-   related=clean(e.findtext("x:doi","",NS)).lower().removeprefix("https://doi.org/")
-   same_doi=related==doi.lower()
-   same_title=fingerprint(e.findtext("a:title","",NS))==fingerprint(title)
-   if related and not same_doi:continue
-   if same_doi or same_title:
+ matches={}
+ fingerprint=lambda value:re.sub(r"[^a-z0-9]","",clean(value).lower())
+ for offset in range(0,len(papers),8):
+  batch=papers[offset:offset+8]
+  clauses=[]
+  for p in batch:
+   words=re.findall(r"[A-Za-z]{4,}",p["title"])
+   terms=list(dict.fromkeys(w.lower() for w in words if w.lower() not in ("with","from","their","under","between","using","into","through")))
+   clauses.append("("+ " AND ".join("ti:"+w for w in terms[:5]) +")")
+  query=" OR ".join(clauses)
+  url="https://export.arxiv.org/api/query?"+urllib.parse.urlencode({"search_query":query,"max_results":100})
+  try:
+   root=ET.fromstring(fetch(url))
+   for e in root.findall("a:entry",NS):
+    related=clean(e.findtext("x:doi","",NS)).lower().removeprefix("https://doi.org/")
+    title=fingerprint(e.findtext("a:title","",NS))
     abstract=clean(e.findtext("a:summary","",NS))
-    if len(abstract)>=140:return abstract[:3300],e.findtext("a:id","",NS)
- except Exception as exc:
-  print(f"NOTICE: Matching preprint abstract unavailable {doi}: {type(exc).__name__}",flush=True)
- return "",""
+    if len(abstract)<140:continue
+    for p in batch:
+     same_doi=related==p["doi"].lower()
+     if related and not same_doi:continue
+     if same_doi or title==fingerprint(p["title"]):
+      matches[p["doi"]]=(abstract[:3300],e.findtext("a:id","",NS))
+  except Exception as exc:
+   print(f"NOTICE: Matching preprint batch unavailable: {type(exc).__name__}",flush=True)
+  if offset+8<len(papers):time.sleep(3)
+ return matches
+
+def arxiv_metadata_abstract(doi,title):
+ return arxiv_metadata_abstracts([{"doi":doi,"title":title}]).get(doi,("",""))
 
 def journals(today,audit=None,skip_ids=None,source_status=None,pending=None):
  """Read all nine journals before any scientific scope or keyword judgment."""
@@ -319,14 +332,14 @@ def journals(today,audit=None,skip_ids=None,source_status=None,pending=None):
   return p
  with ThreadPoolExecutor(max_workers=8) as pool:
   recovered=list(pool.map(recover,work.values()))
+ unresolved_aps=[p for p in recovered if p["abstract_status"]!="available" and p["journal"] in ("PRL","PRX")]
+ preprints=arxiv_metadata_abstracts(unresolved_aps)
  out=[]
  for p in recovered:
-  if p["abstract_status"]!="available" and p["journal"] in ("PRL","PRX"):
-   abstract,source=arxiv_metadata_abstract(p["doi"],p["title"])
-   if abstract:
-    p.update(abstract=abstract,abstract_source=source,abstract_status="available",
-      summary_en=summary(abstract),summary=summary(abstract),topic=topic(p["title"]+" "+abstract))
-   time.sleep(3)  # Respect the arXiv API request interval.
+  if p["doi"] in preprints:
+   abstract,source=preprints[p["doi"]]
+   p.update(abstract=abstract,abstract_source=source,abstract_status="available",
+     summary_en=summary(abstract),summary=summary(abstract),topic=topic(p["title"]+" "+abstract))
   available=p["abstract_status"]=="available"
   audit.append({"id":p["id"],"doi":p["doi"],"title":p["title"],"journal":p["journal"],
     "has_abstract":available,"decision":"candidate" if available else "pending_abstract"})
