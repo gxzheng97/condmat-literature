@@ -83,7 +83,7 @@ class IntakeTests(unittest.TestCase):
         def rows(*args):
             yield {"type":"journal-article","DOI":"10.1038/example","title":[title]}
         audit=[]
-        with patch.object(u,"ISSN",{"Nature":"0028-0836"}),patch.object(u,"crossref_records",side_effect=rows),patch.object(u,"metadata_abstract",return_value=ABSTRACT) as metadata:
+        with patch.object(u,"ISSN",{"Nature":"0028-0836"}),patch.object(u,"crossref_records",side_effect=rows),patch.object(u,"metadata_abstract",return_value=ABSTRACT) as metadata,patch.object(u,"publisher_abstract",return_value=""):
             found=u.journals(dt.datetime(2026,10,26),audit)
         metadata.assert_called_once_with("10.1038/example")
         self.assertEqual(len(found),1)
@@ -95,7 +95,7 @@ class IntakeTests(unittest.TestCase):
             self.assertEqual(u.journals(dt.datetime(2026,10,26),audit,pending=pending),[])
         self.assertEqual(audit[0]["decision"],"pending_abstract")
         self.assertEqual(len(pending),1)
-        with patch.object(u,"ISSN",{"Nature":"0028-0836"}),patch.object(u,"crossref_records",return_value=iter([])),patch.object(u,"metadata_abstract",return_value=ABSTRACT):
+        with patch.object(u,"ISSN",{"Nature":"0028-0836"}),patch.object(u,"crossref_records",return_value=iter([])),patch.object(u,"metadata_abstract",return_value=ABSTRACT),patch.object(u,"publisher_abstract",return_value=""):
             self.assertEqual(len(u.journals(dt.datetime(2026,10,27),pending=pending)),1)
 
     def test_matching_preprint_requires_correct_doi_or_exact_title(self):
@@ -109,6 +109,25 @@ class IntakeTests(unittest.TestCase):
             self.assertTrue(source.endswith("v2"))  # Journal metadata, not arXiv intake.
         with patch.object(u,"fetch",return_value=feed("","A different paper")):
             self.assertEqual(u.arxiv_metadata_abstract("10.1103/right","Exact paper title"),("",""))
+
+    def test_publisher_news_views_is_not_original_research(self):
+        def recover(journal,doi,metadata=None):
+            metadata["article_kind"]="News & Views"
+            return ABSTRACT
+        row={"type":"journal-article","DOI":"10.1038/example","title":["A simple twist to altermagnetism"]}
+        audit=[];pending=[]
+        with patch.object(u,"ISSN",{"Nature Physics":"1745-2473"}),patch.object(u,"crossref_records",return_value=iter([row])),patch.object(u,"publisher_abstract",side_effect=recover),patch.object(u,"metadata_abstract") as metadata:
+            found=u.journals(dt.datetime(2026,10,26),audit,pending=pending)
+        self.assertFalse(found)
+        self.assertFalse(pending)
+        metadata.assert_not_called()
+        self.assertEqual(audit[0]["decision"],"non_original_article")
+        parser=u._PublisherAbstractParser()
+        parser.feed('<meta name="citation_article_type" content="News &amp; Views">')
+        self.assertEqual(parser.metadata["citation_article_type"],"News & Views")
+    def test_corrections_are_document_types_not_subject_keywords(self):
+        self.assertTrue(u.is_non_original({"title":"Author Correction: Quantum magnetism"}))
+        self.assertFalse(u.is_non_original({"title":"Quantum correction to electronic transport","article_kind":"Article"}))
 
 class ScopeTests(unittest.TestCase):
     def run_screen(self,p,ai):
@@ -195,6 +214,21 @@ class RegenerationTests(unittest.TestCase):
         issue=dict(date=p["announcement_date"],screening_version=u.SCREENING_VERSION,
             sources_complete=True,papers=[p],stats=dict(global_editorial=True,scanned=1,ai_assessed=1,ai_unscored=0))
         with self.assertRaises(AssertionError):u.validate_issue(issue)
+
+    def test_historical_raw_snapshot_survives_policy_change(self):
+        with tempfile.TemporaryDirectory(dir=Path(__file__).parent) as folder:
+            root=Path(folder);(root/"audits").mkdir()
+            day=(dt.datetime.now(ZoneInfo("America/Los_Angeles")).date()-dt.timedelta(days=1)).isoformat()
+            p=paper(announcement_date=day)
+            sources=[{"source":name,"status":"ok"} for name in [*u.ISSN,"arXiv"]]
+            snapshot={"date":day,"screening_version":"previous-policy","sources":sources,"candidates":[p]}
+            (root/"audits"/(day+".json")).write_text(json.dumps(snapshot),encoding="utf8")
+            with patch.object(u,"ROOT",root),patch.object(u,"arxiv") as live,patch.object(u,"screen",side_effect=self.screen) as screen,patch.object(u,"enrich"):
+                issue=u.main(["--date",day,"--rescreen"])
+                live.assert_not_called()
+                self.assertEqual(screen.call_args.kwargs["cached_assessments"],{})
+                self.assertEqual(issue["date"],day)
+                self.assertEqual(issue["screening_version"],u.SCREENING_VERSION)
 
 if __name__=="__main__":
     unittest.main()

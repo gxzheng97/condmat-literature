@@ -160,7 +160,7 @@ class _PublisherAbstractParser(HTMLParser):
   attrs=dict(attrs)
   if tag=="meta":
    name=(attrs.get("name") or attrs.get("property") or "").lower()
-   if name in ("citation_abstract","dc.description","description",
+   if name in ("citation_abstract","dc.description","description","citation_article_type","dc.type",
                "og:description") and attrs.get("content"):
     self.metadata[name]=unescape(attrs["content"])
   if self.depth:
@@ -185,7 +185,7 @@ class _PublisherAbstractParser(HTMLParser):
   candidate=clean(" ".join(self.parts))
   return candidate if len(candidate)>=140 else ""
 
-def publisher_abstract(journal,doi):
+def publisher_abstract(journal,doi,metadata=None):
  """Enrich APS papers whose Crossref records omit the scientific abstract."""
  if journal.startswith("Nature") and doi.startswith("10.1038/"):
   url="https://www.nature.com/articles/"+doi.split("/",1)[1]
@@ -203,6 +203,8 @@ def publisher_abstract(journal,doi):
    html=response.read(750000).decode("utf8","replace")
   parser=_PublisherAbstractParser()
   parser.feed(html)
+  if metadata is not None:
+   metadata["article_kind"]=parser.metadata.get("citation_article_type") or parser.metadata.get("dc.type","")
   return parser.extract()[:3300]
  except Exception as exc:
   print(f"NOTICE: Publisher abstract not available for {doi}: {type(exc).__name__}")
@@ -288,6 +290,12 @@ def arxiv_metadata_abstracts(papers):
 def arxiv_metadata_abstract(doi,title):
  return arxiv_metadata_abstracts([{"doi":doi,"title":title}]).get(doi,("",""))
 
+def is_non_original(p):
+ kind=re.sub(r"[^a-z]","",str(p.get("article_kind","")).lower())
+ if kind in {"newsviews","newsandviews","news","editorial","comment","commentary","perspective","review","bookreview","correction","authorcorrection","publishercorrection","erratum","retraction","researchhighlight"}:
+  return True
+ return bool(re.match(r"^(author correction|publisher correction|correction|erratum|retraction)\s*:",str(p.get("title","")),re.I))
+
 def journals(today,audit=None,skip_ids=None,source_status=None,pending=None):
  """Read all nine journals before any scientific scope or keyword judgment."""
  skip_ids=skip_ids or {};audit=audit if audit is not None else []
@@ -320,19 +328,29 @@ def journals(today,audit=None,skip_ids=None,source_status=None,pending=None):
   if p.get("journal") in ISSN and p.get("id") not in skip_ids:
    work.setdefault(p["id"],dict(p))
  def recover(p):
-  p["abstract_source"]="Crossref" if len(p["abstract"])>=140 else "DOI metadata"
+  publisher_meta={}
+  publisher_ab=""
+  # Nature metadata distinguishes News & Views from research even when its
+  # generic Crossref type says journal-article and its teaser sounds experimental.
+  if p["journal"].startswith("Nature") or len(p["abstract"])<140:
+   if not is_non_original(p):
+    publisher_ab=publisher_abstract(p["journal"],p["doi"],publisher_meta)
+    p.update(publisher_meta)
+  if is_non_original(p):
+   p["abstract_status"]="non_original_article"
+   return p
+  p["abstract_source"]="Crossref" if len(p["abstract"])>=140 else "publisher"
+  if len(p["abstract"])<140:p["abstract"]=publisher_ab
   if len(p["abstract"])<140:
    p["abstract"]=metadata_abstract(p["doi"])
-  if len(p["abstract"])<140:
-   p["abstract"]=publisher_abstract(p["journal"],p["doi"])
-   p["abstract_source"]="publisher"
+   p["abstract_source"]="DOI metadata"
   p["abstract_status"]="available" if len(p["abstract"])>=140 else "pending"
   p["topic"]=topic(p["title"]+" "+p["abstract"])
   p["summary_en"]=p["summary"]=summary(p["abstract"])
   return p
  with ThreadPoolExecutor(max_workers=8) as pool:
   recovered=list(pool.map(recover,work.values()))
- unresolved_aps=[p for p in recovered if p["abstract_status"]!="available" and p["journal"] in ("PRL","PRX")]
+ unresolved_aps=[p for p in recovered if p["abstract_status"]=="pending" and p["journal"] in ("PRL","PRX")]
  preprints=arxiv_metadata_abstracts(unresolved_aps)
  out=[]
  for p in recovered:
@@ -341,13 +359,14 @@ def journals(today,audit=None,skip_ids=None,source_status=None,pending=None):
    p.update(abstract=abstract,abstract_source=source,abstract_status="available",
      summary_en=summary(abstract),summary=summary(abstract),topic=topic(p["title"]+" "+abstract))
   available=p["abstract_status"]=="available"
+  non_original=p["abstract_status"]=="non_original_article"
   audit.append({"id":p["id"],"doi":p["doi"],"title":p["title"],"journal":p["journal"],
-    "has_abstract":available,"decision":"candidate" if available else "pending_abstract"})
+    "article_kind":p.get("article_kind",""),"has_abstract":available,
+    "decision":"non_original_article" if non_original else "candidate" if available else "pending_abstract"})
   if available:out.append(p)
   elif pending is not None:
-   # Replace pending metadata with the most recent successfully read record.
    pending[:]=[q for q in pending if q.get("id")!=p["id"]]
-   pending.append(p)
+   if not non_original:pending.append(p)
  return out
 
 def enrich(records):
@@ -428,6 +447,7 @@ def validate_issue(issue):
  assert stats.get("ai_unscored")==0 and stats.get("ai_assessed")==stats.get("scanned"),"Missing AI assessments"
  ids=set()
  for p in issue.get("papers",[]):
+  assert not is_non_original(p),"Non-original article"
   assert p["id"] not in ids,"Duplicate paper ID"
   ids.add(p["id"])
   assert p.get("ai_in_scope") is True and p.get("soft_matter") is False,"Scope decision missing or excluded"
@@ -455,7 +475,8 @@ def main(argv=None):
  saved={}
  if audit_path.exists():
   candidate=json.loads(audit_path.read_text(encoding="utf8"))
-  if candidate.get("screening_version")==SCREENING_VERSION:saved=candidate
+  # Raw evidence survives policy changes; only AI assessment caches expire.
+  if isinstance(candidate.get("candidates"),list):saved=candidate
  historical=requested!=now.date()
  if historical and not saved:
   raise RuntimeError("Historical re-screen requires a saved candidate snapshot for that date; the live arXiv list is not a historical feed")
@@ -487,14 +508,16 @@ def main(argv=None):
   except Exception as exc:
    sources.append({"source":"arXiv","status":"failed","error":str(exc)})
   papers+=journals(now,journal_audit,{pid:"previous_issue" for pid in old},sources,pending)
+  blocked={a["id"] for a in journal_audit if a.get("decision")=="non_original_article"}
   for p in saved.get("candidates",[]):
-   if p.get("type")=="Journal":papers.append(p)
+   if p.get("type")=="Journal" and p["id"] not in blocked:papers.append(p)
  complete=len(sources)==10 and all(x["status"]=="ok" for x in sources)
  if not complete:
   atomic_json(ROOT/"audits"/(date+".failed.json"),{"date":date,"screening_version":SCREENING_VERSION,"sources":sources})
   raise RuntimeError("A source could not be harvested; previous published issue preserved")
  pool={};seen_titles=set()
  for p in sorted(papers,key=lambda p:p["type"]!="Journal"):
+  if is_non_original(p):continue
   title_key=re.sub("[^a-z0-9]","",p["title"].lower())
   if p["id"] in old or p["id"] in pool or title_key in seen_titles:continue
   seen_titles.add(title_key);pool[p["id"]]=p
@@ -520,7 +543,8 @@ def main(argv=None):
  stats.update({"arxiv_selected":sum(p["type"]=="arXiv" for p in kept),
    "journal_selected":sum(p["type"]=="Journal" for p in kept),
    "arxiv_harvest_excluded":sum(a.get("decision") in ("replacement_section","not_first_version","soft_matter_category","quantum_gas_category") for a in arxiv_audit),
-   "pending_journal_abstracts":len(unresolved)})
+   "pending_journal_abstracts":len(unresolved),
+   "non_original_excluded":sum(a.get("decision")=="non_original_article" for a in journal_audit)})
  audit={"date":date,"generated_at":now.isoformat(),"screening_version":SCREENING_VERSION,
    "screening_config":screening_config(),"sources":sources,"journal_candidates":journal_audit,
    "arxiv_candidates":arxiv_audit,"candidates":candidates,
