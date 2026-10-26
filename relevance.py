@@ -12,6 +12,8 @@ import urllib.request
 import urllib.error
 import time
 
+ARXIV_MIN_SCORE = 70
+
 
 # Signals represent physical QUESTIONS rather than generic publication keywords.
 CONCEPTS = (
@@ -109,6 +111,23 @@ def _ai_batch(papers, key):
     rubric = (
       "You are screening a STRICT CONDENSED-MATTER PHYSICS literature digest "
       "covering ORIGINAL THEORETICAL AND EXPERIMENTAL research equally. "
+      "SOFT MATTER IS EXCLUDED even though it is a branch of condensed matter: "
+      "reject colloids, soft polymers, gels, foams, emulsions, granular matter, "
+      "active matter and biological soft matter when those are the main system. "
+      "Do not exclude electronic/magnetic physics of organic quantum materials "
+      "merely because the material is organic. "
+      "For arXiv, require a substantial QUANTUM-MATERIALS contribution: "
+      "superconductivity, correlated electrons, quantum magnetism/spin liquids, "
+      "quantum criticality, topological electronic matter, moire/low-dimensional "
+      "electrons, or distinctive collective electronic/magnetic phenomena and "
+      "their lattice coupling, transport, spectroscopy or symmetry breaking. "
+      "Original theory of such systems qualifies. Generic classical statistical "
+      "mechanics, routine DFT/property surveys, ordinary doping optimization, "
+      "and performance-only devices do not meet this arXiv focus. "
+      "Return quantum_materials=true only for that substantive focus, not merely "
+      "because the word quantum appears or the paper has a cond-mat category. "
+      "Return soft_matter=true independently whenever the primary system is soft matter. "
+      "Classify research_type as theory, experiment, mixed or other. "
       "Research primarily belonging to any OTHER discipline or branch of "
       "physics is OUT OF SCOPE, regardless of journal prestige, novelty, "
       "shared vocabulary, or score. Be an exacting research editor: "
@@ -169,14 +188,16 @@ def _ai_batch(papers, key):
       "Do not interpret scientific uncertainty as automatic low quality. "
       "Set feature_candidate true ONLY for substantial research discoveries "
       "or readily actionable predictions, never mainly for technology performance. "
-      "Reply JSON exactly: {assessments:[{id,in_scope,score,feature_candidate,"
+      "Reply JSON exactly: {assessments:[{id,in_scope,soft_matter,quantum_materials,research_type,score,feature_candidate,"
       "reason,physics_advance}]}. Reason must say why relevant or not in "
       "one sentence. physics_advance names the concrete NEW physical insight "
       "established, or empty string if there is none. All decisions must be "
       "based only on the supplied title and abstract; do not invent claims."
     )
     docs = [
-      {"id":p.get("id"),"title":p.get("title"),"abstract":(p.get("abstract") or p.get("summary_en") or "")[:3300]}
+      {"id":p.get("id"),"title":p.get("title"),"abstract":(p.get("abstract") or p.get("summary_en") or "")[:3300],
+       "source_type":p.get("type","Journal"),"primary_category":p.get("primary_category"),
+       "categories":p.get("categories",[])}
       for p in papers
     ]
     payload={"model":"gpt-6-luna",
@@ -186,9 +207,11 @@ def _ai_batch(papers, key):
                "schema":{"type":"object","properties":{"assessments":{
                  "type":"array","items":{"type":"object","properties":{
                    "id":{"type":"string"},"in_scope":{"type":"boolean"},
+                   "soft_matter":{"type":"boolean"},"quantum_materials":{"type":"boolean"},
+                   "research_type":{"type":"string","enum":["theory","experiment","mixed","other"]},
                    "score":{"type":"integer"},"feature_candidate":{"type":"boolean"},
                    "reason":{"type":"string"},"physics_advance":{"type":"string"}},
-                 "required":["id","in_scope","score","feature_candidate","reason","physics_advance"],
+                 "required":["id","in_scope","soft_matter","quantum_materials","research_type","score","feature_candidate","reason","physics_advance"],
                  "additionalProperties":False}}},
                  "required":["assessments"],"additionalProperties":False}}},"max_output_tokens":8000}
     req=urllib.request.Request(
@@ -215,7 +238,7 @@ def _ai_batch(papers, key):
         raise ValueError("Missing AI assessments")
     found={}
     for x in assessments:
-        if not isinstance(x,dict) or "id" not in x or not isinstance(x.get("in_scope"),bool):
+        if not isinstance(x,dict) or "id" not in x or not all(isinstance(x.get(k),bool) for k in ("in_scope","soft_matter","quantum_materials")):
             raise ValueError("AI must provide a binary in_scope decision for every paper")
         score=x.get("score")
         if isinstance(score,bool) or not isinstance(score,int) or not (0 <= score <= 100):
@@ -312,6 +335,10 @@ def _ai_shortlist(papers, key, max_papers=30):
     instructions = (
       "You are the science editor preparing ONE compact daily literature index "
       "for a researcher of CONDENSED-MATTER PHYSICS, theory and experiment. "
+      "Exclude soft matter, including colloids, gels, foams, soft polymers, "
+      "granular and active matter. ArXiv candidates must make an original "
+      "quantum-materials contribution, not routine materials optimization "
+      "or generic classical statistical mechanics. "
       "Below is the pool passing a first condensed-matter assessment. "
       "Make one global and RELATIVE comparison, using the science of a paper "
       "rather than prestige or keyword overlap. "
@@ -387,7 +414,7 @@ def _ai_shortlist(papers, key, max_papers=30):
     allowed={str(p["id"]) for p in papers}
     proposed=decision.get("selected_ids")
     if not isinstance(proposed,list):
-        proposed=[]
+        raise ValueError("Missing global selected_ids array")
     ids=[]
     seen=set()
     for value in proposed:
@@ -396,13 +423,8 @@ def _ai_shortlist(papers, key, max_papers=30):
             ids.append(pid)
             seen.add(pid)
     if len(ids)!=len(proposed):
-        print(f"WARNING: global review supplied {len(proposed)-len(ids)} invalid or repeated IDs; ignoring them")
-    if not ids:
-        # An imperfect LLM response must not crash the entire daily digest,
-        # or invent a score. All fallback choices passed the AI CM-scope gate.
-        print("WARNING: no valid global IDs; using highest-rated CM assessments")
-        best=sorted(papers,key=lambda p:p.get("relevance_score",0),reverse=True)
-        ids=[str(p["id"]) for p in best[:min(max_papers,20)]]
+        raise ValueError("Global review returned invalid or duplicate article IDs")
+    # An explicitly empty selection is valid; do not override editorial rejection.
     if len(ids)>max_papers:
         print(f"Global editorial shortlist has {len(ids)} papers; retaining the top {max_papers}")
         ids=ids[:max_papers]
@@ -419,7 +441,7 @@ def _ai_shortlist(papers, key, max_papers=30):
     return ids,features[:4]
 
 
-def screen(papers, use_ai=True, max_papers=30):
+def screen(papers, use_ai=True, max_papers=30, cached_assessments=None):
     """Two-pass scientific selection with a global day-level reading budget.
 
     A model outage is an error, not permission to publish a 100+ paper index.
@@ -428,10 +450,16 @@ def screen(papers, use_ai=True, max_papers=30):
     if use_ai and not key:
         raise RuntimeError("OpenAI API key missing: refusing to publish unreviewed issue")
     judged={}
+    cached_assessments=cached_assessments or {}
+    for p in papers:
+        ai=cached_assessments.get(str(p.get("id")))
+        if isinstance(ai,dict) and all(isinstance(ai.get(k),bool) for k in ("in_scope","soft_matter","quantum_materials")) and type(ai.get("score")) is int and 0<=ai["score"]<=100:
+            judged[str(p["id"])]=ai
+    fresh=[p for p in papers if str(p.get("id")) not in judged]
     unscored=[]
     if key:
-        for k in range(0,len(papers),5):
-            subset=papers[k:k+5]
+        for k in range(0,len(fresh),5):
+            subset=fresh[k:k+5]
             pending=subset[:]
             # Retry only missing papers: never discard successful assessments.
             for attempt in range(3):
@@ -462,6 +490,8 @@ def screen(papers, use_ai=True, max_papers=30):
                     unscored.append(pid)
                     print(f"WARNING: paper {pid} could not be scored; excluding rather than fabricating a score")
         print(f"AI scored {len(judged)}/{len(papers)} candidates; unscored={unscored}")
+    if key and unscored:
+        raise RuntimeError(f"AI assessments incomplete ({len(unscored)} papers); keep previous issue intact")
     initial=[]
     for p in papers:
         ai=judged.get(str(p.get("id")))
@@ -469,7 +499,18 @@ def screen(papers, use_ai=True, max_papers=30):
             try:score=max(0,min(100,int(ai["score"])))
             except (TypeError,ValueError,KeyError):
                 raise ValueError("Missing AI score for "+str(p.get("id")))
-            ok=(ai.get("in_scope") is True and score>=55)
+            p["_ai_assessment"]=dict(ai)
+            p["soft_matter"]=ai["soft_matter"]
+            p["quantum_materials"]=ai["quantum_materials"]
+            p["research_type"]=ai.get("research_type","other")
+            threshold=ARXIV_MIN_SCORE if p.get("type")=="arXiv" else 55
+            scope_ok=ai.get("in_scope") is True and not ai["soft_matter"]
+            focus_ok=p.get("type")!="arXiv" or (ai["quantum_materials"] and p.get("arxiv_version")==1 and p.get("primary_category") not in ("cond-mat.soft","cond-mat.quant-gas"))
+            ok=scope_ok and focus_ok and score>=threshold
+            p["screening_decision"]=("first_pass_selected" if ok else
+                "soft_matter" if ai["soft_matter"] else
+                "out_of_scope" if not scope_ok else
+                "arxiv_focus_or_version" if not focus_ok else "below_score_threshold")
             p["physics_advance"]=str(ai.get("physics_advance") or "")[:260]
             p["ai_in_scope"]=ai.get("in_scope") is True
             p["relevance_reason"]=str(ai.get("reason") or "")[:240]
@@ -507,8 +548,14 @@ def screen(papers, use_ai=True, max_papers=30):
         for p in kept[:min(3,len(kept))]:p["feature_candidate"]=True
     if len(kept)>max_papers:
         kept=sorted(kept,key=lambda p:p["relevance_score"],reverse=True)[:max_papers]
+    kept_ids={p["id"] for p in kept}
+    for p in papers:
+        if p["id"] in kept_ids:p["screening_decision"]="selected"
+        elif p.get("screening_decision")=="first_pass_selected":
+            p["screening_decision"]="global_editorial_rejected" if p in initial else "clear_non_cm_title"
     return kept, {"scanned":len(papers),"first_pass_selected":len(initial),
                   "selected":len(kept),"rejected":len(papers)-len(kept),
-                  "ai_assessed":len(judged),"ai_unscored":len(unscored),
+                  "ai_assessed":len(judged),"ai_cached":len(judged)-len(fresh),"ai_unscored":len(unscored),
                   "global_editorial":bool(key),
                   "field_scope_excluded":dropped_for_scope}
+

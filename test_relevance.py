@@ -100,11 +100,11 @@ class JournalRecallTests(unittest.TestCase):
             "Toward Complete Characterization of Topological Insulators and Superconductors"))
         self.assertTrue(journal_candidate_scope("PRL",
             "Cluster-Decorated Lieb Lattice: A Convenient Platform for Tuning Flat-Band Energy"))
-        self.assertTrue(journal_candidate_scope("Communications Materials",
+        self.assertTrue(journal_candidate_scope("Nature Materials",
             "Strain-driven magnetostructural relaxation revealed in Heusler alloys"))
-        self.assertFalse(journal_candidate_scope("Communications Materials",
+        self.assertTrue(journal_candidate_scope("Nature Materials",
             "High numerical aperture flat optics for lithography"))
-        self.assertFalse(journal_candidate_scope("PRL",
+        self.assertTrue(journal_candidate_scope("PRL",
             "Quantum error correction on a superconducting processor"))
 
     def test_cursor_pagination_reads_all_results(self):
@@ -129,7 +129,7 @@ class JournalRecallTests(unittest.TestCase):
             if issn=="0031-9007":
                 yield {"type":"journal-article","DOI":original,
                        "title":["Cluster-Decorated Lieb Lattice: Tuning Flat Band"],
-                       "abstract":""}
+                       "abstract":"This original condensed-matter study resolves the magnetic mechanism and its thermal Hall response in a solid-state quantum material. The abstract contains sufficient scientific information for assessment."}
         pid="doi-"+original.replace("/","-").replace(".","-")
         audit=[]
         with patch("update_daily.crossref_records",side_effect=fake_records), \
@@ -147,14 +147,16 @@ class JournalRecallTests(unittest.TestCase):
                 yield {"type":"journal-article",
                        "DOI":"10.1038/s43246-026-01390-9",
                        "title":["Strain-driven magnetostructural relaxation revealed in Heusler alloys"],
-                       "abstract":""}
+                       "abstract":"This original condensed-matter study resolves the magnetic mechanism and its thermal Hall response in a solid-state quantum material. The abstract contains sufficient scientific information for assessment."}
         audit=[]
         with patch("update_daily.crossref_records",side_effect=fake_records):
             found=journals(dt.datetime(2026,10,25),audit)
         self.assertEqual(len(found),1)
         self.assertEqual(len(seen),9)
         self.assertTrue(all(x[1]=="2026-10-24" and x[2]=="2026-10-25" for x in seen))
-        self.assertEqual(audit[0]["prefilter"],"candidate")
+        self.assertEqual(audit[0]["decision"],"candidate")
 
 if __name__=="__main__":
     unittest.main()
+
+

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Restore full author bibliographies for the current curated issue."""
-import concurrent.futures, datetime, json, re, time, urllib.parse, urllib.request
+import concurrent.futures, datetime, json, os, re, time, urllib.parse, urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -43,7 +43,7 @@ def arxiv_authors(papers):
         except Exception as exc:print('arXiv author fetch:',str(exc)[:130])
     return results
 def main():
-    date=datetime.datetime.now(ZoneInfo('America/Los_Angeles')).date().isoformat()
+    date=os.getenv('ISSUE_DATE') or datetime.datetime.now(ZoneInfo('America/Los_Angeles')).date().isoformat()
     path=ROOT/'issues'/(date+'.json')
     if not path.exists():return
     issue=json.loads(path.read_text(encoding='utf8'))
@@ -58,3 +58,4 @@ def main():
     path.write_text(json.dumps(issue,ensure_ascii=False,indent=2),encoding='utf8')
     print('Bibliography refreshed:',len(papers),'papers; arXiv records:',len(arxiv))
 if __name__=='__main__':main()
+

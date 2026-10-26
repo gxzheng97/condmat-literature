@@ -6,6 +6,15 @@ on:
     - cron: '0 8 * * *'
       timezone: 'America/Los_Angeles'
   workflow_dispatch:
+    inputs:
+      date:
+        description: 'Issue date YYYY-MM-DD; blank means today in Los Angeles'
+        required: false
+        type: string
+      rescreen:
+        description: 'Reassess every candidate under the current rules'
+        type: boolean
+        default: false
 permissions:
   contents: write
   pages: write
@@ -27,7 +36,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Validate physics relevance screen
-        run: python -m unittest -q test_relevance
+        run: python -m unittest -q test_relevance test_pipeline
       - name: Check AI semantic screening configuration
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -81,6 +90,8 @@ jobs:
           PY
       - name: Update daily literature
         env:
+          ISSUE_DATE: ${{ inputs.date }}
+          RESCREEN: ${{ inputs.rescreen }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python update_daily.py
       - name: Re-screen October 23 archive once
@@ -118,24 +129,25 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
       - name: Validate daily publication size and AI completion
+        env:
+          ISSUE_DATE: ${{ inputs.date }}
         run: |
           python - <<'PY'
-          import json
+          import json, os
           from pathlib import Path
           from datetime import datetime
           from zoneinfo import ZoneInfo
-          day=datetime.now(ZoneInfo("America/Los_Angeles")).date().isoformat()
+          from update_daily import validate_issue
+          day=os.getenv("ISSUE_DATE") or datetime.now(ZoneInfo("America/Los_Angeles")).date().isoformat()
           path=Path("issues")/(day+".json")
-          if path.exists():
-              issue=json.loads(path.read_text(encoding="utf-8"))
-              n=len(issue.get("papers",[]))
-              assert n<=30, f"Refusing to publish an uncurated {n}-paper index"
-              if day >= "2026-10-24":
-                  stats=issue.get("stats",{})
-                  assert stats.get("global_editorial"), "Missing global editorial review; refusing publication"
-              print(f"Editorial release gate passed: {n} papers")
+          assert path.exists(), "Today's issue was not generated"
+          issue=json.loads(path.read_text(encoding="utf-8"))
+          validate_issue(issue)
+          print(f"Editorial release gate passed: {len(issue['papers'])} papers")
           PY
       - name: Refresh complete author bibliographies
+        env:
+          ISSUE_DATE: ${{ inputs.date }}
         run: python fill_authors.py
       - name: Generate bilingual PDF reports
         run: |
@@ -163,3 +175,4 @@ jobs:
           path: .
       - id: deployment
         uses: actions/deploy-pages@v4
+
