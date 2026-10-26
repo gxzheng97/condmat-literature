@@ -32,6 +32,12 @@ def paper(**changes):
     obj.update(changes)
     return obj
 
+def published_metadata(journal,doi,metadata=None):
+    if metadata is not None:
+        metadata.update(article_kind="Research Article",publication_status="published",
+            publication_date="2026-10-26",publication_evidence={"source":"publisher","url":"https://example.test/"+doi})
+    return ""
+
 class IntakeTests(unittest.TestCase):
     def listing(self,day="26 October 2026"):
         return f"""<h3>Showing new listings for Monday, {day}</h3>
@@ -83,7 +89,7 @@ class IntakeTests(unittest.TestCase):
         def rows(*args):
             yield {"type":"journal-article","DOI":"10.1038/example","title":[title]}
         audit=[]
-        with patch.object(u,"ISSN",{"Nature":"0028-0836"}),patch.object(u,"crossref_records",side_effect=rows),patch.object(u,"metadata_abstract",return_value=ABSTRACT) as metadata:
+        with patch.object(u,"ISSN",{"Nature":"0028-0836"}),patch.object(u,"crossref_records",side_effect=rows),patch.object(u,"metadata_abstract",return_value=ABSTRACT) as metadata,patch.object(u,"publisher_abstract",side_effect=published_metadata):
             found=u.journals(dt.datetime(2026,10,26),audit)
         metadata.assert_called_once_with("10.1038/example")
         self.assertEqual(len(found),1)
@@ -91,12 +97,12 @@ class IntakeTests(unittest.TestCase):
     def test_missing_abstract_deferred_then_retried(self):
         pending=[];audit=[]
         row={"type":"journal-article","DOI":"10.1038/example","title":["Anderson localization"]}
-        with patch.object(u,"ISSN",{"Nature":"0028-0836"}),patch.object(u,"crossref_records",return_value=iter([row])),patch.object(u,"metadata_abstract",return_value=""),patch.object(u,"publisher_abstract",return_value=""):
+        with patch.object(u,"ISSN",{"Nature":"0028-0836"}),patch.object(u,"crossref_records",return_value=iter([row])),patch.object(u,"metadata_abstract",return_value=""),patch.object(u,"publisher_abstract",side_effect=published_metadata):
             self.assertEqual(u.journals(dt.datetime(2026,10,26),audit,pending=pending),[])
         self.assertEqual(audit[0]["decision"],"pending_abstract")
         self.assertEqual(len(pending),1)
-        with patch.object(u,"ISSN",{"Nature":"0028-0836"}),patch.object(u,"crossref_records",return_value=iter([])),patch.object(u,"metadata_abstract",return_value=ABSTRACT):
-            self.assertEqual(len(u.journals(dt.datetime(2026,10,27),pending=pending)),1)
+        with patch.object(u,"ISSN",{"Nature":"0028-0836"}),patch.object(u,"crossref_records",return_value=iter([])),patch.object(u,"metadata_abstract",return_value=ABSTRACT),patch.object(u,"publisher_abstract",side_effect=published_metadata):
+            self.assertEqual(len(u.journals(dt.datetime(2026,10,26),pending=pending)),1)
 
     def test_matching_preprint_requires_correct_doi_or_exact_title(self):
         def feed(doi,title):
@@ -109,6 +115,25 @@ class IntakeTests(unittest.TestCase):
             self.assertTrue(source.endswith("v2"))  # Journal metadata, not arXiv intake.
         with patch.object(u,"fetch",return_value=feed("","A different paper")):
             self.assertEqual(u.arxiv_metadata_abstract("10.1103/right","Exact paper title"),("",""))
+
+    def test_publisher_news_views_is_not_original_research(self):
+        def recover(journal,doi,metadata=None):
+            metadata["article_kind"]="News & Views"
+            return ABSTRACT
+        row={"type":"journal-article","DOI":"10.1038/example","title":["A simple twist to altermagnetism"]}
+        audit=[];pending=[]
+        with patch.object(u,"ISSN",{"Nature Physics":"1745-2473"}),patch.object(u,"crossref_records",return_value=iter([row])),patch.object(u,"publisher_abstract",side_effect=recover),patch.object(u,"metadata_abstract") as metadata:
+            found=u.journals(dt.datetime(2026,10,26),audit,pending=pending)
+        self.assertFalse(found)
+        self.assertFalse(pending)
+        metadata.assert_not_called()
+        self.assertEqual(audit[0]["decision"],"non_original_article")
+        parser=u._PublisherAbstractParser()
+        parser.feed('<meta name="citation_article_type" content="News &amp; Views">')
+        self.assertEqual(parser.metadata["citation_article_type"],"News & Views")
+    def test_corrections_are_document_types_not_subject_keywords(self):
+        self.assertTrue(u.is_non_original({"title":"Author Correction: Quantum magnetism"}))
+        self.assertFalse(u.is_non_original({"title":"Quantum correction to electronic transport","article_kind":"Article"}))
 
 class ScopeTests(unittest.TestCase):
     def run_screen(self,p,ai):
@@ -195,6 +220,115 @@ class RegenerationTests(unittest.TestCase):
         issue=dict(date=p["announcement_date"],screening_version=u.SCREENING_VERSION,
             sources_complete=True,papers=[p],stats=dict(global_editorial=True,scanned=1,ai_assessed=1,ai_unscored=0))
         with self.assertRaises(AssertionError):u.validate_issue(issue)
+
+    def test_historical_raw_snapshot_survives_policy_change(self):
+        with tempfile.TemporaryDirectory(dir=Path(__file__).parent) as folder:
+            root=Path(folder);(root/"audits").mkdir()
+            day=(dt.datetime.now(ZoneInfo("America/Los_Angeles")).date()-dt.timedelta(days=1)).isoformat()
+            p=paper(announcement_date=day)
+            sources=[{"source":name,"status":"ok"} for name in [*u.ISSN,"arXiv"]]
+            snapshot={"date":day,"screening_version":"previous-policy","sources":sources,"candidates":[p]}
+            (root/"audits"/(day+".json")).write_text(json.dumps(snapshot),encoding="utf8")
+            with patch.object(u,"ROOT",root),patch.object(u,"arxiv") as live,patch.object(u,"screen",side_effect=self.screen) as screen,patch.object(u,"enrich"):
+                issue=u.main(["--date",day,"--rescreen"])
+                live.assert_not_called()
+                self.assertEqual(screen.call_args.kwargs["cached_assessments"],{})
+                self.assertEqual(issue["date"],day)
+                self.assertEqual(issue["screening_version"],u.SCREENING_VERSION)
+
+    def test_same_work_previously_pushed_as_journal_is_not_pushed_as_arxiv(self):
+        with tempfile.TemporaryDirectory(dir=Path(__file__).parent) as folder:
+            root=Path(folder);(root/"issues").mkdir()
+            today=dt.datetime.now(ZoneInfo("America/Los_Angeles")).date()
+            old=paper(id="old-journal",type="Journal",doi="10.1103/same-work",title="An older published title")
+            (root/"issues"/((today-dt.timedelta(days=1)).isoformat()+".json")).write_text(json.dumps({"papers":[old]}),encoding="utf8")
+            current=paper(journal_doi="https://doi.org/10.1103/same-work",title="A changed preprint title")
+            def harvest(now,audit):
+                audit.append({"arxiv_id":current["arxiv_id"],"decision":"candidate"})
+                return [current]
+            with patch.object(u,"ROOT",root),patch.object(u,"arxiv",side_effect=harvest),patch.object(u,"journals",side_effect=self.successful_sources),patch.object(u,"screen",side_effect=self.screen) as screen,patch.object(u,"enrich"):
+                issue=u.main([])
+            self.assertFalse(issue["papers"])
+            self.assertEqual(screen.call_args.args[0],[])
+            audit=json.loads((root/"audits"/(today.isoformat()+".json")).read_text())
+            self.assertEqual(audit["arxiv_candidates"][0]["decision"],"duplicate_work")
+
+class FormalPublicationTests(unittest.TestCase):
+    def journal(self,**changes):
+        p=dict(id="doi-example",type="Journal",journal="PRL",doi="10.1103/example",
+            title="New magnetic correlations",abstract=ABSTRACT,article_kind="Letter",
+            publication_status="published",publication_date="2026-10-26",
+            publication_evidence={"source":"APS RSS","volume":"137","article_number":"186001"})
+        p.update(changes);return p
+    def test_only_positive_research_document_types(self):
+        for kind in ("Essay","Reply","Comment","Review Article","News & Views","Books & Arts","Editorial","Perspective"):
+            self.assertTrue(u.is_non_original({"title":"A title","article_kind":kind}),kind)
+        for kind in ("Article","Research Article","Letter","Research Letter","Brief Communication"):
+            self.assertFalse(u.is_non_original({"title":"A title","article_kind":kind}),kind)
+    def test_reply_and_comment_titles_blocked_without_publisher_type(self):
+        for title in ('Reply to “Comment on superconductivity”','Comment on quantum magnetism','Reply: a theoretical model'):
+            self.assertTrue(u.is_non_original({"title":title}),title)
+        self.assertFalse(u.is_non_original({"title":"Quantum correction to transport"}))
+    def test_acceptance_date_does_not_establish_formal_publication(self):
+        p=self.journal(publication_status="accepted",crossref_online_date=[[2026,10,26]])
+        self.assertEqual(u.journal_eligibility(p,"2026-10-26"),"accepted_unpublished")
+        p=self.journal(publication_status="unverified",publication_evidence={},crossref_online_date=[[2026,10,26]])
+        self.assertEqual(u.journal_eligibility(p,"2026-10-26"),"publication_not_verified")
+    def test_formal_publication_must_be_on_issue_day(self):
+        self.assertEqual(u.journal_eligibility(self.journal(),"2026-10-26"),"candidate")
+        self.assertEqual(u.journal_eligibility(self.journal(publication_date="2026-10-25"),"2026-10-26"),"not_published_today")
+        self.assertEqual(u.journal_eligibility(self.journal(publication_date="2026-10-27"),"2026-10-26"),"not_published_today")
+    def test_aps_feed_requires_final_citation_and_published_label(self):
+        xml='''<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:p="http://prismstandard.org/namespaces/basic/2.0/">
+        <item><title>Formal paper</title><description>Published Mon Oct 26, 2026</description><dc:type>article</dc:type><p:doi>10.1103/formal</p:doi><p:volume>137</p:volume><p:startingPage>186001</p:startingPage><p:publicationDate>2026-10-26T10:00:00Z</p:publicationDate></item>
+        <item><title>Accepted paper</title><description>Accepted 26 October 2026</description><dc:type>article</dc:type><p:doi>10.1103/accepted</p:doi><p:volume>137</p:volume><p:startingPage>186002</p:startingPage><p:publicationDate>2026-10-26T10:00:00Z</p:publicationDate></item>
+        </rdf:RDF>'''
+        with patch.object(u,"fetch",return_value=xml):
+            records=u.aps_publications("PRL")
+        self.assertEqual(set(records),{"10.1103/formal"})
+        self.assertEqual(records["10.1103/formal"]["publication_status"],"published")
+    def test_accepted_crossref_and_reply_never_enter_abstract_queue(self):
+        rows=[
+            {"type":"journal-article","DOI":"10.1103/accepted","title":["Origin of electride states and their responses under pressure"],"published-online":{"date-parts":[[2026,10,26]]}},
+            {"type":"journal-article","DOI":"10.1103/reply","title":["Reply to a Comment"]}]
+        audit=[];pending=[]
+        with patch.object(u,"ISSN",{"PRL":"0031-9007"}),patch.object(u,"crossref_records",return_value=iter(rows)),patch.object(u,"aps_publications",return_value={}),patch.object(u,"metadata_abstract") as metadata:
+            found=u.journals(dt.datetime(2026,10,26),audit,pending=pending)
+        self.assertFalse(found);self.assertFalse(pending)
+        metadata.assert_not_called()
+        self.assertEqual([a["decision"] for a in audit],["publication_not_verified","non_original_article"])
+    def test_essay_is_excluded_even_without_an_abstract(self):
+        p=self.journal(title="The Selfish Gene, 50 years on — it’s time for an update",article_kind="Essay",abstract="")
+        self.assertEqual(u.journal_eligibility(p,"2026-10-26"),"non_original_article")
+    def test_publisher_status_overrides_crossref_online_date(self):
+        row={"type":"journal-article","DOI":"10.1038/example","title":["Physical correlations"],"published-online":{"date-parts":[[2026,10,26]]}}
+        def accepted(journal,doi,metadata):
+            metadata.update(article_kind="Article",publication_status="accepted",publication_date="2026-10-26",publication_evidence={"source":"publisher"})
+            return ABSTRACT
+        audit=[];pending=[]
+        with patch.object(u,"ISSN",{"Nature":"0028-0836"}),patch.object(u,"crossref_records",return_value=iter([row])),patch.object(u,"publisher_abstract",side_effect=accepted),patch.object(u,"metadata_abstract") as metadata:
+            self.assertFalse(u.journals(dt.datetime(2026,10,26),audit,pending=pending))
+        self.assertEqual(audit[0]["decision"],"accepted_unpublished")
+        self.assertFalse(pending);metadata.assert_not_called()
+    def test_rss_discovery_recovers_a_paper_with_an_earlier_crossref_date(self):
+        record=self.journal()
+        rss={record["doi"]:{"DOI":record["doi"],"type":"journal-article","title":[record["title"]],
+            **{k:record[k] for k in ("article_kind","publication_status","publication_date","publication_evidence")}}}
+        with patch.object(u,"ISSN",{"PRL":"0031-9007"}),patch.object(u,"crossref_records",return_value=iter([])),patch.object(u,"aps_publications",return_value=rss),patch.object(u,"metadata_abstract",return_value=ABSTRACT):
+            found=u.journals(dt.datetime(2026,10,26))
+        self.assertEqual(len(found),1)
+        self.assertEqual(found[0]["publication_date"],"2026-10-26")
+    def test_cross_source_aliases_deduplicate_doi_arxiv_id_and_title(self):
+        journal=self.journal(related_arxiv_id="2610.12345")
+        preprint=paper(journal_doi="https://doi.org/10.1103/example",title="A changed preprint title")
+        self.assertTrue(u.paper_aliases(journal)&u.paper_aliases(preprint))
+        self.assertIn("doi:10.1103/example",u.paper_aliases(preprint))
+        self.assertTrue(u.paper_aliases(journal)&u.paper_aliases(paper(title=journal["title"])))
+    def test_next_day_missing_abstract_is_not_backfilled(self):
+        pending=[self.journal(abstract="",abstract_status="pending_abstract")]
+        with patch.object(u,"ISSN",{"PRL":"0031-9007"}),patch.object(u,"crossref_records",return_value=iter([])),patch.object(u,"aps_publications",return_value={}),patch.object(u,"metadata_abstract") as metadata:
+            self.assertFalse(u.journals(dt.datetime(2026,10,27),pending=pending))
+        metadata.assert_not_called();self.assertFalse(pending)
 
 if __name__=="__main__":
     unittest.main()
