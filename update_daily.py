@@ -16,10 +16,7 @@ NS={"a":"http://www.w3.org/2005/Atom","x":"http://arxiv.org/schemas/atom"}
 ISSN={"Science":"0036-8075","Science Advances":"2375-2548","Nature":"0028-0836",
 "Nature Physics":"1745-2473","Nature Materials":"1476-1122",
 "Nature Communications":"2041-1723","PRL":"0031-9007","PRX":"2160-3308",
-"PNAS":"0027-8424",
-"Communications Materials":"2662-4443",
-"Communications Physics":"2399-3650",
-"npj Quantum Materials":"2397-4648"}
+"PNAS":"0027-8424"}
 TOPICS=[("Superconductivity",r"superconduct|josephson|pairing|vortex"),
 ("Thermal & Thermoelectric",r"thermal|thermoelectric|seebeck|nernst|heat capacity|elastocaloric"),
 ("Magnetism",r"magnet|spin|magnon|skyrmion|kagome|altermagnet"),
@@ -73,8 +70,6 @@ def arxiv():
 # A broad collection gate, NOT an inclusion decision. All papers entering
 # the digest still need an explicit AI in_scope and relevance score.
 def journal_candidate_scope(name, title, abstract=""):
- if CLEAR_NON_CM_TITLE.search(title):
-  return False
  # PRL and PRX publish across physics. Let the AI inspect every original
  # research paper: title keywords alone miss real condensed-matter theory.
  if name in ("PRL", "PRX"):
@@ -296,7 +291,7 @@ def enrich(records):
     "result_en","result_zh","future_en","future_zh","tier",
     "tier_reason_en","tier_reason_zh"],"additionalProperties":False}}},
    "required":["papers"],"additionalProperties":False}
-  payload={"model":"gpt-6-luna","reasoning":{"effort":"medium"},
+  payload={"model":"gpt-4.1-mini",
      "input":[{"role":"system","content":instructions},
      {"role":"user","content":json.dumps(docs,ensure_ascii=False)}],
      "text":{"format":{"type":"json_schema","name":"paper_notes","strict":True,
