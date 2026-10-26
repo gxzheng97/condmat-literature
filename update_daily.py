@@ -73,7 +73,7 @@ def journal_candidate_scope(name, title, abstract=""):
  # PRL and PRX publish across physics. Let the AI inspect every original
  # research paper: title keywords alone miss real condensed-matter theory.
  if name in ("PRL", "PRX"):
-  return True
+  return not CLEAR_NON_CM_TITLE.search(title)
  return has_substantive_cm_evidence({"title":title,"abstract":abstract})
 
 def crossref_records(issn, first, last, page_size=200):
