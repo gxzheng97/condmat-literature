@@ -340,8 +340,7 @@ def journals(today,audit=None,skip_ids=None,source_status=None,pending=None):
 def enrich(records):
  key=os.getenv("OPENAI_API_KEY")
  if not key:return
- for k in range(0,len(records),5):
-  batch=records[k:k+5]
+ def enrich_batch(batch):
   docs=[{"id":p["id"],"title":p["title"],"abstract":p["abstract"][:2400],"featured":p.get("level")=="Feature","type":p["type"],
          "journal":p["journal"],"published":bool(p.get("journal_ref"))} for p in batch]
   instructions=("Create faithful bilingual scholarly literature notes using only titles and abstracts. "
@@ -393,6 +392,9 @@ def enrich(records):
      p["tier"]=obj["tier"]
      for field in ("tier_reason_en","tier_reason_zh"):p[field]=obj.get(field,"")
   except Exception as ex:print("AI enrichment:",str(ex))
+ with ThreadPoolExecutor(max_workers=3) as pool:
+  list(pool.map(enrich_batch,[records[k:k+5] for k in range(0,len(records),5)]))
+
 def screening_config():
  return {"arxiv_min_score":ARXIV_MIN_SCORE,"journal_min_score":55,"max_papers":30,
    "arxiv_versions":[1],"exclude_soft_matter":True,"journals":list(ISSN),

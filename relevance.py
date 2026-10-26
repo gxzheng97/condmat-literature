@@ -11,6 +11,7 @@ import re
 import urllib.request
 import urllib.error
 import time
+from concurrent.futures import ThreadPoolExecutor
 
 ARXIV_MIN_SCORE = 70
 
@@ -458,38 +459,40 @@ def screen(papers, use_ai=True, max_papers=30, cached_assessments=None):
     fresh=[p for p in papers if str(p.get("id")) not in judged]
     unscored=[]
     if key:
-        for k in range(0,len(fresh),5):
-            subset=fresh[k:k+5]
+        def assess_subset(item):
+            k,subset=item
+            completed_all={}
             pending=subset[:]
-            # Retry only missing papers: never discard successful assessments.
             for attempt in range(3):
-                if not pending:
-                    break
+                if not pending:break
                 try:
                     completed=_ai_batch(pending,key)
-                    judged.update(completed)
+                    completed_all.update(completed)
                     pending=[p for p in pending if str(p["id"]) not in completed]
                 except Exception as exc:
-                    print(f"AI batch {k//5+1} attempt {attempt+1}: {exc}")
-                if pending and attempt<2:
-                    time.sleep(2**attempt*4)
-            # A failed batch is split into single-paper requests.
+                    print(f"AI batch {k+1} attempt {attempt+1}: {exc}",flush=True)
+                if pending and attempt<2:time.sleep(2**attempt*4)
             for p in pending:
                 pid=str(p["id"])
                 for attempt in range(3):
                     try:
                         one=_ai_batch([p],key)
                         if pid in one:
-                            judged[pid]=one[pid]
+                            completed_all[pid]=one[pid]
                             break
                     except Exception as exc:
-                        print(f"AI single-paper retry for {pid}: {exc}")
-                    if attempt<2:
-                        time.sleep(2**attempt*4)
-                if pid not in judged:
-                    unscored.append(pid)
-                    print(f"WARNING: paper {pid} could not be scored; excluding rather than fabricating a score")
-        print(f"AI scored {len(judged)}/{len(papers)} candidates; unscored={unscored}")
+                        print(f"AI single-paper retry for {pid}: {exc}",flush=True)
+                    if attempt<2:time.sleep(2**attempt*4)
+            missing=[str(p["id"]) for p in subset if str(p["id"]) not in completed_all]
+            print(f"AI batch {k+1}: {len(completed_all)}/{len(subset)} assessed",flush=True)
+            return completed_all,missing
+        batches=list(enumerate([fresh[k:k+5] for k in range(0,len(fresh),5)]))
+        # Independent batches share no mutable results; aggregate in input order.
+        with ThreadPoolExecutor(max_workers=3) as pool:
+            for completed,missing in pool.map(assess_subset,batches):
+                judged.update(completed)
+                unscored.extend(missing)
+        print(f"AI scored {len(judged)}/{len(papers)} candidates; unscored={unscored}",flush=True)
     if key and unscored:
         raise RuntimeError(f"AI assessments incomplete ({len(unscored)} papers); keep previous issue intact")
     initial=[]

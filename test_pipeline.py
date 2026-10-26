@@ -144,6 +144,17 @@ class ScopeTests(unittest.TestCase):
         self.assertEqual(stats["ai_cached"],1)
         self.assertEqual(len(kept),1)
 
+    def test_parallel_batches_preserve_all_individual_assessments(self):
+        papers=[paper(id="p"+str(i)) for i in range(12)]
+        def assess(ps,key):
+            return {p["id"]:assessment(id=p["id"]) for p in ps}
+        with patch.dict(os.environ,{"OPENAI_API_KEY":"test"}),patch.object(r,"_ai_batch",side_effect=assess) as batch,patch.object(r,"_ai_shortlist",side_effect=lambda ps,*a,**kw:([p["id"] for p in ps],[])):
+            kept,stats=r.screen(papers)
+        self.assertEqual([p["id"] for p in kept],[p["id"] for p in papers])
+        self.assertEqual(sorted(len(c.args[0]) for c in batch.call_args_list),[2,5,5])
+        self.assertEqual(stats["ai_assessed"],12)
+        self.assertEqual(stats["ai_unscored"],0)
+
 class RegenerationTests(unittest.TestCase):
     def successful_sources(self,today,audit,skip,sources,pending):
         sources.extend({"source":name,"status":"ok","fetched":0} for name in u.ISSN)
