@@ -143,7 +143,7 @@ class JournalRecallTests(unittest.TestCase):
         seen=[]
         def fake_records(issn,first,last):
             seen.append((issn,first,last))
-            if issn=="2662-4443":
+            if issn=="0031-9007":
                 yield {"type":"journal-article",
                        "DOI":"10.1038/s43246-026-01390-9",
                        "title":["Strain-driven magnetostructural relaxation revealed in Heusler alloys"],
@@ -152,7 +152,7 @@ class JournalRecallTests(unittest.TestCase):
         with patch("update_daily.crossref_records",side_effect=fake_records):
             found=journals(dt.datetime(2026,10,25),audit)
         self.assertEqual(len(found),1)
-        self.assertEqual(len(seen),12)
+        self.assertEqual(len(seen),9)
         self.assertTrue(all(x[1]=="2026-10-24" and x[2]=="2026-10-25" for x in seen))
         self.assertEqual(audit[0]["prefilter"],"candidate")
 
