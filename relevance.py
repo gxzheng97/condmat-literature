@@ -179,7 +179,7 @@ def _ai_batch(papers, key):
       {"id":p.get("id"),"title":p.get("title"),"abstract":(p.get("abstract") or p.get("summary_en") or "")[:3300]}
       for p in papers
     ]
-    payload={"model":"gpt-4.1-mini",
+    payload={"model":"gpt-6-luna",
              "input":[{"role":"system","content":rubric},
                       {"role":"user","content":json.dumps(docs,ensure_ascii=False)}],
              "text":{"format":{"type":"json_schema","name":"paper_assessments","strict":True,
@@ -357,7 +357,7 @@ def _ai_shortlist(papers, key, max_papers=30):
     docs = [{"id":p.get("id"),"title":p.get("title"),
              "abstract":(p.get("abstract") or p.get("summary_en") or "")[:1800],
              "journal":p.get("journal")} for p in papers]
-    payload = {"model":"gpt-4.1-mini",
+    payload = {"model":"gpt-6-luna",
       "input":[{"role":"system","content":instructions},
                {"role":"user","content":json.dumps(docs,ensure_ascii=False)}],
       "text":{"format":{"type":"json_schema","name":"global_shortlist","strict":True,
