@@ -5,6 +5,8 @@ on:
   schedule:
     - cron: '0 8 * * *'
       timezone: 'America/Los_Angeles'
+    - cron: '17,47 8-12 * * *'
+      timezone: 'America/Los_Angeles'
   workflow_dispatch:
     inputs:
       date:
@@ -21,7 +23,7 @@ permissions:
   id-token: write
 concurrency:
   group: condensed-matter-pages-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.event_name != 'schedule' }}
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -35,9 +37,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Check daily release freshness
+        id: freshness
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          ISSUE_DATE: ${{ inputs.date }}
+          RESCREEN: ${{ inputs.rescreen }}
+        run: python daily_release.py plan
       - name: Validate physics relevance screen
-        run: python -m unittest -q test_relevance test_pipeline
+        run: python -m unittest -q test_relevance test_pipeline test_daily_release
       - name: Check AI semantic screening configuration
+        if: steps.freshness.outputs.mode == 'generate'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
@@ -47,7 +57,7 @@ jobs:
             echo "::warning::AI semantic screening key missing. Add OPENAI_API_KEY in repository Actions secrets."
           fi
       - name: Smoke test live AI semantic screening
-        if: github.event_name != 'schedule'
+        if: github.event_name != 'schedule' && steps.freshness.outputs.mode == 'generate'
         continue-on-error: true
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -89,8 +99,9 @@ jobs:
           print("OpenAI API connection and scientific-scope gate: OK")
           PY
       - name: Update daily literature
+        if: steps.freshness.outputs.mode == 'generate'
         env:
-          ISSUE_DATE: ${{ inputs.date }}
+          ISSUE_DATE: ${{ steps.freshness.outputs.date }}
           RESCREEN: ${{ inputs.rescreen }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python update_daily.py
@@ -129,8 +140,9 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
       - name: Validate daily publication size and AI completion
+        if: steps.freshness.outputs.mode != 'current'
         env:
-          ISSUE_DATE: ${{ inputs.date }}
+          ISSUE_DATE: ${{ steps.freshness.outputs.date }}
         run: |
           python - <<'PY'
           import json, os
@@ -146,6 +158,7 @@ jobs:
           print(f"Editorial release gate passed: {len(issue['papers'])} papers")
           PY
       - name: Save validated list before PDF rendering
+        if: steps.freshness.outputs.mode != 'current'
         run: |
           python build.py
           git config user.name 'github-actions[bot]'
@@ -156,19 +169,22 @@ jobs:
             git push
           fi
       - name: Refresh complete author bibliographies
+        if: steps.freshness.outputs.mode != 'current'
         env:
-          ISSUE_DATE: ${{ inputs.date }}
+          ISSUE_DATE: ${{ steps.freshness.outputs.date }}
         run: python fill_authors.py
       - name: Generate bilingual PDF reports
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' && steps.freshness.outputs.mode != 'current'
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq fonts-noto-cjk
           python -m pip install -q weasyprint
           python make_reports.py
       - name: Build site
+        if: steps.freshness.outputs.mode != 'current'
         run: python build.py
       - name: Commit daily issue
+        if: steps.freshness.outputs.mode != 'current'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -181,12 +197,18 @@ jobs:
             git push
           fi
       - uses: actions/configure-pages@v5
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' && steps.freshness.outputs.mode != 'current'
       - uses: actions/upload-pages-artifact@v3
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' && steps.freshness.outputs.mode != 'current'
         with:
           path: .
       - id: deployment
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' && steps.freshness.outputs.mode != 'current'
         uses: actions/deploy-pages@v4
+      - name: Verify published daily issue
+        if: github.ref == 'refs/heads/main' && steps.freshness.outputs.mode != 'current'
+        env:
+          ISSUE_DATE: ${{ steps.freshness.outputs.date }}
+        run: python daily_release.py verify
+
 

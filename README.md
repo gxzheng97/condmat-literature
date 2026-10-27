@@ -33,3 +33,12 @@ Run `python -m unittest -q test_relevance test_pipeline`.
 
 The site is generated from `issues/*.json` and `site_template.html` with `python build.py`. Reports use `python make_reports.py` (WeasyPrint and Noto CJK fonts). GitHub Pages source: GitHub Actions.
 
+
+
+## Scheduled publication and recovery
+
+The primary schedule is 08:00 America/Los_Angeles. Additional scheduled attempts run at minutes 17 and 47 from 08:00 through 12:00. GitHub can delay or omit scheduled triggers; these are redundant attempts, not an exact-time delivery guarantee.
+
+Scheduled runs compare the saved daily issue with the live website. If both match, all generation/deployment work is skipped. If today's validated JSON exists but is not yet live, the run resumes publication without repeating paid scientific screening. A missing/invalid issue is generated normally. Overlapping scheduled retries wait rather than cancelling an active release.
+
+Every actual deployment checks the live website against the saved issue content. A failed verification fails the workflow rather than reporting publication as complete. Pushes and explicit manual runs continue to support deliberate regeneration.
