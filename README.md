@@ -37,7 +37,7 @@ The site is generated from `issues/*.json` and `site_template.html` with `python
 
 ## Scheduled publication and recovery
 
-The primary schedule is 08:00 America/Los_Angeles. Additional scheduled attempts run at minutes 17 and 47 from 08:00 through 12:00. GitHub can delay or omit scheduled triggers; these are redundant attempts, not an exact-time delivery guarantee.
+The primary schedule is 06:00 America/Los_Angeles, leaving three hours before the desired 09:00 publication deadline. Additional scheduled attempts run at minutes 17 and 47 from 06:00 through 12:00. The schedule follows Los Angeles daylight saving time. GitHub can delay or omit scheduled triggers; starting earlier provides extra time but does not guarantee publication before 09:00.
 
 Scheduled runs compare the saved daily issue with the live website. If both match, all generation/deployment work is skipped. If today's validated JSON exists but is not yet live, the run resumes publication without repeating paid scientific screening. A missing/invalid issue is generated normally. Overlapping scheduled retries wait rather than cancelling an active release.
 

@@ -3,9 +3,9 @@ on:
   push:
     branches: [main, codex/v1-quantum-materials-review]
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '0 6 * * *'
       timezone: 'America/Los_Angeles'
-    - cron: '17,47 8-12 * * *'
+    - cron: '17,47 6-12 * * *'
       timezone: 'America/Los_Angeles'
   workflow_dispatch:
     inputs:
