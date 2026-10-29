@@ -46,3 +46,23 @@ for url in [
             print("DATED_ARXIV_HTML",body[body.find("<h1"):body.find("<h1")+20000],flush=True)
     except Exception as exc:
         print("DATED_SOURCE_ERROR",url,type(exc).__name__,str(exc),flush=True)
+
+for url in [
+ "https://journals.aps.org/prl/recent",
+ "https://journals.aps.org/prl/abstract/10.1103/3x42-zb9r",
+ "https://feeds.aps.org/rss/prl.xml",
+ "https://feeds.aps.org/rss/recent/prl.xml?rss=1",
+]:
+    try:
+        req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0","Cache-Control":"no-cache"})
+        with urllib.request.urlopen(req,timeout=20) as response:
+            body=response.read(1000000).decode("utf8","replace")
+            print("FALLBACK_HTTP",url,response.status,{k:response.headers.get(k) for k in ["Date","Last-Modified","Age"]},flush=True)
+        if "feeds.aps" in url:
+            parsed=ET.fromstring(body)
+            print("FALLBACK_APS_DATES",dict(Counter(x.text for x in parsed.findall(".//{http://prismstandard.org/namespaces/basic/2.0/}publicationDate"))),flush=True)
+        else:
+            marker=body.find("Odd-Even")
+            print("FALLBACK_HTML",url,body[max(0,marker-1500):marker+7500] if marker>=0 else body[:3500],flush=True)
+    except Exception as exc:
+        print("FALLBACK_SOURCE_ERROR",url,type(exc).__name__,str(exc),flush=True)
