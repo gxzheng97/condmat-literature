@@ -28,3 +28,21 @@ for journal,slug in [("PRL","prl"),("PRX","prx")]:
                     break
     except Exception as exc:
         print("SOURCE_ERROR",journal,type(exc).__name__,str(exc),flush=True)
+
+for url in [
+ "https://feeds.aps.org/rss/recent/prl.xml?release_date=2026-10-30",
+ "https://arxiv.org/catchup/cond-mat/2026-10-28",
+ "https://arxiv.org/catchup/cond-mat/2026-10-29",
+]:
+    try:
+        req=urllib.request.Request(url,headers={"User-Agent":"CondMatLiteratureMonitor/1.0","Cache-Control":"no-cache"})
+        with urllib.request.urlopen(req,timeout=30) as response:
+            body=response.read().decode("utf8","replace")
+            print("DATED_SOURCE",url,response.status,{k:response.headers.get(k) for k in ["Date","Last-Modified","Age"]},flush=True)
+        if "aps.org" in url:
+            parsed=ET.fromstring(body)
+            print("DATED_APS_DATES",dict(Counter(x.text for x in parsed.findall(".//{http://prismstandard.org/namespaces/basic/2.0/}publicationDate"))),flush=True)
+        else:
+            print("DATED_ARXIV_HTML",body[body.find("<h1"):body.find("<h1")+20000],flush=True)
+    except Exception as exc:
+        print("DATED_SOURCE_ERROR",url,type(exc).__name__,str(exc),flush=True)
