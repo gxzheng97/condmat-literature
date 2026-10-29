@@ -1,5 +1,7 @@
 """Release recovery scenarios; no network or paid model calls."""
+import contextlib
 import copy
+import io
 import json
 from pathlib import Path
 import tempfile
@@ -29,8 +31,8 @@ class DailyReleaseTests(unittest.TestCase):
         with patch.object(release,"fetch",return_value=listing,create=True):
             result=self.plan(reader=lambda *args:copy.deepcopy(self.issue))
         self.assertEqual(result["mode"],"generate","A partial issue must not freeze out a later current announcement")
-    def plan(self,event="schedule",reader=None,validator=None,force=False,announcement_reader=None):
-        return release.plan_release(self.root,DAY,event,force,reader,validator or (lambda issue:None),announcement_reader)
+    def plan(self,event="schedule",reader=None,validator=None,force=False,announcement_reader=None,reuse_valid=False):
+        return release.plan_release(self.root,DAY,event,force,reader,validator or (lambda issue:None),announcement_reader,reuse_valid)
     def test_unchanged_pending_feed_skips_paid_screening_but_is_not_final(self):
         self.save()
         self.save_stale_arxiv_audit()
@@ -96,6 +98,36 @@ class DailyReleaseTests(unittest.TestCase):
         self.assertEqual(self.plan(event="push",reader=reader)["mode"],"generate")
         self.assertEqual(self.plan(event="workflow_dispatch",reader=reader)["mode"],"generate")
         self.assertEqual(self.plan(force=True,reader=reader)["mode"],"generate")
+
+    def test_cloud_trigger_skips_an_already_published_issue(self):
+        self.save()
+        result=self.plan(event="workflow_dispatch",reuse_valid=True,reader=lambda *args:self.issue)
+        self.assertEqual(result["mode"],"current")
+    def test_cloud_trigger_generates_a_missing_issue(self):
+        result=self.plan(event="workflow_dispatch",reuse_valid=True,reader=lambda *args:self.fail("No live read before generation"))
+        self.assertEqual(result["mode"],"generate")
+        self.assertEqual(result["reason"],"no_valid_issue_for_today")
+    def test_cloud_trigger_resumes_only_missing_deployment(self):
+        self.save()
+        def not_live(*args):raise LookupError("site not updated")
+        result=self.plan(event="workflow_dispatch",reuse_valid=True,reader=not_live)
+        self.assertEqual(result["mode"],"deploy")
+    def test_deliberate_rescreen_overrides_cloud_reuse(self):
+        self.save()
+        result=self.plan(event="workflow_dispatch",reuse_valid=True,force=True,reader=lambda *args:self.fail("Do not skip explicit rescreen"))
+        self.assertEqual(result["mode"],"generate")
+    def test_cloud_trigger_resumes_when_delayed_arxiv_arrives(self):
+        self.save()
+        self.save_stale_arxiv_audit()
+        result=self.plan(event="workflow_dispatch",reuse_valid=True,announcement_reader=lambda:DAY,reader=lambda *args:self.fail("Source changed; generation must resume"))
+        self.assertEqual(result["reason"],"current_arxiv_announcement_now_available")
+    def test_cloud_reuse_environment_is_applied_by_command_line_entry(self):
+        self.save()
+        stream=io.StringIO()
+        with patch.dict(release.os.environ,{"EVENT_NAME":"workflow_dispatch","REUSE_VALID_ISSUE":"true"},clear=True), patch.object(release,"ROOT",self.root), patch.object(release,"validate_issue",lambda issue:None), patch.object(release,"read_published_issue",lambda *args:self.issue), contextlib.redirect_stdout(stream):
+            release.main(["plan","--date",DAY])
+        self.assertEqual(json.loads(stream.getvalue())["mode"],"current")
+
     def test_verification_retries_stale_content_and_succeeds(self):
         self.save()
         values=iter([{"date":DAY,"papers":[]} ,self.issue])

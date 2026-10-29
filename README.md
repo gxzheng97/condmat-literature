@@ -44,3 +44,17 @@ Scheduled runs first inspect the saved source audit. If arXiv previously returne
 Scheduled runs compare the saved daily issue with the live website. If both match, all generation/deployment work is skipped. If today's validated JSON exists but is not yet live, the run resumes publication without repeating paid scientific screening. A missing/invalid issue is generated normally. Overlapping scheduled retries wait rather than cancelling an active release.
 
 Every actual deployment checks the live website against the saved issue content. A failed verification fails the workflow rather than reporting publication as complete. Pushes and explicit manual runs continue to support deliberate regeneration.
+
+## Independent cloud trigger
+
+A cloud scheduler can call the existing workflow-dispatch endpoint with:
+
+```json
+{"ref":"main","inputs":{"reuse_valid_issue":true}}
+```
+
+Use America/Los_Angeles time, with 06:00 as the first attempt and 08:00 as the recovery attempt. The trigger credential needs only Actions read/write on this repository. Keep it in the scheduler's Authorization header, never in this repository, a URL, or a chat message.
+
+Cloud recovery checks today's validated issue and live page. It generates a missing issue, resumes an unfinished deployment, or skips work that is already published. Pending arXiv announcements are still rechecked. Explicit rescreen overrides reuse. Recovery triggers wait for an active run rather than cancelling it, and scheduled/recovery runs check out the current branch head so queued attempts see the preceding run's saved issue.
+
+An HTTP success from the dispatch endpoint confirms acceptance of the trigger. Actual publication is separately verified by the workflow's final live-site check. This independent trigger bypasses GitHub cron delivery; it does not establish a fix to GitHub's scheduler or provide an uptime guarantee.

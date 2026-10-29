@@ -63,9 +63,9 @@ def read_arxiv_announcement():
         raise ValueError("arXiv announcement sections could not be parsed")
     return announced
 
-def plan_release(root,day,event,force=False,reader=None,validator=None,announcement_reader=None):
+def plan_release(root,day,event,force=False,reader=None,validator=None,announcement_reader=None,reuse_valid=False):
     dt.date.fromisoformat(day)
-    if event!="schedule" or force:
+    if (event!="schedule" and not reuse_valid) or force:
         return {"mode":"generate","date":day,"reason":"explicit_trigger"}
     try:
         issue=load_issue(root,day,validator)
@@ -117,7 +117,8 @@ def main(argv=None):
         result=verify_release(ROOT,day)
     else:
         result=plan_release(ROOT,day,os.getenv("EVENT_NAME","workflow_dispatch"),
-            force=os.getenv("RESCREEN","").lower()=="true")
+            force=os.getenv("RESCREEN","").lower()=="true",
+            reuse_valid=os.getenv("REUSE_VALID_ISSUE","").lower()=="true")
         if os.getenv("GITHUB_OUTPUT"):
             with open(os.environ["GITHUB_OUTPUT"],"a",encoding="utf8") as stream:
                 stream.write("mode="+result["mode"]+"\ndate="+day+"\n")
