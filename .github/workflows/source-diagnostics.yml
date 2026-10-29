@@ -1,0 +1,17 @@
+name: Public literature source diagnostics
+on:
+  push:
+    branches: [codex/content-source-diagnostics]
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Inspect publisher feeds without changing today's issue
+        run: python source_diagnostics.py
