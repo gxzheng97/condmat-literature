@@ -52,7 +52,7 @@ jobs:
           REUSE_VALID_ISSUE: ${{ inputs.reuse_valid_issue }}
         run: python daily_release.py plan
       - name: Validate physics relevance screen
-        run: python -m unittest -q test_relevance test_pipeline test_daily_release
+        run: python -m unittest -q test_relevance test_pipeline test_daily_release test_intake_window
       - name: Check AI semantic screening configuration
         if: steps.freshness.outputs.mode == 'generate'
         env:

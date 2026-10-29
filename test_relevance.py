@@ -153,7 +153,7 @@ class JournalRecallTests(unittest.TestCase):
         formal={"10.1103/formal-example":{"article_kind":"Letter","publication_status":"published",
             "publication_date":"2026-10-25","publication_evidence":{"source":"APS RSS","volume":"137","article_number":"186001"}}}
         with patch("update_daily.crossref_records",side_effect=fake_records), \
-             patch("update_daily.aps_publications",side_effect=lambda name:formal if name=="PRL" else {}):
+             patch("update_daily.aps_publications",side_effect=lambda name,publication_date=None,diagnostics=None:formal if name=="PRL" else {}):
             found=journals(dt.datetime(2026,10,25),audit)
         self.assertEqual(len(found),1)
         self.assertEqual(len(seen),9)

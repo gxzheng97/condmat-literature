@@ -63,7 +63,7 @@ class IntakeTests(unittest.TestCase):
         return '<feed xmlns="http://www.w3.org/2005/Atom" xmlns:x="http://arxiv.org/schemas/atom">'+"".join(entries)+"</feed>"
     def test_sections_versions_and_soft_category(self):
         audit=[]
-        with patch.object(u,"fetch",side_effect=[self.listing(),self.feed()]) as fetch:
+        with patch.object(u,"fetch",side_effect=[self.listing(),self.feed(),self.listing().replace("Cross submissions","New submissions")]) as fetch:
             found=u.arxiv(dt.datetime(2026,10,26),audit)
         self.assertEqual([p["arxiv_id"] for p in found],["2610.12341","2610.12345"])
         api_url=fetch.call_args_list[1].args[0]
@@ -74,10 +74,10 @@ class IntakeTests(unittest.TestCase):
         self.assertEqual(found[0]["announcement_date"],"2026-10-26")
         self.assertTrue(found[0]["submitted_at"])
         self.assertTrue(found[0]["url"].endswith("v1"))
-    def test_old_announcement_is_not_republished(self):
-        with patch.object(u,"fetch",return_value=self.listing("23 October 2026")) as fetch:
-            self.assertEqual(u.arxiv(dt.datetime(2026,10,26)),[])
-            self.assertEqual(fetch.call_count,1)
+    def test_wrong_date_from_dated_endpoint_fails_without_republishing(self):
+        with patch.object(u,"fetch",return_value=self.listing("23 October 2026")):
+            with self.assertRaisesRegex(ValueError,"does not match"):
+                u.arxiv(dt.datetime(2026,10,26))
     def test_unparseable_date_fails(self):
         with patch.object(u,"fetch",return_value="<html>unavailable</html>"):
             with self.assertRaises(ValueError):u.arxiv(dt.datetime(2026,10,26))
@@ -217,7 +217,7 @@ class RegenerationTests(unittest.TestCase):
             self.assertEqual(json.loads(dest.read_text()),{"original":True})
     def test_validation_rejects_revisions(self):
         p=paper(arxiv_version=2,ai_in_scope=True,soft_matter=False,quantum_materials=True,relevance_score=99)
-        issue=dict(date=p["announcement_date"],screening_version=u.SCREENING_VERSION,
+        issue=dict(date=p["announcement_date"],intake_window=u.issue_window(p["announcement_date"]),screening_version=u.SCREENING_VERSION,
             sources_complete=True,papers=[p],stats=dict(global_editorial=True,scanned=1,ai_assessed=1,ai_unscored=0))
         with self.assertRaises(AssertionError):u.validate_issue(issue)
 
@@ -227,7 +227,7 @@ class RegenerationTests(unittest.TestCase):
             day=(dt.datetime.now(ZoneInfo("America/Los_Angeles")).date()-dt.timedelta(days=1)).isoformat()
             p=paper(announcement_date=day)
             sources=[{"source":name,"status":"ok"} for name in [*u.ISSN,"arXiv"]]
-            snapshot={"date":day,"screening_version":"previous-policy","sources":sources,"candidates":[p]}
+            snapshot={"date":day,"intake_window":u.issue_window(day),"screening_version":"previous-policy","sources":sources,"candidates":[p]}
             (root/"audits"/(day+".json")).write_text(json.dumps(snapshot),encoding="utf8")
             with patch.object(u,"ROOT",root),patch.object(u,"arxiv") as live,patch.object(u,"screen",side_effect=self.screen) as screen,patch.object(u,"enrich"):
                 issue=u.main(["--date",day,"--rescreen"])
