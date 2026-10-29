@@ -1,0 +1,43 @@
+name: Morning intake regression checks
+on:
+  push:
+    branches: [codex/morning-intake-window]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run scientific, release and date-window regression checks
+        run: python -m unittest -q test_relevance test_pipeline test_daily_release test_intake_window
+      - name: Check browser script syntax
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+          source=Path("site_template.html").read_text()
+          scripts=re.findall(r'<script(?:\s[^>]*)?>([\s\S]*?)</script>',source)
+          Path("/tmp/condmat-site.js").write_text("\n".join(s for s in scripts if "const ISSUES" in s or "const issues" in s or "function " in s))
+          PY
+          node --check /tmp/condmat-site.js
+      - name: Verify dated official source access without AI or publication
+        run: |
+          python - <<'PY'
+          import datetime as dt
+          import update_daily as u
+          window=u.issue_window("2026-10-30")
+          assert window["journal_publication_date"]=="2026-10-29"
+          listing,url=u.arxiv_listing("2026-10-29")
+          assert listing.explicitly_empty()
+          assert not u.arxiv(dt.datetime(2026,10,29,6))
+          print("Confirmed the maintenance-day dated batch is a valid zero:",url)
+          diagnostic={}
+          records=u.aps_publications("PRL","2026-10-29",diagnostic)
+          print("Official APS feed verification:",diagnostic)
+          print("Formally published October 29 entries:",[(doi,p["title"][0]) for doi,p in records.items() if p["publication_date"]=="2026-10-29"])
+          PY
