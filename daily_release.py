@@ -10,7 +10,7 @@ import time
 import urllib.request
 from zoneinfo import ZoneInfo
 
-from update_daily import validate_issue
+from update_daily import validate_issue, ArxivListingParser, fetch
 
 ROOT=Path(__file__).resolve().parent
 SITE_URL="https://gxzheng97.github.io/condmat-literature/"
@@ -40,7 +40,30 @@ def load_issue(root,day,validator=None):
     (validator or validate_issue)(issue)
     return issue
 
-def plan_release(root,day,event,force=False,reader=None,validator=None):
+def pending_arxiv_announcement(root,day):
+    path=Path(root)/"audits"/(day+".json")
+    if not path.exists():
+        return None
+    audit=json.loads(path.read_text(encoding="utf8"))
+    if audit.get("date")!=day:
+        raise ValueError("Source audit date does not match the issue")
+    for entry in audit.get("arxiv_candidates",[]):
+        if entry.get("decision")=="no_new_announcement":
+            announced=entry.get("announcement_date","")
+            dt.date.fromisoformat(announced)
+            if announced<day:
+                return announced
+    return None
+
+def read_arxiv_announcement():
+    listing=ArxivListingParser()
+    listing.feed(fetch("https://arxiv.org/list/cond-mat/new?show=2000"))
+    announced=listing.announcement_date()
+    if not listing.entries:
+        raise ValueError("arXiv announcement sections could not be parsed")
+    return announced
+
+def plan_release(root,day,event,force=False,reader=None,validator=None,announcement_reader=None):
     dt.date.fromisoformat(day)
     if event!="schedule" or force:
         return {"mode":"generate","date":day,"reason":"explicit_trigger"}
@@ -48,9 +71,21 @@ def plan_release(root,day,event,force=False,reader=None,validator=None):
         issue=load_issue(root,day,validator)
     except (OSError,ValueError,KeyError,AssertionError,TypeError):
         return {"mode":"generate","date":day,"reason":"no_valid_issue_for_today"}
+    pending=pending_arxiv_announcement(root,day)
+    if pending is not None:
+        try:
+            announced=(announcement_reader or read_arxiv_announcement)()
+            dt.date.fromisoformat(announced)
+        except Exception as exc:
+            raise RuntimeError("Cannot verify the pending arXiv announcement; preserve the live issue and retry") from exc
+        if announced==day:
+            return {"mode":"generate","date":day,"reason":"current_arxiv_announcement_now_available"}
     try:
         live=(reader or read_published_issue)(day,fingerprint(issue)[:16])
         if fingerprint(live)==fingerprint(issue):
+            if pending is not None:
+                return {"mode":"current","date":day,"reason":"published_waiting_for_arxiv_announcement",
+                    "pending_sources":["arXiv"],"observed_announcement_date":announced}
             return {"mode":"current","date":day,"reason":"already_published_and_verified"}
     except Exception as exc:
         return {"mode":"deploy","date":day,"reason":"live_issue_unavailable:"+type(exc).__name__}

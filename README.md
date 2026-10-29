@@ -39,6 +39,8 @@ The site is generated from `issues/*.json` and `site_template.html` with `python
 
 The primary schedule is 06:00 America/Los_Angeles, leaving three hours before the desired 09:00 publication deadline. Additional scheduled attempts run at minutes 17 and 47 from 06:00 through 12:00. The schedule follows Los Angeles daylight saving time. GitHub can delay or omit scheduled triggers; starting earlier provides extra time but does not guarantee publication before 09:00.
 
+Scheduled runs first inspect the saved source audit. If arXiv previously returned an older announcement, a lightweight listing-date check runs before the issue can be treated as final. A newly available announcement for the issue date resumes harvesting and editorial selection while reusing valid AI assessments. An unchanged listing skips paid screening but records the pending source; a failed source-date check fails the run and preserves the live issue for retry.
+
 Scheduled runs compare the saved daily issue with the live website. If both match, all generation/deployment work is skipped. If today's validated JSON exists but is not yet live, the run resumes publication without repeating paid scientific screening. A missing/invalid issue is generated normally. Overlapping scheduled retries wait rather than cancelling an active release.
 
 Every actual deployment checks the live website against the saved issue content. A failed verification fails the workflow rather than reporting publication as complete. Pushes and explicit manual runs continue to support deliberate regeneration.
