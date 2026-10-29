@@ -6,6 +6,8 @@ on:
   schedule:
     - cron: '0 6 * * *'
       timezone: 'America/Los_Angeles'
+    - cron: '17,47 6-12 * * *'
+      timezone: 'America/Los_Angeles'
   workflow_dispatch:
     inputs:
       date:

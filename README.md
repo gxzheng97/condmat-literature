@@ -37,8 +37,8 @@ The site is generated from `issues/*.json` and `site_template.html` with `python
 
 ## Scheduled publication and recovery
 
-The schedule uses one daily 06:00 America/Los_Angeles cron entry, restoring the single-entry structure used on October 23–25. Los Angeles daylight saving time is retained. The extra retry cron entry introduced on October 27 has been removed for a controlled regression check. Each run's title records its event and cron expression. Automatic execution must be observed before this rollback is considered a verified timing fix; the desired publication deadline is 09:00.
+The primary schedule is 06:00 America/Los_Angeles, leaving three hours before the desired 09:00 publication deadline. Additional scheduled attempts run at minutes 17 and 47 from 06:00 through 12:00. The schedule follows Los Angeles daylight saving time. GitHub can delay or omit scheduled triggers; starting earlier provides extra time but does not guarantee publication before 09:00.
 
-Scheduled runs compare the saved daily issue with the live website. If both match, all generation/deployment work is skipped. If today's validated JSON exists but is not yet live, the run resumes publication without repeating paid scientific screening. A missing/invalid issue is generated normally. Overlapping scheduled runs wait rather than cancelling an active release.
+Scheduled runs compare the saved daily issue with the live website. If both match, all generation/deployment work is skipped. If today's validated JSON exists but is not yet live, the run resumes publication without repeating paid scientific screening. A missing/invalid issue is generated normally. Overlapping scheduled retries wait rather than cancelling an active release.
 
 Every actual deployment checks the live website against the saved issue content. A failed verification fails the workflow rather than reporting publication as complete. Pushes and explicit manual runs continue to support deliberate regeneration.
