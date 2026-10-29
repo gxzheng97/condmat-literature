@@ -564,10 +564,12 @@ def atomic_json(path,value):
  temp.replace(path)
 
 def validate_issue(issue):
- assert issue.get("screening_version")==SCREENING_VERSION,"Issue uses outdated screening rules"
+ legacy=issue.get("screening_version")=="quantum-materials-v1-formal-research-v4" and issue["date"]<"2026-10-30"
+ assert issue.get("screening_version")==SCREENING_VERSION or legacy,"Issue uses outdated screening rules"
  assert issue.get("sources_complete") is True,"Source harvest incomplete"
  window=issue_window(issue["date"])
- assert issue.get("intake_window")==window,"Missing or inconsistent intake window"
+ if not legacy:assert issue.get("intake_window")==window,"Missing or inconsistent intake window"
+ publication_date=issue["date"] if legacy else window["journal_publication_date"]
  assert len(issue.get("papers",[]))<=30,"More than 30 articles"
  stats=issue.get("stats",{})
  assert stats.get("global_editorial"),"AI editorial screening incomplete"
@@ -580,12 +582,13 @@ def validate_issue(issue):
   assert p.get("ai_in_scope") is True and p.get("soft_matter") is False,"Scope decision missing or excluded"
   if p["type"]=="arXiv":
    assert p.get("arxiv_version")==1,"Revised arXiv paper"
-   assert announcement_in_window(p.get("announcement_date",""),window),"arXiv announcement outside the intake window"
+   if legacy:assert p.get("announcement_date")==issue["date"],"Stale arXiv announcement"
+   else:assert announcement_in_window(p.get("announcement_date",""),window),"arXiv announcement outside the intake window"
    assert p.get("primary_category") not in ("cond-mat.soft","cond-mat.quant-gas"),"Excluded arXiv category"
    assert p.get("quantum_materials") is True and p["relevance_score"]>=ARXIV_MIN_SCORE,"arXiv focus/score failed"
   else:
    assert p["type"]=="Journal" and p["journal"] in ISSN,"Source outside whitelist"
-   assert journal_eligibility(p,window["journal_publication_date"])=="candidate","Journal not verified as previous-day formally published research"
+   assert journal_eligibility(p,publication_date)=="candidate","Journal not verified as previous-day formally published research"
    assert p.get("abstract_status")=="available","Journal abstract unavailable"
    assert p["relevance_score"]>=55,"Journal score failed"
 

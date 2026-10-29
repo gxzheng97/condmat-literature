@@ -65,9 +65,9 @@ class WindowTests(unittest.TestCase):
         self.assertEqual(fetch.call_args_list[0],fetch.call_args_list[1])
 
     def test_old_v1_cross_listing_is_not_a_first_announcement(self):
-        fixtures=fixtures.IntakeTests()
+        sample=fixtures.IntakeTests()
         # Original category has other new articles, but this ID is only cross-listed.
-        with patch.object(u,"fetch",side_effect=[fixtures.listing(),fixtures.feed(),fixtures.listing()]):
+        with patch.object(u,"fetch",side_effect=[sample.listing(),sample.feed(),sample.listing()]):
             audit=[];found=u.arxiv(dt.datetime(2026,10,26,6),audit)
         self.assertEqual([p["arxiv_id"] for p in found],["2610.12341"])
         self.assertEqual(next(x["decision"] for x in audit if x.get("arxiv_id")=="2610.12345"),"not_first_announcement")
@@ -117,6 +117,19 @@ class WindowTests(unittest.TestCase):
         self.assertEqual(recorded["journals"].date().isoformat(),"2026-10-29")
         self.assertEqual(issue["intake_window"],saved["intake_window"])
         self.assertEqual(issue["date"],"2026-10-30")
+
+    def test_existing_october_29_issue_is_preserved_under_its_original_policy(self):
+        issue=self.issue("2026-10-29")
+        issue["date"]="2026-10-29"
+        issue["screening_version"]="quantum-materials-v1-formal-research-v4"
+        issue.pop("intake_window")
+        u.validate_issue(issue)
+
+    def test_october_30_issue_cannot_reuse_the_old_same_day_policy(self):
+        issue=self.issue("2026-10-30")
+        issue["screening_version"]="quantum-materials-v1-formal-research-v4"
+        with self.assertRaisesRegex(AssertionError,"outdated"):
+            u.validate_issue(issue)
 
     def test_official_backup_feed_recovers_final_citation_from_stale_recent_feed(self):
         def feed(day,doi):

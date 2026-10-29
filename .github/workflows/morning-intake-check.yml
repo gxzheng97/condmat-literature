@@ -36,6 +36,9 @@ jobs:
           assert listing.explicitly_empty()
           assert not u.arxiv(dt.datetime(2026,10,29,6))
           print("Confirmed the maintenance-day dated batch is a valid zero:",url)
+          import json
+          u.validate_issue(json.loads(open("issues/2026-10-29.json",encoding="utf8").read()))
+          print("Existing October 29 issue remains valid under its original rules")
           diagnostic={}
           records=u.aps_publications("PRL","2026-10-29",diagnostic)
           print("Official APS feed verification:",diagnostic)

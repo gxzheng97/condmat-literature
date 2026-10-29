@@ -25,7 +25,7 @@ Historical re-screening uses `python update_daily.py --date YYYY-MM-DD --rescree
 
 The GitHub Actions workflow exposes date and rescreen inputs. A push to main regenerates today's issue, validates scope/version/size constraints, rebuilds bilingual reports and the website, and deploys Pages.
 
-Each issue records its rules, thresholds, generation time, and `intake_window` (UTC start/end, Los Angeles timezone, and target journal publication date). The window always ends at local 06:00 and spans exactly 24 elapsed hours, including daylight-saving transitions. The 08:00 recovery uses the same window. Historical issues without this field retain their original meaning. `audits/YYYY-MM-DD.json` preserves candidates, assessments, exclusions, pending abstracts, and source status. Source or AI assessment failure preserves the previously published issue.
+Each issue records its rules, thresholds, generation time, and `intake_window` (UTC start/end, Los Angeles timezone, and target journal publication date). The window always ends at local 06:00 and spans exactly 24 elapsed hours, including daylight-saving transitions. The 08:00 recovery uses the same window. The new policy starts with the October 30, 2026 morning issue. Existing v4 issues through October 29 remain valid under their original policy; recovery does not regenerate or relabel them. `audits/YYYY-MM-DD.json` preserves candidates, assessments, exclusions, pending abstracts, and source status. Source or AI assessment failure preserves the previously published issue.
 
 ## Checks and site
 
