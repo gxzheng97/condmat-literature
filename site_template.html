@@ -83,7 +83,7 @@ function render(){
  const languageOrder=lang==='zh'?['zh','en']:['en','zh'];
  const reportLinks=languageOrder.filter(l=>reports[l]).map(l=>`<a class="pdf ${l===lang?'current':''}" href="${esc(reports[l])}" target="_blank" rel="noopener" lang="${l==='zh'?'zh-CN':'en'}">${esc(l==='zh'?t.pdfZh:t.pdfEn)}</a>`).join('');
  const issueTitle=(lang==='zh'&&issue.title_zh)||issue.title||t.untitled;
- const coverage=issue.intake_window;
+ const coverage=issue.date<'2026-10-31'?issue.intake_window:null;
  const formatIntake=(value)=>new Intl.DateTimeFormat(lang==='zh'?'zh-CN':'en-US',{timeZone:'America/Los_Angeles',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(value));
  const coverageText=coverage?((lang==='zh'?'期刊发表日期：':'Journal publication date: ')+coverage.journal_publication_date+' · arXiv '+formatIntake(coverage.arxiv_start)+' – '+formatIntake(coverage.arxiv_end)+' (Los Angeles)'):'';
  byId('head').innerHTML=`<div class="issue-head"><div><div class="stamp">${esc(t.issue)} / ${esc(issue.date)}</div><h2>${esc(issueTitle)}</h2><p>${issue.papers.length} ${esc(t.papers)} · ${issue.papers.filter(p=>p.level==='Feature').length} ${esc(t.featured)}</p>${coverageText?`<p class="muted">${esc(coverageText)}</p>`:''}</div>${reportLinks?`<div class="pdf-group">${reportLinks}</div>`:''}</div>`;
