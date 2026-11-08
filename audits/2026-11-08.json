@@ -1,0 +1,1724 @@
+{
+  "date": "2026-11-08",
+  "generated_at": "2026-11-08T08:00:40.576719-08:00",
+  "screening_version": "quantum-materials-v1-formal-research-v5",
+  "assessment_version": "quantum-materials-v1-only-no-soft-v3",
+  "screening_config": {
+    "arxiv_min_score": 70,
+    "journal_min_score": 55,
+    "max_papers": 30,
+    "arxiv_versions": [
+      1
+    ],
+    "exclude_soft_matter": true,
+    "journals": [
+      "Science",
+      "Science Advances",
+      "Nature",
+      "Nature Physics",
+      "Nature Materials",
+      "Nature Communications",
+      "PRL",
+      "PRX",
+      "PNAS"
+    ],
+    "journal_publication": "publisher-verified formal online publication on the previous Los Angeles calendar day",
+    "arxiv_intake": "first announcement in the fixed 24 hours ending at 06:00 America/Los_Angeles",
+    "journal_document_types": "research article or research letter; no accepted papers, essays, replies or comments",
+    "editorial_interest": "experimental quantum materials; original theory and experiment"
+  },
+  "intake_window": {
+    "version": "la-0600-arxiv24h-previous-journal-day-v1",
+    "timezone": "America/Los_Angeles",
+    "arxiv_start": "2026-11-07T14:00:00+00:00",
+    "arxiv_end": "2026-11-08T14:00:00+00:00",
+    "journal_publication_date": "2026-11-07"
+  },
+  "sources": [
+    {
+      "source": "arXiv",
+      "status": "ok",
+      "eligible_v1": 0
+    },
+    {
+      "source": "Science",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-07",
+        "2026-11-07"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Science Advances",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-07",
+        "2026-11-07"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Nature",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-07",
+        "2026-11-07"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Nature Physics",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-07",
+        "2026-11-07"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Nature Materials",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-07",
+        "2026-11-07"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Nature Communications",
+      "status": "ok",
+      "fetched": 18,
+      "window": [
+        "2026-11-07",
+        "2026-11-07"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "PRL",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-07",
+        "2026-11-07"
+      ],
+      "publication_proof": "publisher RSS",
+      "feed_urls": [
+        "https://feeds.aps.org/rss/recent/prl.xml",
+        "https://feeds.aps.org/rss/tocsec/PRL-CondensedMatterStructureetc.xml",
+        "https://feeds.aps.org/rss/recent/prlsuggestions.xml"
+      ],
+      "latest_formal_publication_date": "2026-11-06",
+      "publication_note": "Publisher feeds have no final citation for the requested publication date; unverified records remain excluded"
+    },
+    {
+      "source": "PRX",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-07",
+        "2026-11-07"
+      ],
+      "publication_proof": "publisher RSS",
+      "feed_urls": [
+        "https://feeds.aps.org/rss/recent/prx.xml"
+      ],
+      "latest_formal_publication_date": "2026-11-06",
+      "publication_note": "Publisher feeds have no final citation for the requested publication date; unverified records remain excluded"
+    },
+    {
+      "source": "PNAS",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-07",
+        "2026-11-07"
+      ],
+      "publication_proof": "publisher article metadata"
+    }
+  ],
+  "journal_candidates": [
+    {
+      "id": "doi-10-1038-s41467-026-78710-7",
+      "doi": "10.1038/s41467-026-78710-7",
+      "title": "Mapping Future Energy Journeys Through Modeling the Global Transport of Synthetic Energy Carriers",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-07",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78710-7"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 8,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is spatial energy-system and trade-route modeling, not research on condensed-m matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79006-6",
+      "doi": "10.1038/s41467-026-79006-6",
+      "title": "CO2 responsive nanoscopic and macroscopic materials directed by peptides",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-07",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79006-6"
+      },
+      "has_abstract": true,
+      "decision": "soft_matter",
+      "score": 12,
+      "in_scope": false,
+      "soft_matter": true,
+      "quantum_materials": false,
+      "reason": "The primary contribution is stimulus-responsive peptide colloids and hydrogels, which are soft matter and are excluded from this digest."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79118-z",
+      "doi": "10.1038/s41467-026-79118-z",
+      "title": "Propofol induces sustained suppression of alcohol drinking via habenular activation in mice",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-07",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79118-z"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 3,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is a neuroscience and pharmacology study of alcohol consumption in mice, not condensed-matter research."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79432-6",
+      "doi": "10.1038/s41467-026-79432-6",
+      "title": "Antagonistic second-messenger signalling coordinates Pseudomonas aeruginosa surface colonization and virulence",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-07",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79432-6"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 4,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The study concerns bacterial signaling, surface colonization, and infection biology rather than condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79045-z",
+      "doi": "10.1038/s41467-026-79045-z",
+      "title": "Soft robotic and computational models of left atrial hemodynamics in sinus rhythm and atrial fibrillation",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-07",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79045-z"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 8,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This develops cardiovascular biomechanics and a clinical testing platform, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79097-1",
+      "doi": "10.1038/s41467-026-79097-1",
+      "title": "Genome-wide CRISPR screening in Spodoptera frugiperda reveals the determinants of insecticide activation and sensitivity",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-07",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79097-1"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 5,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is an insect molecular genetics study of insecticide activation and resistance, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79065-9",
+      "doi": "10.1038/s41467-026-79065-9",
+      "title": "WASH orchestrates phagosomal maturation and bacterial killing in neutrophils through syntaxin 19-mediated lysosomal fusion",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-07",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79065-9"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 5,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The work concerns neutrophil cell biology and immune function rather than condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78804-2",
+      "doi": "10.1038/s41467-026-78804-2",
+      "title": "Insular motor and error encoding supports self-correcting intracranial brain-computer interface",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-07",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78804-2"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 8,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is a human neuroscience and brain-computer-interface study, outside condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79077-5",
+      "doi": "10.1038/s41467-026-79077-5",
+      "title": "Topological Josephson trijunctions as a Majorana source and path",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-07",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79077-5"
+      },
+      "has_abstract": true,
+      "decision": "selected",
+      "score": 70,
+      "in_scope": true,
+      "soft_matter": false,
+      "quantum_materials": true,
+      "reason": "The paper develops a theoretical account of Majorana bound-state dynamics in topological-insulator Josephson trijunctions, a substantive contribution to topological superconducting matter."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79104-5",
+      "doi": "10.1038/s41467-026-79104-5",
+      "title": "Retrospective single cell lineage tracing with highly mutable homopolymers",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-07",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79104-5"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 5,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is a single-cell lineage-tracing and methylation-profiling methods study in biology, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79309-8",
+      "doi": "10.1038/s41467-026-79309-8",
+      "title": "Phosphorylation-driven targeted protein degradation of oncogenic β-catenin",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-07",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79309-8"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 4,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary contribution is a cancer-cell biology and drug-targeting result, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79325-8",
+      "doi": "10.1038/s41467-026-79325-8",
+      "title": "Transposable element polymorphisms underlie epigenetic variation and phenotypic diversification during foxtail millet domestication",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-07",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79325-8"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 5,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The study concerns plant genetics, epigenetics, and crop domestication rather than condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79393-w",
+      "doi": "10.1038/s41467-026-79393-w",
+      "title": "Coupling electrolyte mechanical reinforcement and interfacial stress relaxation for near-ambient sulfide all-solid-state lithium metal batteries",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-07",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79393-w"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 26,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The work is primarily battery engineering focused on improving cycling performance through electrolyte and current-collector design, without a substantial quantum-materials or fundamental condensed-matter advance."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78713-4",
+      "doi": "10.1038/s41467-026-78713-4",
+      "title": "Selective depolymerization of poly(ethylene terephthalate) for economical closed-loop recycling of mixed textiles",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-07",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78713-4"
+      },
+      "has_abstract": true,
+      "decision": "soft_matter",
+      "score": 12,
+      "in_scope": false,
+      "soft_matter": true,
+      "quantum_materials": false,
+      "reason": "The primary contribution is a chemical recycling process for PET textiles, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78009-7",
+      "doi": "10.1038/s41467-026-78009-7",
+      "title": "Fully Integrated Deep-Ocean Flexible Temperature–Depth Sensor with Neural Network Compensation",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-07",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78009-7"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 15,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary contribution is engineering and field validation of a flexible deep-ocean sensor, not a condensed-matter physics result."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78325-y",
+      "doi": "10.1038/s41467-026-78325-y",
+      "title": "Ultra-high precision speckle spectrometer enabling radio-frequency scale resolution of atomic spectra",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-07",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78325-y"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 24,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary contribution is improved optical spectrometer performance and spectroscopy instrumentation, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79149-6",
+      "doi": "10.1038/s41467-026-79149-6",
+      "title": "Fractional quantum Hall states and oscillatory Landau charge squeezing in Bernal tetralayer graphene",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-07",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79149-6"
+      },
+      "has_abstract": true,
+      "decision": "selected",
+      "score": 83,
+      "in_scope": true,
+      "soft_matter": false,
+      "quantum_materials": true,
+      "reason": "Magnetotransport and supporting theory establish distinctive fractional quantum Hall phenomena and their displacement-field dependence in a low-dimensional electronic material."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79376-x",
+      "doi": "10.1038/s41467-026-79376-x",
+      "title": "Nanofluid wetting of Cu enables thin lithium negative electrodes for high-energy and long-cycling lithium metal batteries",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-07",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79376-x"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 35,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The work focuses on electrode fabrication, battery cycling, and energy-density performance rather than a substantial new discovery about condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1103-3x42-zb9r",
+      "doi": "10.1103/3x42-zb9r",
+      "title": "Odd-Even Parity of Nonlinear Hall Effects in Bilayer Graphene",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-10-29",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/tocsec/PRL-CondensedMatterStructureetc.xml",
+        "volume": "137",
+        "article_number": "186302"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-ctkf-wz2d",
+      "doi": "10.1103/ctkf-wz2d",
+      "title": "Plasmascopy of Ultrafast Hot Charge Carriers",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-10-30",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "186906"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-yfc3-ny3b",
+      "doi": "10.1103/yfc3-ny3b",
+      "title": "Experimental Observation of Erratic Non-Hermitian Skin Effect in Phononic Crystals",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-10-30",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "186602"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-17nh-csbr",
+      "doi": "10.1103/17nh-csbr",
+      "title": "Atomic-Scale Visualization of Quantum Phase Transition in Mixed-Valence Regime",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-10-30",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "186201"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-vl6b-y5gz",
+      "doi": "10.1103/vl6b-y5gz",
+      "title": "When Liquids Form Membranes: Entropy-Dominated Bending Dynamics in Coacervate Vesicles",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-02",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "198201"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-k5r2-q11w",
+      "doi": "10.1103/k5r2-q11w",
+      "title": "Kekulé Superconductivity Induced by Quantum Geometry in Haldane Phases",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-03",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "196002"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-ngfq-f3t7",
+      "doi": "10.1103/ngfq-f3t7",
+      "title": "First Amplitude Analysis of ${D}^{0}→{K}^{−}{π}^{0}{e}^{+}{ν}_{e}$ and Observation of ${D}^{0}→{K}_{2}^{*}(1430{)}^{−}{e}^{+}{ν}_{e}$",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-03",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "191903"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-b28p-yb2t",
+      "doi": "10.1103/b28p-yb2t",
+      "title": "Time-Dependent Density Functional Theory of Electrons and Quantum Nuclei",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-04",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "193001"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-m9hp-5h28",
+      "doi": "10.1103/m9hp-5h28",
+      "title": "Anomalously Low Thermal Conductivity in Undercoordinated Amorphous Silicon",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-05",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "196302"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-qx3f-85mf",
+      "doi": "10.1103/qx3f-85mf",
+      "title": "Spatiotemporal Architecture of Energy Transfer in Wall-Bounded Turbulence",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-05",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "194001"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-z6d8-2q1g",
+      "doi": "10.1103/z6d8-2q1g",
+      "title": "Classification of Scissors Rotational Bands in Deformed Nuclei",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-05",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "192501"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    }
+  ],
+  "arxiv_candidates": [
+    {
+      "decision": "no_announcements_in_window",
+      "announcement_date": "2026-11-08",
+      "evidence_url": "https://arxiv.org/catchup/cond-mat/2026-11-08",
+      "window": {
+        "version": "la-0600-arxiv24h-previous-journal-day-v1",
+        "timezone": "America/Los_Angeles",
+        "arxiv_start": "2026-11-07T14:00:00+00:00",
+        "arxiv_end": "2026-11-08T14:00:00+00:00",
+        "journal_publication_date": "2026-11-07"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "doi-10-1038-s41467-026-78710-7",
+      "doi": "10.1038/s41467-026-78710-7",
+      "title": "Mapping Future Energy Journeys Through Modeling the Global Transport of Synthetic Energy Carriers",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Uwe Langenmayr, Julia Schuler, Viktor Slednev, Wolf Fichtner",
+      "abstract": "Abstract Synthetic energy carriers can connect renewable-energy-rich potential production regions with distant demand centers, but the emergence of trade depends on total supply costs. Here, we develop a spatially resolved heuristic combining hydrogen production costs with ports, pipelines, and shipping routes, as well as syntheses, cracking, and reformation processes, to identify key import corridors. Across 10,883 production locations and seven different scenarios, we find that export regions connected to the importer through retrofit-ready pipelines remain competitive despite only moderate renewable potentials. Meanwhile, for remote exporters competitiveness depends on port availability and coastal access through pipeline networks. Gaseous hydrogen dominates short pipeline routes, and ammonia is preferred for maritime trade, whereas methanol and methane emerge in long multimodal chains. Additional results show that low-cost heat availability is required for the competitiveness of liquid organic hydrogen carriers, while accounting for market values of conventional counterparts boosts ammonia and methanol trade.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          7
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-78710-7",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-07",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78710-7"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Abstract Synthetic energy carriers can connect renewable-energy-rich potential production regions with distant demand centers, but the emergence of trade depends on total supply costs. Here, we develop a spatially resolved heuristic combining hydrogen production costs with ports, pipelines, and shipping routes, as well as syntheses, cracking, and reformation processes, to identify key import corri",
+      "summary": "Abstract Synthetic energy carriers can connect renewable-energy-rich potential production regions with distant demand centers, but the emergence of trade depends on total supply costs. Here, we develop a spatially resolved heuristic combining hydrogen production costs with ports, pipelines, and shipping routes, as well as syntheses, cracking, and reformation processes, to identify key import corri",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-78710-7",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 8,
+        "feature_candidate": false,
+        "reason": "This is spatial energy-system and trade-route modeling, not research on condensed-m matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is spatial energy-system and trade-route modeling, not research on condensed-m matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 8,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79006-6",
+      "doi": "10.1038/s41467-026-79006-6",
+      "title": "CO2 responsive nanoscopic and macroscopic materials directed by peptides",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "T. Farrokhi, S. V. Ceballos, S. M. Silva, M. B. Ross",
+      "abstract": "Stimuli such as pH, light, and electromagnetic fields have enabled precise control over nanoscale interactions, yet gases remain relatively unexplored as regulators of material behavior despite their central roles in biology, energy, and climate. Here, we introduce carbon dioxide (CO2) as a dynamic and reversible stimulus for controlling nanoscale and macroscale matter using sequence-specific peptide design. Peptide-functionalized nanoparticles exhibit pronounced and tunable responses to CO2 across orders of magnitude changes in gas flow rate, with sensitivity governed by site- and sequence-specific changes in peptide structure. The aggregation sequence-dependence is described by six design principles while quantitative modeling show that aggregation rate scales with flow rate rather than cumulative CO2 dose. This gas-controlled response translates from colloidal nanoparticles to cm-scale biocompatible hydrogels that reversibly and colorimetrically respond to CO2. Leveraging this responsiveness, we further demonstrate spatial patterning of a hydrogel through a gas-permeable mask using CO2 as a lithographic stimulus. Consequently, this work establishes gas-mediated control as a general and scalable strategy for programming responsive materials across length scales. Stimuli responsive assemblies can offer precise control over behaviour, but use of gases for this control is rare. Here, the authors report the use of carbon dioxide for tuneable nanoparticle response, directed by changes in peptide structure.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          7
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79006-6",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-07",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79006-6"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Magnetism",
+      "summary_en": "Stimuli such as pH, light, and electromagnetic fields have enabled precise control over nanoscale interactions, yet gases remain relatively unexplored as regulators of material behavior despite their central roles in biology, energy, and climate. Here, we introduce carbon dioxide (CO2) as a dynamic and reversible stimulus for controlling nanoscale and macroscale matter using sequence-specific pept",
+      "summary": "Stimuli such as pH, light, and electromagnetic fields have enabled precise control over nanoscale interactions, yet gases remain relatively unexplored as regulators of material behavior despite their central roles in biology, energy, and climate. Here, we introduce carbon dioxide (CO2) as a dynamic and reversible stimulus for controlling nanoscale and macroscale matter using sequence-specific pept",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79006-6",
+        "in_scope": false,
+        "soft_matter": true,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 12,
+        "feature_candidate": false,
+        "reason": "The primary contribution is stimulus-responsive peptide colloids and hydrogels, which are soft matter and are excluded from this digest.",
+        "physics_advance": ""
+      },
+      "soft_matter": true,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "soft_matter",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary contribution is stimulus-responsive peptide colloids and hydrogels, which are soft matter and are excluded from this digest.",
+      "relevance_method": "semantic",
+      "relevance_score": 12,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79118-z",
+      "doi": "10.1038/s41467-026-79118-z",
+      "title": "Propofol induces sustained suppression of alcohol drinking via habenular activation in mice",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Zheng Xu, Zhi-Jie Fan, Yi Mei, Yu-Mei Yu, Chao-chao Zhong, Qi Li, Xinran Zhuang, Lijuan Wang, Dongyu Zhou, Chen Zhu, Jun-Xia Yang, Hai-Lei Ding, Zhe Zhang, Song Zhang, Jun-Li Cao",
+      "abstract": "Targeting the lateral habenula (LHb), a key brain region regulating alcohol consumption, presents a promising framework for reducing drinking. LHb neurons exhibit high sensitivity and responsiveness to the intravenous anesthetic propofol. However, whether and how propofol-activated habenular neurons regulate alcohol drinking remains unknown. Here, we show that a single dose of propofol rapidly and persistently reduces alcohol consumption in mice for approximately six days. This effect is mediated by sustained hyperactivity of the habenular ensemble activated by propofol. Furthermore, this ensemble is enriched in 5-HT2C receptors, and we identify the V209 site as the specific binding site through which propofol induces ensemble activation. Disrupting this binding abolishes both the propofol-induced activation of the habenular ensemble and the subsequent reduction in alcohol drinking. Our findings pinpoint a locus of 5-HT2C receptor action within the LHb through which propofol suppresses alcohol consumption, offering a mechanistic framework for understanding alcohol drinking behavior. The lateral habenula is known to regulate alcohol drinking behaviors in mice. Here, the authors show that a single dose of propofol reduces voluntary alcohol drinking in mice via hyperactivity of neurons in the lateral habenula, and through propofol interaction with the 5-HT2C receptor.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          7
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79118-z",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-07",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79118-z"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Targeting the lateral habenula (LHb), a key brain region regulating alcohol consumption, presents a promising framework for reducing drinking. LHb neurons exhibit high sensitivity and responsiveness to the intravenous anesthetic propofol. However, whether and how propofol-activated habenular neurons regulate alcohol drinking remains unknown. Here, we show that a single dose of propofol rapidly and",
+      "summary": "Targeting the lateral habenula (LHb), a key brain region regulating alcohol consumption, presents a promising framework for reducing drinking. LHb neurons exhibit high sensitivity and responsiveness to the intravenous anesthetic propofol. However, whether and how propofol-activated habenular neurons regulate alcohol drinking remains unknown. Here, we show that a single dose of propofol rapidly and",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79118-z",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 3,
+        "feature_candidate": false,
+        "reason": "This is a neuroscience and pharmacology study of alcohol consumption in mice, not condensed-matter research.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is a neuroscience and pharmacology study of alcohol consumption in mice, not condensed-matter research.",
+      "relevance_method": "semantic",
+      "relevance_score": 3,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79432-6",
+      "doi": "10.1038/s41467-026-79432-6",
+      "title": "Antagonistic second-messenger signalling coordinates Pseudomonas aeruginosa surface colonization and virulence",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Maya Bruderer, Jiangning Li, Andreas Kaczmarczyk, Simon van Vliet, Kai Schleicher, Rao Rohan Girish, Pablo Manfredi, Nicole Thürkauf, Alexander Klotz, Marco Kuhn, Nina Khanna, Alexandre Persat, Benoit-Joseph Laventie, Urs Jenal",
+      "abstract": "Abstract Efficient colonisation of host tissue surfaces is a prerequisite for bacterial infection. In the human pathogen Pseudomonas aeruginosa , the second messengers cAMP and c-di-GMP regulate surface behaviours and virulence, but how these pathways are coordinated during tissue infection has remained unclear. Here we demonstrate that cAMP and c-di-GMP establish mutually exclusive signalling states at the single-cell level, generating distinct subpopulations of motile and surface-attached cells through pathway-specific control of type IV pili (T4P). Initial surface contact triggers an increase in c-di-GMP, activating FimW and driving stable attachment via bipolar T4P formation. This state is progressively replaced by cAMP, which inactivates FimW-dependent attachment and induces FimX-mediated T4P polarisation, surface motility and virulence activation. The resulting signalling transition enforces coexisting subpopulations, with attached cells gradually displaced by spreading cells. Using a human airway tissue model, we show that both T4P-mediated adhesion and twitching motility are required for invasion and tissue damage. Based on this, we propose that reciprocal cAMP–c-di-GMP signalling coordinates complementary T4P functions to optimise P. aeruginosa surface colonisation and infection.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          7
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79432-6",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-07",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79432-6"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Abstract Efficient colonisation of host tissue surfaces is a prerequisite for bacterial infection. In the human pathogen Pseudomonas aeruginosa , the second messengers cAMP and c-di-GMP regulate surface behaviours and virulence, but how these pathways are coordinated during tissue infection has remained unclear. Here we demonstrate that cAMP and c-di-GMP establish mutually exclusive signalling sta",
+      "summary": "Abstract Efficient colonisation of host tissue surfaces is a prerequisite for bacterial infection. In the human pathogen Pseudomonas aeruginosa , the second messengers cAMP and c-di-GMP regulate surface behaviours and virulence, but how these pathways are coordinated during tissue infection has remained unclear. Here we demonstrate that cAMP and c-di-GMP establish mutually exclusive signalling sta",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79432-6",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 4,
+        "feature_candidate": false,
+        "reason": "The study concerns bacterial signaling, surface colonization, and infection biology rather than condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The study concerns bacterial signaling, surface colonization, and infection biology rather than condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 4,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79045-z",
+      "doi": "10.1038/s41467-026-79045-z",
+      "title": "Soft robotic and computational models of left atrial hemodynamics in sinus rhythm and atrial fibrillation",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Manisha Singh, Keegan Mendez, Brian Ayers, Sophie X. Wang, Atsushi Takahashi, Debbie L. Teodorescu, Jordi Mill, Carlos Albors, Andreas Escher, Yiling Fan, Caglar Ozturk, Eve Sheridan, Emma Rutherford, Oscar Camara, Tarun Chakravarty, Ellen T. Roche",
+      "abstract": "Atrial fibrillation poses significant challenges because the complex geometry of the left atrial appendage complicates personalized interventions for stroke prevention. Current reliance on animals and cadavers raises reproducibility concerns, necessitating the development of high fidelity, physiologically relevant tools. To address this, we develop a multimodal framework including a soft robotic benchtop simulator and a lumped parameter computational model to replicate left atrial function. The system integrates patient-specific geometries with soft robotic actuators to reproduce realistic wall motion and hemodynamics. Complementary lumped parameter model provides mechanistic insights, quantifying systemic hemodynamic changes during disease and interventions. The models effectively replicate the clinical markers of atrial dysfunction and arrhythmia disorders, and their accuracy is demonstrated through validation against human imaging and porcine models. We show that this scalable, versatile experimental and computational framework advances cardiovascular biomechanics, enabling device development, clinical research and training, and personalized atrial fibrillation treatment to improve patient outcomes. A soft robotic and computational framework replicates left atrial hemodynamics. Validated with human and porcine data, the platform enables personalized preclinical testing of left atrial appendage occlusion devices for atrial fibrillation.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          7
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79045-z",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-07",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79045-z"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Topology & Transport",
+      "summary_en": "Atrial fibrillation poses significant challenges because the complex geometry of the left atrial appendage complicates personalized interventions for stroke prevention. Current reliance on animals and cadavers raises reproducibility concerns, necessitating the development of high fidelity, physiologically relevant tools. To address this, we develop a multimodal framework including a soft robotic b",
+      "summary": "Atrial fibrillation poses significant challenges because the complex geometry of the left atrial appendage complicates personalized interventions for stroke prevention. Current reliance on animals and cadavers raises reproducibility concerns, necessitating the development of high fidelity, physiologically relevant tools. To address this, we develop a multimodal framework including a soft robotic b",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79045-z",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "mixed",
+        "score": 8,
+        "feature_candidate": false,
+        "reason": "This develops cardiovascular biomechanics and a clinical testing platform, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "mixed",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This develops cardiovascular biomechanics and a clinical testing platform, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 8,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79097-1",
+      "doi": "10.1038/s41467-026-79097-1",
+      "title": "Genome-wide CRISPR screening in Spodoptera frugiperda reveals the determinants of insecticide activation and sensitivity",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Huidong Wang, Yueru Ye, Tong Zhang, Bingbing Li, Angela Hayward, Yinjia Wang, Yajuan Xiao, Yajie Kong, Jie Zhong, Cheng Li, Kairan Zuo, Shilong Wang, Ralf Nauen, Yu Shi, Xingliang Wang, Chris Bass, Sanyuan Ma, Shutang Zhou",
+      "abstract": "Insecticide resistance poses a growing threat to global human health and food security. Addressing this challenge requires a comprehensive understanding of the molecular determinants that govern insecticide action and insect sensitivity. However, identifying and functionally validating the specific genes - among the tens of thousands present in a typical insect genome - that contribute to insecticide mode of action and resistance remains a major challenge. Here, we present a genome-wide CRISPR knockout screening system in a cell line derived from Spodoptera frugiperda, a highly damaging insect pest, and demonstrate its utility for dissecting the molecular basis of insecticide activity and resistance. We construct a library of 90,759 single guide RNAs (sgRNAs) targeting 14,434 genes and conduct a three-round screen under successively increasing concentrations of the insecticide pyridalyl. This enriches for the cytochrome P450 gene CYP333B4. Subsequent P450 inhibitor assays, gene knockout in S. frugiperda, and ectopic expression in Drosophila melanogaster confirm that members of the CYP333B subfamily are key mediators of pyridalyl activation and serve as potential resistance targets. Collectively, our findings establish a versatile and scalable platform for genome-wide interrogation of insecticide mode of action and resistance, while uncovering the long-elusive determinants of pyridalyl activity and sensitivity in insects. New tools to investigate the molecular determinants of insect sensitivity to insecticides are needed. Here, a new genome-wide CRISPR-based screening platform is established and used to identify genes involved in activating the insecticide pyridalyl.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          7
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79097-1",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-07",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79097-1"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Topology & Transport",
+      "summary_en": "Insecticide resistance poses a growing threat to global human health and food security. Addressing this challenge requires a comprehensive understanding of the molecular determinants that govern insecticide action and insect sensitivity. However, identifying and functionally validating the specific genes - among the tens of thousands present in a typical insect genome - that contribute to insectic",
+      "summary": "Insecticide resistance poses a growing threat to global human health and food security. Addressing this challenge requires a comprehensive understanding of the molecular determinants that govern insecticide action and insect sensitivity. However, identifying and functionally validating the specific genes - among the tens of thousands present in a typical insect genome - that contribute to insectic",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79097-1",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 5,
+        "feature_candidate": false,
+        "reason": "This is an insect molecular genetics study of insecticide activation and resistance, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is an insect molecular genetics study of insecticide activation and resistance, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 5,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79065-9",
+      "doi": "10.1038/s41467-026-79065-9",
+      "title": "WASH orchestrates phagosomal maturation and bacterial killing in neutrophils through syntaxin 19-mediated lysosomal fusion",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Elsa Meneses-Salas, Jennifer L. Johnson, Aparna Shukla, Danni Chen, Serene Moussaoui, Mouad Ait Kbaich, Kersi Pestonjamasp, William B. Kiosses, Junhee Kwon, Ben A. Croker, Hal M. Hoffman, Catherine C. Hedrick, Daniel D. Billadeau, Mauricio Terebiznik, Sergio D. Catz",
+      "abstract": "Neutrophil phagocytosis is crucial for combating infections, yet the actin-mediated regulation of vesicular trafficking during late phagosomal maturation remains obscure. Using neutrophils lacking the actin nucleation regulator Wiskott-Aldrich Syndrome Protein and Scar Homolog (WASH), we identify a mechanism linking actin remodeling, lysosomal fusion, and bacterial killing. Although WASH is dispensable for particle internalization, WASH deficiency impairs lysosome-phagosome fusion and intracellular bacterial killing. Lysosomes from WASH-deficient neutrophils show decreased association with actin comets and impaired dynamics. Rac1 activation rescues lysosomal trafficking but not phagosomal maturation. Mass spectrometry of phagolysosomes and TR-FRET identify atypical syntaxin 19 (STX19) as a WASH binding partner, and WASH recruits STX19 to phagosomes. Reconstituting WASH in primary neutrophils rescues phagocytosis, STX19 interference impairs phagosomal maturation, while STX19 overexpression enhances it. WASH is thus a central mediator of phagosomal maturation through STX19-mediated membrane fusion and actin-driven lysosomal dynamics, revealing how dysregulated trafficking contributes to immunodeficiency. How actin regulates late phagosomal maturation and microbial killing in neutrophils remains unclear. The authors here show that WASH drives actin-dependent lysosomal dynamics and STX19 recruitment to phagosomes, enabling lysosome fusion and bacterial killing.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          7
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79065-9",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-07",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79065-9"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Neutrophil phagocytosis is crucial for combating infections, yet the actin-mediated regulation of vesicular trafficking during late phagosomal maturation remains obscure. Using neutrophils lacking the actin nucleation regulator Wiskott-Aldrich Syndrome Protein and Scar Homolog (WASH), we identify a mechanism linking actin remodeling, lysosomal fusion, and bacterial killing. Although WASH is dispen",
+      "summary": "Neutrophil phagocytosis is crucial for combating infections, yet the actin-mediated regulation of vesicular trafficking during late phagosomal maturation remains obscure. Using neutrophils lacking the actin nucleation regulator Wiskott-Aldrich Syndrome Protein and Scar Homolog (WASH), we identify a mechanism linking actin remodeling, lysosomal fusion, and bacterial killing. Although WASH is dispen",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79065-9",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 5,
+        "feature_candidate": false,
+        "reason": "The work concerns neutrophil cell biology and immune function rather than condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The work concerns neutrophil cell biology and immune function rather than condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 5,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78804-2",
+      "doi": "10.1038/s41467-026-78804-2",
+      "title": "Insular motor and error encoding supports self-correcting intracranial brain-computer interface",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Paul Weger, Sophia Gimple, Maarten C. Ottenhoff, Maxime Verwoert, Lauren Ostrowski, Albert Colon, Louis Wagner, Johannes P. van Dijk, Yasin Temel, Pieter Kubben, Christian Herff",
+      "abstract": "Abstract Error recognition is fundamental to adaptive behavior, enabling rapid compensatory action when outcomes deviate from expectations. Central to this function are neural circuits for performance monitoring, encoding cognitive signals that could support more reliable neural interfaces. Here, we recorded intracranial electroencephalography (iEEG) in epilepsy patients to enable a motor brain-computer interface (BCI) while sampling error-related activity across a distributed network. Our work reveals high-frequency population dynamics emerging in the anterior insula and propagating to the prefrontal cortex as the interface fails to follow the user’s intention. We identify spatially organized insular responses to error processing and movement feedback, highlighting it as a heterogeneous hub linking action and outcome. Frontoinsular recording sites were found to preferentially encode error-related activity, while centroparietal responses were intermixed with compensatory motor signals, making the former a compelling target for real-time error correction. Together, our findings demonstrate a human intracranial BCI harnessing insular brain activity, integrating cognitive processes directly into device control.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          7
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-78804-2",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-07",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78804-2"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Abstract Error recognition is fundamental to adaptive behavior, enabling rapid compensatory action when outcomes deviate from expectations. Central to this function are neural circuits for performance monitoring, encoding cognitive signals that could support more reliable neural interfaces. Here, we recorded intracranial electroencephalography (iEEG) in epilepsy patients to enable a motor brain-co",
+      "summary": "Abstract Error recognition is fundamental to adaptive behavior, enabling rapid compensatory action when outcomes deviate from expectations. Central to this function are neural circuits for performance monitoring, encoding cognitive signals that could support more reliable neural interfaces. Here, we recorded intracranial electroencephalography (iEEG) in epilepsy patients to enable a motor brain-co",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-78804-2",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 8,
+        "feature_candidate": false,
+        "reason": "This is a human neuroscience and brain-computer-interface study, outside condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is a human neuroscience and brain-computer-interface study, outside condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 8,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79077-5",
+      "doi": "10.1038/s41467-026-79077-5",
+      "title": "Topological Josephson trijunctions as a Majorana source and path",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Kyungtae Kim, June-Young M. Lee, Hyeongseop Kim, H.-S. Sim",
+      "abstract": "Abstract Majorana bound states (MBSs) are zero-energy localized states in topological superconductors, obeying non-Abelian braiding statistics. Manipulation of mobile MBSs, encompassing their on-demand generation, propagation, and fusion, is essential for braiding MBSs and operating topological qubits. We show that the manipulation is enabled by a trijunction formed on a topological insulator in a perpendicular magnetic field, where three Josephson junctions meet. While the superconducting phases at the trijunction center evolve to cross a boundary between topological and non-topological phase domains, the trijunction offers two distinct dynamics, source/sink and path, depending on the phase boundaries. At a source/sink boundary, two MBSs are pairwise generated at the center, and one of them is ejected to a Josephson junction. The reverse, pair annihilation by collision of two MBSs, can also happen. At a path boundary, an MBS moves from a Josephson junction to the trijunction center or vice versa, without involving other MBSs. Exploiting the two dynamics, fusion and braiding of MBSs can be operated in a trijunction network. We illustrate this with a double trijunction setup, where non-Abelian state evolutions associated with MBSs can be manipulated without dynamical control of the setup and detected by Josephson emission spectroscopy.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          7
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79077-5",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-07",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79077-5"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Superconductivity",
+      "summary_en": "Abstract Majorana bound states (MBSs) are zero-energy localized states in topological superconductors, obeying non-Abelian braiding statistics. Manipulation of mobile MBSs, encompassing their on-demand generation, propagation, and fusion, is essential for braiding MBSs and operating topological qubits. We show that the manipulation is enabled by a trijunction formed on a topological insulator in a",
+      "summary": "Abstract Majorana bound states (MBSs) are zero-energy localized states in topological superconductors, obeying non-Abelian braiding statistics. Manipulation of mobile MBSs, encompassing their on-demand generation, propagation, and fusion, is essential for braiding MBSs and operating topological qubits. We show that the manipulation is enabled by a trijunction formed on a topological insulator in a",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79077-5",
+        "in_scope": true,
+        "soft_matter": false,
+        "quantum_materials": true,
+        "research_type": "theory",
+        "score": 70,
+        "feature_candidate": true,
+        "reason": "The paper develops a theoretical account of Majorana bound-state dynamics in topological-insulator Josephson trijunctions, a substantive contribution to topological superconducting matter.",
+        "physics_advance": "Identifies source/sink and path dynamics at phase boundaries that enable generation, propagation, and fusion of Majorana bound states in Josephson trijunctions, with proposed detection through Josephson emission spectroscopy."
+      },
+      "soft_matter": false,
+      "quantum_materials": true,
+      "research_type": "theory",
+      "screening_decision": "selected",
+      "physics_advance": "Identifies source/sink and path dynamics at phase boundaries that enable generation, propagation, and fusion of Majorana bound states in Josephson trijunctions, with proposed detection through Josephson emission spectroscopy.",
+      "ai_in_scope": true,
+      "relevance_reason": "The paper develops a theoretical account of Majorana bound-state dynamics in topological-insulator Josephson trijunctions, a substantive contribution to topological superconducting matter.",
+      "relevance_method": "semantic",
+      "relevance_score": 70,
+      "feature_candidate": true
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79104-5",
+      "doi": "10.1038/s41467-026-79104-5",
+      "title": "Retrospective single cell lineage tracing with highly mutable homopolymers",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Pin-Chung Cheng, Dmitrii Kamenev, Polina Kameneva, Conor Fitzpatrick, Igor Adameyko, Peter V. Kharchenko, Kun Zhang",
+      "abstract": "Retrospective reconstruction of cell lineages from somatic mutations holds substantial promise for understanding development, tissue homeostasis, and disease. Yet, current approaches are often constrained by low marker density, technical noise, and incomplete molecular readouts that limit the resolution and accuracy of inferred lineages. Here, we present RETrace2, a single-cell dual-omic method for simultaneous lineage tracing and cell-type identification. By identifying and targeting highly mutable homopolymers, which we show are approximately twice as informative as conventional microsatellite repeats, combined with technical improvements to increase marker coverage and reduce experimental errors of reading and amplifying homopolymers, RETrace2 can trace lineage continuously at an estimated resolution of fewer than five cell divisions in microsatellite-unstable organisms. Simultaneously, sparse methylation profiles are obtained from the same cells for cell-type identification. We validate the method using in vitro ground-truth models and demonstrate its utility in vivo by reconstructing multi-organ lineage trees from the brain, kidney and liver of Msh2-deficient mice. Cell lineage reconstruction can reveal developmental histories, but current methods are limited by marker density and accuracy. Here, the authors develop RETrace2, a dual‑omic single‑cell approach that combines highly mutable homopolymer markers with methylation profiling to enable high‑resolution lineage tracing and cell‑type identification.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          7
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79104-5",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-07",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79104-5"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Retrospective reconstruction of cell lineages from somatic mutations holds substantial promise for understanding development, tissue homeostasis, and disease. Yet, current approaches are often constrained by low marker density, technical noise, and incomplete molecular readouts that limit the resolution and accuracy of inferred lineages. Here, we present RETrace2, a single-cell dual-omic method fo",
+      "summary": "Retrospective reconstruction of cell lineages from somatic mutations holds substantial promise for understanding development, tissue homeostasis, and disease. Yet, current approaches are often constrained by low marker density, technical noise, and incomplete molecular readouts that limit the resolution and accuracy of inferred lineages. Here, we present RETrace2, a single-cell dual-omic method fo",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79104-5",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 5,
+        "feature_candidate": false,
+        "reason": "This is a single-cell lineage-tracing and methylation-profiling methods study in biology, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is a single-cell lineage-tracing and methylation-profiling methods study in biology, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 5,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79309-8",
+      "doi": "10.1038/s41467-026-79309-8",
+      "title": "Phosphorylation-driven targeted protein degradation of oncogenic β-catenin",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Lucie Wolf, Juline Poirson, Graham MacLeod, Sichun Lin, Yun Hye Kim, Byu Ri Sim, Maira P. Almeida, Mikko Taipale, Stéphane Angers",
+      "abstract": "Therapeutic strategies to inhibit the Wnt signaling pathway for cancer treatment have, so far, failed to advance to the clinic. Induced-proximity drugs are revolutionizing our ability to tackle targets previously considered undruggable. Here, we use an unbiased genome-scale approach to identify induced-proximity protein candidates that inhibit the central Wnt signaling effector β-catenin in colorectal cancer cells. While the identification of several E3 ubiquitin ligases validates our approach, we uncover that inducing proximity to members of the Casein kinase I (CSNK1) family leads to β-catenin degradation and inhibits the growth of colorectal cancer cells harboring Wnt pathway mutations. We show that β-catenin degradation induced by CSNK1 proximity is kinase activity- and proteasome-dependent. We propose that the formation of a neo-degron, through kinase recruitment, can expand induced-proximity drug targeting strategies. Wolf et al. used proteome-scale induced-proximity screens for inhibitors of the oncogene β-catenin in colorectal cancer and discovered induced kinase-dependent degradation as an expansion of the Targeted Protein Degradation concept.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          7
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79309-8",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-07",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79309-8"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Therapeutic strategies to inhibit the Wnt signaling pathway for cancer treatment have, so far, failed to advance to the clinic. Induced-proximity drugs are revolutionizing our ability to tackle targets previously considered undruggable. Here, we use an unbiased genome-scale approach to identify induced-proximity protein candidates that inhibit the central Wnt signaling effector β-catenin in colore",
+      "summary": "Therapeutic strategies to inhibit the Wnt signaling pathway for cancer treatment have, so far, failed to advance to the clinic. Induced-proximity drugs are revolutionizing our ability to tackle targets previously considered undruggable. Here, we use an unbiased genome-scale approach to identify induced-proximity protein candidates that inhibit the central Wnt signaling effector β-catenin in colore",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79309-8",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 4,
+        "feature_candidate": false,
+        "reason": "The primary contribution is a cancer-cell biology and drug-targeting result, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary contribution is a cancer-cell biology and drug-targeting result, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 4,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79325-8",
+      "doi": "10.1038/s41467-026-79325-8",
+      "title": "Transposable element polymorphisms underlie epigenetic variation and phenotypic diversification during foxtail millet domestication",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Wenlei Guo, Sha Tang, Yi Sui, Hui Zhang, Jiahao Liu, Yang Liu, Bin Xie, Hongyan Chang, Yingjie Mi, Jianghui Cui, Hui Zhi, Guanqing Jia, Xianmin Diao, Jinfeng Chen",
+      "abstract": "Transposable elements (TEs) generate genomic variation, yet how TE polymorphisms reshape the epigenetic landscape and contribute to phenotypic diversification during domestication remains unclear. Here, we show that TE-associated genetic variants drive heritable epigenetic changes underlying key domestication traits in foxtail millet (Setaria italica), one of the oldest cereal crops domesticated in China. By analyzing DNA methylomes from 60 wild and domesticated accessions, we identify 76,815 differentially methylated regions associated with extensive polymorphic TE insertions. Epigenomic variation enables the identification of a TE inventory associated with seed shattering, branching, and growth habits. Functional analyses reveal that two DNA/PIF-Harbinger element insertions in the 5′ UTR of the pleiotropic gene SiGW3 modulate its expression and affect plant architecture, panicle morphology, and grain size. Our findings demonstrate that naturally occurring TE polymorphisms generate heritable epigenetic variation and contribute to phenotypic evolution during crop domestication, with implications for crop improvement. Foxtail millet is one of the oldest domesticated crops with climate-resilient trait and balanced nutrients. Here, the authors analyze methylome over a set of 60 foxtail millet accessions and reveal transposable element polymorphisms underlying epigenetic variation and phenotypic diversification during domestication.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          7
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79325-8",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-07",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79325-8"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Transposable elements (TEs) generate genomic variation, yet how TE polymorphisms reshape the epigenetic landscape and contribute to phenotypic diversification during domestication remains unclear. Here, we show that TE-associated genetic variants drive heritable epigenetic changes underlying key domestication traits in foxtail millet (Setaria italica), one of the oldest cereal crops domesticated i",
+      "summary": "Transposable elements (TEs) generate genomic variation, yet how TE polymorphisms reshape the epigenetic landscape and contribute to phenotypic diversification during domestication remains unclear. Here, we show that TE-associated genetic variants drive heritable epigenetic changes underlying key domestication traits in foxtail millet (Setaria italica), one of the oldest cereal crops domesticated i",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79325-8",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 5,
+        "feature_candidate": false,
+        "reason": "The study concerns plant genetics, epigenetics, and crop domestication rather than condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The study concerns plant genetics, epigenetics, and crop domestication rather than condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 5,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79393-w",
+      "doi": "10.1038/s41467-026-79393-w",
+      "title": "Coupling electrolyte mechanical reinforcement and interfacial stress relaxation for near-ambient sulfide all-solid-state lithium metal batteries",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Hyeongseok Lee, Jihun Sung, Seongsoo Park, Dokyung Kim, Sangwon Lee, Jae-Hong Lim, Kyungmok Ko, Daiwei Wang, Donghai Wang, Young Joo Lee, Janghyuk Moon, Soojin Park",
+      "abstract": "All-solid-state lithium metal batteries offer the promise of higher energy density and improved safety compared with conventional lithium-ion batteries; however, their practical operation at room temperature and low stack pressures ( ~ 0.1 MPa) remains challenging due to lithium dendrite formation and stress-induced interfacial degradation. Herein, we demonstrate near-ambient operation ( ≤ 0.3 MPa, room temperature) of all-solid-state lithium metal batteries through a combined electrolyte–current collector design. A self-polymerizable thioctic acid-modified composite solid electrolyte suppresses internal lithium metal creep with high stress tolerance, while a porous carbon matrix current collector provides localized stress relaxation and accommodates lithium deposition within internal voids. As a result, stable long-term cycling is achieved under near-ambient conditions even at a high areal loading of 2.4 mAh cm−2 using a LiNi0.8Co0.1Mn0.1O2 positive electrode operated at 0.1 C. These findings highlight the importance of controlling lithium deformation and stress relaxation for the development of practical all-solid-state lithium metal batteries. All-solid-state lithium metal batteries can suffer from dendrite growth and interfacial stress at low pressures. Here, authors couple a self-polymerizable composite sulfide electrolyte with a porous carbon current collector, enabling stable near-ambient condition cycling at high areal loading.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          7
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79393-w",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-07",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79393-w"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "All-solid-state lithium metal batteries offer the promise of higher energy density and improved safety compared with conventional lithium-ion batteries; however, their practical operation at room temperature and low stack pressures ( ~ 0.1 MPa) remains challenging due to lithium dendrite formation and stress-induced interfacial degradation. Herein, we demonstrate near-ambient operation ( ≤ 0.3 MPa",
+      "summary": "All-solid-state lithium metal batteries offer the promise of higher energy density and improved safety compared with conventional lithium-ion batteries; however, their practical operation at room temperature and low stack pressures ( ~ 0.1 MPa) remains challenging due to lithium dendrite formation and stress-induced interfacial degradation. Herein, we demonstrate near-ambient operation ( ≤ 0.3 MPa",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79393-w",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 26,
+        "feature_candidate": false,
+        "reason": "The work is primarily battery engineering focused on improving cycling performance through electrolyte and current-collector design, without a substantial quantum-materials or fundamental condensed-matter advance.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The work is primarily battery engineering focused on improving cycling performance through electrolyte and current-collector design, without a substantial quantum-materials or fundamental condensed-matter advance.",
+      "relevance_method": "semantic",
+      "relevance_score": 26,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78713-4",
+      "doi": "10.1038/s41467-026-78713-4",
+      "title": "Selective depolymerization of poly(ethylene terephthalate) for economical closed-loop recycling of mixed textiles",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Cheng Liu, Jian Wang, Hong Wan, Lilong Gao, Haomiao Zhang, Bogeng Li, Ning Zheng, Tao Xie",
+      "abstract": "Polyethylene terephthalate (PET) is the second largest source of plastic wastes. An ideal solution is to chemically convert PET back into its monomers. Although many strategies have been reported, their extension towards PET-containing waste textiles is economically prohibitive. This is because chemical depolymerization can degrade multiple components in mixed textiles, yielding complex mixtures that are cost-prohibitive to separate and purify. Here, we report highly efficient processes that overcome this bottleneck. We find that, for thermally treated mixed textiles, the depolymerization of PET via methanolysis can be achieved in a rapid yet highly selective manner under mild conditions. This greatly simplifies the chemical recycling process, yielding high-purity DMT monomer ( ≥ 99.92%) at a yield of 91%. Techno-economic analysis shows that our strategy is economically competitive, suggesting a feasible closed-loop option for this indispensable commodity polymer. Recovering polymerization-grade monomers from waste textiles remains challenging. Here the authors report that the depolymerization of PET from thermally treated mixed textiles via methanolysis can be achieved in a rapid yet highly selective manner under mild conditions.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          7
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-78713-4",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-07",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78713-4"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Thermal & Thermoelectric",
+      "summary_en": "Polyethylene terephthalate (PET) is the second largest source of plastic wastes. An ideal solution is to chemically convert PET back into its monomers. Although many strategies have been reported, their extension towards PET-containing waste textiles is economically prohibitive. This is because chemical depolymerization can degrade multiple components in mixed textiles, yielding complex mixtures t",
+      "summary": "Polyethylene terephthalate (PET) is the second largest source of plastic wastes. An ideal solution is to chemically convert PET back into its monomers. Although many strategies have been reported, their extension towards PET-containing waste textiles is economically prohibitive. This is because chemical depolymerization can degrade multiple components in mixed textiles, yielding complex mixtures t",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-78713-4",
+        "in_scope": false,
+        "soft_matter": true,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 12,
+        "feature_candidate": false,
+        "reason": "The primary contribution is a chemical recycling process for PET textiles, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": true,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "soft_matter",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary contribution is a chemical recycling process for PET textiles, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 12,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78009-7",
+      "doi": "10.1038/s41467-026-78009-7",
+      "title": "Fully Integrated Deep-Ocean Flexible Temperature–Depth Sensor with Neural Network Compensation",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Hai Zhang, Zihong Wei, A. S. Ismail, Zhuhang Dai, Diye Wu, Rongjie Lin, Zhenting Ye, Quan Hong, Maggie CY Lau Vetter, Yaxiaer Yalikun, Huaping Wu, Chenjing Shang, Yang Yang",
+      "abstract": "Earth’s deep ocean shapes global heat transport, carbon cycling and abyssal circulation, yet large regions remain undersampled. While conventional instruments provide precise single point measurements, their rigidity and weight limit deployment on emerging platforms that could extend observational reach. Here, we introduce the fully integrated, flexible temperature–depth sensor deployable on curved and mobile surfaces for deep-sea measurements. The compact, lightweight, stress-adaptive low-power electronics (average quiescent current: 24.63 µA) unit operates as a co-designed cyber–physical platform, where the porous laser-induced graphene–polydimethylsiloxane composite sensing element achieves a broad measurement range over 0–10 MPa hydrostatic pressure, while temperature–pressure compensation through a dual-hidden-layer neural network combined with polynomial fitting yields a depth error of ≤±0.91% full scale and temperature accuracy of ≤±0.29 °C. Deep-sea trials to 4812.2 m show structural integrity under ~50 MPa hydrostatic pressure, demonstrating durability in extreme environments and enabling sensing on platforms inaccessible to conventional instruments. Marine pressure monitoring helps reveal ocean dynamics and assess human impacts. This work reports a self-contained low-power flexible marine temperature depth (FMTD) sensor featuring wide range, high precision and restrained temperature drift.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          7
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-78009-7",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-07",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78009-7"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Earth’s deep ocean shapes global heat transport, carbon cycling and abyssal circulation, yet large regions remain undersampled. While conventional instruments provide precise single point measurements, their rigidity and weight limit deployment on emerging platforms that could extend observational reach. Here, we introduce the fully integrated, flexible temperature–depth sensor deployable on curve",
+      "summary": "Earth’s deep ocean shapes global heat transport, carbon cycling and abyssal circulation, yet large regions remain undersampled. While conventional instruments provide precise single point measurements, their rigidity and weight limit deployment on emerging platforms that could extend observational reach. Here, we introduce the fully integrated, flexible temperature–depth sensor deployable on curve",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-78009-7",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 15,
+        "feature_candidate": false,
+        "reason": "The primary contribution is engineering and field validation of a flexible deep-ocean sensor, not a condensed-matter physics result.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary contribution is engineering and field validation of a flexible deep-ocean sensor, not a condensed-matter physics result.",
+      "relevance_method": "semantic",
+      "relevance_score": 15,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78325-y",
+      "doi": "10.1038/s41467-026-78325-y",
+      "title": "Ultra-high precision speckle spectrometer enabling radio-frequency scale resolution of atomic spectra",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Gabriel Britto Monteiro, Christopher Perrella, Sarah K. Scholten, Morgan Facchin, Andre N. Luiten, Graham D. Bruce, Kishan Dholakia",
+      "abstract": "Abstract Laser speckle, the granular intensity pattern arising from random optical interference, provides a high-dimensional encoding of spectral information that can be exploited for precision metrology. Speckle-based spectrometers have advanced rapidly owing to their compact footprint, mechanical robustness and alignment agnostic nature, yet their spectral resolution has remained limited to the picometre scale. In this work, we break this limit by employing an integrating sphere as a multiply scattering cavity with access to a high range of path lengths to enhance spectral sensitivity. At 780 nm, the resulting device achieves a resolution of 6 fm, corresponding to a resolving power of 1.3 × 10 8 , representing an approximately 80-fold improvement over previous implementations. This ultra-high resolution enables clear discrimination of laser sidebands generated by an electro-optical modulator, with extracted sideband powers agreeing with expected values to within 1%. It further permits a direct speckle-based measurement of the hyperfine structure of the D 2 transition in 85 Rb, with transmission spectra differing by no more than 3.7% from independent wavemeter-referenced measurements. These results establish speckle as a platform for ultra-high precision spectroscopy, radio-frequency spectrometry, and microwave photonics.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          7
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-78325-y",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-07",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78325-y"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Abstract Laser speckle, the granular intensity pattern arising from random optical interference, provides a high-dimensional encoding of spectral information that can be exploited for precision metrology. Speckle-based spectrometers have advanced rapidly owing to their compact footprint, mechanical robustness and alignment agnostic nature, yet their spectral resolution has remained limited to the ",
+      "summary": "Abstract Laser speckle, the granular intensity pattern arising from random optical interference, provides a high-dimensional encoding of spectral information that can be exploited for precision metrology. Speckle-based spectrometers have advanced rapidly owing to their compact footprint, mechanical robustness and alignment agnostic nature, yet their spectral resolution has remained limited to the ",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-78325-y",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 24,
+        "feature_candidate": false,
+        "reason": "The primary contribution is improved optical spectrometer performance and spectroscopy instrumentation, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary contribution is improved optical spectrometer performance and spectroscopy instrumentation, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 24,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79149-6",
+      "doi": "10.1038/s41467-026-79149-6",
+      "title": "Fractional quantum Hall states and oscillatory Landau charge squeezing in Bernal tetralayer graphene",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Yinghai Xu, Yiwei Chen, Yanbo Wang, Xiao-Kai Yue, Dongdong An, Junwei Song, Qingxin Li, Kenji Watanabe, Takashi Taniguchi, Fu-Chun Zhang, Ying-Hai Wu, Wei Chen, Lei Wang",
+      "abstract": "The precise layer-number control in graphene provides valuable opportunities to explore the physics from the two-dimensional limit to the bulk crystalline regime. As the thickness increases, a fundamental question is how this increased dimensionality influences the integer and fractional quantum Hall states. Here, we perform magnetotransport measurements on high-quality Bernal tetralayer graphene and uncover a variety of fractional quantum Hall states at filling factors with both odd-denominator and even ones (ν − 1/2 = 3, 5, 7, 8, 10), which may be non-Abelian states. Moreover, the fractional quantum Hall states exhibit a sawtooth pattern when an out-of-plane displacement field D is tuned. Theoretical calculations reveal that these patterns arise from oscillatory Landau charge squeezing effect caused by subtle competitions between Landau levels with vastly disparate spatial distributions. Our results establish Bernal tetralayer graphene as a promising platform, where the layer degree of freedom provides distinctive tunability to explore rich correlated phenomena. Fractional quantum Hall states have been observed in monolayer, bilayer and trilayer graphene. Here, the authors observe in Bernal tetralayer graphene fractional quantum Hall states at filling factors with both even- and odd-denominators as well as an oscillatory Landau charge squeezing effect.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          7
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79149-6",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-07",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79149-6"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Magnetism",
+      "summary_en": "The precise layer-number control in graphene provides valuable opportunities to explore the physics from the two-dimensional limit to the bulk crystalline regime. As the thickness increases, a fundamental question is how this increased dimensionality influences the integer and fractional quantum Hall states. Here, we perform magnetotransport measurements on high-quality Bernal tetralayer graphene ",
+      "summary": "The precise layer-number control in graphene provides valuable opportunities to explore the physics from the two-dimensional limit to the bulk crystalline regime. As the thickness increases, a fundamental question is how this increased dimensionality influences the integer and fractional quantum Hall states. Here, we perform magnetotransport measurements on high-quality Bernal tetralayer graphene ",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79149-6",
+        "in_scope": true,
+        "soft_matter": false,
+        "quantum_materials": true,
+        "research_type": "mixed",
+        "score": 83,
+        "feature_candidate": true,
+        "reason": "Magnetotransport and supporting theory establish distinctive fractional quantum Hall phenomena and their displacement-field dependence in a low-dimensional electronic material.",
+        "physics_advance": "Bernal tetralayer graphene hosts fractional quantum Hall states at odd- and even-denominator filling factors, whose sawtooth displacement-field dependence is attributed to oscillatory Landau charge squeezing from competition between Landau levels with different spatial distributions."
+      },
+      "soft_matter": false,
+      "quantum_materials": true,
+      "research_type": "mixed",
+      "screening_decision": "selected",
+      "physics_advance": "Bernal tetralayer graphene hosts fractional quantum Hall states at odd- and even-denominator filling factors, whose sawtooth displacement-field dependence is attributed to oscillatory Landau charge squeezing from competition between Landau levels with differen",
+      "ai_in_scope": true,
+      "relevance_reason": "Magnetotransport and supporting theory establish distinctive fractional quantum Hall phenomena and their displacement-field dependence in a low-dimensional electronic material.",
+      "relevance_method": "semantic",
+      "relevance_score": 83,
+      "feature_candidate": true
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79376-x",
+      "doi": "10.1038/s41467-026-79376-x",
+      "title": "Nanofluid wetting of Cu enables thin lithium negative electrodes for high-energy and long-cycling lithium metal batteries",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Wei Wu, Qilong Wu, Wenting Liu, De Ning, Ming Chen, Jie Zhang, Fengping Zhang, Xuhao Wang, Dong Zhou, Man Wang, Zhenyao Wei, Guohua Zhong, Yonghong Deng, Stefano Passerini, Jun Wang, Chunlei Yang",
+      "abstract": "Abstract Exploiting thin Li foils ≤ 20 μm is required for high-energy-density and long-cycling-lifespan battery, but is severely hindered by the poor processability of Li, as well as its inhomogeneous plating behaviors and resulting low Coulombic efficiency. Herein, an approach balancing Li supply and consumption is fulfilled by designing thin molten-salt-derived, nanocomposite Li@LiX metal negative electrodes. Benefitting from the formation of nanofluid due to the spontaneous reaction of inorganic nanoparticles in molten Li, the bonding states at both Li surface and Li|Cu interface are effectively regulated, displaying an enhanced wetting behaviour of Li on Cu. This approach enables the fabrication of an 800-nm-thick Li-based negative electrode foil as well as the formation of an inorganic-rich interphase upon cycling, which suppresses Li consumption by reducing corrosion susceptibility. As a result, practical pouch cells composed of 10-μm-thick Li@lithium bis(fluorosulfonyl)imide (LiFSI) and LiFePO 4 offer stable cycling over 250 cycles, while those composed of 20-μm-thick Li@LiFSI and LiNi 0.92 Co 0.03 Mn 0.05 O 2 with an areal capacity of 4.6 mAh cm −2 achieve 100 cycles, yielding specific energy of 498 Wh kg −1 and energy density of 1,142 Wh L −1 , indicating that this design strategy is applicable to lithium metal batteries.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          7
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79376-x",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-07",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79376-x"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Abstract Exploiting thin Li foils ≤ 20 μm is required for high-energy-density and long-cycling-lifespan battery, but is severely hindered by the poor processability of Li, as well as its inhomogeneous plating behaviors and resulting low Coulombic efficiency. Herein, an approach balancing Li supply and consumption is fulfilled by designing thin molten-salt-derived, nanocomposite Li@LiX metal negati",
+      "summary": "Abstract Exploiting thin Li foils ≤ 20 μm is required for high-energy-density and long-cycling-lifespan battery, but is severely hindered by the poor processability of Li, as well as its inhomogeneous plating behaviors and resulting low Coulombic efficiency. Herein, an approach balancing Li supply and consumption is fulfilled by designing thin molten-salt-derived, nanocomposite Li@LiX metal negati",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79376-x",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 35,
+        "feature_candidate": false,
+        "reason": "The work focuses on electrode fabrication, battery cycling, and energy-density performance rather than a substantial new discovery about condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The work focuses on electrode fabrication, battery cycling, and energy-density performance rather than a substantial new discovery about condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 35,
+      "feature_candidate": false
+    }
+  ],
+  "pending_journal_records": [],
+  "selected_ids": [
+    "doi-10-1038-s41467-026-79077-5",
+    "doi-10-1038-s41467-026-79149-6"
+  ],
+  "stats": {
+    "scanned": 18,
+    "first_pass_selected": 2,
+    "selected": 2,
+    "rejected": 16,
+    "ai_assessed": 18,
+    "ai_cached": 0,
+    "ai_unscored": 0,
+    "global_editorial": true,
+    "field_scope_excluded": 0,
+    "duplicate_work_excluded": 0,
+    "arxiv_selected": 0,
+    "journal_selected": 2,
+    "arxiv_harvest_excluded": 0,
+    "pending_journal_abstracts": 0,
+    "non_original_excluded": 0,
+    "publication_not_eligible": 11
+  }
+}

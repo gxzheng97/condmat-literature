@@ -1,0 +1,160 @@
+{
+  "date": "2026-11-08",
+  "title": "Daily Condensed Matter Literature",
+  "generated_at": "2026-11-08T08:00:40.576719-08:00",
+  "screening_version": "quantum-materials-v1-formal-research-v5",
+  "screening_config": {
+    "arxiv_min_score": 70,
+    "journal_min_score": 55,
+    "max_papers": 30,
+    "arxiv_versions": [
+      1
+    ],
+    "exclude_soft_matter": true,
+    "journals": [
+      "Science",
+      "Science Advances",
+      "Nature",
+      "Nature Physics",
+      "Nature Materials",
+      "Nature Communications",
+      "PRL",
+      "PRX",
+      "PNAS"
+    ],
+    "journal_publication": "publisher-verified formal online publication on the previous Los Angeles calendar day",
+    "arxiv_intake": "first announcement in the fixed 24 hours ending at 06:00 America/Los_Angeles",
+    "journal_document_types": "research article or research letter; no accepted papers, essays, replies or comments",
+    "editorial_interest": "experimental quantum materials; original theory and experiment"
+  },
+  "intake_window": {
+    "version": "la-0600-arxiv24h-previous-journal-day-v1",
+    "timezone": "America/Los_Angeles",
+    "arxiv_start": "2026-11-07T14:00:00+00:00",
+    "arxiv_end": "2026-11-08T14:00:00+00:00",
+    "journal_publication_date": "2026-11-07"
+  },
+  "sources_complete": true,
+  "papers": [
+    {
+      "id": "doi-10-1038-s41467-026-79149-6",
+      "doi": "10.1038/s41467-026-79149-6",
+      "title": "Fractional quantum Hall states and oscillatory Landau charge squeezing in Bernal tetralayer graphene",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Yinghai Xu, Yiwei Chen, Yanbo Wang, Xiao-Kai Yue, Dongdong An, Junwei Song, Qingxin Li, Kenji Watanabe, Takashi Taniguchi, Fu-Chun Zhang, Ying-Hai Wu, Wei Chen, Lei Wang",
+      "abstract": "The precise layer-number control in graphene provides valuable opportunities to explore the physics from the two-dimensional limit to the bulk crystalline regime. As the thickness increases, a fundamental question is how this increased dimensionality influences the integer and fractional quantum Hall states. Here, we perform magnetotransport measurements on high-quality Bernal tetralayer graphene and uncover a variety of fractional quantum Hall states at filling factors with both odd-denominator and even ones (ν − 1/2 = 3, 5, 7, 8, 10), which may be non-Abelian states. Moreover, the fractional quantum Hall states exhibit a sawtooth pattern when an out-of-plane displacement field D is tuned. Theoretical calculations reveal that these patterns arise from oscillatory Landau charge squeezing effect caused by subtle competitions between Landau levels with vastly disparate spatial distributions. Our results establish Bernal tetralayer graphene as a promising platform, where the layer degree of freedom provides distinctive tunability to explore rich correlated phenomena. Fractional quantum Hall states have been observed in monolayer, bilayer and trilayer graphene. Here, the authors observe in Bernal tetralayer graphene fractional quantum Hall states at filling factors with both even- and odd-denominators as well as an oscillatory Landau charge squeezing effect.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          7
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79149-6",
+      "level": "Feature",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-07",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79149-6"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Magnetism",
+      "summary_en": "This study investigates how the added layer degree of freedom in Bernal tetralayer graphene affects quantum Hall physics. It reports fractional quantum Hall states at odd- and even-denominator filling factors and a displacement-field-dependent sawtooth pattern attributed to oscillatory Landau charge squeezing.",
+      "summary": "The precise layer-number control in graphene provides valuable opportunities to explore the physics from the two-dimensional limit to the bulk crystalline regime. As the thickness increases, a fundamental question is how this increased dimensionality influences the integer and fractional quantum Hall states. Here, we perform magnetotransport measurements on high-quality Bernal tetralayer graphene ",
+      "soft_matter": false,
+      "quantum_materials": true,
+      "research_type": "mixed",
+      "screening_decision": "selected",
+      "physics_advance": "Bernal tetralayer graphene hosts fractional quantum Hall states at odd- and even-denominator filling factors, whose sawtooth displacement-field dependence is attributed to oscillatory Landau charge squeezing from competition between Landau levels with differen",
+      "ai_in_scope": true,
+      "relevance_reason": "Magnetotransport and supporting theory establish distinctive fractional quantum Hall phenomena and their displacement-field dependence in a low-dimensional electronic material.",
+      "relevance_method": "semantic",
+      "relevance_score": 83,
+      "feature_candidate": true,
+      "summary_zh": "本研究考察 Bernal 四层石墨烯中新增的层自由度如何影响量子霍尔物理。研究报告了奇、偶分母填充因子处的分数量子霍尔态，以及一种归因于振荡型朗道电荷挤压效应、随位移场变化的锯齿状图样。",
+      "method_en": "The authors perform magnetotransport measurements on high-quality Bernal tetralayer graphene while tuning the out-of-plane displacement field. They use theoretical calculations to investigate the origin of the observed sawtooth pattern.",
+      "method_zh": "作者在高质量 Bernal 四层石墨烯上进行磁输运测量，并调节面外位移场。研究还利用理论计算探究所观测锯齿状图样的起源。",
+      "result_en": "Fractional quantum Hall states are observed at filling factors with ν − 1/2 = 3, 5, 7, 8, and 10, encompassing both odd and even denominators. The even-denominator states may be non-Abelian, as stated by the authors. The states exhibit a sawtooth pattern as the out-of-plane displacement field is varied. The calculations attribute this pattern to oscillatory Landau charge squeezing arising from competition between Landau levels with substantially different spatial distributions.",
+      "result_zh": "研究在 ν − 1/2 = 3、5、7、8 和 10 对应的填充因子处观测到分数量子霍尔态，涵盖奇、偶分母。作者指出，偶分母态可能具有非阿贝尔性质。随着面外位移场变化，这些态呈现锯齿状图样。计算将该图样归因于振荡型朗道电荷挤压，其来源是空间分布差异显著的朗道能级之间的竞争。",
+      "future_en": "The results motivate further investigation of the even-denominator states to clarify whether they are non-Abelian. Mapping the displacement-field dependence and its proposed charge-squeezing origin may also help establish how the layer degree of freedom can be used to explore correlated states in tetralayer graphene.",
+      "future_zh": "这些结果促使人们进一步研究偶分母态，以厘清其是否具有非阿贝尔性质。进一步绘制位移场依赖关系并检验所提出的电荷挤压起源，也有助于理解如何利用四层石墨烯的层自由度探索关联态。"
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79077-5",
+      "doi": "10.1038/s41467-026-79077-5",
+      "title": "Topological Josephson trijunctions as a Majorana source and path",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Kyungtae Kim, June-Young M. Lee, Hyeongseop Kim, H.-S. Sim",
+      "abstract": "Abstract Majorana bound states (MBSs) are zero-energy localized states in topological superconductors, obeying non-Abelian braiding statistics. Manipulation of mobile MBSs, encompassing their on-demand generation, propagation, and fusion, is essential for braiding MBSs and operating topological qubits. We show that the manipulation is enabled by a trijunction formed on a topological insulator in a perpendicular magnetic field, where three Josephson junctions meet. While the superconducting phases at the trijunction center evolve to cross a boundary between topological and non-topological phase domains, the trijunction offers two distinct dynamics, source/sink and path, depending on the phase boundaries. At a source/sink boundary, two MBSs are pairwise generated at the center, and one of them is ejected to a Josephson junction. The reverse, pair annihilation by collision of two MBSs, can also happen. At a path boundary, an MBS moves from a Josephson junction to the trijunction center or vice versa, without involving other MBSs. Exploiting the two dynamics, fusion and braiding of MBSs can be operated in a trijunction network. We illustrate this with a double trijunction setup, where non-Abelian state evolutions associated with MBSs can be manipulated without dynamical control of the setup and detected by Josephson emission spectroscopy.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          7
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79077-5",
+      "level": "Feature",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-07",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79077-5"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Superconductivity",
+      "summary_en": "This work proposes a topological-insulator Josephson trijunction in a perpendicular magnetic field as a platform for generating, moving, and fusing Majorana bound states. It distinguishes source/sink dynamics, which create or annihilate pairs, from path dynamics, which move a single Majorana between a junction and the trijunction center.",
+      "summary": "Abstract Majorana bound states (MBSs) are zero-energy localized states in topological superconductors, obeying non-Abelian braiding statistics. Manipulation of mobile MBSs, encompassing their on-demand generation, propagation, and fusion, is essential for braiding MBSs and operating topological qubits. We show that the manipulation is enabled by a trijunction formed on a topological insulator in a",
+      "soft_matter": false,
+      "quantum_materials": true,
+      "research_type": "theory",
+      "screening_decision": "selected",
+      "physics_advance": "Identifies source/sink and path dynamics at phase boundaries that enable generation, propagation, and fusion of Majorana bound states in Josephson trijunctions, with proposed detection through Josephson emission spectroscopy.",
+      "ai_in_scope": true,
+      "relevance_reason": "The paper develops a theoretical account of Majorana bound-state dynamics in topological-insulator Josephson trijunctions, a substantive contribution to topological superconducting matter.",
+      "relevance_method": "semantic",
+      "relevance_score": 70,
+      "feature_candidate": true,
+      "summary_zh": "本研究提出在垂直磁场中的拓扑绝缘体约瑟夫森三结，可作为产生、移动和融合马约拉纳束缚态的平台。研究区分了两种动力学：源/汇过程产生或湮灭一对马约拉纳态；路径过程则使单个马约拉纳态在某个结与三结中心之间移动。",
+      "method_en": "The authors describe the dynamics of a trijunction as its superconducting phases evolve across boundaries separating topological and non-topological domains. They also present a double-trijunction setup and propose Josephson emission spectroscopy for detecting the associated non-Abelian state evolutions.",
+      "method_zh": "作者描述了三结中超导相演化并跨越拓扑与非拓扑区域边界时的动力学。研究还展示了双三结构型，并提出利用约瑟夫森发射谱检测相关的非阿贝尔态演化。",
+      "result_en": "At a source/sink boundary, two Majorana bound states are generated in pairs at the trijunction center, with one ejected into a Josephson junction; the reverse process allows pair annihilation through collision. At a path boundary, a Majorana moves between a Josephson junction and the center without involving other Majorana states. The authors state that these two dynamics can support fusion and braiding operations in a trijunction network. In a double-trijunction setup, they illustrate manipulation of non-Abelian state evolutions without dynamical control of the setup and propose detecting them through Josephson emission spectroscopy.",
+      "result_zh": "在源/汇边界处，两个马约拉纳束缚态在三结中心成对产生，其中一个被推出至约瑟夫森结；反向过程则可通过碰撞湮灭这一对态。在路径边界处，一个马约拉纳态可在约瑟夫森结与中心之间移动，而不涉及其他马约拉纳态。作者指出，这两种动力学可支持三结网络中的融合与编织操作。研究以双三结构型展示了无需对装置进行动态控制来操纵非阿贝尔态演化，并提出通过约瑟夫森发射谱进行检测。",
+      "future_en": "A natural next step is to experimentally test whether the proposed source/sink and path dynamics can be realized and distinguished in a trijunction. The proposed Josephson emission spectroscopy could be assessed as a means of detecting the non-Abelian state evolution, while the double-trijunction proposal motivates further examination of fusion and braiding operations.",
+      "future_zh": "一个自然的后续方向是在实验中检验所提出的源/汇与路径动力学能否在三结中实现并加以区分。可进一步评估约瑟夫森发射谱能否用于检测非阿贝尔态演化；双三结方案也为继续研究融合与编织操作提供了方向。"
+    }
+  ],
+  "stats": {
+    "scanned": 18,
+    "first_pass_selected": 2,
+    "selected": 2,
+    "rejected": 16,
+    "ai_assessed": 18,
+    "ai_cached": 0,
+    "ai_unscored": 0,
+    "global_editorial": true,
+    "field_scope_excluded": 0,
+    "duplicate_work_excluded": 0,
+    "arxiv_selected": 0,
+    "journal_selected": 2,
+    "arxiv_harvest_excluded": 0,
+    "pending_journal_abstracts": 0,
+    "non_original_excluded": 0,
+    "publication_not_eligible": 11
+  }
+}
