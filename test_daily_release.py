@@ -8,6 +8,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 import daily_release as release
+from report_state import record_report, report_path
 
 DAY="2026-10-27"
 
@@ -138,6 +139,67 @@ class DailyReleaseTests(unittest.TestCase):
         self.save()
         with self.assertRaises(RuntimeError):
             release.verify_release(self.root,DAY,attempts=1,reader=lambda *args:{"date":"2026-10-26"},validator=lambda issue:None)
+
+    def reports(self):
+        data=b"%PDF-1.7\nverified report\n%%EOF\n"
+        for lang in ("en","zh"):
+            path=report_path(self.root,DAY,lang)
+            path.parent.mkdir(exist_ok=True)
+            path.write_bytes(data)
+            record_report(self.root,self.issue,lang)
+        return data
+
+    def report_state(self,linked=True):
+        return {"issues":{DAY:self.issue},"reports":{
+            DAY:{lang:f"reports/{DAY}.{lang}.pdf" for lang in ("en","zh")}} if linked else {}}
+
+    def test_pdf_failure_keeps_body_current_and_retry_does_not_rescreen(self):
+        import make_reports
+        self.save()
+        def broken(html,destination,root):
+            destination.write_bytes(b"%PDF-incomplete")
+            raise RuntimeError("Optional PDF dependency unavailable")
+        with self.assertRaises(RuntimeError):
+            make_reports.generate_reports(self.root,day=DAY,renderer=broken)
+        self.assertEqual(self.plan(event="workflow_dispatch",reuse_valid=True,reader=lambda *args:self.issue)["mode"],"current")
+        result=release.plan_reports(self.root,DAY,validator=lambda issue:None)
+        self.assertEqual(result["mode"],"render")
+        self.assertEqual(result["languages"],["en","zh"])
+
+    def test_cached_reports_missing_from_website_need_only_deployment(self):
+        self.save();self.reports()
+        result=release.plan_reports(self.root,DAY,reader=lambda:self.report_state(False),validator=lambda issue:None)
+        self.assertEqual(result["mode"],"deploy")
+
+    def test_successful_report_pair_skips_rendering_and_deployment(self):
+        self.save();data=self.reports()
+        result=release.plan_reports(self.root,DAY,reader=self.report_state,validator=lambda issue:None,downloader=lambda url:data)
+        self.assertEqual(result["mode"],"current")
+
+    def test_same_pdf_urls_with_old_bytes_retry_failed_second_deployment(self):
+        self.save();self.reports()
+        result=release.plan_reports(self.root,DAY,reader=self.report_state,validator=lambda issue:None,downloader=lambda url:b"%PDF-1.7\nold renderer\n%%EOF")
+        self.assertEqual(result["mode"],"deploy")
+
+    def test_missing_one_language_renders_only_missing_report(self):
+        self.save();self.reports()
+        report_path(self.root,DAY,"zh").unlink()
+        result=release.plan_reports(self.root,DAY,validator=lambda issue:None)
+        self.assertEqual(result["mode"],"render")
+        self.assertEqual(result["languages"],["zh"])
+
+    def test_report_verification_checks_actual_published_bytes(self):
+        self.save();data=self.reports()
+        result=release.verify_reports(self.root,DAY,attempts=1,reader=self.report_state,downloader=lambda url:data,validator=lambda issue:None)
+        self.assertTrue(result["verified"])
+        with self.assertRaisesRegex(RuntimeError,"Published PDF differs"):
+            release.verify_reports(self.root,DAY,attempts=1,reader=self.report_state,downloader=lambda url:b"old",validator=lambda issue:None)
+
+    def test_report_verification_rejects_incomplete_bilingual_pair(self):
+        self.save();self.reports()
+        report_path(self.root,DAY,"en").unlink()
+        with self.assertRaisesRegex(ValueError,"incomplete"):
+            release.verify_reports(self.root,DAY,attempts=1,validator=lambda issue:None)
 
 if __name__=="__main__":
     unittest.main()

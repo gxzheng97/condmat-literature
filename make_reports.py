@@ -3,7 +3,10 @@
 from pathlib import Path
 from html import escape
 import json
-from weasyprint import HTML
+import argparse
+import os
+import tempfile
+from report_state import LANGUAGES, pdf_fingerprint, record_report, report_is_current, report_path
 
 ROOT = Path(__file__).resolve().parent
 CSS = """
@@ -124,14 +127,68 @@ def document(issue, lang):
             lines.append('</section>')
     return '\n'.join(lines + ['</body></html>'])
 
-def main():
-    (ROOT/'reports').mkdir(exist_ok=True)
-    for file in sorted((ROOT/'issues').glob('????-??-??.json')):
-        issue = json.loads(file.read_text(encoding='utf-8'))
-        for lang in ('en','zh'):
-            destination = ROOT/'reports'/f'{issue["date"]}.{lang}.pdf'
-            HTML(string=document(issue,lang), base_url=str(ROOT)).write_pdf(destination)
-            print(destination, destination.stat().st_size)
+def render_pdf(html, destination, root):
+    # Site generation and cache inspection do not need native PDF dependencies.
+    from weasyprint import HTML
+    HTML(string=html, base_url=str(root)).write_pdf(destination)
+
+
+def generate_reports(root, day=None, all_issues=False, force=False, renderer=None):
+    root = Path(root)
+    files = sorted((root / 'issues').glob('????-??-??.json'))
+    if day is not None:
+        report_path(root, day, 'en')  # Validate before constructing an issue path.
+        files = [root / 'issues' / (day + '.json')]
+    elif not all_issues:
+        files = files[-1:]
+    if not files:
+        raise FileNotFoundError('No issue is available for PDF generation')
+    results = {'generated': [], 'skipped': []}
+    errors = []
+    for file in files:
+        issue = json.loads(file.read_text(encoding='utf8'))
+        if issue.get('date') != file.stem:
+            raise ValueError('Report issue date does not match its filename')
+        for lang in LANGUAGES:
+            destination = report_path(root, issue['date'], lang)
+            if not force and report_is_current(root, issue, lang):
+                results['skipped'].append(str(destination))
+                print('Reused current PDF:', destination, flush=True)
+                continue
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            temporary = None
+            try:
+                with tempfile.NamedTemporaryFile(dir=destination.parent,
+                                                 prefix=destination.name + '.', suffix='.tmp',
+                                                 delete=False) as stream:
+                    temporary = Path(stream.name)
+                (renderer or render_pdf)(document(issue, lang), temporary, root)
+                pdf_fingerprint(temporary)
+                os.replace(temporary, destination)
+                record_report(root, issue, lang)
+                results['generated'].append(str(destination))
+                print('Generated PDF:', destination, destination.stat().st_size, flush=True)
+            except Exception as exc:
+                errors.append(f"{issue['date']} {lang}: {type(exc).__name__}: {exc}")
+                print('PDF generation failed:', errors[-1], flush=True)
+            finally:
+                if temporary is not None:
+                    temporary.unlink(missing_ok=True)
+    if errors:
+        raise RuntimeError('PDF generation incomplete: ' + '; '.join(errors))
+    return results
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument('--date', help='Issue date YYYY-MM-DD; defaults to ISSUE_DATE or latest issue')
+    group.add_argument('--all', action='store_true', help='Check every archived issue incrementally')
+    parser.add_argument('--force', action='store_true', help='Render even when a matching PDF is cached')
+    args = parser.parse_args(argv)
+    day = args.date or (None if args.all else os.getenv('ISSUE_DATE') or None)
+    return generate_reports(ROOT, day=day, all_issues=args.all, force=args.force)
+
 
 if __name__ == '__main__':
     main()

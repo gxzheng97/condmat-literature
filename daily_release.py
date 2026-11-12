@@ -11,6 +11,8 @@ import urllib.request
 from zoneinfo import ZoneInfo
 
 from update_daily import validate_issue, ArxivListingParser, fetch
+from report_assets import read_live_state, download as download_report
+from report_state import LANGUAGES, report_is_current, report_path
 
 ROOT=Path(__file__).resolve().parent
 SITE_URL="https://gxzheng97.github.io/condmat-literature/"
@@ -107,21 +109,70 @@ def verify_release(root,day,attempts=6,delay=10,reader=None,validator=None):
                 time.sleep(delay)
     raise RuntimeError("Publication verification failed: "+str(last_error))
 
+def plan_reports(root,day,reader=None,validator=None,downloader=None):
+    """Report recovery is independent of paid screening and body freshness."""
+    issue=load_issue(root,day,validator)
+    missing=[lang for lang in LANGUAGES if not report_is_current(root,issue,lang)]
+    if missing:
+        return {"mode":"render","date":day,"reason":"missing_or_outdated_reports","languages":missing}
+    try:
+        state=(reader or read_live_state)()
+        expected={lang:"reports/"+report_path(root,day,lang).name for lang in LANGUAGES}
+        if (fingerprint(state["issues"].get(day))==fingerprint(issue)
+                and state["reports"].get(day)==expected):
+            # URLs do not change when a new renderer replaces an old PDF. A
+            # failed second deployment must still be retried from the cache.
+            for lang,relative in expected.items():
+                data=(downloader or download_report)(SITE_URL+relative+"?release="+str(time.time_ns()))
+                if hashlib.sha256(data).digest()!=hashlib.sha256(report_path(root,day,lang).read_bytes()).digest():
+                    raise ValueError("Published PDF does not match the current report")
+            return {"mode":"current","date":day,"reason":"reports_already_published"}
+    except Exception:
+        pass
+    return {"mode":"deploy","date":day,"reason":"cached_reports_not_yet_published"}
+
+def verify_reports(root,day,attempts=6,delay=10,reader=None,downloader=None,validator=None):
+    issue=load_issue(root,day,validator)
+    expected={lang:"reports/"+report_path(root,day,lang).name for lang in LANGUAGES}
+    if not all(report_is_current(root,issue,lang) for lang in LANGUAGES):
+        raise ValueError("Cannot publish an incomplete or outdated report pair")
+    last_error=None
+    for attempt in range(attempts):
+        try:
+            state=(reader or read_live_state)()
+            if fingerprint(state["issues"].get(day))!=fingerprint(issue) or state["reports"].get(day)!=expected:
+                raise ValueError("Published issue/report links differ from saved content")
+            for lang,relative in expected.items():
+                data=(downloader or download_report)(SITE_URL+relative+"?release="+str(time.time_ns()))
+                local=report_path(root,day,lang).read_bytes()
+                if hashlib.sha256(data).digest()!=hashlib.sha256(local).digest():
+                    raise ValueError("Published PDF differs from the verified local report: "+lang)
+            return {"date":day,"verified":True,"reports":expected}
+        except Exception as exc:
+            last_error=exc
+            if attempt+1<attempts:
+                time.sleep(delay)
+    raise RuntimeError("Report publication verification failed: "+str(last_error))
+
 def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command",choices=("plan","verify"))
+    parser.add_argument("command",choices=("plan","verify","reports","verify-reports"))
     parser.add_argument("--date",default=os.getenv("ISSUE_DATE") or None)
     args=parser.parse_args(argv)
     day=args.date or dt.datetime.now(ZoneInfo("America/Los_Angeles")).date().isoformat()
     if args.command=="verify":
         result=verify_release(ROOT,day)
+    elif args.command=="verify-reports":
+        result=verify_reports(ROOT,day)
+    elif args.command=="reports":
+        result=plan_reports(ROOT,day)
     else:
         result=plan_release(ROOT,day,os.getenv("EVENT_NAME","workflow_dispatch"),
             force=os.getenv("RESCREEN","").lower()=="true",
             reuse_valid=os.getenv("REUSE_VALID_ISSUE","").lower()=="true")
-        if os.getenv("GITHUB_OUTPUT"):
-            with open(os.environ["GITHUB_OUTPUT"],"a",encoding="utf8") as stream:
-                stream.write("mode="+result["mode"]+"\ndate="+day+"\n")
+    if args.command in ("plan","reports") and os.getenv("GITHUB_OUTPUT"):
+        with open(os.environ["GITHUB_OUTPUT"],"a",encoding="utf8") as stream:
+            stream.write("mode="+result["mode"]+"\ndate="+day+"\n")
     print(json.dumps(result,ensure_ascii=True),flush=True)
 
 if __name__=="__main__":

@@ -23,15 +23,21 @@ Run `python update_daily.py` to harvest candidates and rebuild today's joint sel
 
 Historical re-screening uses `python update_daily.py --date YYYY-MM-DD --rescreen` and requires a saved audit snapshot with the matching intake window for that date. Snapshots from a different date policy are rejected so old archives are not silently relabelled. It never substitutes today's arXiv feed for a historical date.
 
-The GitHub Actions workflow exposes date and rescreen inputs. A push to main regenerates today's issue, validates scope/version/size constraints, rebuilds bilingual reports and the website, and deploys Pages.
+The GitHub Actions workflow exposes date and rescreen inputs. A push to main regenerates today's issue and validates scope/version/size constraints. It saves the reviewed selection, publishes the website and verifies the live article list **before** preparing PDFs. PDF failures leave that article publication in place and produce a warning; a later recovery retries the reports without repeating scientific screening.
 
 Each issue records its rules, thresholds, generation time, and `intake_window` (UTC start/end, Los Angeles timezone, and target journal publication date). The window always ends at local 06:00 and spans exactly 24 elapsed hours, including daylight-saving transitions. The 08:00 recovery uses the same window. The new policy starts with the October 30, 2026 morning issue. Existing v4 issues through October 29 remain valid under their original policy; recovery does not regenerate or relabel them. `audits/YYYY-MM-DD.json` preserves candidates, assessments, exclusions, pending abstracts, and source status. Source or AI assessment failure preserves the previously published issue.
 
 ## Checks and site
 
-Run `python -m unittest -q test_relevance test_pipeline test_daily_release test_intake_window`.
+Run `python -m unittest -q test_relevance test_pipeline test_daily_release test_intake_window test_reports test_build test_report_assets test_prepare_reports`.
 
-The site is generated from `issues/*.json` and `site_template.html` with `python build.py`. Reports use `python make_reports.py` (WeasyPrint and Noto CJK fonts). GitHub Pages source: GitHub Actions.
+The site is generated from `issues/*.json` and `site_template.html` with `python build.py`. `python build.py --output _site` also creates a deployment directory containing only the page and verified PDF pairs. GitHub Pages source: GitHub Actions.
+
+PDF rendering uses `python -m pip install -r requirements-reports.txt`, `python prepare_reports.py`, and `python make_reports.py --date YYYY-MM-DD`. WeasyPrint is pinned; the font script verifies official Noto CJK fonts against fixed commit URLs and SHA256 digests, without apt or sudo. Cached fonts are verified and reused. `--font-dir` supports a different user font directory.
+
+By default `make_reports.py` processes only `ISSUE_DATE` or the latest saved issue. `--all` checks the complete archive and `--force` deliberately regenerates reports. Each language is skipped when both its issue and renderer fingerprints match. Temporary PDFs are validated before replacement; incomplete files never become download links. The site publishes links only when both language PDFs match the saved issue.
+
+Actions caches reports, their checksums and fonts. On a cache miss, `report_assets.py` restores known historical PDFs from the current live website before any deployment; an unreadable known asset stops that deployment rather than silently deleting the archive. Report recovery separately checks the live links and actual PDF bytes, so a failed PDF deployment can resume from the cache without rendering again. Body and report deployments use separate artifact names under the same workflow concurrency lock.
 
 
 
@@ -41,9 +47,9 @@ The primary schedule is 06:00 America/Los_Angeles, leaving three hours before th
 
 The arXiv harvest requests the issue date's official catchup page instead of relying on the mutable live `new` listing. An explicitly dated, empty page (maintenance, holiday or no announcement) is a valid zero; an unavailable, malformed or wrong-date response fails harvesting and preserves the previous issue. Later runs cannot absorb the following day's batch into this morning's window.
 
-Scheduled runs compare the saved daily issue with the live website. If both match, all generation/deployment work is skipped. If today's validated JSON exists but is not yet live, the run resumes publication without repeating paid scientific screening. A missing/invalid issue is generated normally. Overlapping scheduled retries wait rather than cancelling an active release.
+Scheduled runs compare the saved daily issue with the live website. If both match, scientific generation and body deployment are skipped; missing, outdated or unpublished PDFs are still recovered independently. If today's validated JSON exists but is not yet live, the run resumes publication without repeating paid scientific screening. A missing/invalid issue is generated normally. Overlapping scheduled retries wait rather than cancelling an active release.
 
-Every actual deployment checks the live website against the saved issue content. A failed verification fails the workflow rather than reporting publication as complete. Pushes and explicit manual runs continue to support deliberate regeneration.
+Every body deployment checks the live website against the saved issue content. A failed body verification fails the workflow rather than reporting publication as complete. The subsequent optional PDF deployment verifies the unchanged issue and both report files; failures are recorded as deferred PDF publication. Pushes and explicit manual runs continue to support deliberate regeneration.
 
 ## Independent cloud trigger
 
