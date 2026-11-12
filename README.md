@@ -29,7 +29,7 @@ Each issue records its rules, thresholds, generation time, and `intake_window` (
 
 ## Checks and site
 
-Run `python -m unittest -q test_relevance test_pipeline test_daily_release test_intake_window test_reports test_build test_report_assets test_prepare_reports`.
+Run `python -m unittest -q test_relevance test_pipeline test_daily_release test_intake_window test_reports test_build test_report_assets test_prepare_reports test_fetch`.
 
 The site is generated from `issues/*.json` and `site_template.html` with `python build.py`. `python build.py --output _site` also creates a deployment directory containing only the page and verified PDF pairs. GitHub Pages source: GitHub Actions.
 
@@ -50,6 +50,8 @@ The arXiv harvest requests the issue date's official catchup page instead of rel
 Scheduled runs compare the saved daily issue with the live website. If both match, scientific generation and body deployment are skipped; missing, outdated or unpublished PDFs are still recovered independently. If today's validated JSON exists but is not yet live, the run resumes publication without repeating paid scientific screening. A missing/invalid issue is generated normally. Overlapping scheduled retries wait rather than cancelling an active release.
 
 Every body deployment checks the live website against the saved issue content. A failed body verification fails the workflow rather than reporting publication as complete. The subsequent optional PDF deployment verifies the unchanged issue and both report files; failures are recorded as deferred PDF publication. Pushes and explicit manual runs continue to support deliberate regeneration.
+
+Source GET requests retry transient network failures and HTTP 429/500/502/503/504 a bounded number of times. Permanent HTTP errors and invalid publication evidence still fail normally. An incomplete source harvest prints the failed source and error, preserves the previous issue, and uploads the dated `.failed.json` audit as a diagnostic artifact for 14 days; it is never reported as a genuine zero-paper day.
 
 ## Independent cloud trigger
 

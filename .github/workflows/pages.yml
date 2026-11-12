@@ -54,7 +54,7 @@ jobs:
           REUSE_VALID_ISSUE: ${{ inputs.reuse_valid_issue }}
         run: python daily_release.py plan
       - name: Validate physics relevance screen
-        run: python -m unittest -q test_relevance test_pipeline test_daily_release test_intake_window test_reports test_build test_report_assets test_prepare_reports
+        run: python -m unittest -q test_relevance test_pipeline test_daily_release test_intake_window test_reports test_build test_report_assets test_prepare_reports test_fetch
       - name: Check AI semantic screening configuration
         if: steps.freshness.outputs.mode == 'generate'
         env:
@@ -290,5 +290,14 @@ jobs:
         run: |
           echo '::warning::The daily article list remains published. PDF publication is pending and the next recovery will retry it without repeating AI screening.'
           echo 'Daily article publication completed; bilingual PDF publication needs a retry.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Preserve source failure audit for diagnosis
+        if: failure() && steps.freshness.outputs.mode == 'generate'
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: failed-harvest-${{ steps.freshness.outputs.date }}
+          path: audits/${{ steps.freshness.outputs.date }}.failed.json
+          if-no-files-found: ignore
+          retention-days: 14
 
 

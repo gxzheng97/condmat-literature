@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Daily condensed matter literature index, arXiv + Crossref."""
-import argparse, datetime as dt, json, os, re, time, urllib.parse, urllib.request
+import argparse, datetime as dt, json, os, re, time, urllib.parse, urllib.request, urllib.error
+from email.utils import parsedate_to_datetime
+from http.client import IncompleteRead
 from concurrent.futures import ThreadPoolExecutor
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
@@ -26,9 +28,46 @@ TOPICS=[("Superconductivity",r"superconduct|josephson|pairing|vortex"),
 ("Materials & Growth",r"growth|synthes|crystal|structural|phase coexist|substitu"),
 ("Topology & Transport",r"topolog|hall|transport|semimetal|weyl|dirac"),
 ("Correlated Electrons",r"correlat|kondo|fermion|mott|valence|density wave")]
+def source_endpoint(url):
+ parts=urllib.parse.urlsplit(url)
+ return (parts.hostname or "unknown-host")+(parts.path or "/")
+
+def safe_source_error(exc):
+ return re.sub(r"https?://[^\s<>\"']+",lambda match:source_endpoint(match[0]),str(exc))
+
+def source_failure(name,exc):
+ details={"source":name,"status":"failed","error_type":type(exc).__name__,"error":safe_source_error(exc)}
+ print(f"ERROR: Source {name} failed: {details['error_type']}: {details['error']}",flush=True)
+ return details
+
+def fetch_retry_delay(exc,attempt):
+ delay=3*(2**attempt)
+ if isinstance(exc,urllib.error.HTTPError) and exc.headers:
+  value=exc.headers.get("Retry-After")
+  if value:
+   try:retry_after=float(value)
+   except ValueError:
+    try:
+     until=parsedate_to_datetime(value)
+     if until.tzinfo is None:until=until.replace(tzinfo=dt.timezone.utc)
+     retry_after=(until-dt.datetime.now(dt.timezone.utc)).total_seconds()
+    except (ValueError,TypeError,OverflowError):retry_after=0
+   delay=max(delay,min(30,max(0,retry_after)))
+ return delay
+
 def fetch(url):
- req=urllib.request.Request(url,headers={"User-Agent":"CondMatLiteratureMonitor/1.0","Cache-Control":"no-cache"})
- with urllib.request.urlopen(req,timeout=55) as r:return r.read().decode("utf8","replace")
+ """Retry only transient failures of the same idempotent GET, at most 3 times."""
+ for attempt in range(3):
+  req=urllib.request.Request(url,headers={"User-Agent":"CondMatLiteratureMonitor/1.0","Cache-Control":"no-cache"})
+  try:
+   with urllib.request.urlopen(req,timeout=55) as response:
+    return response.read().decode("utf8","replace")
+  except (urllib.error.URLError,TimeoutError,ConnectionError,IncompleteRead) as exc:
+   transient=not isinstance(exc,urllib.error.HTTPError) or exc.code in (429,500,502,503,504)
+   if not transient or attempt==2:raise
+   delay=fetch_retry_delay(exc,attempt)
+   print(f"NOTICE: GET {source_endpoint(url)} retry {attempt+1}/2 after {type(exc).__name__}: {safe_source_error(exc)}; wait {delay:g}s",flush=True)
+   time.sleep(delay)
 def clean(s):return re.sub(r"\s+"," ",re.sub(r"<[^>]+>"," ",str(s or ""))).strip()
 def topic(s):
  for name,pattern in TOPICS:
@@ -171,6 +210,9 @@ def crossref_records(issn, first, last, page_size=200):
    try:
     response=json.loads(fetch(url))["message"]
     break
+   except (urllib.error.URLError,TimeoutError,ConnectionError,IncompleteRead):
+    # fetch already exhausted its bounded network retries; never multiply them.
+    raise
    except Exception:
     if attempt==2:raise
     time.sleep(2**attempt*2)
@@ -432,7 +474,7 @@ def journals(today,audit=None,skip_ids=None,source_status=None,pending=None):
    source_status.append({"source":name,"status":"ok","fetched":total,"window":[date,date],
      "publication_proof":"publisher RSS" if name in ("PRL","PRX") else "publisher article metadata",**feed_diagnostics})
   except Exception as exc:
-   source_status.append({"source":name,"status":"failed","fetched":total,"error":str(exc)})
+   source_status.append({**source_failure(name,exc),"fetched":total})
   print(f"Journal harvesting {name}: fetched={total}, formal publication day={date}",flush=True)
  for p in pending or []:
   if p.get("journal") in ISSN and p.get("id") not in skip_ids:
@@ -644,7 +686,7 @@ def main(argv=None):
    papers+=arxiv(cutoff,arxiv_audit)
    sources.append({"source":"arXiv","status":"ok","eligible_v1":len(papers)})
   except Exception as exc:
-   sources.append({"source":"arXiv","status":"failed","error":str(exc)})
+   sources.append(source_failure("arXiv",exc))
   papers+=journals(journal_date,journal_audit,{pid:"previous_issue" for pid in old},sources,pending)
   blocked={a["id"] for a in journal_audit if a.get("decision") not in ("candidate","pending_abstract")}
   for p in saved.get("candidates",[]):
