@@ -135,7 +135,7 @@ jobs:
           git add issues/2026-10-23.json
           git add -u rescreen-2026-10-23.request
           git commit -m "Publish complete AI semantic re-screen of October 23"
-          git push
+          git push origin "HEAD:$GITHUB_REF"
       - name: Strictly re-screen October 24 archive
         id: rescreen24
         if: github.event_name == 'push'
@@ -183,7 +183,7 @@ jobs:
           git add -u
           if ! git diff --cached --quiet; then
             git commit -m "Save validated daily selection and screening audit"
-            git push
+            git push origin "HEAD:$GITHUB_REF"
           fi
       - name: Restore cached reports and fonts
         id: report_cache
