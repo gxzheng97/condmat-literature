@@ -1,7 +1,7 @@
 {
   "date": "2026-11-12",
   "title": "Daily Condensed Matter Literature",
-  "generated_at": "2026-11-12T06:00:39.551833-08:00",
+  "generated_at": "2026-11-12T10:43:45.781374-08:00",
   "screening_version": "quantum-materials-v1-formal-research-v5",
   "screening_config": {
     "arxiv_min_score": 70,
@@ -42,16 +42,16 @@
     "selected": 0,
     "rejected": 47,
     "ai_assessed": 47,
-    "ai_cached": 0,
+    "ai_cached": 47,
     "ai_unscored": 0,
     "global_editorial": true,
     "field_scope_excluded": 0,
-    "duplicate_work_excluded": 0,
+    "duplicate_work_excluded": 47,
     "arxiv_selected": 0,
     "journal_selected": 0,
     "arxiv_harvest_excluded": 0,
     "pending_journal_abstracts": 0,
-    "non_original_excluded": 30,
+    "non_original_excluded": 31,
     "publication_not_eligible": 38
   }
 }
