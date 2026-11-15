@@ -1,0 +1,2868 @@
+{
+  "date": "2026-11-15",
+  "generated_at": "2026-11-15T06:00:37.101874-08:00",
+  "screening_version": "quantum-materials-v1-formal-research-v5",
+  "assessment_version": "quantum-materials-v1-only-no-soft-v3",
+  "screening_config": {
+    "arxiv_min_score": 70,
+    "journal_min_score": 55,
+    "max_papers": 30,
+    "arxiv_versions": [
+      1
+    ],
+    "exclude_soft_matter": true,
+    "journals": [
+      "Science",
+      "Science Advances",
+      "Nature",
+      "Nature Physics",
+      "Nature Materials",
+      "Nature Communications",
+      "PRL",
+      "PRX",
+      "PNAS"
+    ],
+    "journal_publication": "publisher-verified formal online publication on the previous Los Angeles calendar day",
+    "arxiv_intake": "first announcement in the fixed 24 hours ending at 06:00 America/Los_Angeles",
+    "journal_document_types": "research article or research letter; no accepted papers, essays, replies or comments",
+    "editorial_interest": "experimental quantum materials; original theory and experiment"
+  },
+  "intake_window": {
+    "version": "la-0600-arxiv24h-previous-journal-day-v1",
+    "timezone": "America/Los_Angeles",
+    "arxiv_start": "2026-11-14T14:00:00+00:00",
+    "arxiv_end": "2026-11-15T14:00:00+00:00",
+    "journal_publication_date": "2026-11-14"
+  },
+  "sources": [
+    {
+      "source": "arXiv",
+      "status": "ok",
+      "eligible_v1": 0
+    },
+    {
+      "source": "Science",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-14",
+        "2026-11-14"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Science Advances",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-14",
+        "2026-11-14"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Nature",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-14",
+        "2026-11-14"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Nature Physics",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-14",
+        "2026-11-14"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Nature Materials",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-14",
+        "2026-11-14"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Nature Communications",
+      "status": "ok",
+      "fetched": 31,
+      "window": [
+        "2026-11-14",
+        "2026-11-14"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "PRL",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-14",
+        "2026-11-14"
+      ],
+      "publication_proof": "publisher RSS",
+      "feed_urls": [
+        "https://feeds.aps.org/rss/recent/prl.xml",
+        "https://feeds.aps.org/rss/tocsec/PRL-CondensedMatterStructureetc.xml",
+        "https://feeds.aps.org/rss/recent/prlsuggestions.xml"
+      ],
+      "latest_formal_publication_date": "2026-11-13",
+      "publication_note": "Publisher feeds have no final citation for the requested publication date; unverified records remain excluded"
+    },
+    {
+      "source": "PRX",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-14",
+        "2026-11-14"
+      ],
+      "publication_proof": "publisher RSS",
+      "feed_urls": [
+        "https://feeds.aps.org/rss/recent/prx.xml"
+      ],
+      "latest_formal_publication_date": "2026-11-13",
+      "publication_note": "Publisher feeds have no final citation for the requested publication date; unverified records remain excluded"
+    },
+    {
+      "source": "PNAS",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-14",
+        "2026-11-14"
+      ],
+      "publication_proof": "publisher article metadata"
+    }
+  ],
+  "journal_candidates": [
+    {
+      "id": "doi-10-1038-s41467-026-79480-y",
+      "doi": "10.1038/s41467-026-79480-y",
+      "title": "Chemogenetic dissection of the H2O2–salicylic acid feedback loop in PTI and ETI evolutionary conservation",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79480-y"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 12,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is a plant-immunity study whose primary contribution is biological signaling and a fluorescent probe, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79704-1",
+      "doi": "10.1038/s41467-026-79704-1",
+      "title": "Photocatalytic radical hydrogenation of unactivated alkenes via an intermolecular hydrogen-atom-transfer relay",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79704-1"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 15,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary advance is a synthetic organic-chemistry method for alkene hydrogenation, not a study of condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79233-x",
+      "doi": "10.1038/s41467-026-79233-x",
+      "title": "Taming crystallization to achieve superior soft magnetic performance via fine nanocrystallines",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79233-x"
+      },
+      "has_abstract": true,
+      "decision": "global_editorial_rejected",
+      "score": 58,
+      "in_scope": true,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is a focused magnetic-materials study that connects field-controlled crystallization in magnetic alloys to nanoscale structure and magnetic properties, though its main emphasis is performance improvement."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79090-8",
+      "doi": "10.1038/s41467-026-79090-8",
+      "title": "DPI-score: a deep learning-based metric for assessing protein-protein interfaces in cryoEM derived assemblies",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79090-8"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 8,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This paper develops a computational validation metric for cryoEM protein interfaces, a structural-biology methods contribution rather than condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79121-4",
+      "doi": "10.1038/s41467-026-79121-4",
+      "title": "A subspecialty diagnostic system powered by self-supervised learning for cervical histopathology",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79121-4"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 7,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is a medical-AI study for cervical histopathology diagnosis and does not investigate condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79395-8",
+      "doi": "10.1038/s41467-026-79395-8",
+      "title": "Kinetic balancing for near-equilibrium growth of defect-suppressed lead bromide perovskite single crystals",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79395-8"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 43,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The main contribution is a crystal-growth strategy and improved radiation-detector operation, rather than an independent substantial discovery about condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79359-y",
+      "doi": "10.1038/s41467-026-79359-y",
+      "title": "Chirality-locked low-dimensional bound states in the continuum lasers",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79359-y"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 18,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is a photonic-laser study of localized bound states and their emission properties, not research on condensed-matter material physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79372-1",
+      "doi": "10.1038/s41467-026-79372-1",
+      "title": "Sensory cortical disinhibition underlies long-term fear memory in humans",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79372-1"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 2,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary question concerns neural mechanisms of human fear memory, which is neuroscience rather than condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78987-8",
+      "doi": "10.1038/s41467-026-78987-8",
+      "title": "Molecular profiling of repeated self-sampled blood reveals dynamic immune phenotypes in young adults",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78987-8"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 2,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The study profiles immune responses and genetic associations in people, making it biomedical epidemiology rather than condensed-matter research."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79442-4",
+      "doi": "10.1038/s41467-026-79442-4",
+      "title": "Global patterns of radial growth-structural heterogeneity relationships in forests",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79442-4"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 2,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The work studies forest growth and tree-size structure under climate variation, a topic in ecology rather than condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79602-6",
+      "doi": "10.1038/s41467-026-79602-6",
+      "title": "Enhancer-driven gene regulatory network of human forebrain development provides insights into autism",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79602-6"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 12,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is a neurodevelopmental biology study of gene regulation and autism in forebrain organoids, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79788-9",
+      "doi": "10.1038/s41467-026-79788-9",
+      "title": "Tuning methanol-CO selectivity in CO2 hydrogenation by Ga coordination engineering in ZnGa2O4",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79788-9"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 29,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The work investigates catalytic pathways and product selectivity in an oxide catalyst, making its primary contribution catalysis and chemistry rather than condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79388-7",
+      "doi": "10.1038/s41467-026-79388-7",
+      "title": "Glutamine binding and sodium coordination reveal the transport mechanism of y⁺LAT1/CD98hc",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79388-7"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 8,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is a structural and functional study of a biological amino-acid transporter, not a study of condensed-matter systems."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79569-4",
+      "doi": "10.1038/s41467-026-79569-4",
+      "title": "Emergent mesoscale nanoparticle patterns from a non-equilibrium liquid lens",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79569-4"
+      },
+      "has_abstract": true,
+      "decision": "soft_matter",
+      "score": 5,
+      "in_scope": false,
+      "soft_matter": true,
+      "quantum_materials": false,
+      "reason": "The primary system is a colloidal suspension assembling at a fluid interface, which is excluded soft matter rather than condensed-matter physics under this screening scope."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79000-y",
+      "doi": "10.1038/s41467-026-79000-y",
+      "title": "Theoretical frameworks for credit assignment via behavioral timescale synaptic plasticity",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79000-y"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 8,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The theoretical framework addresses neural learning and synaptic plasticity in network models, not the physics of condensed matter."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79482-w",
+      "doi": "10.1038/s41467-026-79482-w",
+      "title": "A Miniaturized Electrostatic Field Sensor Based on MOS Depletion-Layer Capacitance Modulation",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79482-w"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 24,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This paper primarily develops and benchmarks an electrostatic sensing device rather than investigating condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79307-w",
+      "doi": "10.1038/s41467-026-79307-w",
+      "title": "Phenotypic variation in Drosophila complex traits is influenced more by genotype and environmental interactions than by mitonuclear coevolutionary history",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79307-w"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 10,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary contribution concerns evolutionary genetics of Drosophila traits, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78019-5",
+      "doi": "10.1038/s41467-026-78019-5",
+      "title": "Field-angle-resolved heat transport in UTe2: determination of nodal positions in the superconducting order parameter",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78019-5"
+      },
+      "has_abstract": true,
+      "decision": "selected",
+      "score": 79,
+      "in_scope": true,
+      "soft_matter": false,
+      "quantum_materials": true,
+      "reason": "The study combines thermal-transport measurements and modeling to constrain the superconducting gap structure of the quantum material UTe2."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79357-0",
+      "doi": "10.1038/s41467-026-79357-0",
+      "title": "Multi-ancestry genetic analysis reveals 29 novel rheumatoid arthritis loci, effector genes and drug repurposing opportunities",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79357-0"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 9,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is a human disease-genetics study identifying rheumatoid arthritis risk loci and candidate therapeutic targets, not condensed-matter research."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79324-9",
+      "doi": "10.1038/s41467-026-79324-9",
+      "title": "Single cell RNA sequencing reveals unexpected heterogeneity and identifies AP2XI-6 as a mature bradyzoite specific cell cycle regulator",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79324-9"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 8,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The study investigates parasite cell-cycle biology and persistence in hosts, outside condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79146-9",
+      "doi": "10.1038/s41467-026-79146-9",
+      "title": "Built-in electric field driven MXene/perovskite Schottky heterojunction for photo-electro-thermal energy redistribution in thermochromic smart windows",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79146-9"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 34,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary contribution is a performance-oriented thermochromic smart-window architecture, not a substantial discovery about condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79722-z",
+      "doi": "10.1038/s41467-026-79722-z",
+      "title": "A split RNA-guided Cas9 system for PAM-independent and cis-cleavage-free nucleic acid detection",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79722-z"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 8,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is a nucleic-acid diagnostic technology study in molecular biology rather than condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79430-8",
+      "doi": "10.1038/s41467-026-79430-8",
+      "title": "Light-driven oxidative coupling of methane via charge-symmetry-breaking",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79430-8"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 24,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The main advance is photocatalytic methane conversion and chemical yield, not a new condensed-matter phenomenon."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78707-2",
+      "doi": "10.1038/s41467-026-78707-2",
+      "title": "Boosting reinforcement learning for critical node detection with multi-topology training strategies",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78707-2"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 12,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This paper develops a machine-learning method for network analysis and does not investigate condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79375-y",
+      "doi": "10.1038/s41467-026-79375-y",
+      "title": "Agricultural economic responses to ecoclimate teleconnections induced by forest loss",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79375-y"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 10,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The study concerns climate teleconnections and agricultural economics, outside condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79533-2",
+      "doi": "10.1038/s41467-026-79533-2",
+      "title": "Geophysical conditions favoring precursory slip before major earthquakes",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79533-2"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 44,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is experimental fault mechanics and earthquake geophysics, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79528-z",
+      "doi": "10.1038/s41467-026-79528-z",
+      "title": "Functional diversity of GPCR–Gustducin complexes controls signaling output and suppresses alternative pathways",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79528-z"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 32,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary contribution concerns GPCR signaling in living cells, a biological signaling question rather than condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79607-1",
+      "doi": "10.1038/s41467-026-79607-1",
+      "title": "Sunflower pollen microgels enable sonication-free dispersion of carbon nanotubes for bio-based conductive inks",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79607-1"
+      },
+      "has_abstract": true,
+      "decision": "soft_matter",
+      "score": 27,
+      "in_scope": false,
+      "soft_matter": true,
+      "quantum_materials": false,
+      "reason": "The work centers on biopolymer microgel-based conductive inks and their processing and sensing applications, so it is excluded soft-matter and device research."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78951-6",
+      "doi": "10.1038/s41467-026-78951-6",
+      "title": "Bright and stable near-infrared tin-perovskite LEDs enabled by efficient optical and thermal management",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78951-6"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 36,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary advance is improved LED radiance and stability through optical and thermal management, without a distinct discovery about condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79466-w",
+      "doi": "10.1038/s41467-026-79466-w",
+      "title": "An electrically driven multimodal soft robot enabled by a monolithic heterolayer elastomer",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79466-w"
+      },
+      "has_abstract": true,
+      "decision": "soft_matter",
+      "score": 16,
+      "in_scope": false,
+      "soft_matter": true,
+      "quantum_materials": false,
+      "reason": "This is soft-robotics engineering based on elastomers, a soft-matter system excluded from the digest."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79182-5",
+      "doi": "10.1038/s41467-026-79182-5",
+      "title": "TRIM47 drives cardiac ischemia/reperfusion injury by impairing mitochondrial function and fatty acid metabolism in male mice",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-14",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79182-5"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 12,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is a biological and cardiovascular study of molecular regulation and injury in mouse hearts, not a condensed-matter physics investigation."
+    },
+    {
+      "id": "doi-10-1103-3x42-zb9r",
+      "doi": "10.1103/3x42-zb9r",
+      "title": "Odd-Even Parity of Nonlinear Hall Effects in Bilayer Graphene",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-10-29",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/tocsec/PRL-CondensedMatterStructureetc.xml",
+        "volume": "137",
+        "article_number": "186302"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-ctkf-wz2d",
+      "doi": "10.1103/ctkf-wz2d",
+      "title": "Plasmascopy of Ultrafast Hot Charge Carriers",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-10-30",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "186906"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-yfc3-ny3b",
+      "doi": "10.1103/yfc3-ny3b",
+      "title": "Experimental Observation of Erratic Non-Hermitian Skin Effect in Phononic Crystals",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-10-30",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "186602"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-17nh-csbr",
+      "doi": "10.1103/17nh-csbr",
+      "title": "Atomic-Scale Visualization of Quantum Phase Transition in Mixed-Valence Regime",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-10-30",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "186201"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-vl6b-y5gz",
+      "doi": "10.1103/vl6b-y5gz",
+      "title": "When Liquids Form Membranes: Entropy-Dominated Bending Dynamics in Coacervate Vesicles",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-02",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "198201"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-k5r2-q11w",
+      "doi": "10.1103/k5r2-q11w",
+      "title": "Kekulé Superconductivity Induced by Quantum Geometry in Haldane Phases",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-03",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "196002"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-ngfq-f3t7",
+      "doi": "10.1103/ngfq-f3t7",
+      "title": "First Amplitude Analysis of ${D}^{0}→{K}^{−}{π}^{0}{e}^{+}{ν}_{e}$ and Observation of ${D}^{0}→{K}_{2}^{*}(1430{)}^{−}{e}^{+}{ν}_{e}$",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-03",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "191903"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-b28p-yb2t",
+      "doi": "10.1103/b28p-yb2t",
+      "title": "Time-Dependent Density Functional Theory of Electrons and Quantum Nuclei",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-04",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "193001"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-m9hp-5h28",
+      "doi": "10.1103/m9hp-5h28",
+      "title": "Anomalously Low Thermal Conductivity in Undercoordinated Amorphous Silicon",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-05",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "196302"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-qx3f-85mf",
+      "doi": "10.1103/qx3f-85mf",
+      "title": "Spatiotemporal Architecture of Energy Transfer in Wall-Bounded Turbulence",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-05",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "194001"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-z6d8-2q1g",
+      "doi": "10.1103/z6d8-2q1g",
+      "title": "Classification of Scissors Rotational Bands in Deformed Nuclei",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-05",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "192501"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-t87j-1ngl",
+      "doi": "10.1103/t87j-1ngl",
+      "title": "Intracycle Interference in Strong-Field Photoemission from a Tungsten Needle Tip",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-09",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206901"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-f92d-w6fn",
+      "doi": "10.1103/f92d-w6fn",
+      "title": "Superparamagnetism in an Interacting Nanomagnet Array: A Tale of Three Temperatures",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-09",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206701"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-g9x1-wnnd",
+      "doi": "10.1103/g9x1-wnnd",
+      "title": "Atomistic Simulation of Subcritical Crack Growth in Glass in Vacuum",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-09",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206101"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-kj1q-h9pw",
+      "doi": "10.1103/kj1q-h9pw",
+      "title": "Terahertz Switching of Two-dimensional Antiferromagnetic Order",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-09",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206702"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-zpbg-7137",
+      "doi": "10.1103/zpbg-7137",
+      "title": "Many-Body-Driven Ultrafast Exciton Relaxation Enabled by Phonon-Activated Coulomb Coupling",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-10",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206401"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-l5j1-7b4d",
+      "doi": "10.1103/l5j1-7b4d",
+      "title": "Long-Range and Short-Range Longitudinal Flow Decorrelations in the Quark-Gluon Plasma",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-12",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "202301"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-y95w-7ztb",
+      "doi": "10.1103/y95w-7ztb",
+      "title": "Lower Limit on the Double-Alpha Decay of Ra 224",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-12",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "202501"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-nn1b-pxhf",
+      "doi": "10.1103/nn1b-pxhf",
+      "title": "Grain-Scale Origin of Stick-Slip Waves in Silo Discharge: Influence of Cohesion",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-12",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "208202"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-99gj-qpbv",
+      "doi": "10.1103/99gj-qpbv",
+      "title": "Walk-on-Spheres Solution to Heterogeneous Transport Phenomena",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-12",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "207102"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-qqpd-92fb",
+      "doi": "10.1103/qqpd-92fb",
+      "title": "Open-Boundary-Condition-Persistent Point-Gap Bound States in the Non-Hermitian Continuum",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-13",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206603"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    }
+  ],
+  "arxiv_candidates": [
+    {
+      "decision": "no_announcements_in_window",
+      "announcement_date": "2026-11-15",
+      "evidence_url": "https://arxiv.org/catchup/cond-mat/2026-11-15",
+      "window": {
+        "version": "la-0600-arxiv24h-previous-journal-day-v1",
+        "timezone": "America/Los_Angeles",
+        "arxiv_start": "2026-11-14T14:00:00+00:00",
+        "arxiv_end": "2026-11-15T14:00:00+00:00",
+        "journal_publication_date": "2026-11-14"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "doi-10-1038-s41467-026-79480-y",
+      "doi": "10.1038/s41467-026-79480-y",
+      "title": "Chemogenetic dissection of the H2O2–salicylic acid feedback loop in PTI and ETI evolutionary conservation",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Yiliang Chen, Siyuan Tang, Chuyan Xia, Qi Wang, Shihong Wei, Duoduo Guo, Jufen Yan, Kui Zhang, Gan Ai, Xinya Han",
+      "abstract": "The signaling interplay between hydrogen peroxide (H2O2) and salicylic acid (SA) is fundamental to plant stress responses, yet resolving their spatiotemporal dynamics in vivo remains challenging due to spatial ambiguity when using multiple probes. Here, we present RhCy-NI, a single-molecule dual-responsive fluorescent probe featuring orthogonal reaction sites for crosstalk-free detection of H2O2 and SA. The probe exhibits ~25-fold and ~250-fold fluorescence enhancements at 562 and 751 nm, respectively, with detection limits of 96 and 24 nM and high selectivity. Time-course imaging in rice under salt and cadmium stresses reveals that a rapid, transient H2O2 burst precedes SA accumulation. In Nicotiana benthamiana challenged with the Phytophthora infestans elicitin INF1, pharmacological inhibition and SA-deficient genetic backgrounds show that early oxidative signaling is required for SA accumulation, whereas SA sustains a secondary oxidative phase. Genetic analysis reveals that enhanced disease susceptibility 1 (EDS1) primarily supports SA accumulation, whereas helper nucleotide-binding leucine-rich repeat (NLR) receptors of the NLR-required-for-cell-death (NRC) family (NRC2/3/4) support both SA accumulation and sustained secondary H2O2 amplification. These findings establish RhCy-NI as a tool for resolving H2O2–SA feedback and implicate components associated with effector-triggered immunity in cell-surface-triggered defense. Interaction between hydrogen peroxide and salicylic acid is important for plant stress responses. Here, the authors develop a dual-responsive fluorescent probe that simultaneously resolves the two signals in living plants.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79480-y",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79480-y"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Topology & Transport",
+      "summary_en": "The signaling interplay between hydrogen peroxide (H2O2) and salicylic acid (SA) is fundamental to plant stress responses, yet resolving their spatiotemporal dynamics in vivo remains challenging due to spatial ambiguity when using multiple probes. Here, we present RhCy-NI, a single-molecule dual-responsive fluorescent probe featuring orthogonal reaction sites for crosstalk-free detection of H2O2 a",
+      "summary": "The signaling interplay between hydrogen peroxide (H2O2) and salicylic acid (SA) is fundamental to plant stress responses, yet resolving their spatiotemporal dynamics in vivo remains challenging due to spatial ambiguity when using multiple probes. Here, we present RhCy-NI, a single-molecule dual-responsive fluorescent probe featuring orthogonal reaction sites for crosstalk-free detection of H2O2 a",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79480-y",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 12,
+        "feature_candidate": false,
+        "reason": "This is a plant-immunity study whose primary contribution is biological signaling and a fluorescent probe, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is a plant-immunity study whose primary contribution is biological signaling and a fluorescent probe, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 12,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79704-1",
+      "doi": "10.1038/s41467-026-79704-1",
+      "title": "Photocatalytic radical hydrogenation of unactivated alkenes via an intermolecular hydrogen-atom-transfer relay",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Weiqiao Lan, Ziyuan Wei, Zhao Wu",
+      "abstract": "Despite the ubiquity of alkene reduction in chemical synthesis, developing safe, general, and chemoselective hydrogenation methods that avoid pressurized hydrogen gas or precious metals remains a significant challenge. Herein, we report a redox-neutral photocatalytic radical transfer hydrogenation strategy that addresses these constraints via an intermolecular hydrogen-atom-transfer (HAT) relay. This approach leverages a synergistic diaryl ketone–cobalt–thiol triple catalytic system to utilize naturally abundant γ-terpinene as a sustainable hydrogen donor. Driven by visible light, the reaction proceeds through a HAT cascade to generate a reactive cobalt–hydride species, enabling the efficient hydrogenation of a broad spectrum of unactivated alkenes—ranging from terminal to sterically demanding tetrasubstituted variants—under mild, additive-free conditions. The protocol exhibits excellent chemoselectivity, preserving sensitive functionalities such as aldehydes, epoxides, carboxylic acids, and Lewis basic heterocycles. The practical utility of this protocol is demonstrated through gram-scale synthesis with low catalyst loadings, establishing a versatile and environmentally benign platform for alkene reduction. Cross-electrophile coupling between unactivated alkyl halides and alkynyl halides has long been challenged by reactivity mismatch and poor chemoselectivity. Here the authors report nickel-catalyzed crosselectrophile coupling enabled by a tridentate ligand that controls the sequence of electrophile activation, allowing direct construction of alkynyl–alkyl bonds.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79704-1",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79704-1"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Despite the ubiquity of alkene reduction in chemical synthesis, developing safe, general, and chemoselective hydrogenation methods that avoid pressurized hydrogen gas or precious metals remains a significant challenge. Herein, we report a redox-neutral photocatalytic radical transfer hydrogenation strategy that addresses these constraints via an intermolecular hydrogen-atom-transfer (HAT) relay. T",
+      "summary": "Despite the ubiquity of alkene reduction in chemical synthesis, developing safe, general, and chemoselective hydrogenation methods that avoid pressurized hydrogen gas or precious metals remains a significant challenge. Herein, we report a redox-neutral photocatalytic radical transfer hydrogenation strategy that addresses these constraints via an intermolecular hydrogen-atom-transfer (HAT) relay. T",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79704-1",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 15,
+        "feature_candidate": false,
+        "reason": "The primary advance is a synthetic organic-chemistry method for alkene hydrogenation, not a study of condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary advance is a synthetic organic-chemistry method for alkene hydrogenation, not a study of condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 15,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79233-x",
+      "doi": "10.1038/s41467-026-79233-x",
+      "title": "Taming crystallization to achieve superior soft magnetic performance via fine nanocrystallines",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "R. C. Sun, X. S. Li, J. Zhou, Y. Q. Yan, S. Y. Di, J. H. Luan, H. L. Peng, B. A. Sun, H. B. Ke, W. H. Wang, H. Y. Bai",
+      "abstract": "The increasing demand for high-efficiency power electronics in emerging technologies such as 5 G and artificial intelligence is limited by the intrinsic trade-off between high saturation magnetic flux density (Bs) and low coercivity (Hc) in soft magnetic materials. Here, we report a rotational magnetic field annealing strategy for Fe-(Co)-Si-B-Cu-Nb and Fe-Co-B-P alloys that enables precise control of crystallization kinetics. The applied rotational magnetic field promotes dynamic structural fluctuations in amorphous precursors, enhancing nucleation while suppressing grain growth. Consequently, fine nanocrystalline structures with grain sizes of 1–5 nm are obtained, achieving a high Bs of 1.94 T and a low Hc of ~0.8 A m−1. Molecular dynamics simulations reveal that rotational magnetic fields generate spatially heterogeneous fluctuations, facilitating dense and uniform nucleation. This work provides a pathway for designing fine nanocomposite soft magnetic materials through external-field-controlled crystallization. Researchers demonstrate that rotational magnetic field annealing controls crystallization to produce ultrafine nanocrystals, enabling soft magnetic alloys with both high magnetic flux density and low coercivity for next-generation energy-efficient power electronics.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79233-x",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79233-x"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Magnetism",
+      "summary_en": "The increasing demand for high-efficiency power electronics in emerging technologies such as 5 G and artificial intelligence is limited by the intrinsic trade-off between high saturation magnetic flux density (Bs) and low coercivity (Hc) in soft magnetic materials. Here, we report a rotational magnetic field annealing strategy for Fe-(Co)-Si-B-Cu-Nb and Fe-Co-B-P alloys that enables precise contro",
+      "summary": "The increasing demand for high-efficiency power electronics in emerging technologies such as 5 G and artificial intelligence is limited by the intrinsic trade-off between high saturation magnetic flux density (Bs) and low coercivity (Hc) in soft magnetic materials. Here, we report a rotational magnetic field annealing strategy for Fe-(Co)-Si-B-Cu-Nb and Fe-Co-B-P alloys that enables precise contro",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79233-x",
+        "in_scope": true,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "mixed",
+        "score": 58,
+        "feature_candidate": false,
+        "reason": "This is a focused magnetic-materials study that connects field-controlled crystallization in magnetic alloys to nanoscale structure and magnetic properties, though its main emphasis is performance improvement.",
+        "physics_advance": "Rotational magnetic-field annealing is reported to produce spatially heterogeneous fluctuations that promote dense nucleation while limiting grain growth, yielding fine nanocrystalline magnetic alloys."
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "mixed",
+      "screening_decision": "global_editorial_rejected",
+      "physics_advance": "Rotational magnetic-field annealing is reported to produce spatially heterogeneous fluctuations that promote dense nucleation while limiting grain growth, yielding fine nanocrystalline magnetic alloys.",
+      "ai_in_scope": true,
+      "relevance_reason": "This is a focused magnetic-materials study that connects field-controlled crystallization in magnetic alloys to nanoscale structure and magnetic properties, though its main emphasis is performance improvement.",
+      "relevance_method": "semantic",
+      "relevance_score": 58,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79090-8",
+      "doi": "10.1038/s41467-026-79090-8",
+      "title": "DPI-score: a deep learning-based metric for assessing protein-protein interfaces in cryoEM derived assemblies",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Niraj Bhujel, Nick Whyatt, Agnel Praveen Joseph, Jyothish Thomas, Luc G. Elliot, Tamilarasan Sabapathy, Jeyan Thiyagalingam, Sony Malhotra",
+      "abstract": "Abstract Advances in cryoEM have led to a surge in high-resolution structures; however, model building and refinement at resolutions ( &gt; = 3 Å) and in regions with variable local resolution remain challenging, making validation essential. CryoEM derived assemblies often contain extensive protein-protein interfaces, however, most existing validation metrics focus on density fit or overall geometry without directly assessing interface quality. To address this, we present DPI-Score, a deep learning-based metric for assessing protein-protein interfaces in cryoEM derived complexes. The method uses only raw structural coordinates of interface atoms, without requiring engineered features, and achieves 87.53% validation accuracy. DPI-Score was applied to 29,120 interfaces from 6,011 fitted entries with resolutions worse than 3 Å in the Electron Microscopy Data Bank. Here, we show that DPI-Score provides complementary information to existing validation metrics and can identify interface errors in modelled assemblies that are not detected by density-based scores alone.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79090-8",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79090-8"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Abstract Advances in cryoEM have led to a surge in high-resolution structures; however, model building and refinement at resolutions ( &gt; = 3 Å) and in regions with variable local resolution remain challenging, making validation essential. CryoEM derived assemblies often contain extensive protein-protein interfaces, however, most existing validation metrics focus on density fit or overall geomet",
+      "summary": "Abstract Advances in cryoEM have led to a surge in high-resolution structures; however, model building and refinement at resolutions ( &gt; = 3 Å) and in regions with variable local resolution remain challenging, making validation essential. CryoEM derived assemblies often contain extensive protein-protein interfaces, however, most existing validation metrics focus on density fit or overall geomet",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79090-8",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 8,
+        "feature_candidate": false,
+        "reason": "This paper develops a computational validation metric for cryoEM protein interfaces, a structural-biology methods contribution rather than condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This paper develops a computational validation metric for cryoEM protein interfaces, a structural-biology methods contribution rather than condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 8,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79121-4",
+      "doi": "10.1038/s41467-026-79121-4",
+      "title": "A subspecialty diagnostic system powered by self-supervised learning for cervical histopathology",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Yizhi Wang, Li Chen, Qiang Huang, Tian Guan, Xi Deng, Zhiyuan Shen, Jiawen Li, Xinrui Chen, Bin Hu, Zhe Lei, Xitong Ling, Taojie Zhu, Zirui Huang, Deshui Yu, Fanyi Zeng, Yan Liu, Jiurun Chen, Lianghui Zhu, Qiming He, Yiqing Liu, Diwei Shi, Hanzhong Liu, Junbo Hu, Hongyi Gao, Zhen Song, Xilong Zhao, Lingchuan Guo, Chao He, Ming Zhao, Yonghong He",
+      "abstract": "Cervical cancer remains a major malignancy in women, with large-scale human papillomavirus-based screening generating a large volume of biopsies and, for advanced cases, surgical specimens, imposing an overwhelming diagnostic burden that necessitates precise histopathological evaluation. Although deep learning shows promise, general foundation models offer a broader reach but remain limited in capturing subspecialty-specific features and task adaptability. We introduce the Cervical Subspecialty Pathology (CerS-Path) diagnostic system, built upon the subspecialized dataset and developed through two synergistic pretraining stages: self-supervised learning on approximately 190 million tissue patches to build a cervical-specific feature extractor, and multimodal enhancement with 2.5 million image-text pairs, followed by diagnostic functions integration and downstream task enhancement. CerS-Path integrates eight functions—across morphological diagnosis, predictive analytics, and multimodal tasks—to cover the diagnostic workflow from biopsies to resection specimens. Comprehensive evaluations demonstrate improved performance in cervical pathology in female patients, where CerS-Path outperforms state-of-the-art foundation models across 26 of 30 diagnostic tasks. Furthermore, in multicenter retrospective and prospective validation across six independent cohorts of women, CerS-Path achieves up to 99% sensitivity for clinically relevant lesion detection with acceptable specificity across sites, highlighting its potential for screening-derived histopathology and suitability for integration into high-volume diagnostic pathways. Foundation models could be promising for cervical cancer screening, but have important limitations for their clinical deployment. Here, the authors introduce the Cervical Subspecialty Pathology (CerS-Path) diagnostic system, a self-supervised learning framework for cervical cancer pathology that outperforms state-of-the-art foundation models across multiple diagnostic tasks.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79121-4",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79121-4"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Cervical cancer remains a major malignancy in women, with large-scale human papillomavirus-based screening generating a large volume of biopsies and, for advanced cases, surgical specimens, imposing an overwhelming diagnostic burden that necessitates precise histopathological evaluation. Although deep learning shows promise, general foundation models offer a broader reach but remain limited in cap",
+      "summary": "Cervical cancer remains a major malignancy in women, with large-scale human papillomavirus-based screening generating a large volume of biopsies and, for advanced cases, surgical specimens, imposing an overwhelming diagnostic burden that necessitates precise histopathological evaluation. Although deep learning shows promise, general foundation models offer a broader reach but remain limited in cap",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79121-4",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 7,
+        "feature_candidate": false,
+        "reason": "This is a medical-AI study for cervical histopathology diagnosis and does not investigate condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is a medical-AI study for cervical histopathology diagnosis and does not investigate condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 7,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79395-8",
+      "doi": "10.1038/s41467-026-79395-8",
+      "title": "Kinetic balancing for near-equilibrium growth of defect-suppressed lead bromide perovskite single crystals",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Xiao Zhao, Ziqing Li, Tao Zhou, Yingying Hao, Shimao Wang, Gang Meng, Yadong Xu, Xiaosheng Fang",
+      "abstract": "Controlling crystallization pathways for solution-grown lead-bromide perovskites remains a major unresolved challenge. Herein, we present a ligand-regulated crystallization strategy that achieves near-equilibrium growth for lead-bromide perovskite single crystals. Such regulation mitigates kinetic imbalance during crystal growth, thereby suppressing non-equilibrium defect incorporation, improving lattice coherence, and facilitating spatially uniform crystal growth. This strategy is applicable to a representative set of lead-bromide perovskites. Specifically, the resulting CsPbBr3 single crystals exhibit a high resistivity of 5.1 × 1010 Ω·cm and carrier mobility up to 93.95 cm2·V−1·s−1. Reduced electron-phonon coupling weakens optical-phonon scattering and raises the effective thermally activated conduction barrier from 0.43 to 0.71 eV, extending stable bias operation from 40 to 200 V·mm−1. These advances enable sensitive and stable ionizing-radiation detection under both photon-counting and charge-integrating modes. Overall, this work establishes a general kinetic-design principle for defect-suppressed, near-equilibrium crystallization of lead-bromide perovskites, enabling reliable high-field operation for ionizing-radiation detectors. A ligand-regulated crystallization strategy achieves near-equilibrium growth of lead bromide perovskite single crystals, suppressing defects and improving quality. The resulting CsPbBr3 crystals enable stable, sensitive ionizing-radiation detection.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79395-8",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79395-8"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Thermal & Thermoelectric",
+      "summary_en": "Controlling crystallization pathways for solution-grown lead-bromide perovskites remains a major unresolved challenge. Herein, we present a ligand-regulated crystallization strategy that achieves near-equilibrium growth for lead-bromide perovskite single crystals. Such regulation mitigates kinetic imbalance during crystal growth, thereby suppressing non-equilibrium defect incorporation, improving ",
+      "summary": "Controlling crystallization pathways for solution-grown lead-bromide perovskites remains a major unresolved challenge. Herein, we present a ligand-regulated crystallization strategy that achieves near-equilibrium growth for lead-bromide perovskite single crystals. Such regulation mitigates kinetic imbalance during crystal growth, thereby suppressing non-equilibrium defect incorporation, improving ",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79395-8",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 43,
+        "feature_candidate": false,
+        "reason": "The main contribution is a crystal-growth strategy and improved radiation-detector operation, rather than an independent substantial discovery about condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The main contribution is a crystal-growth strategy and improved radiation-detector operation, rather than an independent substantial discovery about condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 43,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79359-y",
+      "doi": "10.1038/s41467-026-79359-y",
+      "title": "Chirality-locked low-dimensional bound states in the continuum lasers",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Heegeun Kim, Chiwon Shin, Seunghoon Bae, Kyoung-Ho Kim, Hong-Gyu Park",
+      "abstract": "Abstract Bound states in the continuum (BICs) support high-quality-factor resonances embedded in extended spectra, and their radiation properties can be tailored through perturbative symmetry breaking and chiral engineering. However, because BICs are intrinsically delocalized states of infinite periodic structures, they typically require large spatial footprints. Achieving localized BIC modes while preserving radiation suppression and topological singularities, and simultaneously enabling chiral responses, remains a challenge. Here, we experimentally realize low-threshold BIC lasers localized at one-dimensional interfaces and zero-dimensional junctions by interfacing domains with identical bulk BIC characteristics but opposite chirality. The resulting interfaces and junctions host spatially localized states that exhibit optical spin–momentum-locked emission governed by the assigned chirality, while retaining intrinsic BIC properties, including narrow far-field divergence and pump-selective lasing localization. In addition, polarization singularities confirm the topological nature of these low-dimensional BICs, particularly the well-defined topological charge of the zero-dimensional junction mode. Coupling two zero-dimensional BICs further gives rise to bonding and antibonding supermodes, enabling non-Hermitian, chirality-locked behaviors. These results establish a route to compact, high-quality-factor photonic states with engineered chirality through dimensional reduction of BICs, without relying on defect confinement or band inversion.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79359-y",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79359-y"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Magnetism",
+      "summary_en": "Abstract Bound states in the continuum (BICs) support high-quality-factor resonances embedded in extended spectra, and their radiation properties can be tailored through perturbative symmetry breaking and chiral engineering. However, because BICs are intrinsically delocalized states of infinite periodic structures, they typically require large spatial footprints. Achieving localized BIC modes whil",
+      "summary": "Abstract Bound states in the continuum (BICs) support high-quality-factor resonances embedded in extended spectra, and their radiation properties can be tailored through perturbative symmetry breaking and chiral engineering. However, because BICs are intrinsically delocalized states of infinite periodic structures, they typically require large spatial footprints. Achieving localized BIC modes whil",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79359-y",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 18,
+        "feature_candidate": false,
+        "reason": "This is a photonic-laser study of localized bound states and their emission properties, not research on condensed-matter material physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is a photonic-laser study of localized bound states and their emission properties, not research on condensed-matter material physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 18,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79372-1",
+      "doi": "10.1038/s41467-026-79372-1",
+      "title": "Sensory cortical disinhibition underlies long-term fear memory in humans",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Joshua A. Brown, Yijia Ma, Yifan Wang, John J. Massa, Peter Kuan-Hao Cheng, Chaowen Chen, Mingzhou Ding, Norman B. Schmidt, Mohammed R. Milad, Jair C. Soares, Raymond J. Dolan, Chenyu You, Wen Li",
+      "abstract": "Abstract How transient threats turn into persistent, long-term fear memories is a fundamental problem in neuroscience, yet the underlying mechanisms remain elusive. Early sensory cortex, traditionally viewed as a passive feature analyzer, is increasingly recognized as an active participant in fear processing. Combining high-definition α-frequency transcranial alternating current stimulation (HD α-tACS) with simultaneous EEG-fMRI (electroencephalography-functional magnetic resonance imaging) and transformer-based neural decoding, we tracked fear memory development across formation, consolidation, and long-term retention (assessed at 15 min, 24 h, and 7 days after fear conditioning). Spatiotemporal memory traces were identified at all three assessments, beginning at an early sensory stage (40–60 ms post-stimulus) and distributed across visual cortex and limbic regions. Conditioning potentiated occipital α-oscillation desynchronization, a marker of visual cortical disinhibition, which subsequently predicted the strength of long-term memory traces. Critically, targeted α-tACS over early visual cortex induced early visual cortical (V1/V2) inhibition, abolished conditioning-potentiated α desynchronization, and selectively disrupted fear-memory consolidation and retention while leaving initial acquisition intact. These findings establish sensory cortical disinhibition as a necessary mechanism for long-term fear memory in humans and identify early sensory cortex as crucial node for intervention of persistent maladaptive fear.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79372-1",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79372-1"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Magnetism",
+      "summary_en": "Abstract How transient threats turn into persistent, long-term fear memories is a fundamental problem in neuroscience, yet the underlying mechanisms remain elusive. Early sensory cortex, traditionally viewed as a passive feature analyzer, is increasingly recognized as an active participant in fear processing. Combining high-definition α-frequency transcranial alternating current stimulation (HD α-",
+      "summary": "Abstract How transient threats turn into persistent, long-term fear memories is a fundamental problem in neuroscience, yet the underlying mechanisms remain elusive. Early sensory cortex, traditionally viewed as a passive feature analyzer, is increasingly recognized as an active participant in fear processing. Combining high-definition α-frequency transcranial alternating current stimulation (HD α-",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79372-1",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 2,
+        "feature_candidate": false,
+        "reason": "The primary question concerns neural mechanisms of human fear memory, which is neuroscience rather than condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary question concerns neural mechanisms of human fear memory, which is neuroscience rather than condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 2,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78987-8",
+      "doi": "10.1038/s41467-026-78987-8",
+      "title": "Molecular profiling of repeated self-sampled blood reveals dynamic immune phenotypes in young adults",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Annika Bendes, Sophia Björkander, Maura M. Kere, Simon Kebede Merid, Ashish Kumar, Leo Dahl, Tess D. Pottinger, Zhebin Yu, Anna Gardell, Amelie Vogt, Changil Kim, Qiang Pan-Hammarström, Anna Bergström, Inger Kull, Anne-Sophie Merritt, Sandra Ekström, Alexandra Lövquist, Ben Murrell, Niclas Roxhed, Erik Melén, Jochen M. Schwenk",
+      "abstract": "Abstract Although population-based studies of circulating blood proteins have provided profound insight into human biology, transient changes to time-dependent exposures often remain elusive. Here, we perform a longitudinal dried blood spot (DBS) self-sampling study in 808 young adults (aged 24–27, 64% females) from the Swedish Barn [Children], Allergy, Milieu, Stockholm Epidemiology cohort. In total, we collected ~2400 samples from 2020 to 2022. Each sample was profiled for SARS-CoV-2 serological, anti-interferon autoantibodies (AAbs), and 365 inflammation-related proteins. We subsequently linked these samples to registry-confirmed infection and vaccination exposures, physiological traits, genetic variation, and blood counts. We show that data-driven seroclustering captures the response to both infection and vaccination exposures, while stable AAbs against interferon receptors IFNAR1 and IFNGR2 associate with the duration of self-reported COVID-19 symptoms. Genome-wide mapping reveals 664 protein quantitative trait loci (pQTL) across 65 proteins, with cis -pQTLs associated proteins showing greater longitudinal stability. Paired pre- and post-exposure samples indicate temporal changes in protein levels after infection (LAP3) and vaccination (TIMP3). This multi-molecular epidemiological profiling of self-sampled blood captures dynamic immune trajectories and shorter-term variability in a population of young adults.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-78987-8",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78987-8"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Abstract Although population-based studies of circulating blood proteins have provided profound insight into human biology, transient changes to time-dependent exposures often remain elusive. Here, we perform a longitudinal dried blood spot (DBS) self-sampling study in 808 young adults (aged 24–27, 64% females) from the Swedish Barn [Children], Allergy, Milieu, Stockholm Epidemiology cohort. In to",
+      "summary": "Abstract Although population-based studies of circulating blood proteins have provided profound insight into human biology, transient changes to time-dependent exposures often remain elusive. Here, we perform a longitudinal dried blood spot (DBS) self-sampling study in 808 young adults (aged 24–27, 64% females) from the Swedish Barn [Children], Allergy, Milieu, Stockholm Epidemiology cohort. In to",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-78987-8",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 2,
+        "feature_candidate": false,
+        "reason": "The study profiles immune responses and genetic associations in people, making it biomedical epidemiology rather than condensed-matter research.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The study profiles immune responses and genetic associations in people, making it biomedical epidemiology rather than condensed-matter research.",
+      "relevance_method": "semantic",
+      "relevance_score": 2,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79442-4",
+      "doi": "10.1038/s41467-026-79442-4",
+      "title": "Global patterns of radial growth-structural heterogeneity relationships in forests",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Yuan Yao, Shumiao Shu, Jian Feng, Hanying Hu, Wenzheng Yang, Ruixuan Liu, Xiaodan Wang, Sheng Zhang",
+      "abstract": "Classical theory predicts that environmental improvement intensifies competition and increases forest structural heterogeneity (variation in tree radial size). Whether warmer and wetter conditions drive convergence in stress-dominated regions remains unknown. Using a global tree-ring dataset ( > 900 sites, > 55,000 cores) with mixed-effects and mediation models, and accounting for Taylor’s law, we show that the negative growth–structure correlation is widespread, but its absolute slope increases along the stress gradient and becomes non-significant in low-stress regions (warm low-altitude, South Temperate, and tropics). Climate-to-structure pathways shift from growth-mediated in stress-dominated regions to non-significant in low-stress regions, with mediation strength increasing from temperate to alpine zones. On the Tibetan Plateau, warmer and wetter conditions are associated with homogenization via enhanced radial growth and reduced climate sensitivity. These findings challenge the classical expectation that environmental improvement inevitably increases structural heterogeneity, revealing a shift from stress-driven convergence to decoupling under low stress and providing a unified framework for predicting forest responses to climate change. Climate change can reshape forest size structure. Using tree rings from > 900 sites, the authors found warming and wetter conditions reduce tree-size inequality in high-stress regions but have little effect in low-stress forests.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79442-4",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79442-4"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Classical theory predicts that environmental improvement intensifies competition and increases forest structural heterogeneity (variation in tree radial size). Whether warmer and wetter conditions drive convergence in stress-dominated regions remains unknown. Using a global tree-ring dataset ( > 900 sites, > 55,000 cores) with mixed-effects and mediation models, and accounting for Taylor’s law, we",
+      "summary": "Classical theory predicts that environmental improvement intensifies competition and increases forest structural heterogeneity (variation in tree radial size). Whether warmer and wetter conditions drive convergence in stress-dominated regions remains unknown. Using a global tree-ring dataset ( > 900 sites, > 55,000 cores) with mixed-effects and mediation models, and accounting for Taylor’s law, we",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79442-4",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 2,
+        "feature_candidate": false,
+        "reason": "The work studies forest growth and tree-size structure under climate variation, a topic in ecology rather than condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The work studies forest growth and tree-size structure under climate variation, a topic in ecology rather than condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 2,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79602-6",
+      "doi": "10.1038/s41467-026-79602-6",
+      "title": "Enhancer-driven gene regulatory network of human forebrain development provides insights into autism",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Alexandre Jourdon, Jessica Mariani, Abhiram Natu, Feinan Wu, Boxun Li, Davide Capauto, Kevin T. Hagy, Scott Norton, Livia Tomasini, Alexias Safi, Anahita Amiri, Jeremy Schreiner, Cindy Khanh Nguyen, Neal Nolan, Matthew P. Nelson, Daniel M. Ramos, Michael E. Ward, Anna Szekely, James C. McPartland, Kevin Pelphrey, Pamela Ventola, Katarzyna Chawarska, Charles A. Gersbach, Gregory E. Crawford, Alexej Abyzov, Flora M. Vaccarino",
+      "abstract": "Cell differentiation is orchestrated by transcription factors binding to enhancers, shaping gene regulatory networks that drive neuronal lineage specification. Deciphering these enhancer-driven networks in human forebrain development is essential for understanding the genetic basis of neurodevelopmental disorders. Through integrative epigenomic and transcriptomic analyses of human forebrain organoids derived from 10 male individuals with autism spectrum disorder and their neurotypical fathers, we construct a comprehensive enhancer-driven gene regulatory network of early neurodevelopment. This network reveals hierarchical regulatory layers upstream of neuronal cell fate genes, experimentally validated via CRISPR interference and loss-of-function analyses. A subnetwork links autism-associated transcriptomic alterations to opposite activities of the transcription factors FOXG1, BHLHE22, EOMES, and NEUROD2, driving increased or decreased excitatory neuron specification in (respectively) macrocephalic or normocephalic individuals with autism. These findings support the association of autism with disruption of enhancer-driven regulatory networks altering neuronal cell fate decisions in the developing fetal brain. The authors construct a gene regulatory network showing the potential role of specific enhancer elements in driving lineage imbalance in autism, explaining why forebrain organoids from autism probands show heterogeneity in the generation of excitatory neurons.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79602-6",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79602-6"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Cell differentiation is orchestrated by transcription factors binding to enhancers, shaping gene regulatory networks that drive neuronal lineage specification. Deciphering these enhancer-driven networks in human forebrain development is essential for understanding the genetic basis of neurodevelopmental disorders. Through integrative epigenomic and transcriptomic analyses of human forebrain organo",
+      "summary": "Cell differentiation is orchestrated by transcription factors binding to enhancers, shaping gene regulatory networks that drive neuronal lineage specification. Deciphering these enhancer-driven networks in human forebrain development is essential for understanding the genetic basis of neurodevelopmental disorders. Through integrative epigenomic and transcriptomic analyses of human forebrain organo",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79602-6",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 12,
+        "feature_candidate": false,
+        "reason": "This is a neurodevelopmental biology study of gene regulation and autism in forebrain organoids, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is a neurodevelopmental biology study of gene regulation and autism in forebrain organoids, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 12,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79788-9",
+      "doi": "10.1038/s41467-026-79788-9",
+      "title": "Tuning methanol-CO selectivity in CO2 hydrogenation by Ga coordination engineering in ZnGa2O4",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Zhufu Fu, Huang Qin, Yunian Chen, Xi Gao, Yuan Xue, Hai Zhang, Tianfu Wang",
+      "abstract": "Structure sensitivity limits the rational control of CO2 hydrogenation over oxide catalysts, yet how cation coordination governs product selectivity in spinel remains unclear. A synthesis-structure-mechanism framework for ZnGa2O4 is established by linking Ga coordination to methanol and CO production. Ammonia-mediated coprecipitation favors octahedrally coordinated Ga, whereas organic-assisted hydrothermal synthesis enriches tetrahedrally coordinated Ga. Catalytic measurements, structural characterization, in-situ spectroscopy and calculations show that Ga coordination is associated with reaction pathway selection, while surface area, crystallinity and oxygen vacancies also influence CO2 conversion. Octahedral Ga-rich surfaces readily form oxygen vacancies and expose Zn-containing sites, promoting the hydrogenation of formate intermediates to methanol. In contrast, tetrahedral Ga-rich surfaces suppress extensive vacancy formation and favor a carboxyl-mediated pathway to CO. This coordination-based framework links synthesis to operando active-site structure and product distribution, providing a general strategy for programming methanol/CO product distributions in Zn-based spinel catalysts for CO2 hydrogenation. Controlling whether carbon dioxide hydrogenation yields methanol or carbon monoxide remains challenging. This study shows that tuning gallium coordination in ZnGa₂O₄ directs distinct reaction pathways and product selectivity.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79788-9",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79788-9"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Thermal & Thermoelectric",
+      "summary_en": "Structure sensitivity limits the rational control of CO2 hydrogenation over oxide catalysts, yet how cation coordination governs product selectivity in spinel remains unclear. A synthesis-structure-mechanism framework for ZnGa2O4 is established by linking Ga coordination to methanol and CO production. Ammonia-mediated coprecipitation favors octahedrally coordinated Ga, whereas organic-assisted hyd",
+      "summary": "Structure sensitivity limits the rational control of CO2 hydrogenation over oxide catalysts, yet how cation coordination governs product selectivity in spinel remains unclear. A synthesis-structure-mechanism framework for ZnGa2O4 is established by linking Ga coordination to methanol and CO production. Ammonia-mediated coprecipitation favors octahedrally coordinated Ga, whereas organic-assisted hyd",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79788-9",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "mixed",
+        "score": 29,
+        "feature_candidate": false,
+        "reason": "The work investigates catalytic pathways and product selectivity in an oxide catalyst, making its primary contribution catalysis and chemistry rather than condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "mixed",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The work investigates catalytic pathways and product selectivity in an oxide catalyst, making its primary contribution catalysis and chemistry rather than condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 29,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79388-7",
+      "doi": "10.1038/s41467-026-79388-7",
+      "title": "Glutamine binding and sodium coordination reveal the transport mechanism of y⁺LAT1/CD98hc",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "David Aparicio, Marc González-Subías, Patricia Gómez-Gejo, Héctor Gaitán-Peñas, Miguel Luengo, Josep Lluis Gelpí, Maria Martínez-Molledo, Adrià Caballe, Oscar Llorca, Victor Guallar, Raúl Estévez, Manuel Palacín",
+      "abstract": "The heteromeric amino acid transporter y⁺LAT1/CD98hc (SLC7A7/SLC3A2) mediates electroneutral exchange of cationic and neutral amino acids, with Na⁺ required for efficient transport of neutral substrates. Loss-of-function mutations cause Lysinuric Protein Intolerance (LPI), and emerging evidence highlights the physiological relevance of L-glutamine uptake in immune and bone cells. Here, we present the cryo-EM structure of human y⁺LAT1/CD98hc at 3.4 Å resolution in an outward-open conformation bound to L-glutamine, revealing a non-canonical substrate-binding pose involving Cys320 in TM8. Combining docking and molecular dynamics simulations, and functional assays, we identify a Na+-binding tetrad (Asn49–Ser131–Gly323–Ser327) that underlies Na⁺-dependent transport of neutral amino acids. By contrast, cationic substrates such as L-arginine occupy the same locus with their positively charged side chain, effectively replacing the role of Na⁺ and enabling Na⁺-independent exchange. Mutagenesis and kinetic analyses support this mechanism and reveal a key role for Glu128 during transitions toward inward-facing conformations, providing structural insight into the transport cycle. Collectively, these findings establish how y⁺LAT1 integrates Na⁺ and substrate recognition to mediate the selective exchange of neutral and cationic amino acids. Here, cryo-EM, functional and computational studies reveal how the lysinuric protein intolerance transporter y⁺LAT1/CD98hc integrates Na⁺ and substrate recognition to mediate selective exchange of neutral and cationic amino acids.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79388-7",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79388-7"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "The heteromeric amino acid transporter y⁺LAT1/CD98hc (SLC7A7/SLC3A2) mediates electroneutral exchange of cationic and neutral amino acids, with Na⁺ required for efficient transport of neutral substrates. Loss-of-function mutations cause Lysinuric Protein Intolerance (LPI), and emerging evidence highlights the physiological relevance of L-glutamine uptake in immune and bone cells. Here, we present ",
+      "summary": "The heteromeric amino acid transporter y⁺LAT1/CD98hc (SLC7A7/SLC3A2) mediates electroneutral exchange of cationic and neutral amino acids, with Na⁺ required for efficient transport of neutral substrates. Loss-of-function mutations cause Lysinuric Protein Intolerance (LPI), and emerging evidence highlights the physiological relevance of L-glutamine uptake in immune and bone cells. Here, we present ",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79388-7",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "mixed",
+        "score": 8,
+        "feature_candidate": false,
+        "reason": "This is a structural and functional study of a biological amino-acid transporter, not a study of condensed-matter systems.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "mixed",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is a structural and functional study of a biological amino-acid transporter, not a study of condensed-matter systems.",
+      "relevance_method": "semantic",
+      "relevance_score": 8,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79569-4",
+      "doi": "10.1038/s41467-026-79569-4",
+      "title": "Emergent mesoscale nanoparticle patterns from a non-equilibrium liquid lens",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Jonathan Palumbo, Anjali Asthagiri, Tobias Hanrath",
+      "abstract": "Colloidal nanoparticles can assemble into richly structured materials, yet the complex morphologies that emerge under non-equilibrium conditions are often viewed as irreproducible artifacts. Here we show that evaporating a lens-shaped colloidal suspension at a fluid–fluid interface produces a robust cascade of nanoparticle film morphologies, ranging from continuous monolayers to perforated films, ribbon networks, and isolated tiles. Using in situ confocal microscopy and ex situ electron microscopy together with coupled cross-scale simulations, we identify the physical principles that govern this sequence. A macroscopic transport model determines the deposition history imposed by evaporation, which drives a nanoscale kinetic Monte Carlo model capturing particle rearrangement and solvent-mediated kinetic arrest. A coarse-grained Cahn–Hilliard–Stokes framework rationalizes the observed mesoscale periodicity as a finite-wavelength instability of the evolving film. By tuning concentration and solvent volatility, we control the system’s trajectory through this dynamic phase space and establish a predictable framework for navigating non-equilibrium nanoparticle assembly. Nanoparticle assembly at fluid interfaces is often viewed as unpredictable and dominated by uncontrolled non-equilibrium effects. Here, the authors show that evaporation-driven nanoparticle assembly reveals predictable morphologies through multiscale modeling, linking transport dynamics and kinetic arrest.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79569-4",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79569-4"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Topology & Transport",
+      "summary_en": "Colloidal nanoparticles can assemble into richly structured materials, yet the complex morphologies that emerge under non-equilibrium conditions are often viewed as irreproducible artifacts. Here we show that evaporating a lens-shaped colloidal suspension at a fluid–fluid interface produces a robust cascade of nanoparticle film morphologies, ranging from continuous monolayers to perforated films, ",
+      "summary": "Colloidal nanoparticles can assemble into richly structured materials, yet the complex morphologies that emerge under non-equilibrium conditions are often viewed as irreproducible artifacts. Here we show that evaporating a lens-shaped colloidal suspension at a fluid–fluid interface produces a robust cascade of nanoparticle film morphologies, ranging from continuous monolayers to perforated films, ",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79569-4",
+        "in_scope": false,
+        "soft_matter": true,
+        "quantum_materials": false,
+        "research_type": "mixed",
+        "score": 5,
+        "feature_candidate": false,
+        "reason": "The primary system is a colloidal suspension assembling at a fluid interface, which is excluded soft matter rather than condensed-matter physics under this screening scope.",
+        "physics_advance": ""
+      },
+      "soft_matter": true,
+      "quantum_materials": false,
+      "research_type": "mixed",
+      "screening_decision": "soft_matter",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary system is a colloidal suspension assembling at a fluid interface, which is excluded soft matter rather than condensed-matter physics under this screening scope.",
+      "relevance_method": "semantic",
+      "relevance_score": 5,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79000-y",
+      "doi": "10.1038/s41467-026-79000-y",
+      "title": "Theoretical frameworks for credit assignment via behavioral timescale synaptic plasticity",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Ian Cone, Claudia Clopath, Rui Ponte Costa",
+      "abstract": "Abstract Behavioral Timescale Synaptic Plasticity (BTSP) is a form of plasticity which drives place field formation in hippocampal pyramidal neurons. Unlike traditional learning rules, BTSP learns pre-post correlations on timescales of seconds and rapidly changes single-unit activity in only a few trials. To study how BTSP-like learning can be integrated into network models, we propose a generalized theoretical framework, gBTSP, which we apply to unsupervised and supervised tasks in feedforward and recurrent networks. We show that unsupervised gBTSP learns place field maps in the feedforward case and attractor memories in the recurrent case. For supervised learning, we derive how plateau events can reduce task error, enabling gBTSP to solve trajectory matching and delayed non-match-to-sample tasks. Finally, we find that the speed of credit assignment via gBTSP is limited by network depth or CA3-like recurrence, suggesting that additional mechanisms are necessary to account for BTSP-driven few-shot learning in naturalistic settings.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79000-y",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79000-y"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Correlated Electrons",
+      "summary_en": "Abstract Behavioral Timescale Synaptic Plasticity (BTSP) is a form of plasticity which drives place field formation in hippocampal pyramidal neurons. Unlike traditional learning rules, BTSP learns pre-post correlations on timescales of seconds and rapidly changes single-unit activity in only a few trials. To study how BTSP-like learning can be integrated into network models, we propose a generaliz",
+      "summary": "Abstract Behavioral Timescale Synaptic Plasticity (BTSP) is a form of plasticity which drives place field formation in hippocampal pyramidal neurons. Unlike traditional learning rules, BTSP learns pre-post correlations on timescales of seconds and rapidly changes single-unit activity in only a few trials. To study how BTSP-like learning can be integrated into network models, we propose a generaliz",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79000-y",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "theory",
+        "score": 8,
+        "feature_candidate": false,
+        "reason": "The theoretical framework addresses neural learning and synaptic plasticity in network models, not the physics of condensed matter.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "theory",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The theoretical framework addresses neural learning and synaptic plasticity in network models, not the physics of condensed matter.",
+      "relevance_method": "semantic",
+      "relevance_score": 8,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79482-w",
+      "doi": "10.1038/s41467-026-79482-w",
+      "title": "A Miniaturized Electrostatic Field Sensor Based on MOS Depletion-Layer Capacitance Modulation",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Xinting Liu, Shilin Wu, Yihan Ye, Xiaozhou Jiang, Fangwei Liang, Xiaotong Shen, Weiyi Ye, Chuanyang Li, Bo Zhang, Qi Li, Jinliang He, Jun Hu",
+      "abstract": "Static and low-frequency electric fields are ubiquitous in natural and engineered systems. Space-charge accumulation, migration, and dissipation regulate local field distributions and are central to dielectric characterization, high-voltage insulation assessment, and power electronic device analysis. However, existing measurement approaches remain limited for embedded online electrostatic field monitoring by mechanical structures, grounding requirements, system size, and complex external readout. Here, we report a miniaturized electrostatic field sensor based on MOS depletion-layer capacitance modulation. An external electric field is converted by an induction electrode into an equivalent bias voltage, which modulates the depletion-layer width and total capacitance of a MOS structure and is read out by a bias-tunable MOS capacitance bridge. By engineering the MOS C–V operating window, the depletion response is positioned within a monotonic regime suitable for bipolar electric field measurements. After calibration in a parallel-plate electrode system, the sensor achieves a measurement range of ±1000 kV/m, a resolution of 178 V/m, and a linearity of 0.9999. Monitoring surface-charge evolution on insulating materials and scanning of surface electric fields on power devices demonstrate that this MOS-based sensor enables miniaturized, floating, and low-perturbation electrostatic field measurements at charged interfaces and in device environments. Static and low-frequency electric fields are important in power systems and insulating materials, but compact non-perturbing sensors remain challenging to build. Here, the authors show a miniaturized MOS-capacitance sensor that measures electric fields with high linearity and enables monitoring of surface charge and device electric fields.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79482-w",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79482-w"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Topology & Transport",
+      "summary_en": "Static and low-frequency electric fields are ubiquitous in natural and engineered systems. Space-charge accumulation, migration, and dissipation regulate local field distributions and are central to dielectric characterization, high-voltage insulation assessment, and power electronic device analysis. However, existing measurement approaches remain limited for embedded online electrostatic field mo",
+      "summary": "Static and low-frequency electric fields are ubiquitous in natural and engineered systems. Space-charge accumulation, migration, and dissipation regulate local field distributions and are central to dielectric characterization, high-voltage insulation assessment, and power electronic device analysis. However, existing measurement approaches remain limited for embedded online electrostatic field mo",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79482-w",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 24,
+        "feature_candidate": false,
+        "reason": "This paper primarily develops and benchmarks an electrostatic sensing device rather than investigating condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This paper primarily develops and benchmarks an electrostatic sensing device rather than investigating condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 24,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79307-w",
+      "doi": "10.1038/s41467-026-79307-w",
+      "title": "Phenotypic variation in Drosophila complex traits is influenced more by genotype and environmental interactions than by mitonuclear coevolutionary history",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Leah J. Darwin, Faye A. Lemieux, Rebecca Z. Bachtel, Jack H. Blocker, Camille P. Brown, Alexander D. Griffin, Jacob D. Lerman, Olivia C. Maule, Yevgeniy Raynes, David M. Rand",
+      "abstract": "The interdependent relationship between mitochondrial and nuclear genomes is a powerful model for understanding how epistasis shapes the architecture and evolution of complex traits. Once considered a neutral marker, mitochondrial DNA variation is now recognized as critical to phenotypic evolution because of its epistatic interactions and history of coevolution with the nuclear genome. A central challenge in evolutionary genetics is to quantify the relative importance of stabilizing and directional selection shaping complex trait distributions within and among species. Both can act on interacting and/or co-evolving genes contributing to quantitative traits, but resolving their relative roles is complicated by the complex architecture of most traits. Here, we use a panel of 90 Drosophila mitonuclear genotypes to quantify the relative contributions of mitochondrial, nuclear, and environmental variation and their interactions to four metabolically demanding complex traits. We sample both within-species and between-species mitochondrial variation and observe stronger interaction effects attributable to within-species variation, consistent with stabilizing selection maintaining mitonuclear function. Additionally, culturing the flies on a mitochondrial Complex I inhibitor, rotenone, reveals significant genotype × environment (G × E and G × G × E) interaction effects, providing insight into how genetic variation can be maintained across changing environments. Complex traits depend on energy produced by proteins encoded in both mitochondrial and nuclear genomes. By mixing and matching Drosophila variants of these genomes, this study finds that recent mtDNA mutations have more impact on traits than divergent mtDNAs revealing the influence of purifying selection.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79307-w",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79307-w"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Topology & Transport",
+      "summary_en": "The interdependent relationship between mitochondrial and nuclear genomes is a powerful model for understanding how epistasis shapes the architecture and evolution of complex traits. Once considered a neutral marker, mitochondrial DNA variation is now recognized as critical to phenotypic evolution because of its epistatic interactions and history of coevolution with the nuclear genome. A central c",
+      "summary": "The interdependent relationship between mitochondrial and nuclear genomes is a powerful model for understanding how epistasis shapes the architecture and evolution of complex traits. Once considered a neutral marker, mitochondrial DNA variation is now recognized as critical to phenotypic evolution because of its epistatic interactions and history of coevolution with the nuclear genome. A central c",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79307-w",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 10,
+        "feature_candidate": false,
+        "reason": "The primary contribution concerns evolutionary genetics of Drosophila traits, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary contribution concerns evolutionary genetics of Drosophila traits, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 10,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78019-5",
+      "doi": "10.1038/s41467-026-78019-5",
+      "title": "Field-angle-resolved heat transport in UTe2: determination of nodal positions in the superconducting order parameter",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Ian M. Hayes, Elliot Fang, Shanta R. Saha, Vivek Mishra, P. J. Hirschfeld, Johnpierre Paglione",
+      "abstract": "Abstract One of the recurring hurdles in studying unconventional superconductivity is the challenge of efficiently and conclusively identifying the symmetry of the superconducting order parameter in a new material. Uranium ditelluride (UTe 2 ) exhibits an unprecedented number of superconducting phases, and none of them has had its symmetry conclusively identified so far. Here we report results of an extensive study of the thermal conductivity of UTe 2 in the superconducting state as a function of the angle of an applied magnetic field rotated in the b-c plane. We observe substantial oscillations in the thermal conductivity as a function of field angle, and, utilizing the experimentally determined Fermi surface, we model this phenomenon for all potential gap structures in UTe 2 . This allows us to identify point nodes near the b-axis, implying that the superconducting order parameter most likely belongs to the B 2 u irreducible representation of the crystal point group.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-78019-5",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78019-5"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Superconductivity",
+      "summary_en": "Abstract One of the recurring hurdles in studying unconventional superconductivity is the challenge of efficiently and conclusively identifying the symmetry of the superconducting order parameter in a new material. Uranium ditelluride (UTe 2 ) exhibits an unprecedented number of superconducting phases, and none of them has had its symmetry conclusively identified so far. Here we report results of ",
+      "summary": "Abstract One of the recurring hurdles in studying unconventional superconductivity is the challenge of efficiently and conclusively identifying the symmetry of the superconducting order parameter in a new material. Uranium ditelluride (UTe 2 ) exhibits an unprecedented number of superconducting phases, and none of them has had its symmetry conclusively identified so far. Here we report results of ",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-78019-5",
+        "in_scope": true,
+        "soft_matter": false,
+        "quantum_materials": true,
+        "research_type": "mixed",
+        "score": 79,
+        "feature_candidate": true,
+        "reason": "The study combines thermal-transport measurements and modeling to constrain the superconducting gap structure of the quantum material UTe2.",
+        "physics_advance": "Field-angle-dependent thermal conductivity and Fermi-surface-based modeling indicate point nodes near the b-axis in UTe2, favoring a B2u superconducting order parameter."
+      },
+      "soft_matter": false,
+      "quantum_materials": true,
+      "research_type": "mixed",
+      "screening_decision": "selected",
+      "physics_advance": "Field-angle-dependent thermal conductivity and Fermi-surface-based modeling indicate point nodes near the b-axis in UTe2, favoring a B2u superconducting order parameter.",
+      "ai_in_scope": true,
+      "relevance_reason": "The study combines thermal-transport measurements and modeling to constrain the superconducting gap structure of the quantum material UTe2.",
+      "relevance_method": "semantic",
+      "relevance_score": 79,
+      "feature_candidate": true
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79357-0",
+      "doi": "10.1038/s41467-026-79357-0",
+      "title": "Multi-ancestry genetic analysis reveals 29 novel rheumatoid arthritis loci, effector genes and drug repurposing opportunities",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Ayeong Kwon, So-Young Bang, Eunji Ha, Young Jin Kim, Young Bin Joo, Bong-Jo Kim, Hye-Soon Lee, Sang-Cheol Bae, Kwangwoo Kim",
+      "abstract": "Abstract Rheumatoid arthritis (RA) is a complex autoimmune disease with a substantial heritable component. We perform multi-ancestry genome-wide association meta-analyses of 351,498 individuals (comprising 39,600 RA cases and 311,898 controls) by integrating published and new datasets. This analysis identifies 29 novel RA susceptibility loci and systematically classifies association signals as population-specific, population-dominant, or population-shared between East Asian and European populations. Bayesian fine-mapping and functional annotation prioritize putative causal variants, highlighting 67 variants with posterior inclusion probability&gt;0.1 in novel loci, including an SLC27A6 missense variant (rs137898880) and a STIM1 3′ UTR variant (rs3750996). Our gene-prioritization framework combining genetic and biological evidence identifies 203 high-confidence effector genes, 16 of which reside in novel loci (e.g., IFI16 , AIM2 , RGS1 , ITPKB , CD80 , RHOH , NFKB1 , SIK3 , and CCND2 ). Colocalization analysis leveraging tissue-specific eQTL datasets provides mechanistic insights by implicating shared causal variants underlying RA association signals. Notably, the transcription factor gene RUNX3 at a novel locus shows evidence of cis -regulation in immune cells, and RUNX3-binding sites are enriched for variants explaining excess RA heritability, suggesting a potential role for RUNX3 as a trans -regulatory mediator of RA risk at distal RA loci. Finally, exploratory gene-drug interaction networks weighted by RA association strength highlight population-informed therapeutic opportunities and drug-repurposing targets driven largely by novel loci.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79357-0",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79357-0"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Abstract Rheumatoid arthritis (RA) is a complex autoimmune disease with a substantial heritable component. We perform multi-ancestry genome-wide association meta-analyses of 351,498 individuals (comprising 39,600 RA cases and 311,898 controls) by integrating published and new datasets. This analysis identifies 29 novel RA susceptibility loci and systematically classifies association signals as pop",
+      "summary": "Abstract Rheumatoid arthritis (RA) is a complex autoimmune disease with a substantial heritable component. We perform multi-ancestry genome-wide association meta-analyses of 351,498 individuals (comprising 39,600 RA cases and 311,898 controls) by integrating published and new datasets. This analysis identifies 29 novel RA susceptibility loci and systematically classifies association signals as pop",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79357-0",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 9,
+        "feature_candidate": false,
+        "reason": "This is a human disease-genetics study identifying rheumatoid arthritis risk loci and candidate therapeutic targets, not condensed-matter research.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is a human disease-genetics study identifying rheumatoid arthritis risk loci and candidate therapeutic targets, not condensed-matter research.",
+      "relevance_method": "semantic",
+      "relevance_score": 9,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79324-9",
+      "doi": "10.1038/s41467-026-79324-9",
+      "title": "Single cell RNA sequencing reveals unexpected heterogeneity and identifies AP2XI-6 as a mature bradyzoite specific cell cycle regulator",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Emma Franklin, Argenis Arriojas Maldonado, Kyra Lee, Grace Hilliard, Bruno Martorelli Di Genova, Gary E. Ward, Kourosh Zarringhalam, Robyn Kent",
+      "abstract": "Toxoplasma gondii prevalence is due, in part, to its ability to persist in hosts while retaining the capacity to transmit and recrudesce. This process, while critical, is poorly understood. Through single cell RNA profiling of in vivo-derived bradyzoites, we show that bradyzoites are heterogeneous and not G1-arrested, as expected from in vitro studies. Instead, they progress through two distinct cell cycles that branch from a single G1 state. One is common amongst tachyzoites and in vitro- and in vivo-derived bradyzoites; the other is newly identified within the population of in vivo-derived bradyzoites. While in G1b, these in vivo-derived bradyzoites express cyst wall proteins predicted to replenish the wall that protects cysts and prevents clearance. We demonstrate that AP2XI-6, a putative AP2-transcription factor expressed by bradyzoites in G1 in vivo, is dispensable for tachyzoite growth and cyst formation in vitro but necessary for encystation or persistence in vivo. We propose that AP2XI-6 is a driver of replication through the newly identified in vivo bradyzoite specific cell cycle and that this is required for cyst maturation or persistence. Authors show mature chronic-stage T. gondii adopt cell-cycle-controlled cyst-wall protein expression and two cell-cycle architectures in vivo. AP2XI-6 is required for the mature architecture; without it, parasites form cysts in vitro but fail in vivo.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79324-9",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79324-9"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Toxoplasma gondii prevalence is due, in part, to its ability to persist in hosts while retaining the capacity to transmit and recrudesce. This process, while critical, is poorly understood. Through single cell RNA profiling of in vivo-derived bradyzoites, we show that bradyzoites are heterogeneous and not G1-arrested, as expected from in vitro studies. Instead, they progress through two distinct c",
+      "summary": "Toxoplasma gondii prevalence is due, in part, to its ability to persist in hosts while retaining the capacity to transmit and recrudesce. This process, while critical, is poorly understood. Through single cell RNA profiling of in vivo-derived bradyzoites, we show that bradyzoites are heterogeneous and not G1-arrested, as expected from in vitro studies. Instead, they progress through two distinct c",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79324-9",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 8,
+        "feature_candidate": false,
+        "reason": "The study investigates parasite cell-cycle biology and persistence in hosts, outside condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The study investigates parasite cell-cycle biology and persistence in hosts, outside condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 8,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79146-9",
+      "doi": "10.1038/s41467-026-79146-9",
+      "title": "Built-in electric field driven MXene/perovskite Schottky heterojunction for photo-electro-thermal energy redistribution in thermochromic smart windows",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Xin Li, Xiaoke Lu, Chuyao Wang, Qiang Li, Yang Fu, Wenqi Wang, Rui Zhang, Qiuyi Shi, Ze Li, Dan Feng, Sai Liu, Yihao Zhu, Xiaomeng Fan, Hongjing Wu, Yongsheng Liu, Chi Yan Tso",
+      "abstract": "Perovskite-based thermochromic smart windows offer a sustainable solution for energy-efficient building technologies. However, existing strategies to reconcile the transition temperature of thermochromic perovskites with practical application temperatures primarily rely on extrinsic composite engineering, often neglecting the intrinsic multi-energy field conversion and photo-electro-thermal coupling effects of perovskites. Here, we introduce a band structure engineering strategy by constructing a MXene/perovskite Schottky heterojunction, leveraging an interfacial built-in electric field to induce photon energy redistribution. The Fermi level alignment between Ti3C2Tx and MAPbI3-xClx facilitates light-activated band bending, which enhances ultraviolet/visible photon harvesting for charge generation (photoelectric channel), complementing the inherent broadband photothermal effect of MXene (photothermal channel). This dual-energy utilization pathway, integrated within a MXene-enhanced perovskite architecture, significantly enhances the photo-electro-thermal performance. The fabricated multilayer Cl-doped perovskite smart window demonstrates a self-induced room-temperature thermochromic transition with a narrow thermal hysteresis of 5.2 °C and a 55% enhancement in photocurrent density. It also exhibits scalable manufacturability, competitive stability, extensive energy-saving performance, and multi-band communication compatibility. This work establishes a universal design paradigm for thermally responsive materials, and the multi-channel photon energy utilization strategy can be extended to other energy-efficient phase-transition systems, with promising implications for global carbon neutrality efforts. A MXene and chloride-doped perovskite Schottky junction uses a built-in electric field to route ultraviolet and visible light into charge separation and interfacial heating, enabling room-temperature switching with 5.2 degrees Celsius hysteresis, 20.5% solar modulation, and 55% higher photocurrent.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79146-9",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79146-9"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Thermal & Thermoelectric",
+      "summary_en": "Perovskite-based thermochromic smart windows offer a sustainable solution for energy-efficient building technologies. However, existing strategies to reconcile the transition temperature of thermochromic perovskites with practical application temperatures primarily rely on extrinsic composite engineering, often neglecting the intrinsic multi-energy field conversion and photo-electro-thermal coupli",
+      "summary": "Perovskite-based thermochromic smart windows offer a sustainable solution for energy-efficient building technologies. However, existing strategies to reconcile the transition temperature of thermochromic perovskites with practical application temperatures primarily rely on extrinsic composite engineering, often neglecting the intrinsic multi-energy field conversion and photo-electro-thermal coupli",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79146-9",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 34,
+        "feature_candidate": false,
+        "reason": "The primary contribution is a performance-oriented thermochromic smart-window architecture, not a substantial discovery about condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary contribution is a performance-oriented thermochromic smart-window architecture, not a substantial discovery about condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 34,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79722-z",
+      "doi": "10.1038/s41467-026-79722-z",
+      "title": "A split RNA-guided Cas9 system for PAM-independent and cis-cleavage-free nucleic acid detection",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Wenhao Yin, Hong Xu, Xiangang Xia, Yi Du, Xinping Wang, Ruyi He, Zhuo Chen, Jie Qiao, Yi Liu",
+      "abstract": "The CRISPR-Cas9 system exhibits limited trans-cleavage activity, restricting its utility for nucleic acid detection. Here, we present a split RNA-guided Cas9 system (SCas9) that overcomes this limitation. By partitioning single-guide RNA into functionally independent scaffold and spacer modules, SCas9 enables amplification-free detection of single-stranded DNA and RNA with picomolar sensitivity within 30 min and single-nucleotide specificity. Incorporation of λ exonuclease permits PAM-independent detection of double-stranded DNA without cis-cleavage activity. Coupling SCas9 with recombinase polymerase amplification or reverse transcription–recombinase polymerase amplification extends detection of double-stranded DNA and long RNA to attomolar sensitivity. We further developed an autocatalytic SCas9 strategy for attomolar microRNA detection. SCas9 demonstrates broad substrate compatibility and was validated in clinical specimens, including human papillomavirus 16 in vaginal secretions and miR-21 in colorectal cancer tissues, highlighting its potential for point-of-care diagnostics. CRISPR-Cas9 lacks collateral cleavage for nucleic acid diagnostics. Here, authors show that splitting the guide RNA into scaffold and spacer converts Cas9 into SCas9, enabling rapid, single-nucleotide-specific DNA/RNA sensing, PAM-independent dsDNA detection, and attomolar clinical assays.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79722-z",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79722-z"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "The CRISPR-Cas9 system exhibits limited trans-cleavage activity, restricting its utility for nucleic acid detection. Here, we present a split RNA-guided Cas9 system (SCas9) that overcomes this limitation. By partitioning single-guide RNA into functionally independent scaffold and spacer modules, SCas9 enables amplification-free detection of single-stranded DNA and RNA with picomolar sensitivity wi",
+      "summary": "The CRISPR-Cas9 system exhibits limited trans-cleavage activity, restricting its utility for nucleic acid detection. Here, we present a split RNA-guided Cas9 system (SCas9) that overcomes this limitation. By partitioning single-guide RNA into functionally independent scaffold and spacer modules, SCas9 enables amplification-free detection of single-stranded DNA and RNA with picomolar sensitivity wi",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79722-z",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 8,
+        "feature_candidate": false,
+        "reason": "This is a nucleic-acid diagnostic technology study in molecular biology rather than condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is a nucleic-acid diagnostic technology study in molecular biology rather than condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 8,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79430-8",
+      "doi": "10.1038/s41467-026-79430-8",
+      "title": "Light-driven oxidative coupling of methane via charge-symmetry-breaking",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Fei Xue, Chunyang Zhang, Wenlong Fu, Cheng Cheng, Xueli Yan, Saiya Liu, Feng Liu, Huiping Peng, Hong-chao Li, Qiuyue Zhang, Yuanbin Qin, Zhiwei Hu, Wei-Hsiang Huang, Chih-wen Pao, Mingshu Chen, Maochang Liu, Xiaoqing Huang, Yong Xu",
+      "abstract": "Light-driven oxidative coupling of methane into C2+ chemicals represents a sustainable route towards carbon-neutral management, yet faces critical challenges including narrow solar spectrum utilization, inefficient charge carrier dynamics, and tricky C − C coupling. Herein, we achieve highly active and selective light-driven methane conversion to C2+ chemicals over multi-interfacial CuO/ZnO heterojunction. Mechanistic investigations reveal that charge redistribution at CuO/ZnO interface creates interfacial sites with unbalanced electronic states, which promote methane dissociation, alleviate coupling energy of methyl intermediates, and suppress electrostatic repulsion, thereby facilitating C − C coupling. Additionally, Z-Scheme charge transfer spatially decouples oxygen reduction on CuO and methane oxidation on ZnO, respectively. Consequently, CuO/ZnO delivers an ethane yield of 30.87 mmol g−1 h−1 with a C2+ selectivity up to 97.8%, an apparent quantum yield of 3.9% at 420 nm and a durability of 124 h. Here, we show that charge symmetry breaking provides a feasible strategy for converting methane to high-value C2+ chemicals. The successful construction of multiple CuO/ZnO interfaces with charge symmetry breaking achieves a high POCM performance with a C2H6 yield of 30.87 mmol g − 1 h − 1 and C2+ selectivity of 97.8% under ambient conditions in flowing reactor.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79430-8",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79430-8"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Topology & Transport",
+      "summary_en": "Light-driven oxidative coupling of methane into C2+ chemicals represents a sustainable route towards carbon-neutral management, yet faces critical challenges including narrow solar spectrum utilization, inefficient charge carrier dynamics, and tricky C − C coupling. Herein, we achieve highly active and selective light-driven methane conversion to C2+ chemicals over multi-interfacial CuO/ZnO hetero",
+      "summary": "Light-driven oxidative coupling of methane into C2+ chemicals represents a sustainable route towards carbon-neutral management, yet faces critical challenges including narrow solar spectrum utilization, inefficient charge carrier dynamics, and tricky C − C coupling. Herein, we achieve highly active and selective light-driven methane conversion to C2+ chemicals over multi-interfacial CuO/ZnO hetero",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79430-8",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 24,
+        "feature_candidate": false,
+        "reason": "The main advance is photocatalytic methane conversion and chemical yield, not a new condensed-matter phenomenon.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The main advance is photocatalytic methane conversion and chemical yield, not a new condensed-matter phenomenon.",
+      "relevance_method": "semantic",
+      "relevance_score": 24,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78707-2",
+      "doi": "10.1038/s41467-026-78707-2",
+      "title": "Boosting reinforcement learning for critical node detection with multi-topology training strategies",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Kushal Raj Bhandari, Pin-Yu Chen, Shlomo Havlin, Jianxi Gao",
+      "abstract": "Identifying pivotal components in complex networks—such as key intersections in transportation systems, influential actors in social networks, or keystone species in ecosystems—is essential for improving the resilience and mitigating catastrophic failures of these systems. However, existing methods for critical node detection are typically tailored to specific network types and objectives, limiting their generalizability. To overcome this limitation, we propose a machine learning framework that combines reinforcement learning with an attention-based graph neural network. By leveraging multi-topology training, our model learns to adapt and generalize across diverse network structures and objective functions. Experiments on real-world and synthetic networks uncover distinct topological features that are important for identifying critical nodes. Notably, our method applied to personalized gene networks, prioritizes genes that are significantly enriched for cataloged cancer drivers. This work provides a robust critical node detection model with a comprehensive multi-topology training approach, suitable for a broader range of real-world applications. Critical node detection helps identify network elements whose removal most disrupts connectivity. Here, the authors develop a reinforcement-learning approach that trains on diverse graph topologies to improve generalization to both synthetic and real networks.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-78707-2",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78707-2"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Topology & Transport",
+      "summary_en": "Identifying pivotal components in complex networks—such as key intersections in transportation systems, influential actors in social networks, or keystone species in ecosystems—is essential for improving the resilience and mitigating catastrophic failures of these systems. However, existing methods for critical node detection are typically tailored to specific network types and objectives, limitin",
+      "summary": "Identifying pivotal components in complex networks—such as key intersections in transportation systems, influential actors in social networks, or keystone species in ecosystems—is essential for improving the resilience and mitigating catastrophic failures of these systems. However, existing methods for critical node detection are typically tailored to specific network types and objectives, limitin",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-78707-2",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 12,
+        "feature_candidate": false,
+        "reason": "This paper develops a machine-learning method for network analysis and does not investigate condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This paper develops a machine-learning method for network analysis and does not investigate condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 12,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79375-y",
+      "doi": "10.1038/s41467-026-79375-y",
+      "title": "Agricultural economic responses to ecoclimate teleconnections induced by forest loss",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Yayun B. Chen, Lunyu C. Zhao, Chengcheng J. Fei, Bruce A. McCarl, Xingguo Wang, Mengqiao Q. Liu, David D. Breshears, Xiao Feng, Elizabeth Baldwin, Haotian Cheng, Jonathan J. Derbridge, Jessie D. Golding, Aaron M. Lien, Laura López-Hoffman, Danielle M. McLaughlin, Abigail L. S. Swann, José R. Soto",
+      "abstract": "Forest disturbances are increasing globally, altering vegetation in ways that can affect distant agricultural systems through ecoclimate teleconnections. We examine how large-scale U.S. regional forest loss with C3 grass replacement affects agricultural production and markets. We integrate climate simulations, econometric yield models, and an agricultural sector model to trace impacts from vegetation change through climate anomalies to yields, land allocation, prices, and welfare, while isolating vegetation-driven effects from greenhouse-gas forcing. Teleconnection-induced yield responses are spatially heterogeneous. Soybean yields decline, particularly in the Southern Plains, while wheat gains occur there and corn responses are muted. This shifts regional crop mixes and increases total production by 1–3%, lowering crop prices, increasing consumer surplus, and reducing producer surplus, with small positive net agricultural welfare effects. Our study excludes forest-sector impacts and ecosystem-service losses and therefore does not imply that forest loss is beneficial. Forest loss across 14 U.S. regions can affect distant climates. Linking these teleconnections to crop yields and agricultural markets reveals soybean losses, wheat gains, 1–3% higher total production, lower crop prices, and small net gains in agricultural welfare.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79375-y",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79375-y"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Forest disturbances are increasing globally, altering vegetation in ways that can affect distant agricultural systems through ecoclimate teleconnections. We examine how large-scale U.S. regional forest loss with C3 grass replacement affects agricultural production and markets. We integrate climate simulations, econometric yield models, and an agricultural sector model to trace impacts from vegetat",
+      "summary": "Forest disturbances are increasing globally, altering vegetation in ways that can affect distant agricultural systems through ecoclimate teleconnections. We examine how large-scale U.S. regional forest loss with C3 grass replacement affects agricultural production and markets. We integrate climate simulations, econometric yield models, and an agricultural sector model to trace impacts from vegetat",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79375-y",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "mixed",
+        "score": 10,
+        "feature_candidate": false,
+        "reason": "The study concerns climate teleconnections and agricultural economics, outside condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "mixed",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The study concerns climate teleconnections and agricultural economics, outside condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 10,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79533-2",
+      "doi": "10.1038/s41467-026-79533-2",
+      "title": "Geophysical conditions favoring precursory slip before major earthquakes",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Peng Dong, Kaiwen Xia, Aitaro Kato, Kazushige Obara, Zhigang Peng, Jianbing Peng",
+      "abstract": "Precursory slow slip holds potential for reliable earthquake forewarning, yet the conditions conducive to it remain elusive. While quite a number of large earthquakes on smooth megathrust faults are preceded by precursory slow slip, laboratory experiments suggest such slip is inhibited on smooth faults. Here we capture diverse preseismic slow slip behaviors through laboratory experiments, and show that the occurrence pattern of precursory slow slip is dictated by both fault roughness and stress. We find that energetic slow slip producing pronounced acceleration in preseismic moment release prevails on smooth faults under low stress but diminishes as stress increases. For rougher faults, multiple slow slips yield moderate to pronounced acceleration depending on stress. Our results extend previous observations by showing that under lower normal stress, precursor signals on smooth faults can be more pronounced than those on rougher faults, reconciling the contradiction between field and laboratory observations. Our findings provide a mechanism for the prevalence of precursory phase for large earthquakes on smooth, fluid-rich megathrust faults. Laboratory experiments show that precursory slow slip before earthquakes is controlled by fault roughness and stress. On smooth faults, it is most pronounced at low stress, explaining why smooth, fluid-rich megathrust faults often host precursors.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79533-2",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79533-2"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Correlated Electrons",
+      "summary_en": "Precursory slow slip holds potential for reliable earthquake forewarning, yet the conditions conducive to it remain elusive. While quite a number of large earthquakes on smooth megathrust faults are preceded by precursory slow slip, laboratory experiments suggest such slip is inhibited on smooth faults. Here we capture diverse preseismic slow slip behaviors through laboratory experiments, and show",
+      "summary": "Precursory slow slip holds potential for reliable earthquake forewarning, yet the conditions conducive to it remain elusive. While quite a number of large earthquakes on smooth megathrust faults are preceded by precursory slow slip, laboratory experiments suggest such slip is inhibited on smooth faults. Here we capture diverse preseismic slow slip behaviors through laboratory experiments, and show",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79533-2",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 44,
+        "feature_candidate": false,
+        "reason": "This is experimental fault mechanics and earthquake geophysics, not condensed-matter physics.",
+        "physics_advance": "The experiments show how fault roughness and stress jointly control precursory slow slip, including pronounced precursors on smooth faults at low stress."
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "The experiments show how fault roughness and stress jointly control precursory slow slip, including pronounced precursors on smooth faults at low stress.",
+      "ai_in_scope": false,
+      "relevance_reason": "This is experimental fault mechanics and earthquake geophysics, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 44,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79528-z",
+      "doi": "10.1038/s41467-026-79528-z",
+      "title": "Functional diversity of GPCR–Gustducin complexes controls signaling output and suppresses alternative pathways",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Victoria Jaime Arce, Mira Lettmann, Mona Stefanie Tögl, Santiago Javier Bonn Garcia, Max Bauer, Maike Neukirch, Olivia Kleinstück, Anastasia Langolf, Isabell Kaczmarek, Daniel Hilger, Hannes Schihada",
+      "abstract": "Abstract Gustducin (G gust ), the G protein mediating taste receptor signaling, is expressed not only in sensory taste cells but throughout the human body alongside numerous non-taste G protein-coupled receptors (GPCRs). Whether and how these receptors engage G gust , and the functional consequences of such interactions, remain poorly understood. Here, we develop two complementary biosensors that enable direct monitoring of GPCR–G gust interaction and downstream signaling in living cells, allowing pharmacological characterization of G gust activity induced by non-taste GPCRs. We find that several non-taste GPCRs do not activate G gust but instead stabilize the G protein heterotrimer and suppress basal signaling by forming unproductive GPCR–G protein complexes, whereas others induce conventional G gust activation and signal transduction. We further show that these unproductive GPCR–G gust complexes suppress the activation of alternative signaling pathways by sequestering receptors from other G proteins. This mode of interaction functionally partitions GPCRs into activators and inactivators of G gust and represents a mechanism for balancing concurrent signaling pathways within a cell.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79528-z",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79528-z"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Abstract Gustducin (G gust ), the G protein mediating taste receptor signaling, is expressed not only in sensory taste cells but throughout the human body alongside numerous non-taste G protein-coupled receptors (GPCRs). Whether and how these receptors engage G gust , and the functional consequences of such interactions, remain poorly understood. Here, we develop two complementary biosensors that ",
+      "summary": "Abstract Gustducin (G gust ), the G protein mediating taste receptor signaling, is expressed not only in sensory taste cells but throughout the human body alongside numerous non-taste G protein-coupled receptors (GPCRs). Whether and how these receptors engage G gust , and the functional consequences of such interactions, remain poorly understood. Here, we develop two complementary biosensors that ",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79528-z",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 32,
+        "feature_candidate": false,
+        "reason": "The primary contribution concerns GPCR signaling in living cells, a biological signaling question rather than condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary contribution concerns GPCR signaling in living cells, a biological signaling question rather than condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 32,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79607-1",
+      "doi": "10.1038/s41467-026-79607-1",
+      "title": "Sunflower pollen microgels enable sonication-free dispersion of carbon nanotubes for bio-based conductive inks",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Changdan Gao, Di Yang, Jingwen Liang, Zongyu Wang, Mingyu Zhao, Ze Zhao, Hongbing Deng",
+      "abstract": "Sustainable, high-performance conductive inks are crucial for wearable electronics. While biopolymer-based dispersants offer renewable and biocompatible routes for CNT inks, a paradox persists: biopolymers require energy-intensive extraction, high-power ultrasonication, and lack the rheological strength for precision extrusion printing. Here we show that a sonication-free strategy utilizing sunflower pollen microgels in their native granular state, leveraging their amphiphilic spiky architecture, achieves CNT debundling through a mild-stirring-driven capture-collision-friction integrated process, while alginate provides electrostatic stabilization. The resulting pollen-alginate-CNT (PAC) inks exhibit rapid thixotropy and high viscoelasticity, enabling high-fidelity 3D extrusion and screen printing. Drying induces a lamella-like assembly, forming anisotropic conductive networks. These features unlock multifunctional performance, including humidity sensing via interlayer-spacing modulation, direction-dependent strain sensing, and electromagnetic interference shielding. This work establishes a scalable, energy-efficient framework that overcomes the processing and rheological limitations of conventional bio-based inks, advancing sustainable, adaptive printed electronic systems. Dispersing carbon nanotubes in conductive inks often requires energy-intensive sonication. Here, the authors use sunflower pollen microgels and alginate to create sonication-free conductive inks for printing, sensing, and electromagnetic shielding applications.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79607-1",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79607-1"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Magnetism",
+      "summary_en": "Sustainable, high-performance conductive inks are crucial for wearable electronics. While biopolymer-based dispersants offer renewable and biocompatible routes for CNT inks, a paradox persists: biopolymers require energy-intensive extraction, high-power ultrasonication, and lack the rheological strength for precision extrusion printing. Here we show that a sonication-free strategy utilizing sunflo",
+      "summary": "Sustainable, high-performance conductive inks are crucial for wearable electronics. While biopolymer-based dispersants offer renewable and biocompatible routes for CNT inks, a paradox persists: biopolymers require energy-intensive extraction, high-power ultrasonication, and lack the rheological strength for precision extrusion printing. Here we show that a sonication-free strategy utilizing sunflo",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79607-1",
+        "in_scope": false,
+        "soft_matter": true,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 27,
+        "feature_candidate": false,
+        "reason": "The work centers on biopolymer microgel-based conductive inks and their processing and sensing applications, so it is excluded soft-matter and device research.",
+        "physics_advance": ""
+      },
+      "soft_matter": true,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "soft_matter",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The work centers on biopolymer microgel-based conductive inks and their processing and sensing applications, so it is excluded soft-matter and device research.",
+      "relevance_method": "semantic",
+      "relevance_score": 27,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78951-6",
+      "doi": "10.1038/s41467-026-78951-6",
+      "title": "Bright and stable near-infrared tin-perovskite LEDs enabled by efficient optical and thermal management",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Yuhan Zhou, Yangyu Liu, Chunping Pu, Qipan Yu, Xingjiao Feng, Danping Chen, Wenxiao Niu, Yuhui Ye, Xiaoyong Wang, Tao Yu, Feng Gao, Zhigang Zou, Chunxiong Bao",
+      "abstract": "Invisible near-infrared (NIR) light sources are central to optoelectronic and bioelectronic systems including night-vision imaging, facial recognition, and non-invasive biomedical sensing. However, realizing planar NIR emitters with high output optical power remains a major challenge. Here we demonstrate lead-free CsSnI3 perovskite light-emitting diodes (LEDs) that achieve simultaneous breakthroughs in efficiency, radiance and operational stability. The devices deliver high radiances of 6304 W sr−1 m−2 under DC and 21,633 W sr−1 m−2 under pulsed driving, together with a half-lifetime (T50) of 64.3 h at 100 mA cm−2, representing record performance for NIR tin-based perovskite LEDs and a substantial advance for solution-processed NIR optoelectronics. These advances are enabled by the spontaneous formation of discrete hemispherical perovskite microstructures, which synergistically enhance optical and thermal management. We further demonstrate the effectiveness of large-area planar LEDs for red-glow-free night-vision surveillance, biomedical imaging and sensing. Our work establishes a viable route toward high-radiance, stable and lead-free NIR light sources, advancing the development of scalable perovskite-based optoelectronic and bioelectronic technologies. Invisible near-infrared light sources are vital for imaging and sensing, but planar emitters struggle to achieve high optical power. Zhou et al. developed stable, lead-free perovskite light-emitting diodes with record radiance for night vision and biomedical uses.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-78951-6",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78951-6"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Thermal & Thermoelectric",
+      "summary_en": "Invisible near-infrared (NIR) light sources are central to optoelectronic and bioelectronic systems including night-vision imaging, facial recognition, and non-invasive biomedical sensing. However, realizing planar NIR emitters with high output optical power remains a major challenge. Here we demonstrate lead-free CsSnI3 perovskite light-emitting diodes (LEDs) that achieve simultaneous breakthroug",
+      "summary": "Invisible near-infrared (NIR) light sources are central to optoelectronic and bioelectronic systems including night-vision imaging, facial recognition, and non-invasive biomedical sensing. However, realizing planar NIR emitters with high output optical power remains a major challenge. Here we demonstrate lead-free CsSnI3 perovskite light-emitting diodes (LEDs) that achieve simultaneous breakthroug",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-78951-6",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 36,
+        "feature_candidate": false,
+        "reason": "The primary advance is improved LED radiance and stability through optical and thermal management, without a distinct discovery about condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary advance is improved LED radiance and stability through optical and thermal management, without a distinct discovery about condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 36,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79466-w",
+      "doi": "10.1038/s41467-026-79466-w",
+      "title": "An electrically driven multimodal soft robot enabled by a monolithic heterolayer elastomer",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Lvting Wang, Huangwei Ji, Zixuan Wang, Jiangshan Zhuo, Lu Jiang, Ning Xu, Mengke Shi, Huifeng Dong, Junbo Peng, Ofoq Normahmedov, Shengchao Jiang, Xin Zhao, Zhijian Wang, Feifei Chen, Ye Shi",
+      "abstract": "Soft robots powered by active materials can navigate complex environments through multimodal locomotion. However, prevailing designs typically rely on a single active material within multi-component architectures, which often leads to high structural complexity and “soft-stiff” interfacial challenges. Here, we present an electrically driven, entirely soft robot based on a monolithic heterolayer elastomer integrating a processable high-performance dielectric elastomer and a liquid crystal elastomer. In this “soft-soft” structure, the liquid crystal elastomer functions as a reconfigurable compliant skeleton to program the equilibrium states, while the dielectric elastomer serves as a fast-responsive artificial muscle driving dynamic motion. Through independent control of the two active materials, the robot demonstrates bidirectional crawling at 2.3 cm·s−1, leaping over 2.5 body lengths, climbing on a 20° slope, and controlled rolling. Our approach establishes a paradigm for creating soft robots with high structural integrity, payload‑to‑weight ratio, and controllability for deployment in unstructured environments. Soft robots are promising for complex applications, though typical robots rely on a single active material limiting applications. Here the authors design artificial muscle using dielectric elastomers and liquid crystal elastomers for multimodal locomotion.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79466-w",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79466-w"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Soft robots powered by active materials can navigate complex environments through multimodal locomotion. However, prevailing designs typically rely on a single active material within multi-component architectures, which often leads to high structural complexity and “soft-stiff” interfacial challenges. Here, we present an electrically driven, entirely soft robot based on a monolithic heterolayer el",
+      "summary": "Soft robots powered by active materials can navigate complex environments through multimodal locomotion. However, prevailing designs typically rely on a single active material within multi-component architectures, which often leads to high structural complexity and “soft-stiff” interfacial challenges. Here, we present an electrically driven, entirely soft robot based on a monolithic heterolayer el",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79466-w",
+        "in_scope": false,
+        "soft_matter": true,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 16,
+        "feature_candidate": false,
+        "reason": "This is soft-robotics engineering based on elastomers, a soft-matter system excluded from the digest.",
+        "physics_advance": ""
+      },
+      "soft_matter": true,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "soft_matter",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is soft-robotics engineering based on elastomers, a soft-matter system excluded from the digest.",
+      "relevance_method": "semantic",
+      "relevance_score": 16,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79182-5",
+      "doi": "10.1038/s41467-026-79182-5",
+      "title": "TRIM47 drives cardiac ischemia/reperfusion injury by impairing mitochondrial function and fatty acid metabolism in male mice",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Can Hu, Lufang Wang, Wei Sun, Yishu Song, Xueke Li, Ziming Zhang, Xin Zhang, Li Zhang",
+      "abstract": "E3 ubiquitin ligase Tripartite motif-containing 47 (TRIM47) is integral in modulating metabolic processes and cellular homeostasis. However, its pivotal role and underlying molecular mechanisms in cardiac ischemia/reperfusion (I/R) injury remain incompletely understood. Here, we show that TRIM47 is markedly upregulated in cardiomyocytes during cardiac I/R injury in an early growth response 1-dependent manner, and that its expression positively correlates with the severity of cardiac I/R injury. Gain- and loss-of-function studies reveal that cardiomyocyte-specific TRIM47 overexpression exacerbates, while TRIM47 knockout attenuates I/R-induced cardiac injury, structural remodeling and functional impairment in vivo and in vitro. Mechanistically, upregulated TRIM47 facilitates K63-linked ubiquitination of forkhead box O1 (FOXO1) at K210 site to induce its nuclear translocation, where it interacts with and inhibits the transcriptional activity of hepatocyte nuclear factor 4 alpha (HNF4α), thereby aggravating mitochondrial dysfunction, fatty acid oxidation defects and cardiac I/R injury. Moreover, therapeutic knockdown of TRIM47 after I/R injury is highly effective in preventing cardiac remodeling and dysfunction. Our findings identify the role of the TRIM47/FOXO1/HNF4α axis in I/R-induced mitochondrial dysfunction, metabolic disorders and cardiac injury, highlighting the therapeutic potential of targeting TRIM47 to treat cardiac I/R injury in male mice. Cardiac I/R injury is a prevalent and intractable clinical complication. Here, the authors show that TRIM47 facilitates ubiquitination-dependent nuclear translocation of FOXO1 and the subsequent inhibition of HNF4α, thereby aggravating mitochondrial dysfunction, FAO defects and cardiac I/R injury.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79182-5",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79182-5"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Superconductivity",
+      "summary_en": "E3 ubiquitin ligase Tripartite motif-containing 47 (TRIM47) is integral in modulating metabolic processes and cellular homeostasis. However, its pivotal role and underlying molecular mechanisms in cardiac ischemia/reperfusion (I/R) injury remain incompletely understood. Here, we show that TRIM47 is markedly upregulated in cardiomyocytes during cardiac I/R injury in an early growth response 1-depen",
+      "summary": "E3 ubiquitin ligase Tripartite motif-containing 47 (TRIM47) is integral in modulating metabolic processes and cellular homeostasis. However, its pivotal role and underlying molecular mechanisms in cardiac ischemia/reperfusion (I/R) injury remain incompletely understood. Here, we show that TRIM47 is markedly upregulated in cardiomyocytes during cardiac I/R injury in an early growth response 1-depen",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79182-5",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 12,
+        "feature_candidate": false,
+        "reason": "This is a biological and cardiovascular study of molecular regulation and injury in mouse hearts, not a condensed-matter physics investigation.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is a biological and cardiovascular study of molecular regulation and injury in mouse hearts, not a condensed-matter physics investigation.",
+      "relevance_method": "semantic",
+      "relevance_score": 12,
+      "feature_candidate": false
+    }
+  ],
+  "pending_journal_records": [],
+  "selected_ids": [
+    "doi-10-1038-s41467-026-78019-5"
+  ],
+  "stats": {
+    "scanned": 31,
+    "first_pass_selected": 2,
+    "selected": 1,
+    "rejected": 30,
+    "ai_assessed": 31,
+    "ai_cached": 0,
+    "ai_unscored": 0,
+    "global_editorial": true,
+    "field_scope_excluded": 0,
+    "duplicate_work_excluded": 0,
+    "arxiv_selected": 0,
+    "journal_selected": 1,
+    "arxiv_harvest_excluded": 0,
+    "pending_journal_abstracts": 0,
+    "non_original_excluded": 0,
+    "publication_not_eligible": 21
+  }
+}

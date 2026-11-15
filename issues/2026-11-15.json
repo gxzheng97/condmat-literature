@@ -1,0 +1,109 @@
+{
+  "date": "2026-11-15",
+  "title": "Daily Condensed Matter Literature",
+  "generated_at": "2026-11-15T06:00:37.101874-08:00",
+  "screening_version": "quantum-materials-v1-formal-research-v5",
+  "screening_config": {
+    "arxiv_min_score": 70,
+    "journal_min_score": 55,
+    "max_papers": 30,
+    "arxiv_versions": [
+      1
+    ],
+    "exclude_soft_matter": true,
+    "journals": [
+      "Science",
+      "Science Advances",
+      "Nature",
+      "Nature Physics",
+      "Nature Materials",
+      "Nature Communications",
+      "PRL",
+      "PRX",
+      "PNAS"
+    ],
+    "journal_publication": "publisher-verified formal online publication on the previous Los Angeles calendar day",
+    "arxiv_intake": "first announcement in the fixed 24 hours ending at 06:00 America/Los_Angeles",
+    "journal_document_types": "research article or research letter; no accepted papers, essays, replies or comments",
+    "editorial_interest": "experimental quantum materials; original theory and experiment"
+  },
+  "intake_window": {
+    "version": "la-0600-arxiv24h-previous-journal-day-v1",
+    "timezone": "America/Los_Angeles",
+    "arxiv_start": "2026-11-14T14:00:00+00:00",
+    "arxiv_end": "2026-11-15T14:00:00+00:00",
+    "journal_publication_date": "2026-11-14"
+  },
+  "sources_complete": true,
+  "papers": [
+    {
+      "id": "doi-10-1038-s41467-026-78019-5",
+      "doi": "10.1038/s41467-026-78019-5",
+      "title": "Field-angle-resolved heat transport in UTe2: determination of nodal positions in the superconducting order parameter",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Ian M. Hayes, Elliot Fang, Shanta R. Saha, Vivek Mishra, P. J. Hirschfeld, Johnpierre Paglione",
+      "abstract": "Abstract One of the recurring hurdles in studying unconventional superconductivity is the challenge of efficiently and conclusively identifying the symmetry of the superconducting order parameter in a new material. Uranium ditelluride (UTe 2 ) exhibits an unprecedented number of superconducting phases, and none of them has had its symmetry conclusively identified so far. Here we report results of an extensive study of the thermal conductivity of UTe 2 in the superconducting state as a function of the angle of an applied magnetic field rotated in the b-c plane. We observe substantial oscillations in the thermal conductivity as a function of field angle, and, utilizing the experimentally determined Fermi surface, we model this phenomenon for all potential gap structures in UTe 2 . This allows us to identify point nodes near the b-axis, implying that the superconducting order parameter most likely belongs to the B 2 u irreducible representation of the crystal point group.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          14
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-78019-5",
+      "level": "Feature",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-14",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78019-5"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Superconductivity",
+      "summary_en": "This study investigates the superconducting order parameter of UTe₂, whose superconducting phases have not yet had their symmetry conclusively identified. Field-angle-dependent thermal conductivity is used to infer nodal positions and assess candidate gap structures.",
+      "summary": "Abstract One of the recurring hurdles in studying unconventional superconductivity is the challenge of efficiently and conclusively identifying the symmetry of the superconducting order parameter in a new material. Uranium ditelluride (UTe 2 ) exhibits an unprecedented number of superconducting phases, and none of them has had its symmetry conclusively identified so far. Here we report results of ",
+      "soft_matter": false,
+      "quantum_materials": true,
+      "research_type": "mixed",
+      "screening_decision": "selected",
+      "physics_advance": "Field-angle-dependent thermal conductivity and Fermi-surface-based modeling indicate point nodes near the b-axis in UTe2, favoring a B2u superconducting order parameter.",
+      "ai_in_scope": true,
+      "relevance_reason": "The study combines thermal-transport measurements and modeling to constrain the superconducting gap structure of the quantum material UTe2.",
+      "relevance_method": "semantic",
+      "relevance_score": 79,
+      "feature_candidate": true,
+      "summary_zh": "本研究考察 UTe₂ 的超导序参量；其各超导相的对称性此前尚未得到确证。研究通过测量热导率随磁场方向的变化，推断节点位置并评估候选能隙结构。",
+      "method_en": "The authors measured thermal conductivity in the superconducting state while rotating an applied magnetic field within the b-c plane. Using the experimentally determined Fermi surface, they modeled the field-angle-dependent signal for all potential gap structures considered for UTe₂.",
+      "method_zh": "作者在超导态下测量了磁场于 b-c 平面内旋转时的热导率。结合实验确定的费米面，他们针对 UTe₂ 所考虑的各种候选能隙结构，对热导率的磁场角度依赖信号进行了建模。",
+      "result_en": "The measurements reveal substantial oscillations in thermal conductivity as the magnetic-field angle changes. Comparison with the modeled responses for candidate gap structures identifies point nodes near the b-axis. The inferred nodal positions favor the B₂u irreducible representation of the crystal point group. The authors therefore conclude that the superconducting order parameter most likely belongs to B₂u.",
+      "result_zh": "测量发现，热导率会随磁场角度变化而显著振荡。将实验结果与候选能隙结构的模型响应进行比较后，研究确定点节点位于 b 轴附近。推断出的节点位置支持晶体点群的 B₂u 不可约表示。因此，作者认为该超导序参量最可能属于 B₂u 表示。",
+      "future_en": "A useful follow-up would be to test whether the inferred nodal positions and B₂u assignment remain consistent across UTe₂’s distinct superconducting phases. Further field-angle-resolved measurements and comparisons with candidate-gap models could help assess the robustness of the symmetry identification.",
+      "future_zh": "后续研究可检验推断出的节点位置及 B₂u 归属是否适用于 UTe₂ 的不同超导相。进一步开展磁场角度分辨测量，并与候选能隙模型比较，有助于评估这一对称性判定的稳健性。"
+    }
+  ],
+  "stats": {
+    "scanned": 31,
+    "first_pass_selected": 2,
+    "selected": 1,
+    "rejected": 30,
+    "ai_assessed": 31,
+    "ai_cached": 0,
+    "ai_unscored": 0,
+    "global_editorial": true,
+    "field_scope_excluded": 0,
+    "duplicate_work_excluded": 0,
+    "arxiv_selected": 0,
+    "journal_selected": 1,
+    "arxiv_harvest_excluded": 0,
+    "pending_journal_abstracts": 0,
+    "non_original_excluded": 0,
+    "publication_not_eligible": 21
+  }
+}
