@@ -1,0 +1,162 @@
+{
+  "date": "2026-11-21",
+  "title": "Daily Condensed Matter Literature",
+  "generated_at": "2026-11-21T06:00:37.055428-08:00",
+  "screening_version": "quantum-materials-v1-formal-research-v5",
+  "screening_config": {
+    "arxiv_min_score": 70,
+    "journal_min_score": 55,
+    "max_papers": 30,
+    "arxiv_versions": [
+      1
+    ],
+    "exclude_soft_matter": true,
+    "journals": [
+      "Science",
+      "Science Advances",
+      "Nature",
+      "Nature Physics",
+      "Nature Materials",
+      "Nature Communications",
+      "PRL",
+      "PRX",
+      "PNAS"
+    ],
+    "journal_publication": "publisher-verified formal online publication on the previous Los Angeles calendar day",
+    "arxiv_intake": "first announcement in the fixed 24 hours ending at 06:00 America/Los_Angeles",
+    "journal_document_types": "research article or research letter; no accepted papers, essays, replies or comments",
+    "editorial_interest": "experimental quantum materials; original theory and experiment"
+  },
+  "intake_window": {
+    "version": "la-0600-arxiv24h-previous-journal-day-v1",
+    "timezone": "America/Los_Angeles",
+    "arxiv_start": "2026-11-20T14:00:00+00:00",
+    "arxiv_end": "2026-11-21T14:00:00+00:00",
+    "journal_publication_date": "2026-11-20"
+  },
+  "sources_complete": true,
+  "papers": [
+    {
+      "id": "doi-10-1038-s41467-026-79535-0",
+      "doi": "10.1038/s41467-026-79535-0",
+      "title": "Controlling intertwined electronic orders in FeSe with exfoliation",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Wenyao Liu, Gabriel Natale, Kyung-Mo Kim, Birender Singh, Piyush Sakrikar, Stephen D. Funni, Leo Kondo, Augustin Davignon, Antoine de Lagrave, Kota Ishihara, Michael Geiwitz, Maia G. Vergniory, Takasada Shibauchi, Jun Sung Kim, Michał Papaj, Judy J. Cha, Kenneth S. Burch",
+      "abstract": "Controlling intertwined electronic orders in two-dimensional superconductors offers an effective route to answering fundamental questions and engineering new quantum devices. However, tuning the balance between competing orders typically requires complex chemistry, strain, or interface engineering. Here, we show that a pristine alternative is the dimensional reduction of the unconventional superconductor FeSe. Exfoliation suppresses the bulk electronic nematic response and switches the superconducting symmetry from bulk s-wave to d-wave-dominant. Transport, electron microscopy, and Raman spectroscopy establish the substantial weakening of nematic order in thin flakes. To probe superconductivity, we perform angle-dependent Andreev reflection spectroscopy on pristine crystal edges. As the junction’s orientation is rotated, the spectra evolve from zero-energy bound states to coherence peaks. The injection angle, field, and temperature dependence, along with theoretical modeling, confirm that exfoliation switches the superconducting symmetry. Our results suggest a versatile superconducting platform for engineering quantum orders and provide insights into the underlying pairing mechanisms. The authors perform angle-dependent Andreev reflection spectroscopy on pristine crystal edges of the unconventional superconductor FeSe. They show substantial weakening of nematic order in thin flakes and further observe that the spectra evolve from zero-energy bound states to coherence peaks as the junction’s orientation is rotated.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          20
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79535-0",
+      "level": "Feature",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-20",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79535-0"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Superconductivity",
+      "summary_en": "The authors report that exfoliation of FeSe weakens its nematic response and changes its superconducting symmetry from bulk s-wave to d-wave-dominant. They present dimensional reduction as a way to tune intertwined electronic orders without chemical, strain, or interface engineering.",
+      "summary": "Controlling intertwined electronic orders in two-dimensional superconductors offers an effective route to answering fundamental questions and engineering new quantum devices. However, tuning the balance between competing orders typically requires complex chemistry, strain, or interface engineering. Here, we show that a pristine alternative is the dimensional reduction of the unconventional superco",
+      "soft_matter": false,
+      "quantum_materials": true,
+      "research_type": "mixed",
+      "screening_decision": "selected",
+      "physics_advance": "Exfoliation of FeSe substantially weakens nematic order and switches its superconducting state from bulk s-wave to d-wave-dominant, as probed by angle-dependent Andreev reflection.",
+      "ai_in_scope": true,
+      "relevance_reason": "This is an experimental study of nematic order and superconducting pairing symmetry in the quantum material FeSe, supported by theoretical modeling.",
+      "relevance_method": "semantic",
+      "relevance_score": 82,
+      "feature_candidate": true,
+      "summary_zh": "作者报告，剥离 FeSe 会削弱其向列响应，并使超导对称性从块体的 s 波转变为以 d 波为主。研究提出，降低维度可在不依赖化学、应变或界面工程的情况下调控相互交织的电子序。",
+      "method_en": "The study combines transport, electron microscopy, and Raman spectroscopy to assess nematic order in thin flakes. Superconductivity is probed by angle-dependent Andreev reflection spectroscopy on pristine crystal edges, with injection-angle, magnetic-field, and temperature dependence interpreted alongside theoretical modeling.",
+      "method_zh": "研究结合输运、电子显微镜和拉曼光谱，评估薄片中的向列序。作者在洁净晶体边缘进行角度依赖的 Andreev 反射光谱测量，并结合注入角、磁场和温度依赖性及理论建模来分析超导性。",
+      "result_en": "The measurements establish a substantial weakening of the nematic response in thin FeSe flakes. The reported superconducting symmetry changes from bulk s-wave to d-wave-dominant upon exfoliation. As the junction orientation is rotated, the Andreev spectra evolve from zero-energy bound states to coherence peaks. Their dependence on injection angle, field, and temperature, together with theoretical modeling, is presented as confirming the symmetry change. The authors identify exfoliated FeSe as a platform for engineering quantum orders and probing pairing mechanisms.",
+      "result_zh": "测量表明，薄 FeSe 薄片中的向列响应显著减弱。作者报告，剥离使超导对称性从块体的 s 波转变为以 d 波为主。随着结的取向旋转，Andreev 光谱由零能束缚态演变为相干峰。作者将其对注入角、磁场和温度的依赖性与理论建模结合，作为超导对称性改变的证据。研究提出，剥离 FeSe 可用于调控量子序并探究配对机制。",
+      "future_en": "A useful follow-up would be to map how nematic response and the reported superconducting symmetry evolve systematically with flake thickness, using complementary probes. Further tests across junction orientations and measurement conditions could help clarify the pairing mechanisms that the authors identify as an open issue.",
+      "future_zh": "后续研究可结合互补探测手段，系统测量向列响应和所报告的超导对称性随薄片厚度的演变。进一步改变结的取向和测量条件，有助于阐明作者指出仍需探究的配对机制。"
+    },
+    {
+      "id": "doi-10-1103-b884-4h1s",
+      "doi": "10.1103/b884-4h1s",
+      "title": "Superconducting Half-Dome in Bilayer Nickelates",
+      "type": "Journal",
+      "journal": "PRX",
+      "authors": "Yidi Liu, Bai Yang Wang, Jiarui Li, Yaoju Tarn, Lopa Bhatt, Michael Colletta, Yi-Ming Wu, Sang-Jun Lee, Cheng-Tai Kuo, Jun-Sik Lee, Berit H. Goodge, David A. Muller, Zhi-Xun Shen, Srinivas Raghu, Harold Y. Hwang, Yijun Yu",
+      "abstract": "Understanding how superconductivity emerges and collapses in correlated electron systems remains a central challenge in condensed matter physics. As a recently discovered member of the high temperature superconductor family, bilayer nickelates provide a new opportunity for examining this problem. Their pronounced sensitivity to oxygen stoichiometry, while posing challenges for stabilizing superconductivity, simultaneously offers an effective control parameter for tuning electronic phases. Here we report a superconducting half-dome in compressively strained bilayer nickelate thin films as a function of continuous tuning of oxygen stoichiometry. Starting from an optimally superconducting state, increasing oxygen stoichiometry gradually suppresses superconductivity toward a metallic phase, whereas decreasing oxygen stoichiometry drives a granular superconductor-to-insulator transition while leaving the superconducting onset intact. This half-dome structure is consistent with the contrasting roles played by interstitial oxygen versus oxygen vacancies—namely, the dominance of doping versus scattering. Notably, the half-dome emerges consistently across samples with different rare-earth combinations, with or without alkaline-earth doping, revealing a general feature of the bilayer nickelate phase diagram and informing opportunities for further enhancing superconductivity.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          20
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1103/b884-4h1s",
+      "level": "Feature",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-20",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prx.xml",
+        "volume": "16",
+        "article_number": "041050"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Superconductivity",
+      "summary_en": "The authors report a superconducting half-dome in compressively strained bilayer nickelate thin films as oxygen stoichiometry is continuously tuned. The contrasting evolution on the oxygen-rich and oxygen-poor sides is attributed to different roles of interstitial oxygen and oxygen vacancies.",
+      "summary": "Understanding how superconductivity emerges and collapses in correlated electron systems remains a central challenge in condensed matter physics. As a recently discovered member of the high temperature superconductor family, bilayer nickelates provide a new opportunity for examining this problem. Their pronounced sensitivity to oxygen stoichiometry, while posing challenges for stabilizing supercon",
+      "soft_matter": false,
+      "quantum_materials": true,
+      "research_type": "experiment",
+      "screening_decision": "selected",
+      "physics_advance": "A superconducting half-dome appears across bilayer nickelate compositions as oxygen stoichiometry is tuned, with oxygen interstitials primarily suppressing superconductivity through doping and vacancies driving a granular superconductor-to-insulator transition",
+      "ai_in_scope": true,
+      "relevance_reason": "This experiment establishes oxygen-stoichiometry-dependent superconducting phase behavior in correlated bilayer nickelate films, a substantive quantum-materials result.",
+      "relevance_method": "semantic",
+      "relevance_score": 77,
+      "feature_candidate": true,
+      "summary_zh": "作者报告，在压缩应变双层镍酸盐薄膜中连续调节氧化学计量比，可观察到超导半圆顶结构。氧含量增加与减少时呈现不同演变，作者将其归因于间隙氧和氧空位作用的差异。",
+      "method_en": "The study continuously tunes oxygen stoichiometry in compressively strained bilayer nickelate thin films and tracks superconductivity toward oxygen-rich and oxygen-poor conditions. The authors compare whether the half-dome occurs across samples with different rare-earth combinations and with or without alkaline-earth doping.",
+      "method_zh": "研究在压缩应变双层镍酸盐薄膜中连续调节氧化学计量比，并追踪氧含量增加和减少时超导性的变化。作者还比较了采用不同稀土元素组合、以及有无碱土掺杂的样品中是否均出现半圆顶结构。",
+      "result_en": "Starting from an optimally superconducting state, increasing oxygen stoichiometry gradually suppresses superconductivity toward a metallic phase. Decreasing oxygen stoichiometry instead drives a granular superconductor-to-insulator transition while leaving the superconducting onset intact. The resulting half-dome is interpreted in terms of interstitial oxygen predominantly contributing doping and oxygen vacancies predominantly contributing scattering. The authors report that the structure recurs across samples with different rare-earth combinations, both with and without alkaline-earth doping. They present this consistency as evidence that the half-dome is a general feature of the bilayer nickelate phase diagram and as a guide for efforts to enhance superconductivity.",
+      "result_zh": "从最优超导状态出发，增加氧化学计量比会逐步抑制超导性，使体系趋向金属相。降低氧化学计量比则会导致颗粒状超导体—绝缘体转变，同时保留超导起始温度。作者将这一半圆顶结构解释为：间隙氧主要起掺杂作用，而氧空位主要起散射作用。作者报告，这一结构在不同稀土元素组合、以及有无碱土掺杂的样品中均可重现。研究据此认为，半圆顶是双层镍酸盐相图的普遍特征，并可为进一步增强超导性提供参考。",
+      "future_en": "A useful next step would be to quantify how the oxygen-rich and oxygen-poor tuning paths relate to the proposed doping and scattering roles across the different sample compositions. Further exploration of oxygen stoichiometry could also test the authors’ suggestion that this phase-diagram structure can inform strategies for enhancing superconductivity.",
+      "future_zh": "后续可在不同样品组成中定量研究富氧与贫氧调节路径如何对应于作者提出的掺杂和散射作用。进一步探索氧化学计量比的影响，也可检验作者关于该相图结构能够指导增强超导性的设想。"
+    }
+  ],
+  "stats": {
+    "scanned": 49,
+    "first_pass_selected": 4,
+    "selected": 2,
+    "rejected": 47,
+    "ai_assessed": 49,
+    "ai_cached": 0,
+    "ai_unscored": 0,
+    "global_editorial": true,
+    "field_scope_excluded": 0,
+    "duplicate_work_excluded": 0,
+    "arxiv_selected": 0,
+    "journal_selected": 2,
+    "arxiv_harvest_excluded": 0,
+    "pending_journal_abstracts": 0,
+    "non_original_excluded": 18,
+    "publication_not_eligible": 49
+  }
+}
