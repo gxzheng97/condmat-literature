@@ -1,0 +1,2030 @@
+{
+  "date": "2026-11-22",
+  "generated_at": "2026-11-22T06:00:39.768142-08:00",
+  "screening_version": "quantum-materials-v1-formal-research-v5",
+  "assessment_version": "quantum-materials-v1-only-no-soft-v3",
+  "screening_config": {
+    "arxiv_min_score": 70,
+    "journal_min_score": 55,
+    "max_papers": 30,
+    "arxiv_versions": [
+      1
+    ],
+    "exclude_soft_matter": true,
+    "journals": [
+      "Science",
+      "Science Advances",
+      "Nature",
+      "Nature Physics",
+      "Nature Materials",
+      "Nature Communications",
+      "PRL",
+      "PRX",
+      "PNAS"
+    ],
+    "journal_publication": "publisher-verified formal online publication on the previous Los Angeles calendar day",
+    "arxiv_intake": "first announcement in the fixed 24 hours ending at 06:00 America/Los_Angeles",
+    "journal_document_types": "research article or research letter; no accepted papers, essays, replies or comments",
+    "editorial_interest": "experimental quantum materials; original theory and experiment"
+  },
+  "intake_window": {
+    "version": "la-0600-arxiv24h-previous-journal-day-v1",
+    "timezone": "America/Los_Angeles",
+    "arxiv_start": "2026-11-21T14:00:00+00:00",
+    "arxiv_end": "2026-11-22T14:00:00+00:00",
+    "journal_publication_date": "2026-11-21"
+  },
+  "sources": [
+    {
+      "source": "arXiv",
+      "status": "ok",
+      "eligible_v1": 0
+    },
+    {
+      "source": "Science",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-21",
+        "2026-11-21"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Science Advances",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-21",
+        "2026-11-21"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Nature",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-21",
+        "2026-11-21"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Nature Physics",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-21",
+        "2026-11-21"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Nature Materials",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-21",
+        "2026-11-21"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Nature Communications",
+      "status": "ok",
+      "fetched": 18,
+      "window": [
+        "2026-11-21",
+        "2026-11-21"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "PRL",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-21",
+        "2026-11-21"
+      ],
+      "publication_proof": "publisher RSS",
+      "feed_urls": [
+        "https://feeds.aps.org/rss/recent/prl.xml",
+        "https://feeds.aps.org/rss/tocsec/PRL-CondensedMatterStructureetc.xml",
+        "https://feeds.aps.org/rss/recent/prlsuggestions.xml"
+      ],
+      "latest_formal_publication_date": "2026-11-20",
+      "publication_note": "Publisher feeds have no final citation for the requested publication date; unverified records remain excluded"
+    },
+    {
+      "source": "PRX",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-21",
+        "2026-11-21"
+      ],
+      "publication_proof": "publisher RSS",
+      "feed_urls": [
+        "https://feeds.aps.org/rss/recent/prx.xml"
+      ],
+      "latest_formal_publication_date": "2026-11-20",
+      "publication_note": "Publisher feeds have no final citation for the requested publication date; unverified records remain excluded"
+    },
+    {
+      "source": "PNAS",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-21",
+        "2026-11-21"
+      ],
+      "publication_proof": "publisher article metadata"
+    }
+  ],
+  "journal_candidates": [
+    {
+      "id": "doi-10-1038-s41467-026-79817-7",
+      "doi": "10.1038/s41467-026-79817-7",
+      "title": "Plankton ecological complexity amplifies climate-driven weakening of the ocean biological pump",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-21",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79817-7"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 12,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is an Earth-system and plankton-ecology modeling study, not research on condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79750-9",
+      "doi": "10.1038/s41467-026-79750-9",
+      "title": "Biosynthesis of iboga alkaloids",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-21",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79750-9"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 8,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary contribution is plant biochemistry and alkaloid biosynthesis, outside condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79615-1",
+      "doi": "10.1038/s41467-026-79615-1",
+      "title": "Visible light drives bright extreme-ultraviolet high harmonics",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-21",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79615-1"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 22,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The study advances laser-driven high-harmonic light-source performance in helium rather than establishing new physics of condensed matter."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79478-6",
+      "doi": "10.1038/s41467-026-79478-6",
+      "title": "G3BP1-induced retrograde transport blockade triggers HSC activation and liver fibrosis via COPI alternative splicing",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-21",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79478-6"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 8,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is a cell and animal study of molecular mechanisms in liver fibrosis, not condensed-matter research."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79742-9",
+      "doi": "10.1038/s41467-026-79742-9",
+      "title": "Structural basis for constitutive activation of oncogenic gp130 mutants found in human inflammatory hepatocellular adenomas",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-21",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79742-9"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 10,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The work investigates receptor structure and oncogenic signaling in liver tumors, a biological rather than condensed-matter physics question."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79577-4",
+      "doi": "10.1038/s41467-026-79577-4",
+      "title": "Localized strain-engineered 1D electron guides in 2D MoS2 devices with synaptic memory and high-mobility transistor functionalities",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-21",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79577-4"
+      },
+      "has_abstract": true,
+      "decision": "selected",
+      "score": 61,
+      "in_scope": true,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is a narrow condensed-matter transport study of strained monolayer MoS2, though its principal emphasis is multifunctional device operation rather than a broader quantum-materials phenomenon."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79590-7",
+      "doi": "10.1038/s41467-026-79590-7",
+      "title": "[c2]Daisy-chain molecular turing machines with switchable fluorescence outputs",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-21",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79590-7"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 17,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary contribution is molecular-machine design for fluorescence-based information encoding, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79685-1",
+      "doi": "10.1038/s41467-026-79685-1",
+      "title": "Greenhouse gas responses to coastal wetland land use change vary by ecosystem and conversion pathway",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-21",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79685-1"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 5,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is an ecological meta-analysis of greenhouse-gas responses to coastal wetland land-use change, outside condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79625-z",
+      "doi": "10.1038/s41467-026-79625-z",
+      "title": "Entropy-engineered polar heterogeneity enables near-decoupled polarization–strain behavior for high-density energy storage",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-21",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79625-z"
+      },
+      "has_abstract": true,
+      "decision": "selected",
+      "score": 68,
+      "in_scope": true,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The work establishes a material-physics link between chemical disorder, polar textures, and electromechanical response in relaxor ferroelectric ceramics, beyond reporting capacitor performance alone."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79243-9",
+      "doi": "10.1038/s41467-026-79243-9",
+      "title": "Accelerating high-throughput catalyst screening by direct generation of equilibrium adsorption structures",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-21",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79243-9"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 19,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The central contribution is a generative computational method for catalyst screening, not a discovery about condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79644-w",
+      "doi": "10.1038/s41467-026-79644-w",
+      "title": "Shape conforming Janus hydrogel for preventing anastomotic leaks",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-21",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79644-w"
+      },
+      "has_abstract": true,
+      "decision": "soft_matter",
+      "score": 8,
+      "in_scope": false,
+      "soft_matter": true,
+      "quantum_materials": false,
+      "reason": "This study develops a biomedical hydrogel sealant, so its primary contribution is soft-materials and surgical application research rather than condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79586-3",
+      "doi": "10.1038/s41467-026-79586-3",
+      "title": "Landscape fire sourced PM2.5, cause-specific paediatric hospitalisations, and the role of tree cover",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-21",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79586-3"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 2,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The paper analyzes associations between wildfire pollution, tree cover, and pediatric hospitalizations, a public-health study unrelated to condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79726-9",
+      "doi": "10.1038/s41467-026-79726-9",
+      "title": "Influenza A virus orchestrates ciliated cell fate and injury during the mucociliary damage repair cycle",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-21",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79726-9"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 3,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The work investigates influenza-driven airway injury and epithelial repair mechanisms, making its primary contribution biological and biomedical rather than condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78602-w",
+      "doi": "10.1038/s41467-026-78602-w",
+      "title": "A global atlas of digital dermatology to map innovation and disparities",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-21",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78602-w"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 2,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is a dermatology data-atlas and dataset-coverage analysis, not research on the physics of matter."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79596-1",
+      "doi": "10.1038/s41467-026-79596-1",
+      "title": "A highly distorted benzenium cation",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-21",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79596-1"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 8,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The paper reports the structure and reactivity of an organic cation, a contribution to molecular chemistry rather than condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79355-2",
+      "doi": "10.1038/s41467-026-79355-2",
+      "title": "Deep ultraviolet gallium-oxide avalanche photodiodes reaching an impulse-response-derived gain-bandwidth record of 152 GHz",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-21",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79355-2"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 28,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary advance is photodetector performance and band engineering for an optoelectronic device, not a new finding about condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-77502-3",
+      "doi": "10.1038/s41467-026-77502-3",
+      "title": "Mapping temperature using transmission Kikuchi diffraction",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-21",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-77502-3"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 32,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This work develops a nanoscale temperature-measurement method, with no independent discovery about the physics of the measured material."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79674-4",
+      "doi": "10.1038/s41467-026-79674-4",
+      "title": "Early-life skin molecular signatures are predictive of atopic dermatitis risk in an Asian preconception birth cohort",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-21",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79674-4"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 8,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The study concerns infant skin microbiome and immune signatures as a biomedical predictor, rather than condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1103-3x42-zb9r",
+      "doi": "10.1103/3x42-zb9r",
+      "title": "Odd-Even Parity of Nonlinear Hall Effects in Bilayer Graphene",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-10-29",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/tocsec/PRL-CondensedMatterStructureetc.xml",
+        "volume": "137",
+        "article_number": "186302"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-ctkf-wz2d",
+      "doi": "10.1103/ctkf-wz2d",
+      "title": "Plasmascopy of Ultrafast Hot Charge Carriers",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-10-30",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "186906"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-yfc3-ny3b",
+      "doi": "10.1103/yfc3-ny3b",
+      "title": "Experimental Observation of Erratic Non-Hermitian Skin Effect in Phononic Crystals",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-10-30",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "186602"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-17nh-csbr",
+      "doi": "10.1103/17nh-csbr",
+      "title": "Atomic-Scale Visualization of Quantum Phase Transition in Mixed-Valence Regime",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-10-30",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "186201"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-vl6b-y5gz",
+      "doi": "10.1103/vl6b-y5gz",
+      "title": "When Liquids Form Membranes: Entropy-Dominated Bending Dynamics in Coacervate Vesicles",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-02",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "198201"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-k5r2-q11w",
+      "doi": "10.1103/k5r2-q11w",
+      "title": "Kekulé Superconductivity Induced by Quantum Geometry in Haldane Phases",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-03",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "196002"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-ngfq-f3t7",
+      "doi": "10.1103/ngfq-f3t7",
+      "title": "First Amplitude Analysis of ${D}^{0}→{K}^{−}{π}^{0}{e}^{+}{ν}_{e}$ and Observation of ${D}^{0}→{K}_{2}^{*}(1430{)}^{−}{e}^{+}{ν}_{e}$",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-03",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "191903"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-b28p-yb2t",
+      "doi": "10.1103/b28p-yb2t",
+      "title": "Time-Dependent Density Functional Theory of Electrons and Quantum Nuclei",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-04",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "193001"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-m9hp-5h28",
+      "doi": "10.1103/m9hp-5h28",
+      "title": "Anomalously Low Thermal Conductivity in Undercoordinated Amorphous Silicon",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-05",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "196302"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-qx3f-85mf",
+      "doi": "10.1103/qx3f-85mf",
+      "title": "Spatiotemporal Architecture of Energy Transfer in Wall-Bounded Turbulence",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-05",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "194001"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-z6d8-2q1g",
+      "doi": "10.1103/z6d8-2q1g",
+      "title": "Classification of Scissors Rotational Bands in Deformed Nuclei",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-05",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "192501"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-t87j-1ngl",
+      "doi": "10.1103/t87j-1ngl",
+      "title": "Intracycle Interference in Strong-Field Photoemission from a Tungsten Needle Tip",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-09",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206901"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-f92d-w6fn",
+      "doi": "10.1103/f92d-w6fn",
+      "title": "Superparamagnetism in an Interacting Nanomagnet Array: A Tale of Three Temperatures",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-09",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206701"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-g9x1-wnnd",
+      "doi": "10.1103/g9x1-wnnd",
+      "title": "Atomistic Simulation of Subcritical Crack Growth in Glass in Vacuum",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-09",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206101"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-kj1q-h9pw",
+      "doi": "10.1103/kj1q-h9pw",
+      "title": "Terahertz Switching of Two-dimensional Antiferromagnetic Order",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-09",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206702"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-zpbg-7137",
+      "doi": "10.1103/zpbg-7137",
+      "title": "Many-Body-Driven Ultrafast Exciton Relaxation Enabled by Phonon-Activated Coulomb Coupling",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-10",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206401"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-l5j1-7b4d",
+      "doi": "10.1103/l5j1-7b4d",
+      "title": "Long-Range and Short-Range Longitudinal Flow Decorrelations in the Quark-Gluon Plasma",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-12",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "202301"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-y95w-7ztb",
+      "doi": "10.1103/y95w-7ztb",
+      "title": "Lower Limit on the Double-Alpha Decay of Ra 224",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-12",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "202501"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-nn1b-pxhf",
+      "doi": "10.1103/nn1b-pxhf",
+      "title": "Grain-Scale Origin of Stick-Slip Waves in Silo Discharge: Influence of Cohesion",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-12",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "208202"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-99gj-qpbv",
+      "doi": "10.1103/99gj-qpbv",
+      "title": "Walk-on-Spheres Solution to Heterogeneous Transport Phenomena",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-12",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "207102"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-qqpd-92fb",
+      "doi": "10.1103/qqpd-92fb",
+      "title": "Open-Boundary-Condition-Persistent Point-Gap Bound States in the Non-Hermitian Continuum",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-13",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206603"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-1lmr-876g",
+      "doi": "10.1103/1lmr-876g",
+      "title": "High-Heating Efficiency and Reproducibility in Double-Cone Ignition Experiments",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-16",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "215101"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-8bqv-q7xn",
+      "doi": "10.1103/8bqv-q7xn",
+      "title": "Multimode Squeezing and Multipartite Entanglement Generations with Topological Protection",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-16",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "213601"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-6bb2-hy7q",
+      "doi": "10.1103/6bb2-hy7q",
+      "title": "Transformation-Induced Plasticity in Metals Activated by Shape-Memory Ceramics",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-17",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "216101"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-tzk8-nqby",
+      "doi": "10.1103/tzk8-nqby",
+      "title": "Strain-Tunable Competing Polar Orders in NbOCl 2",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-17",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "216801"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-ljsf-xwz9",
+      "doi": "10.1103/ljsf-xwz9",
+      "title": "Dual Relaxation Modes Control Polymer Crystallization",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-17",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "218102"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-yk31-1s6y",
+      "doi": "10.1103/yk31-1s6y",
+      "title": "Experimental Bounds on Phonon Tunneling across Nanoscale Vacuum Gaps",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-17",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "216302"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-4wrm-gr4b",
+      "doi": "10.1103/4wrm-gr4b",
+      "title": "Two-Fluid Effects in Z-Pinch Ablation Characterized by Unified Bayesian Inversion",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-17",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "215102"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-1xgg-qdyd",
+      "doi": "10.1103/1xgg-qdyd",
+      "title": "Mendonça, Jachymski, and Wang Reply",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-19",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "219302"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    }
+  ],
+  "arxiv_candidates": [
+    {
+      "decision": "no_announcements_in_window",
+      "announcement_date": "2026-11-22",
+      "evidence_url": "https://arxiv.org/catchup/cond-mat/2026-11-22",
+      "window": {
+        "version": "la-0600-arxiv24h-previous-journal-day-v1",
+        "timezone": "America/Los_Angeles",
+        "arxiv_start": "2026-11-21T14:00:00+00:00",
+        "arxiv_end": "2026-11-22T14:00:00+00:00",
+        "journal_publication_date": "2026-11-21"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "doi-10-1038-s41467-026-79817-7",
+      "doi": "10.1038/s41467-026-79817-7",
+      "title": "Plankton ecological complexity amplifies climate-driven weakening of the ocean biological pump",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Fanyu Lin, Chengfeng Le, Yihui Chen, Gabriela Negrete-García, Jessica Y. Luo, Stephanie Henson, Stephanie Dutkiewicz",
+      "abstract": "The ocean biological pump regulates atmospheric carbon dioxide, yet Earth system projections may miss how plankton food-web complexity shapes its response to warming. Here we use a single Earth system model framework with three progressively more complex plankton ecosystems to show that ecological complexity amplifies the climate-driven weakening of future carbon export. Across historical and future emission scenarios, warming and stratification cause only modest changes in global net primary production but persistent declines in net community production and export fluxes. This weakening increases systematically with ecosystem complexity across scenarios. Under SSP5-8.5, late-century global net community production falls by 5.8% in the default configuration, compared with 8.8% and 12.8% in the more complex configurations. The amplification arises from climate-driven shifts towards smaller phytoplankton and stronger zooplankton grazing, retaining more fixed carbon in the upper ocean. Coarse plankton representations may therefore underestimate future biological-pump weakening and climate-carbon feedbacks. Using one Earth system model with increasingly complex plankton food webs, the study finds that greater ecological complexity amplifies climate-driven declines in ocean carbon export, suggesting simple models may underestimate future weakening.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          21
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79817-7",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-21",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79817-7"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "The ocean biological pump regulates atmospheric carbon dioxide, yet Earth system projections may miss how plankton food-web complexity shapes its response to warming. Here we use a single Earth system model framework with three progressively more complex plankton ecosystems to show that ecological complexity amplifies the climate-driven weakening of future carbon export. Across historical and futu",
+      "summary": "The ocean biological pump regulates atmospheric carbon dioxide, yet Earth system projections may miss how plankton food-web complexity shapes its response to warming. Here we use a single Earth system model framework with three progressively more complex plankton ecosystems to show that ecological complexity amplifies the climate-driven weakening of future carbon export. Across historical and futu",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79817-7",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 12,
+        "feature_candidate": false,
+        "reason": "This is an Earth-system and plankton-ecology modeling study, not research on condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is an Earth-system and plankton-ecology modeling study, not research on condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 12,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79750-9",
+      "doi": "10.1038/s41467-026-79750-9",
+      "title": "Biosynthesis of iboga alkaloids",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Moonyoung Kang, Mohamed Omar Kamileen, Yoko Nakamura, John P. Hamilton, Gyumin Kang, Bruno Huettel, Jens Wurlitzer, Sarah Heinicke, Maritta Kunert, C. Robin Buell, Lorenzo Caputi, Sarah E. O’Connor",
+      "abstract": "Abstract Tabernanthe iboga (iboga) is the source of voacangine, which is widely used as a semi-synthetic starting material for the anti-addiction agent ibogaine. Despite extensive investigation of voacangine biosynthesis, production of this compound cannot be reconstituted in a heterologous host, suggesting that one or more enzymes required for biosynthesis are missing. Additionally, T. iboga produces ibophyllidine, a pyrroloindole alkaloid that utilizes the same upstream precursor as voacangine, but is a member of a structurally distinct alkaloid class. Here we use bulk and single cell gene expression from leaf and root tissue to identify the unknown enzymes from these two pathways. We identify two additional enzymes that enable biosynthesis of voacangine in a heterologous host. The missing enzymes includes a pathogenesis-related (PR)10 family protein that likely catalyzes cyclization of a transient intermediate. Careful analysis of gene expression profiles in leaf and root also enabled the discovery of four additional enzymes that convert an upstream intermediate to ibophyllidine. This work reveals the chemical logic that generates two distinct alkaloid scaffolds in this important medicinal plant.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          21
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79750-9",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-21",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79750-9"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Abstract Tabernanthe iboga (iboga) is the source of voacangine, which is widely used as a semi-synthetic starting material for the anti-addiction agent ibogaine. Despite extensive investigation of voacangine biosynthesis, production of this compound cannot be reconstituted in a heterologous host, suggesting that one or more enzymes required for biosynthesis are missing. Additionally, T. iboga prod",
+      "summary": "Abstract Tabernanthe iboga (iboga) is the source of voacangine, which is widely used as a semi-synthetic starting material for the anti-addiction agent ibogaine. Despite extensive investigation of voacangine biosynthesis, production of this compound cannot be reconstituted in a heterologous host, suggesting that one or more enzymes required for biosynthesis are missing. Additionally, T. iboga prod",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79750-9",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 8,
+        "feature_candidate": false,
+        "reason": "The primary contribution is plant biochemistry and alkaloid biosynthesis, outside condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary contribution is plant biochemistry and alkaloid biosynthesis, outside condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 8,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79615-1",
+      "doi": "10.1038/s41467-026-79615-1",
+      "title": "Visible light drives bright extreme-ultraviolet high harmonics",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Maximilian Karst, Martin Gebhardt, Lucas Eisenbach, Philipp Gierschke, Themistoklis Sidiropoulos, Robert Klas, Jan Rothhardt, Jens Limpert",
+      "abstract": "Abstract Coherent extreme-ultraviolet (XUV) light is a central tool in modern photon science, probing the electronic, chemical and structural properties of matter. High-harmonic generation can extend the reach of laser sources into this spectral range, but the achievable photon flux falls sharply as photon energy increases. We show experimentally and theoretically that plasma-core-induced self-guiding of a visible-wavelength driver in helium sustains high intensity and favorable phase matching over an extended propagation length. We achieve a conversion efficiency of up to 10 −6 in a single high-harmonic line and phase-matched emission extending to 100 eV. With less than 10 W of average power at 516 nm from a frequency-doubled ytterbium laser, we generate 1.8 × 10 11 photons s −1 within 2 % bandwidth at 13.5 nm (91.8 eV), exceeding previous reports by more than an order of magnitude. These results establish a power-scalable XUV platform for actinic metrology, spectroscopy and coherent imaging.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          21
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79615-1",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-21",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79615-1"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Abstract Coherent extreme-ultraviolet (XUV) light is a central tool in modern photon science, probing the electronic, chemical and structural properties of matter. High-harmonic generation can extend the reach of laser sources into this spectral range, but the achievable photon flux falls sharply as photon energy increases. We show experimentally and theoretically that plasma-core-induced self-gui",
+      "summary": "Abstract Coherent extreme-ultraviolet (XUV) light is a central tool in modern photon science, probing the electronic, chemical and structural properties of matter. High-harmonic generation can extend the reach of laser sources into this spectral range, but the achievable photon flux falls sharply as photon energy increases. We show experimentally and theoretically that plasma-core-induced self-gui",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79615-1",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "mixed",
+        "score": 22,
+        "feature_candidate": false,
+        "reason": "The study advances laser-driven high-harmonic light-source performance in helium rather than establishing new physics of condensed matter.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "mixed",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The study advances laser-driven high-harmonic light-source performance in helium rather than establishing new physics of condensed matter.",
+      "relevance_method": "semantic",
+      "relevance_score": 22,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79478-6",
+      "doi": "10.1038/s41467-026-79478-6",
+      "title": "G3BP1-induced retrograde transport blockade triggers HSC activation and liver fibrosis via COPI alternative splicing",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Enyi Wu, Mengmeng He, Yuqiong Song, Mengqian Liu, Yang Cheng, Yingrong Leng, Yanqiu Zhang, Shengtao Ye, Ying Zheng, Zhongjiang Wang, Lingyi Kong, Hao Zhang",
+      "abstract": "The molecular mechanisms underlying hepatic stellate cell (HSC) activation and subsequent liver fibrogenesis remain incompletely elucidated. Here, Ras GTPase-activating protein-binding protein 1 (G3BP1) is identified a significant upregulation in liver specimens from patients with liver fibrosis and experimental murine fibrosis models. G3BP1 promotes HSC activation in human LX-2 cells, primary mouse HSCs, and CCl4-/BDL-induced fibrotic mouse models, acting independently of stress granules (SGs). Genetic ablation of hepatic G3BP1 attenuates HSC activation and fibrotic progression. Integrative transcriptomic and APEX‑mass spectrometry analyses in HSCs reveal that G3BP1 regulates alternative splicing of coat protein complex Ⅰ (COPI) subunits through functional interaction with the splicing factor heterogeneous nuclear ribonucleoprotein M (hnRNPM). The consequent accumulation of exon 2-deficient COPG1 and exon 8-deficient COPB2 isoforms impairs COPI-dependent retrograde transport and induces endoplasmic reticulum (ER) stress, which drives HSC activation and fibrogenesis. Further studies demonstrate that G3BP1 recruits SRPK1 to phosphorylate hnRNPM, thereby promotes alternative splicing of COPI subunits. Pharmacological intervention of G3BP1/SRPK1/hnRNPM improves liver fibrosis. In conclusion, these results uncover an unrecognized role of G3BP1 in HSC activation by promoting COPI alternative splicing, and provide a potential therapeutic target for liver fibrosis. Liver fibrosis is driven by hepatic stellate cell activation, but its molecular drivers remain unclear. Here, the authors show that G3BP1 promotes COPI alternative splicing via SRPK1–hnRNPM, impairing Golgi-to-ER transport and causing ER stress that activates these cells and drives fibrosis.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          21
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79478-6",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-21",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79478-6"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Superconductivity",
+      "summary_en": "The molecular mechanisms underlying hepatic stellate cell (HSC) activation and subsequent liver fibrogenesis remain incompletely elucidated. Here, Ras GTPase-activating protein-binding protein 1 (G3BP1) is identified a significant upregulation in liver specimens from patients with liver fibrosis and experimental murine fibrosis models. G3BP1 promotes HSC activation in human LX-2 cells, primary mou",
+      "summary": "The molecular mechanisms underlying hepatic stellate cell (HSC) activation and subsequent liver fibrogenesis remain incompletely elucidated. Here, Ras GTPase-activating protein-binding protein 1 (G3BP1) is identified a significant upregulation in liver specimens from patients with liver fibrosis and experimental murine fibrosis models. G3BP1 promotes HSC activation in human LX-2 cells, primary mou",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79478-6",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 8,
+        "feature_candidate": false,
+        "reason": "This is a cell and animal study of molecular mechanisms in liver fibrosis, not condensed-matter research.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is a cell and animal study of molecular mechanisms in liver fibrosis, not condensed-matter research.",
+      "relevance_method": "semantic",
+      "relevance_score": 8,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79742-9",
+      "doi": "10.1038/s41467-026-79742-9",
+      "title": "Structural basis for constitutive activation of oncogenic gp130 mutants found in human inflammatory hepatocellular adenomas",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Yi Zhou, Jing Cao, Trudy Ramlall, Luke L. McGoldrick, Jennifer Jones, Annan S. I. Cook, Raymond Leidich, Mark W. Sleeman, William C. Olson, Panayiotis E. Stevis, Matthew C. Franklin",
+      "abstract": "Inflammatory hepatocellular adenomas (IHCAs) are benign liver tumors primarily driven by somatic mutations in the gp130 receptor, resulting in its constitutive activation. To uncover the structural mechanisms underlying this activation, we employ cryo-electron microscopy and mutagenesis to study five representative IHCAs-associated gp130 mutants and two engineered mutants with ligand-independent activity. Most mutants form “X”-shaped dimers through a 3D domain-swapping mechanism, characterized by large separations between juxtamembrane domains and reliant on D1 domain-mediated “tip-to-tip” interactions for dimer clustering and activation. A rare mutant displays a distinct “Y”-shaped dimer conformation, with closely aligned juxtamembrane domains enabling direct activation independent of dimer clustering. These findings highlight the diversity of gp130 mutant activation mechanisms and provide a foundation for developing therapeutic strategies targeting aberrant gp130 signaling in IHCAs. Inflammatory hepatocellular adenomas are benign liver tumors primarily driven by constitutively active gp130 mutants. The authors employ cryo-EM and mutagenesis to reveal the structural mechanism of ligand-independent activation of these mutants.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          21
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79742-9",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-21",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79742-9"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Inflammatory hepatocellular adenomas (IHCAs) are benign liver tumors primarily driven by somatic mutations in the gp130 receptor, resulting in its constitutive activation. To uncover the structural mechanisms underlying this activation, we employ cryo-electron microscopy and mutagenesis to study five representative IHCAs-associated gp130 mutants and two engineered mutants with ligand-independent a",
+      "summary": "Inflammatory hepatocellular adenomas (IHCAs) are benign liver tumors primarily driven by somatic mutations in the gp130 receptor, resulting in its constitutive activation. To uncover the structural mechanisms underlying this activation, we employ cryo-electron microscopy and mutagenesis to study five representative IHCAs-associated gp130 mutants and two engineered mutants with ligand-independent a",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79742-9",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 10,
+        "feature_candidate": false,
+        "reason": "The work investigates receptor structure and oncogenic signaling in liver tumors, a biological rather than condensed-matter physics question.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The work investigates receptor structure and oncogenic signaling in liver tumors, a biological rather than condensed-matter physics question.",
+      "relevance_method": "semantic",
+      "relevance_score": 10,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79577-4",
+      "doi": "10.1038/s41467-026-79577-4",
+      "title": "Localized strain-engineered 1D electron guides in 2D MoS2 devices with synaptic memory and high-mobility transistor functionalities",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Junsung Byeon, Onesik Harm, Jinhyeok Pyo, Sohyeon Park, Byeongchan Kim, Eunhee Cho, Jungmoon Lim, Taehun Kim, Byeongseong Yoo, Seokjin Oh, Chaewon Song, Hyungchang Jeong, Kyung-Ho Park, Sangyeon Pak, SeungNam Cha",
+      "abstract": "Local strain engineering has been studied as an effective strategy to modify the electronic band structure of two-dimensional (2D) semiconductors. However, using precisely controlled localized strain as a scalable tool for directing and controlling charge dynamics in 2D electronics remains largely underexplored. Here, we introduce wafer-scale localized strain engineering that applies periodically localized one-dimensional (1D) uniaxial strain to monolayer MoS2-based dual-functional electronics. By transferring MoS2 onto a line-patterned HfO2 substrate, we can deterministically generate a periodic localized 1D potential well. This approach creates a well-defined 1D potential landscape that facilitates dual functionality within a single material platform, depending on the alignment between the potential well orientation and the direction of carrier transport. Charge transport perpendicular to the 1D potential wells results in controlled charge trapping, thereby yielding a multibit synaptic memory device, whereas transport parallel to the potential wells experiences reduced lattice scattering and an effective mass with trap-free carrier conduction, leading to a high-mobility field-effect transistor. Systematic transport analyses elucidate how localized uniaxial strain modulates charge-trap density, lattice scattering, and effective mass, giving rise to direction-dependent charge transport. These findings highlight localized 1D strain as an effective design parameter for high-performance, scalable multifunctional 2D electronics. Local strain engineering can tune the electronic and transport properties of 2D semiconductors. Here, the authors report the realization of multifunctional strained 2D MoS2 devices on patterned HfO2 substrates, showing synaptic memory or high-mobility transistors functionalities depending on the carrier transport direction.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          21
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79577-4",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-21",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79577-4"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Topology & Transport",
+      "summary_en": "Local strain engineering has been studied as an effective strategy to modify the electronic band structure of two-dimensional (2D) semiconductors. However, using precisely controlled localized strain as a scalable tool for directing and controlling charge dynamics in 2D electronics remains largely underexplored. Here, we introduce wafer-scale localized strain engineering that applies periodically ",
+      "summary": "Local strain engineering has been studied as an effective strategy to modify the electronic band structure of two-dimensional (2D) semiconductors. However, using precisely controlled localized strain as a scalable tool for directing and controlling charge dynamics in 2D electronics remains largely underexplored. Here, we introduce wafer-scale localized strain engineering that applies periodically ",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79577-4",
+        "in_scope": true,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 61,
+        "feature_candidate": false,
+        "reason": "This is a narrow condensed-matter transport study of strained monolayer MoS2, though its principal emphasis is multifunctional device operation rather than a broader quantum-materials phenomenon.",
+        "physics_advance": "Localized uniaxial strain creates direction-dependent transport in monolayer MoS2: crossing the potential wells promotes charge trapping, while transport along them reduces scattering and supports trap-free conduction."
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "selected",
+      "physics_advance": "Localized uniaxial strain creates direction-dependent transport in monolayer MoS2: crossing the potential wells promotes charge trapping, while transport along them reduces scattering and supports trap-free conduction.",
+      "ai_in_scope": true,
+      "relevance_reason": "This is a narrow condensed-matter transport study of strained monolayer MoS2, though its principal emphasis is multifunctional device operation rather than a broader quantum-materials phenomenon.",
+      "relevance_method": "semantic",
+      "relevance_score": 61,
+      "feature_candidate": true
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79590-7",
+      "doi": "10.1038/s41467-026-79590-7",
+      "title": "[c2]Daisy-chain molecular turing machines with switchable fluorescence outputs",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Wei-Jian Li, Cheng Liu, Yiming Rao, Sheng-Yi Yang, Xiaopei Xia, Ryan T. K. Kwok, Jianwei Sun, Yi Qin, Hai-Bo Yang, Jacky W. Y. Lam, Ben Zhong Tang",
+      "abstract": "Synthetic small-molecule machines capable of bidirectionally reading and writing information on molecular tapes with visual output remain elusive due to the challenge in amplifying molecular-scale motions into macroscopic signals. Herein, we report two [c2]daisy-chain molecular Turing machines that convert reversible mechanical motions into different fluorescence signals by developing novel aggregation-induced emission luminogens with an intramolecular charge transfer mechanism. Attributed to the collective and amplified shuttling motions triggered by anions or solvents, the [c2]daisy chains exhibit controllable and reversible fluorescence modulation in solution for up to 42 cycles. Moreover, incorporation of [c2]daisy chains into polymers yields fast-response macroscopic Turing machines capable of conformation-dependent fluorescence switching. Importantly, the [c2]daisy chains enable binary ASCII and nucleotide-base encoding, allowing visual representation of letters, digits, and 64 genetic codons. By mapping codons to fluorescence, they also enable visual decoding of DNA information, bridging molecular-scale motion to macroscopically readable information processing and advancing functional molecular computation. Synthetic small-molecule machines capable of bidirectionally reading and writing information on molecular tapes with visual output remain elusive due to the challenge in amplifying molecular-scale motions into macroscopic signals. Here, the authors report two [c2]daisy-chain molecular Turing machines that convert mechanical motions into fluorescence signals.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          21
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79590-7",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-21",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79590-7"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Topology & Transport",
+      "summary_en": "Synthetic small-molecule machines capable of bidirectionally reading and writing information on molecular tapes with visual output remain elusive due to the challenge in amplifying molecular-scale motions into macroscopic signals. Herein, we report two [c2]daisy-chain molecular Turing machines that convert reversible mechanical motions into different fluorescence signals by developing novel aggreg",
+      "summary": "Synthetic small-molecule machines capable of bidirectionally reading and writing information on molecular tapes with visual output remain elusive due to the challenge in amplifying molecular-scale motions into macroscopic signals. Herein, we report two [c2]daisy-chain molecular Turing machines that convert reversible mechanical motions into different fluorescence signals by developing novel aggreg",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79590-7",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 17,
+        "feature_candidate": false,
+        "reason": "The primary contribution is molecular-machine design for fluorescence-based information encoding, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary contribution is molecular-machine design for fluorescence-based information encoding, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 17,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79685-1",
+      "doi": "10.1038/s41467-026-79685-1",
+      "title": "Greenhouse gas responses to coastal wetland land use change vary by ecosystem and conversion pathway",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Zihao Wang, Feifei Yan, Can Wang, Jingyu Sun, Mingzhi Liu, Xianbiao Lin",
+      "abstract": "Abstract Land-use and land-cover change (LULCC) is altering greenhouse gas (GHG) dynamics in coastal wetlands, yet how these responses vary among ecosystems and conversion pathways remains uncertain. Here, we synthesized 276 studies and applied multilevel meta-analysis to paired LULCC comparisons. GHG responses varied with pre-conversion wetland type, destination land use, hydrology, and soil carbon and nitrogen status. Pooled sustained-flux global warming potential (SGWP) was ‒122.41 ± 81.99 mg CO 2 e m ‒2 h ‒1 for natural coastal wetlands and 250.60 ± 101.06 for LULCC sites, corresponding to 0.17 ± 0.06 Gt CO 2 e of cumulative emissions over two decades. The descriptive SGWP contrast with pooled LULCC sites was larger for vegetated wetlands ( + 309.32%) than for tidal flats ( + 165.02%). Ecologically restored wetlands showed negative pooled SGWP ( − 33.03 ± 114.70 mg CO 2 e m ‒2 h ‒1 ), contrasting with the positive pooled LULCC estimate. Our results indicate that GHG responses to coastal wetland conversion are ecosystem- and pathway-specific, underscoring the importance of conserving vegetated wetlands and targeting restoration.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          21
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79685-1",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-21",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79685-1"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Abstract Land-use and land-cover change (LULCC) is altering greenhouse gas (GHG) dynamics in coastal wetlands, yet how these responses vary among ecosystems and conversion pathways remains uncertain. Here, we synthesized 276 studies and applied multilevel meta-analysis to paired LULCC comparisons. GHG responses varied with pre-conversion wetland type, destination land use, hydrology, and soil carb",
+      "summary": "Abstract Land-use and land-cover change (LULCC) is altering greenhouse gas (GHG) dynamics in coastal wetlands, yet how these responses vary among ecosystems and conversion pathways remains uncertain. Here, we synthesized 276 studies and applied multilevel meta-analysis to paired LULCC comparisons. GHG responses varied with pre-conversion wetland type, destination land use, hydrology, and soil carb",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79685-1",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 5,
+        "feature_candidate": false,
+        "reason": "This is an ecological meta-analysis of greenhouse-gas responses to coastal wetland land-use change, outside condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is an ecological meta-analysis of greenhouse-gas responses to coastal wetland land-use change, outside condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 5,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79625-z",
+      "doi": "10.1038/s41467-026-79625-z",
+      "title": "Entropy-engineered polar heterogeneity enables near-decoupled polarization–strain behavior for high-density energy storage",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Yule Yang, Leiyang Zhang, Yunyao Huang, Fukang Chen, Yuxuan Yang, Ruiyi Jing, Zibin Chen, Liqiang He, Dong Wang, Bin Zhou, Xuefeng Chen, Yang Zhang, Haijun Wu, Hua Tan, Haibo Zhang, Gang Liu, Yan Yan, Jun Yang, Shujun Zhang, Li Jin",
+      "abstract": "Dielectric energy-storage (ES) ceramics are central to pulsed power technologies, yet excessive polarization–strain coupling in lead-free systems induces electrostrain, compromising ES density and device reliability. Here, we introduce configurational entropy (Sconfig) as a quantitative design parameter to engineer polar heterogeneity and regulate polarization–strain interactions in lead-free relaxor ferroelectrics (RFEs). Entropy engineering generates chemical heterogeneity, local lattice distortions, strain-field fluctuations, and polar fragmentation, disrupting long-range polar coherence and reducing the spatial cooperativity of polarization-induced deformation while preserving large field-induced polarization. This entropy-mediated reconstruction of the polar landscape yields an ultralow electrostrictive coefficient Q33 of ~0.010 m4 C–2 in a (Bi0.5Na0.5)TiO3-based high-entropy RFE, enabling a near-decoupled polarization–strain response with high polarization and suppressed macroscopic electrostrain. Multilayer ceramic capacitors achieve a recoverable ES density of 21.5 J cm–3 at 1200 kV cm–1, together with a low electrostrain of 0.073% at 300 kV cm–1. Atomic-scale imaging reveals vortex and antivortex polarization configurations associated with entropy-induced structural heterogeneity and lattice distortions. Phase-field simulations demonstrate that heterogeneous polarization states redistribute elastic energy and reduce cooperative polarization-induced deformation. This work establishes Sconfig as a quantitative descriptor for engineering weak electromechanical coupling and high-ES-density performance in lead-free dielectric capacitors. Strong polarization–strain coupling limits the energy density and reliability of lead-free dielectric capacitors. Here, the authors show that entropy-engineered polar heterogeneity weakens this coupling, enabling ultrahigh energy storage with minimal electrostrain.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          21
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79625-z",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-21",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79625-z"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Superconductivity",
+      "summary_en": "Dielectric energy-storage (ES) ceramics are central to pulsed power technologies, yet excessive polarization–strain coupling in lead-free systems induces electrostrain, compromising ES density and device reliability. Here, we introduce configurational entropy (Sconfig) as a quantitative design parameter to engineer polar heterogeneity and regulate polarization–strain interactions in lead-free rela",
+      "summary": "Dielectric energy-storage (ES) ceramics are central to pulsed power technologies, yet excessive polarization–strain coupling in lead-free systems induces electrostrain, compromising ES density and device reliability. Here, we introduce configurational entropy (Sconfig) as a quantitative design parameter to engineer polar heterogeneity and regulate polarization–strain interactions in lead-free rela",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79625-z",
+        "in_scope": true,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "mixed",
+        "score": 68,
+        "feature_candidate": true,
+        "reason": "The work establishes a material-physics link between chemical disorder, polar textures, and electromechanical response in relaxor ferroelectric ceramics, beyond reporting capacitor performance alone.",
+        "physics_advance": "Configurational-entropy-driven heterogeneity fragments polar order and is associated with vortex and antivortex polarization configurations, weakening cooperative polarization-induced strain while retaining large field-induced polarization."
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "mixed",
+      "screening_decision": "selected",
+      "physics_advance": "Configurational-entropy-driven heterogeneity fragments polar order and is associated with vortex and antivortex polarization configurations, weakening cooperative polarization-induced strain while retaining large field-induced polarization.",
+      "ai_in_scope": true,
+      "relevance_reason": "The work establishes a material-physics link between chemical disorder, polar textures, and electromechanical response in relaxor ferroelectric ceramics, beyond reporting capacitor performance alone.",
+      "relevance_method": "semantic",
+      "relevance_score": 68,
+      "feature_candidate": true
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79243-9",
+      "doi": "10.1038/s41467-026-79243-9",
+      "title": "Accelerating high-throughput catalyst screening by direct generation of equilibrium adsorption structures",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Songze Huo, Xiao-Ming Cao",
+      "abstract": "Abstract The adsorption energy serves as a crucial descriptor for the large-scale screening of catalysts. Nevertheless, the limited distribution of training data for the extensively utilised machine learning interatomic potential, predominantly sourced from near-equilibrium structures, results in unreliable adsorption structures and consequent adsorption energy predictions. In this context, we present DBCata, a deep generative model that integrates a periodic Brownian-bridge framework with an equivariant graph neural network to establish a low-dimensional transition manifold between unrelaxed and DFT-relaxed structures, without requiring explicit energy or force information. Upon training, DBCata effectively generates high-fidelity adsorption geometries, achieving an interatomic distance mean absolute error of 0.035 Å on the dataset from Catalysis-Hub, which is approximately 70% lower than that of the current state-of-the-art machine learning potential models. Moreover, the corresponding DFT accuracy can be improved within 0.1 eV in 94% of instances by identifying and refining anomalous predictions through a hybrid chemical-heuristic and self-supervised outlier detection approach. We demonstrate that DBCata enables accelerated high-throughput computational screening for alloy catalysts in the oxygen reduction reaction, highlighting the potential of DBCata as a powerful tool for catalyst design and optimisation.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          21
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79243-9",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-21",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79243-9"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Abstract The adsorption energy serves as a crucial descriptor for the large-scale screening of catalysts. Nevertheless, the limited distribution of training data for the extensively utilised machine learning interatomic potential, predominantly sourced from near-equilibrium structures, results in unreliable adsorption structures and consequent adsorption energy predictions. In this context, we pre",
+      "summary": "Abstract The adsorption energy serves as a crucial descriptor for the large-scale screening of catalysts. Nevertheless, the limited distribution of training data for the extensively utilised machine learning interatomic potential, predominantly sourced from near-equilibrium structures, results in unreliable adsorption structures and consequent adsorption energy predictions. In this context, we pre",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79243-9",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 19,
+        "feature_candidate": false,
+        "reason": "The central contribution is a generative computational method for catalyst screening, not a discovery about condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The central contribution is a generative computational method for catalyst screening, not a discovery about condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 19,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79644-w",
+      "doi": "10.1038/s41467-026-79644-w",
+      "title": "Shape conforming Janus hydrogel for preventing anastomotic leaks",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Dongjie Song, Lihao Chen, Ye Li, Chujun Ni, Hang Yang, Sheng Chen, Chenyue Yang, Xufeng Liao, Jianqing Yu, Yue Liu, Yeting Hu, Xiangxing Kong, Chuansheng Guo, Haiyan Chen, Qian Xiao, Qian Zhao, Tao Xie, Kefeng Ding",
+      "abstract": "Anastomotic leaks are severe complications following gastrointestinal surgery. The shape conformability of powder-based hydrogels makes them potentially suitable for leak-sealing, but they typically cause undesirable tissue adhesion, prohibiting clinical applications. Here we present a powder-based Janus hydrogel that forms in situ to simultaneously prevent anastomotic leaks and tissue adhesions. By rational regulation of dissolution and gelation kinetics, a powder mixture of chitosan lactate and oxidized chondroitin sulfate rapidly forms an adhesive porous scaffold in situ via amine-aldehyde condensation. A zwitterionic anti-adhesive layer is synthesized on the peritoneal side of the porous layer, creating a stable Janus structure via mechanical interlocking. The chemical and structural asymmetry between the serosal and peritoneal surfaces reconciles the conflicting demands of robust tissue integration, leakage prevention, and anti-adhesive safety. Further, the Janus hydrogel improves short- and long-term survival by reducing immune responses and perianastomotic adhesions, highlighting its potential for clinical translation in gastrointestinal surgery. Anastomotic leaks remain a major complication of gastrointestinal surgery, yet existing sealants often fail to provide durable coverage of irregular tissue surfaces. Here, the authors develop a Janus powder-derived dressing composed of an adhesive porous layer mechanically interlocked with a non-adhesive backing. The material conforms to anastomotic tissues, resists unwanted post-surgical adhesions, and provides sustained sealing, offering a promising strategy for leak prevention and repair.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          21
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79644-w",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-21",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79644-w"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Anastomotic leaks are severe complications following gastrointestinal surgery. The shape conformability of powder-based hydrogels makes them potentially suitable for leak-sealing, but they typically cause undesirable tissue adhesion, prohibiting clinical applications. Here we present a powder-based Janus hydrogel that forms in situ to simultaneously prevent anastomotic leaks and tissue adhesions. ",
+      "summary": "Anastomotic leaks are severe complications following gastrointestinal surgery. The shape conformability of powder-based hydrogels makes them potentially suitable for leak-sealing, but they typically cause undesirable tissue adhesion, prohibiting clinical applications. Here we present a powder-based Janus hydrogel that forms in situ to simultaneously prevent anastomotic leaks and tissue adhesions. ",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79644-w",
+        "in_scope": false,
+        "soft_matter": true,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 8,
+        "feature_candidate": false,
+        "reason": "This study develops a biomedical hydrogel sealant, so its primary contribution is soft-materials and surgical application research rather than condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": true,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "soft_matter",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This study develops a biomedical hydrogel sealant, so its primary contribution is soft-materials and surgical application research rather than condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 8,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79586-3",
+      "doi": "10.1038/s41467-026-79586-3",
+      "title": "Landscape fire sourced PM2.5, cause-specific paediatric hospitalisations, and the role of tree cover",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Shuang Zhou, Zhihu Xu, Zhengyu Yang, Wenhua Yu, Wenzhong Huang, Eric Lavigne, Michael J. Abramson, Lidia Morawska, Micheline S. Z. S. Coelho, Kraichat Tantrakarnapa, Wissanupong Kliengchuay, Yao Wu, Bo Wen, Rongbin Xu, Gongbo Chen, Pei Yu, Tingting Ye, Yiwen Zhang, Ke Ju, Yanming Liu, Botian Chen, Yunfei Xing, Zhaoyuan Li, Junwang Huang, Linxi Tang, Qingbo Fang, Fay H. Johnston, Simon Hales, Yue-Liang Leon Guo, Jane Heyworth, Luke Knibbs, Guy Marks, Patricia Matus, Paulo H. N. Saldiva, Yuming Guo, Shanshan Li",
+      "abstract": "Landscape fire smoke threatens child health, but tree cover’s role is unclear. We analyse 67.9 million hospitalisations among children aged 0-19 years in 1012 communities across seven countries/territories during 2000-2019 using time-series models and meta-analysis. Here we show that each 10 µg/m3 increase in daily landscape fire-sourced fine particulate matter is associated with a 1.4% increase in all-cause hospitalisation risk (95% confidence interval 1.2-1.6%) with low tree cover versus 0.5% (0.2-0.8%) with high tree cover. Differences are significant in communities with low or middle gross domestic product, with similar patterns for respiratory, infectious, neurological and digestive hospitalisations. Under a counterfactual 10% increase in tree cover, attributable fractions decrease significantly for all-cause (−0.03%, 95% confidence interval −0.05% to −0.01%), respiratory (−0.05%, −0.09% to −0.01%) and infectious (−0.04%, −0.07% to −0.01%) hospitalisations, with significant reductions in communities with low gross domestic product. These findings support considering tree cover alongside broader smoke-protection strategies. Greater tree cover is associated with lower risks and burdens of landscape fire smoke-related hospitalisations in children and adolescents across seven countries and territories, suggesting potential benefits of expanding tree cover.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          21
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79586-3",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-21",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79586-3"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Landscape fire smoke threatens child health, but tree cover’s role is unclear. We analyse 67.9 million hospitalisations among children aged 0-19 years in 1012 communities across seven countries/territories during 2000-2019 using time-series models and meta-analysis. Here we show that each 10 µg/m3 increase in daily landscape fire-sourced fine particulate matter is associated with a 1.4% increase i",
+      "summary": "Landscape fire smoke threatens child health, but tree cover’s role is unclear. We analyse 67.9 million hospitalisations among children aged 0-19 years in 1012 communities across seven countries/territories during 2000-2019 using time-series models and meta-analysis. Here we show that each 10 µg/m3 increase in daily landscape fire-sourced fine particulate matter is associated with a 1.4% increase i",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79586-3",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 2,
+        "feature_candidate": false,
+        "reason": "The paper analyzes associations between wildfire pollution, tree cover, and pediatric hospitalizations, a public-health study unrelated to condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The paper analyzes associations between wildfire pollution, tree cover, and pediatric hospitalizations, a public-health study unrelated to condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 2,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79726-9",
+      "doi": "10.1038/s41467-026-79726-9",
+      "title": "Influenza A virus orchestrates ciliated cell fate and injury during the mucociliary damage repair cycle",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Biying Xiao, Xuenan Zhao, Shiyong Guo, Mingyue Fan, Hui Zhang, Xiaojing Yang, Lulu Zhang, Yuting Li, Kaixiong Ma, Youlan Zheng, Yang Peng, Linbo Liu, Renee Wan Yi Chan, Shaobo Wang, Wenbao Qi, Zuodong Ye, Lei Wang",
+      "abstract": "Abstract Influenza A virus causes acute damage to airway epithelium, yet the damage–repair cycle and mechanisms underlying persistent mucociliary clearance (MCC) dysfunction long after viral clearance remain unclear. Here, using longitudinal in vivo quantitative micro-optical coherence tomography, we show that global MCC impairment persists for more than 14 days, marked by impaired ciliary activity and sustained mucus hypersecretion in male mice infected with the H1N1 influenza A/Puerto Rico/8/1934 (PR8) strain. Through lineage tracing and multi-omics analyses, we identify an immune-mediated transdifferentiation program in which IFN signaling activates the IDO1–AhR axis to drive ciliated-to-mucous cell fate transition and chronic muco-obstruction after H1N1 PR8 infection in a reconstructed human bronchial epithelium model. In parallel, we identify the viral M2 protein as a key driver of ciliary loss, suppressing the host TP73–FOXJ1–RFX3 regulatory axis and promoting proteasomal degradation of FOXJ1. Together, these findings uncover host- and virus-driven pathways that cooperatively impair airway epithelial homeostasis and sustain MCC failure beyond active infection, highlighting therapeutic targets for post-influenza muco-obstructive disease.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          21
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79726-9",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-21",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79726-9"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Abstract Influenza A virus causes acute damage to airway epithelium, yet the damage–repair cycle and mechanisms underlying persistent mucociliary clearance (MCC) dysfunction long after viral clearance remain unclear. Here, using longitudinal in vivo quantitative micro-optical coherence tomography, we show that global MCC impairment persists for more than 14 days, marked by impaired ciliary activit",
+      "summary": "Abstract Influenza A virus causes acute damage to airway epithelium, yet the damage–repair cycle and mechanisms underlying persistent mucociliary clearance (MCC) dysfunction long after viral clearance remain unclear. Here, using longitudinal in vivo quantitative micro-optical coherence tomography, we show that global MCC impairment persists for more than 14 days, marked by impaired ciliary activit",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79726-9",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 3,
+        "feature_candidate": false,
+        "reason": "The work investigates influenza-driven airway injury and epithelial repair mechanisms, making its primary contribution biological and biomedical rather than condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The work investigates influenza-driven airway injury and epithelial repair mechanisms, making its primary contribution biological and biomedical rather than condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 3,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78602-w",
+      "doi": "10.1038/s41467-026-78602-w",
+      "title": "A global atlas of digital dermatology to map innovation and disparities",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Fabian Gröger, Simone Lionetti, Philippe Gottfrois, Alvaro Gonzalez-Jimenez, Lea Habermacher, , Maximilian Böhm, Sara Cerminara, Georgios Nikolakis, Alexander Romswinkel, Ludovic Amruthalingam, Matthew Groh, Marc Pouly, Alexander A. Navarini",
+      "abstract": "Abstract Artificial intelligence promises democratized access to dermatological care, but model reliability depends on the quality and comprehensiveness of the underlying data. Despite rapid growth in publicly available dermatology images, the field lacks quantitative indicators to measure whether new datasets expand clinical coverage or merely replicate what is already known. Existing collections are widely assumed to be biased, yet the scale and topography of these gaps have remained unquantified, leaving the community without a road map for strategic data acquisition. Here, we show, by unifying 1.1 million images from 29 public datasets into a queryable semantic atlas, that the global archive is markedly skewed and increasingly redundant: darker skin tones (Fitzpatrick V–VI) constitute only 11.0% of images, pediatric patients only 2.3%, and informational novelty has plateaued despite exponential growth, revealing where targeted data acquisition is most needed.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          21
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-78602-w",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-21",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78602-w"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Abstract Artificial intelligence promises democratized access to dermatological care, but model reliability depends on the quality and comprehensiveness of the underlying data. Despite rapid growth in publicly available dermatology images, the field lacks quantitative indicators to measure whether new datasets expand clinical coverage or merely replicate what is already known. Existing collections",
+      "summary": "Abstract Artificial intelligence promises democratized access to dermatological care, but model reliability depends on the quality and comprehensiveness of the underlying data. Despite rapid growth in publicly available dermatology images, the field lacks quantitative indicators to measure whether new datasets expand clinical coverage or merely replicate what is already known. Existing collections",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-78602-w",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 2,
+        "feature_candidate": false,
+        "reason": "This is a dermatology data-atlas and dataset-coverage analysis, not research on the physics of matter.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is a dermatology data-atlas and dataset-coverage analysis, not research on the physics of matter.",
+      "relevance_method": "semantic",
+      "relevance_score": 2,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79596-1",
+      "doi": "10.1038/s41467-026-79596-1",
+      "title": "A highly distorted benzenium cation",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Baojing Tian, Jiaofan Chang, Qi Sun, Qi Zhang, Shaowen Zhang, He Huang, Xudong Xu, Zongyao Sun, Weixing Chen, Ting Tan, Shenghua Li, Siping Pang",
+      "abstract": "Abstract In contrast to the well-explored peripheral functionalization of benzene, its skeletal alteration remains underdeveloped. Here, we report a highly distorted benzenium cation, 2,3-dihydroxy-1,4,6-triamino-5-nitrobenzenium (TANBC + ), featuring a ring twist angle of 35.91° and a ring C-C bond length of 1.540 Å, both rank the highest among all benzenium cations. Such pronounced structural distortions endow TANBC + with unique electronic properties, including a highly positive electrostatic charge on the warped carbon, weak aromaticity, and a low ring bond dissociation energy. Consequently, instead of undergoing peripheral functionalization like typical benzenium cations, TANBC + participates in three distinct benzene ring reconstruction pathways or remains inert under standard electrophilic substitution conditions. Moreover, despite its distorted structure, TANBC + exhibits excellent ambient stability, stabilized by extensive hydrogen bonding, and can be synthesized readily without harsh conditions usually required for conventional benzenium cations. This work not only introduces a new strategy for benzene reconstruction but also redefines the role of benzenium cations from mediators of peripheral functionalization to promoters of skeletal alteration, thereby advancing the fundamental chemistry of benzene.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          21
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79596-1",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-21",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79596-1"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Abstract In contrast to the well-explored peripheral functionalization of benzene, its skeletal alteration remains underdeveloped. Here, we report a highly distorted benzenium cation, 2,3-dihydroxy-1,4,6-triamino-5-nitrobenzenium (TANBC + ), featuring a ring twist angle of 35.91° and a ring C-C bond length of 1.540 Å, both rank the highest among all benzenium cations. Such pronounced structural di",
+      "summary": "Abstract In contrast to the well-explored peripheral functionalization of benzene, its skeletal alteration remains underdeveloped. Here, we report a highly distorted benzenium cation, 2,3-dihydroxy-1,4,6-triamino-5-nitrobenzenium (TANBC + ), featuring a ring twist angle of 35.91° and a ring C-C bond length of 1.540 Å, both rank the highest among all benzenium cations. Such pronounced structural di",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79596-1",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 8,
+        "feature_candidate": false,
+        "reason": "The paper reports the structure and reactivity of an organic cation, a contribution to molecular chemistry rather than condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The paper reports the structure and reactivity of an organic cation, a contribution to molecular chemistry rather than condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 8,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79355-2",
+      "doi": "10.1038/s41467-026-79355-2",
+      "title": "Deep ultraviolet gallium-oxide avalanche photodiodes reaching an impulse-response-derived gain-bandwidth record of 152 GHz",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Dianmeng Dong, Jintao Fu, Hongda Ren, Qingyi Zhang, Tao Zhang, Xingsi Liu, Yilin Cao, Min Peng, Xinyun Zhu, Yuanjun Tang, Fan Zhang, Jinlei Zhang, Yucheng Jiang, Yang Zhang, Zhenping Wu, Cheng-Wei Qiu",
+      "abstract": "Abstract Solar-blind Ga 2 O 3 -based photodetectors, sensing deep ultraviolet (DUV) light (200–280 nm), offer unparalleled opportunities for secure non-line-of-sight optical communication. Yet their practical applications have been largely hindered by the relatively low gain-bandwidth product (GBP), due to the fundamental trade-off between response speed and photoelectric gain. Here, we report nanosecond-level-response solar-blind avalanche photodetectors based on β-Ga 2 O 3 /MgO/La 0.8 Ca 0.2 MnO 3 (LCMO) n-Barrier-p heterojunctions with high apparent gain over 2.6×10 6 , thereby achieving an impulse-response-derived record-breaking 152 GHz gain-bandwidth product — outpacing the state-of-the-art Ga 2 O 3 -based devices by 3 orders of magnitude. The MgO interlayer enables lattice matching and engineered conduction band offset to boost gain and suppress dark current, while the p-type LCMO layer introduces a large valence band offset and simultaneously establishes a hole-selective transport highway for ultrafast response. This work not only resolves the longstanding gain-bandwidth trade-off in DUV photodetection but also presents a universal band-engineering framework for next-generation optoelectronics.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          21
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79355-2",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-21",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79355-2"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Topology & Transport",
+      "summary_en": "Abstract Solar-blind Ga 2 O 3 -based photodetectors, sensing deep ultraviolet (DUV) light (200–280 nm), offer unparalleled opportunities for secure non-line-of-sight optical communication. Yet their practical applications have been largely hindered by the relatively low gain-bandwidth product (GBP), due to the fundamental trade-off between response speed and photoelectric gain. Here, we report nan",
+      "summary": "Abstract Solar-blind Ga 2 O 3 -based photodetectors, sensing deep ultraviolet (DUV) light (200–280 nm), offer unparalleled opportunities for secure non-line-of-sight optical communication. Yet their practical applications have been largely hindered by the relatively low gain-bandwidth product (GBP), due to the fundamental trade-off between response speed and photoelectric gain. Here, we report nan",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79355-2",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 28,
+        "feature_candidate": false,
+        "reason": "The primary advance is photodetector performance and band engineering for an optoelectronic device, not a new finding about condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary advance is photodetector performance and band engineering for an optoelectronic device, not a new finding about condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 28,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-77502-3",
+      "doi": "10.1038/s41467-026-77502-3",
+      "title": "Mapping temperature using transmission Kikuchi diffraction",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Yueyun Chen, Xin Yi Ling, Jared J. Lodico, Tristan P. O’Neill, B. C. Regan, Matthew Mecklenburg",
+      "abstract": "Abstract As electronic devices are engineered at increasingly smaller length scales, new nanoscopic metrologies are needed. Measuring nanoscale temperatures and pressures is challenging as physical contact inevitably perturbs the system, and collecting far-field thermal radiation limits the spatial resolution. Kikuchi diffraction thermometry (KDTh), a non-contact scanning electron microscope (SEM) technique, can sensitively map nanoscale temperatures. Local lattice changes measured by Kikuchi pattern fitting enable translating volumetric strain to temperature via the material’s coefficient of thermal expansion (CTE). Measurements on Joule-heated graphite come from rastering a 5.5-nm electron probe across the sample, achieving a ~ 0.01% fractional precision and 2.2 K/ $$\\sqrt{{{\\rm{Hz}}}}$$ Hz temperature sensitivity. KDTh offers superior sensitivity by fitting the entire Kikuchi pattern, instead of a particular Kikuchi band or interband angle. Transmission electron microscopy (TEM) techniques can achieve a similar precision, but electron-transparency limits their applications. KDTh can operate in both transmission and reflection modes to cost-effectively accommodate a variety of samples.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          21
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-77502-3",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-21",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-77502-3"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Thermal & Thermoelectric",
+      "summary_en": "Abstract As electronic devices are engineered at increasingly smaller length scales, new nanoscopic metrologies are needed. Measuring nanoscale temperatures and pressures is challenging as physical contact inevitably perturbs the system, and collecting far-field thermal radiation limits the spatial resolution. Kikuchi diffraction thermometry (KDTh), a non-contact scanning electron microscope (SEM)",
+      "summary": "Abstract As electronic devices are engineered at increasingly smaller length scales, new nanoscopic metrologies are needed. Measuring nanoscale temperatures and pressures is challenging as physical contact inevitably perturbs the system, and collecting far-field thermal radiation limits the spatial resolution. Kikuchi diffraction thermometry (KDTh), a non-contact scanning electron microscope (SEM)",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-77502-3",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 32,
+        "feature_candidate": false,
+        "reason": "This work develops a nanoscale temperature-measurement method, with no independent discovery about the physics of the measured material.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This work develops a nanoscale temperature-measurement method, with no independent discovery about the physics of the measured material.",
+      "relevance_method": "semantic",
+      "relevance_score": 32,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79674-4",
+      "doi": "10.1038/s41467-026-79674-4",
+      "title": "Early-life skin molecular signatures are predictive of atopic dermatitis risk in an Asian preconception birth cohort",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Le Duc Huy Ta, Stephen Wearne, Seong Soo Lim, Minghao Chia, Kaibo Duan, Evelyn Xiu Ling Loo, Lynette P. Shek, Anne E. N. Goh, Kok Wee Chong, Si Hui Goh, Hugo P. S. Van Bever, Oon Hoe Teoh, Zai Ru Cheng, Yung Seng Lee, Fabian Yap, Kok Hian Tan, Jerry Kok Yen Chan, Yap-Seng Chong, Bee Wah Lee, John E. Common, Niranjan Nagarajan, Elizabeth Huiwen Tham",
+      "abstract": "Early identification of infants at risk of atopic dermatitis (AD) is critical for timely prevention, yet preclinical biomarkers remain elusive. In this nested study within the prospective Singapore Preconception Study of Long-Term Maternal and Child Outcomes (S-PRESTO) cohort (ClinicalTrials.gov NCT03531658), we investigated whether early molecular signatures of infant skin could predict disease onset. The primary endpoint was physician-diagnosed AD by 18 months of age; secondary endpoints included AD severity and longitudinal trajectories of skin metagenomic, metabolomic, and proteomic profiles. Non-lesional skin tape strips were collected longitudinally from 119 infants (60 AD cases, 59 controls) at week 1 and months 3, 6, and 18. Here, we show that distinct microbial and host molecular alterations significantly precede clinical manifestation. Healthy infants exhibited progressive microbial diversity, transitioning from Staphylococcus epidermidis to lipophilic commensals, accompanied by butanoate fermentation and elevated natural moisturizing factors. Conversely, infants developing AD displayed early dysbiosis, driven by Pseudomonas stutzeri at week 1 and Staphylococcus aureus by month 3, alongside premature upregulation of antimicrobial peptides and uncoupled host-microbiome interactions. Predictive models showed strong performance in stratifying AD risk, shifting from microbial and peptide markers at week 1 to sustained inflammation at month 3. These preclinical signatures offer practical non-invasive tools for early infant risk stratification. Here, via a multi-omics analysis of the infant skin microbiome and host immune markers, the authors identify preclinical molecular signatures in the first week of life that predict the onset of atopic dermatitis by 18 months, offering an early window for preventive care.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          21
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79674-4",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-21",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79674-4"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Early identification of infants at risk of atopic dermatitis (AD) is critical for timely prevention, yet preclinical biomarkers remain elusive. In this nested study within the prospective Singapore Preconception Study of Long-Term Maternal and Child Outcomes (S-PRESTO) cohort (ClinicalTrials.gov NCT03531658), we investigated whether early molecular signatures of infant skin could predict disease o",
+      "summary": "Early identification of infants at risk of atopic dermatitis (AD) is critical for timely prevention, yet preclinical biomarkers remain elusive. In this nested study within the prospective Singapore Preconception Study of Long-Term Maternal and Child Outcomes (S-PRESTO) cohort (ClinicalTrials.gov NCT03531658), we investigated whether early molecular signatures of infant skin could predict disease o",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79674-4",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 8,
+        "feature_candidate": false,
+        "reason": "The study concerns infant skin microbiome and immune signatures as a biomedical predictor, rather than condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The study concerns infant skin microbiome and immune signatures as a biomedical predictor, rather than condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 8,
+      "feature_candidate": false
+    }
+  ],
+  "pending_journal_records": [],
+  "selected_ids": [
+    "doi-10-1038-s41467-026-79577-4",
+    "doi-10-1038-s41467-026-79625-z"
+  ],
+  "stats": {
+    "scanned": 18,
+    "first_pass_selected": 2,
+    "selected": 2,
+    "rejected": 16,
+    "ai_assessed": 18,
+    "ai_cached": 0,
+    "ai_unscored": 0,
+    "global_editorial": true,
+    "field_scope_excluded": 0,
+    "duplicate_work_excluded": 0,
+    "arxiv_selected": 0,
+    "journal_selected": 2,
+    "arxiv_harvest_excluded": 0,
+    "pending_journal_abstracts": 0,
+    "non_original_excluded": 0,
+    "publication_not_eligible": 29
+  }
+}

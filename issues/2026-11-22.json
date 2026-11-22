@@ -1,0 +1,146 @@
+{
+  "date": "2026-11-22",
+  "title": "Daily Condensed Matter Literature",
+  "generated_at": "2026-11-22T06:00:39.768142-08:00",
+  "screening_version": "quantum-materials-v1-formal-research-v5",
+  "screening_config": {
+    "arxiv_min_score": 70,
+    "journal_min_score": 55,
+    "max_papers": 30,
+    "arxiv_versions": [
+      1
+    ],
+    "exclude_soft_matter": true,
+    "journals": [
+      "Science",
+      "Science Advances",
+      "Nature",
+      "Nature Physics",
+      "Nature Materials",
+      "Nature Communications",
+      "PRL",
+      "PRX",
+      "PNAS"
+    ],
+    "journal_publication": "publisher-verified formal online publication on the previous Los Angeles calendar day",
+    "arxiv_intake": "first announcement in the fixed 24 hours ending at 06:00 America/Los_Angeles",
+    "journal_document_types": "research article or research letter; no accepted papers, essays, replies or comments",
+    "editorial_interest": "experimental quantum materials; original theory and experiment"
+  },
+  "intake_window": {
+    "version": "la-0600-arxiv24h-previous-journal-day-v1",
+    "timezone": "America/Los_Angeles",
+    "arxiv_start": "2026-11-21T14:00:00+00:00",
+    "arxiv_end": "2026-11-22T14:00:00+00:00",
+    "journal_publication_date": "2026-11-21"
+  },
+  "sources_complete": true,
+  "papers": [
+    {
+      "id": "doi-10-1038-s41467-026-79625-z",
+      "doi": "10.1038/s41467-026-79625-z",
+      "title": "Entropy-engineered polar heterogeneity enables near-decoupled polarization–strain behavior for high-density energy storage",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Yule Yang, Leiyang Zhang, Yunyao Huang, Fukang Chen, Yuxuan Yang, Ruiyi Jing, Zibin Chen, Liqiang He, Dong Wang, Bin Zhou, Xuefeng Chen, Yang Zhang, Haijun Wu, Hua Tan, Haibo Zhang, Gang Liu, Yan Yan, Jun Yang, Shujun Zhang, Li Jin",
+      "abstract": "Dielectric energy-storage (ES) ceramics are central to pulsed power technologies, yet excessive polarization–strain coupling in lead-free systems induces electrostrain, compromising ES density and device reliability. Here, we introduce configurational entropy (Sconfig) as a quantitative design parameter to engineer polar heterogeneity and regulate polarization–strain interactions in lead-free relaxor ferroelectrics (RFEs). Entropy engineering generates chemical heterogeneity, local lattice distortions, strain-field fluctuations, and polar fragmentation, disrupting long-range polar coherence and reducing the spatial cooperativity of polarization-induced deformation while preserving large field-induced polarization. This entropy-mediated reconstruction of the polar landscape yields an ultralow electrostrictive coefficient Q33 of ~0.010 m4 C–2 in a (Bi0.5Na0.5)TiO3-based high-entropy RFE, enabling a near-decoupled polarization–strain response with high polarization and suppressed macroscopic electrostrain. Multilayer ceramic capacitors achieve a recoverable ES density of 21.5 J cm–3 at 1200 kV cm–1, together with a low electrostrain of 0.073% at 300 kV cm–1. Atomic-scale imaging reveals vortex and antivortex polarization configurations associated with entropy-induced structural heterogeneity and lattice distortions. Phase-field simulations demonstrate that heterogeneous polarization states redistribute elastic energy and reduce cooperative polarization-induced deformation. This work establishes Sconfig as a quantitative descriptor for engineering weak electromechanical coupling and high-ES-density performance in lead-free dielectric capacitors. Strong polarization–strain coupling limits the energy density and reliability of lead-free dielectric capacitors. Here, the authors show that entropy-engineered polar heterogeneity weakens this coupling, enabling ultrahigh energy storage with minimal electrostrain.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          21
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79625-z",
+      "level": "Feature",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-21",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79625-z"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Superconductivity",
+      "summary_en": "Dielectric energy-storage (ES) ceramics are central to pulsed power technologies, yet excessive polarization–strain coupling in lead-free systems induces electrostrain, compromising ES density and device reliability. Here, we introduce configurational entropy (Sconfig) as a quantitative design parameter to engineer polar heterogeneity and regulate polarization–strain interactions in lead-free rela",
+      "summary": "Dielectric energy-storage (ES) ceramics are central to pulsed power technologies, yet excessive polarization–strain coupling in lead-free systems induces electrostrain, compromising ES density and device reliability. Here, we introduce configurational entropy (Sconfig) as a quantitative design parameter to engineer polar heterogeneity and regulate polarization–strain interactions in lead-free rela",
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "mixed",
+      "screening_decision": "selected",
+      "physics_advance": "Configurational-entropy-driven heterogeneity fragments polar order and is associated with vortex and antivortex polarization configurations, weakening cooperative polarization-induced strain while retaining large field-induced polarization.",
+      "ai_in_scope": true,
+      "relevance_reason": "The work establishes a material-physics link between chemical disorder, polar textures, and electromechanical response in relaxor ferroelectric ceramics, beyond reporting capacitor performance alone.",
+      "relevance_method": "semantic",
+      "relevance_score": 68,
+      "feature_candidate": true
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79577-4",
+      "doi": "10.1038/s41467-026-79577-4",
+      "title": "Localized strain-engineered 1D electron guides in 2D MoS2 devices with synaptic memory and high-mobility transistor functionalities",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Junsung Byeon, Onesik Harm, Jinhyeok Pyo, Sohyeon Park, Byeongchan Kim, Eunhee Cho, Jungmoon Lim, Taehun Kim, Byeongseong Yoo, Seokjin Oh, Chaewon Song, Hyungchang Jeong, Kyung-Ho Park, Sangyeon Pak, SeungNam Cha",
+      "abstract": "Local strain engineering has been studied as an effective strategy to modify the electronic band structure of two-dimensional (2D) semiconductors. However, using precisely controlled localized strain as a scalable tool for directing and controlling charge dynamics in 2D electronics remains largely underexplored. Here, we introduce wafer-scale localized strain engineering that applies periodically localized one-dimensional (1D) uniaxial strain to monolayer MoS2-based dual-functional electronics. By transferring MoS2 onto a line-patterned HfO2 substrate, we can deterministically generate a periodic localized 1D potential well. This approach creates a well-defined 1D potential landscape that facilitates dual functionality within a single material platform, depending on the alignment between the potential well orientation and the direction of carrier transport. Charge transport perpendicular to the 1D potential wells results in controlled charge trapping, thereby yielding a multibit synaptic memory device, whereas transport parallel to the potential wells experiences reduced lattice scattering and an effective mass with trap-free carrier conduction, leading to a high-mobility field-effect transistor. Systematic transport analyses elucidate how localized uniaxial strain modulates charge-trap density, lattice scattering, and effective mass, giving rise to direction-dependent charge transport. These findings highlight localized 1D strain as an effective design parameter for high-performance, scalable multifunctional 2D electronics. Local strain engineering can tune the electronic and transport properties of 2D semiconductors. Here, the authors report the realization of multifunctional strained 2D MoS2 devices on patterned HfO2 substrates, showing synaptic memory or high-mobility transistors functionalities depending on the carrier transport direction.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          21
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79577-4",
+      "level": "Feature",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-21",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79577-4"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Topology & Transport",
+      "summary_en": "Local strain engineering has been studied as an effective strategy to modify the electronic band structure of two-dimensional (2D) semiconductors. However, using precisely controlled localized strain as a scalable tool for directing and controlling charge dynamics in 2D electronics remains largely underexplored. Here, we introduce wafer-scale localized strain engineering that applies periodically ",
+      "summary": "Local strain engineering has been studied as an effective strategy to modify the electronic band structure of two-dimensional (2D) semiconductors. However, using precisely controlled localized strain as a scalable tool for directing and controlling charge dynamics in 2D electronics remains largely underexplored. Here, we introduce wafer-scale localized strain engineering that applies periodically ",
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "selected",
+      "physics_advance": "Localized uniaxial strain creates direction-dependent transport in monolayer MoS2: crossing the potential wells promotes charge trapping, while transport along them reduces scattering and supports trap-free conduction.",
+      "ai_in_scope": true,
+      "relevance_reason": "This is a narrow condensed-matter transport study of strained monolayer MoS2, though its principal emphasis is multifunctional device operation rather than a broader quantum-materials phenomenon.",
+      "relevance_method": "semantic",
+      "relevance_score": 61,
+      "feature_candidate": true
+    }
+  ],
+  "stats": {
+    "scanned": 18,
+    "first_pass_selected": 2,
+    "selected": 2,
+    "rejected": 16,
+    "ai_assessed": 18,
+    "ai_cached": 0,
+    "ai_unscored": 0,
+    "global_editorial": true,
+    "field_scope_excluded": 0,
+    "duplicate_work_excluded": 0,
+    "arxiv_selected": 0,
+    "journal_selected": 2,
+    "arxiv_harvest_excluded": 0,
+    "pending_journal_abstracts": 0,
+    "non_original_excluded": 0,
+    "publication_not_eligible": 29
+  }
+}
