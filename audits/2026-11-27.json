@@ -1,0 +1,2199 @@
+{
+  "date": "2026-11-27",
+  "generated_at": "2026-11-27T06:00:38.856786-08:00",
+  "screening_version": "quantum-materials-v1-formal-research-v5",
+  "assessment_version": "quantum-materials-v1-only-no-soft-v3",
+  "screening_config": {
+    "arxiv_min_score": 70,
+    "journal_min_score": 55,
+    "max_papers": 30,
+    "arxiv_versions": [
+      1
+    ],
+    "exclude_soft_matter": true,
+    "journals": [
+      "Science",
+      "Science Advances",
+      "Nature",
+      "Nature Physics",
+      "Nature Materials",
+      "Nature Communications",
+      "PRL",
+      "PRX",
+      "PNAS"
+    ],
+    "journal_publication": "publisher-verified formal online publication on the previous Los Angeles calendar day",
+    "arxiv_intake": "first announcement in the fixed 24 hours ending at 06:00 America/Los_Angeles",
+    "journal_document_types": "research article or research letter; no accepted papers, essays, replies or comments",
+    "editorial_interest": "experimental quantum materials; original theory and experiment"
+  },
+  "intake_window": {
+    "version": "la-0600-arxiv24h-previous-journal-day-v1",
+    "timezone": "America/Los_Angeles",
+    "arxiv_start": "2026-11-26T14:00:00+00:00",
+    "arxiv_end": "2026-11-27T14:00:00+00:00",
+    "journal_publication_date": "2026-11-26"
+  },
+  "sources": [
+    {
+      "source": "arXiv",
+      "status": "ok",
+      "eligible_v1": 0
+    },
+    {
+      "source": "Science",
+      "status": "ok",
+      "fetched": 3,
+      "window": [
+        "2026-11-26",
+        "2026-11-26"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Science Advances",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-26",
+        "2026-11-26"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Nature",
+      "status": "ok",
+      "fetched": 6,
+      "window": [
+        "2026-11-26",
+        "2026-11-26"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Nature Physics",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-26",
+        "2026-11-26"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Nature Materials",
+      "status": "ok",
+      "fetched": 1,
+      "window": [
+        "2026-11-26",
+        "2026-11-26"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Nature Communications",
+      "status": "ok",
+      "fetched": 19,
+      "window": [
+        "2026-11-26",
+        "2026-11-26"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "PRL",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-26",
+        "2026-11-26"
+      ],
+      "publication_proof": "publisher RSS",
+      "feed_urls": [
+        "https://feeds.aps.org/rss/recent/prl.xml",
+        "https://feeds.aps.org/rss/tocsec/PRL-CondensedMatterStructureetc.xml",
+        "https://feeds.aps.org/rss/recent/prlsuggestions.xml"
+      ],
+      "latest_formal_publication_date": "2026-11-25",
+      "publication_note": "Publisher feeds have no final citation for the requested publication date; unverified records remain excluded"
+    },
+    {
+      "source": "PRX",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-26",
+        "2026-11-26"
+      ],
+      "publication_proof": "publisher RSS",
+      "feed_urls": [
+        "https://feeds.aps.org/rss/recent/prx.xml"
+      ],
+      "latest_formal_publication_date": "2026-11-25",
+      "publication_note": "Publisher feeds have no final citation for the requested publication date; unverified records remain excluded"
+    },
+    {
+      "source": "PNAS",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-26",
+        "2026-11-26"
+      ],
+      "publication_proof": "publisher article metadata"
+    }
+  ],
+  "journal_candidates": [
+    {
+      "id": "doi-10-1126-science-aed6493",
+      "doi": "10.1126/science.aed6493",
+      "title": "Binding kinetics enable tumor-selective MAPK and growth suppression by a Type 1 RAF inhibitor",
+      "journal": "Science",
+      "article_kind": "",
+      "publication_status": "unverified",
+      "publication_date": "",
+      "publication_evidence": {},
+      "has_abstract": false,
+      "decision": "publication_not_verified"
+    },
+    {
+      "id": "doi-10-1126-science-aei6252",
+      "doi": "10.1126/science.aei6252",
+      "title": "AI-based digital pathology defines spatial border ecosystems in triple-negative breast cancer",
+      "journal": "Science",
+      "article_kind": "",
+      "publication_status": "unverified",
+      "publication_date": "",
+      "publication_evidence": {},
+      "has_abstract": false,
+      "decision": "publication_not_verified"
+    },
+    {
+      "id": "doi-10-1126-science-aek0813",
+      "doi": "10.1126/science.aek0813",
+      "title": "Mechanisms of nucleosome disruption shape epigenetic inheritance pathway choice",
+      "journal": "Science",
+      "article_kind": "",
+      "publication_status": "unverified",
+      "publication_date": "",
+      "publication_evidence": {},
+      "has_abstract": false,
+      "decision": "publication_not_verified"
+    },
+    {
+      "id": "doi-10-1038-d41586-026-02752-6",
+      "doi": "10.1038/d41586-026-02752-6",
+      "title": "Navigating grief in academia: ways to find balance",
+      "journal": "Nature",
+      "article_kind": "Career Column",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/d41586-026-02752-6"
+      },
+      "has_abstract": false,
+      "decision": "non_original_article"
+    },
+    {
+      "id": "doi-10-1038-d41586-026-03828-z",
+      "doi": "10.1038/d41586-026-03828-z",
+      "title": "Orangutans face bleak future after Indonesia’s devastating wildfires",
+      "journal": "Nature",
+      "article_kind": "News Q&A",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/d41586-026-03828-z"
+      },
+      "has_abstract": false,
+      "decision": "non_original_article"
+    },
+    {
+      "id": "doi-10-1038-s41586-026-11475-7",
+      "doi": "10.1038/s41586-026-11475-7",
+      "title": "Editorial Expression of Concern: Dual control of nuclear EIN3 by bifurcate MAPK cascades in C2H4 signalling",
+      "journal": "Nature",
+      "article_kind": "Editorial Expression of Concern",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41586-026-11475-7"
+      },
+      "has_abstract": false,
+      "decision": "non_original_article"
+    },
+    {
+      "id": "doi-10-1038-d41586-026-03875-6",
+      "doi": "10.1038/d41586-026-03875-6",
+      "title": "Has AI just cracked Internet encryption? Rumoured ‘bombshell’ stuns scientists",
+      "journal": "Nature",
+      "article_kind": "News Explainer",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/d41586-026-03875-6"
+      },
+      "has_abstract": false,
+      "decision": "non_original_article"
+    },
+    {
+      "id": "doi-10-1038-d41586-026-03874-7",
+      "doi": "10.1038/d41586-026-03874-7",
+      "title": "Chromosome ‘glue’ could boost fertility by stabilizing ageing eggs",
+      "journal": "Nature",
+      "article_kind": "News",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/d41586-026-03874-7"
+      },
+      "has_abstract": false,
+      "decision": "non_original_article"
+    },
+    {
+      "id": "doi-10-1038-d41586-026-03894-3",
+      "doi": "10.1038/d41586-026-03894-3",
+      "title": "Daily briefing: A guide to the Riemann hypothesis",
+      "journal": "Nature",
+      "article_kind": "Nature Briefing",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/d41586-026-03894-3"
+      },
+      "has_abstract": false,
+      "decision": "non_original_article"
+    },
+    {
+      "id": "doi-10-1038-s41563-026-02815-z",
+      "doi": "10.1038/s41563-026-02815-z",
+      "title": "Tunable diffusive memristor arrays for neuromorphic temporal computing",
+      "journal": "Nature Materials",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41563-026-02815-z"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 28,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary contribution is improving memristor uniformity and neuromorphic-computing performance, not establishing a substantial condensed-matter physics result."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78865-3",
+      "doi": "10.1038/s41467-026-78865-3",
+      "title": "Author Correction: Learning reorganizes dendritic and stabilizes axon initial segment inhibitory synapses in CA1 pyramidal neurons",
+      "journal": "Nature Communications",
+      "article_kind": "",
+      "publication_status": "unverified",
+      "publication_date": "",
+      "publication_evidence": {},
+      "has_abstract": false,
+      "decision": "non_original_article"
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79655-7",
+      "doi": "10.1038/s41467-026-79655-7",
+      "title": "Targeting chemotherapy-induced CD200 via a nucleoside-enhanced nanocarrier for cancer immunochemotherapy",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79655-7"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 3,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is cancer immunotherapy research focused on tumor immune responses and nanocarrier delivery, outside condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79798-7",
+      "doi": "10.1038/s41467-026-79798-7",
+      "title": "Dynamic B–OH intermediates enable photocatalytic conversion of CO2 into formic acid",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79798-7"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 17,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The central advance is a photocatalytic chemical conversion process and its pollutant-removal performance, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79426-4",
+      "doi": "10.1038/s41467-026-79426-4",
+      "title": "A quasi-particle theory for the dynamics of polycatenated architected materials",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79426-4"
+      },
+      "has_abstract": true,
+      "decision": "soft_matter",
+      "score": 34,
+      "in_scope": false,
+      "soft_matter": true,
+      "quantum_materials": false,
+      "reason": "The paper addresses rheology of interlinked architected materials, a soft-matter/mechanical-materials problem rather than condensed-matter physics under this scope."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79152-x",
+      "doi": "10.1038/s41467-026-79152-x",
+      "title": "A bacteriocin from the commensal Streptococcus mitis prevents influenza infection-driven pneumococcal lung dissemination",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79152-x"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 2,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is microbiology research on bacteriocins and prevention of pneumococcal infection, unrelated to condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78743-y",
+      "doi": "10.1038/s41467-026-78743-y",
+      "title": "Impact-stiffening materials modulated by host–guest interactions in polypseudorotaxanes",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78743-y"
+      },
+      "has_abstract": true,
+      "decision": "soft_matter",
+      "score": 22,
+      "in_scope": false,
+      "soft_matter": true,
+      "quantum_materials": false,
+      "reason": "This is an experimental study of polymer-based impact-protective soft materials, a soft-matter and materials-engineering topic excluded from the condensed-matter digest."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79361-4",
+      "doi": "10.1038/s41467-026-79361-4",
+      "title": "Sustained changes to urban mobility after COVID-19 reinforced socioeconomic inequalities in Argentina, Chile and Colombia",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79361-4"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 3,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The paper studies post-pandemic urban mobility and socioeconomic inequality, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79571-w",
+      "doi": "10.1038/s41467-026-79571-w",
+      "title": "Learning beyond rigid manipulation with hybrid soft-rigid robots",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79571-w"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 15,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary contribution is robotic manipulation and imitation learning rather than research on soft-matter physics or condensed-matter materials."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79499-1",
+      "doi": "10.1038/s41467-026-79499-1",
+      "title": "Development and clinical validation of a multimodal AI framework to predict persistent fever during antibiotic therapy in hospitalized patients with cancer",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79499-1"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 2,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is a clinical AI prediction and validation study, outside condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79471-z",
+      "doi": "10.1038/s41467-026-79471-z",
+      "title": "A long-read based haplotype panel enhances imputation and discovery of functional small and structural variants",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79471-z"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 5,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The work develops a human-genetics variant reference panel and GWAS resource, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79543-0",
+      "doi": "10.1038/s41467-026-79543-0",
+      "title": "Disagreements in global urban growth projections amplify uncertainties in deforestation and carbon emissions",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79543-0"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 12,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is a land-use and climate-assessment study of urbanization projections, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79752-7",
+      "doi": "10.1038/s41467-026-79752-7",
+      "title": "Choline kinase α promotes glycolysis and tumor growth by phosphorylating and activating enolase 1",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79752-7"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 8,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary advance concerns cancer-cell biochemistry and tumor growth, not the physics of condensed matter."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-80132-4",
+      "doi": "10.1038/s41467-026-80132-4",
+      "title": "Retraction Note: NMDAR-mediated modulation of gap junction circuit regulates olfactory learning in C. elegans",
+      "journal": "Nature Communications",
+      "article_kind": "Retraction Note",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-80132-4"
+      },
+      "has_abstract": false,
+      "decision": "non_original_article"
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79508-3",
+      "doi": "10.1038/s41467-026-79508-3",
+      "title": "Bacterial whole-cell biosensors uncover spatially variable sialic acid availability within the inflamed mammalian gut",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79508-3"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 7,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is a microbiology study using engineered bacterial biosensors to map gut metabolites, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79443-3",
+      "doi": "10.1038/s41467-026-79443-3",
+      "title": "The nature of the phase transition in VO2 B-phase and a quantum entanglement perspective",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79443-3"
+      },
+      "has_abstract": true,
+      "decision": "selected",
+      "score": 79,
+      "in_scope": true,
+      "soft_matter": false,
+      "quantum_materials": true,
+      "reason": "The study establishes a distinct electronic and structural interpretation of a correlated-oxide phase transition through material analysis and theoretical modeling."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79503-8",
+      "doi": "10.1038/s41467-026-79503-8",
+      "title": "A noncanonical reducing-domain architecture defines a distinct class of modular polyketide synthases",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79503-8"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 9,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary contribution is structural biology of a bacterial biosynthetic enzyme, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79148-7",
+      "doi": "10.1038/s41467-026-79148-7",
+      "title": "Extending frequency metrology to increasingly complex molecules: SI-traceable sub-Doppler mid-IR spectroscopy of trioxane",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79148-7"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 18,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is molecular rovibrational spectroscopy and precision-frequency metrology, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79550-1",
+      "doi": "10.1038/s41467-026-79550-1",
+      "title": "Plant protoplasts display phytopodia",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79550-1"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 17,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary contribution concerns plant-cell biology and membrane protrusions, not condensed-matter physics or a soft-matter study."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79694-0",
+      "doi": "10.1038/s41467-026-79694-0",
+      "title": "Nuclear factor I connects H3K27M to a targetable purine dependency in diffuse intrinsic pontine glioma",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-26",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79694-0"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 20,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This study investigates cancer-cell metabolism and a therapeutic target, rather than condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1103-3x42-zb9r",
+      "doi": "10.1103/3x42-zb9r",
+      "title": "Odd-Even Parity of Nonlinear Hall Effects in Bilayer Graphene",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-10-29",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/tocsec/PRL-CondensedMatterStructureetc.xml",
+        "volume": "137",
+        "article_number": "186302"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-ctkf-wz2d",
+      "doi": "10.1103/ctkf-wz2d",
+      "title": "Plasmascopy of Ultrafast Hot Charge Carriers",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-10-30",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "186906"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-yfc3-ny3b",
+      "doi": "10.1103/yfc3-ny3b",
+      "title": "Experimental Observation of Erratic Non-Hermitian Skin Effect in Phononic Crystals",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-10-30",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "186602"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-17nh-csbr",
+      "doi": "10.1103/17nh-csbr",
+      "title": "Atomic-Scale Visualization of Quantum Phase Transition in Mixed-Valence Regime",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-10-30",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "186201"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-vl6b-y5gz",
+      "doi": "10.1103/vl6b-y5gz",
+      "title": "When Liquids Form Membranes: Entropy-Dominated Bending Dynamics in Coacervate Vesicles",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-02",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "198201"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-k5r2-q11w",
+      "doi": "10.1103/k5r2-q11w",
+      "title": "Kekulé Superconductivity Induced by Quantum Geometry in Haldane Phases",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-03",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "196002"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-ngfq-f3t7",
+      "doi": "10.1103/ngfq-f3t7",
+      "title": "First Amplitude Analysis of ${D}^{0}→{K}^{−}{π}^{0}{e}^{+}{ν}_{e}$ and Observation of ${D}^{0}→{K}_{2}^{*}(1430{)}^{−}{e}^{+}{ν}_{e}$",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-03",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "191903"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-b28p-yb2t",
+      "doi": "10.1103/b28p-yb2t",
+      "title": "Time-Dependent Density Functional Theory of Electrons and Quantum Nuclei",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-04",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "193001"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-m9hp-5h28",
+      "doi": "10.1103/m9hp-5h28",
+      "title": "Anomalously Low Thermal Conductivity in Undercoordinated Amorphous Silicon",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-05",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "196302"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-qx3f-85mf",
+      "doi": "10.1103/qx3f-85mf",
+      "title": "Spatiotemporal Architecture of Energy Transfer in Wall-Bounded Turbulence",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-05",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "194001"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-z6d8-2q1g",
+      "doi": "10.1103/z6d8-2q1g",
+      "title": "Classification of Scissors Rotational Bands in Deformed Nuclei",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-05",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "192501"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-t87j-1ngl",
+      "doi": "10.1103/t87j-1ngl",
+      "title": "Intracycle Interference in Strong-Field Photoemission from a Tungsten Needle Tip",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-09",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206901"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-f92d-w6fn",
+      "doi": "10.1103/f92d-w6fn",
+      "title": "Superparamagnetism in an Interacting Nanomagnet Array: A Tale of Three Temperatures",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-09",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206701"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-g9x1-wnnd",
+      "doi": "10.1103/g9x1-wnnd",
+      "title": "Atomistic Simulation of Subcritical Crack Growth in Glass in Vacuum",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-09",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206101"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-kj1q-h9pw",
+      "doi": "10.1103/kj1q-h9pw",
+      "title": "Terahertz Switching of Two-dimensional Antiferromagnetic Order",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-09",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206702"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-zpbg-7137",
+      "doi": "10.1103/zpbg-7137",
+      "title": "Many-Body-Driven Ultrafast Exciton Relaxation Enabled by Phonon-Activated Coulomb Coupling",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-10",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206401"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-l5j1-7b4d",
+      "doi": "10.1103/l5j1-7b4d",
+      "title": "Long-Range and Short-Range Longitudinal Flow Decorrelations in the Quark-Gluon Plasma",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-12",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "202301"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-y95w-7ztb",
+      "doi": "10.1103/y95w-7ztb",
+      "title": "Lower Limit on the Double-Alpha Decay of Ra 224",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-12",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "202501"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-nn1b-pxhf",
+      "doi": "10.1103/nn1b-pxhf",
+      "title": "Grain-Scale Origin of Stick-Slip Waves in Silo Discharge: Influence of Cohesion",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-12",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "208202"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-99gj-qpbv",
+      "doi": "10.1103/99gj-qpbv",
+      "title": "Walk-on-Spheres Solution to Heterogeneous Transport Phenomena",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-12",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "207102"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-qqpd-92fb",
+      "doi": "10.1103/qqpd-92fb",
+      "title": "Open-Boundary-Condition-Persistent Point-Gap Bound States in the Non-Hermitian Continuum",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-13",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206603"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-1lmr-876g",
+      "doi": "10.1103/1lmr-876g",
+      "title": "High-Heating Efficiency and Reproducibility in Double-Cone Ignition Experiments",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-16",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "215101"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-8bqv-q7xn",
+      "doi": "10.1103/8bqv-q7xn",
+      "title": "Multimode Squeezing and Multipartite Entanglement Generations with Topological Protection",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-16",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "213601"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-6bb2-hy7q",
+      "doi": "10.1103/6bb2-hy7q",
+      "title": "Transformation-Induced Plasticity in Metals Activated by Shape-Memory Ceramics",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-17",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "216101"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-tzk8-nqby",
+      "doi": "10.1103/tzk8-nqby",
+      "title": "Strain-Tunable Competing Polar Orders in NbOCl 2",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-17",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "216801"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-ljsf-xwz9",
+      "doi": "10.1103/ljsf-xwz9",
+      "title": "Dual Relaxation Modes Control Polymer Crystallization",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-17",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "218102"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-yk31-1s6y",
+      "doi": "10.1103/yk31-1s6y",
+      "title": "Experimental Bounds on Phonon Tunneling across Nanoscale Vacuum Gaps",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-17",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "216302"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-4wrm-gr4b",
+      "doi": "10.1103/4wrm-gr4b",
+      "title": "Two-Fluid Effects in Z-Pinch Ablation Characterized by Unified Bayesian Inversion",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-17",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "215102"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-1xgg-qdyd",
+      "doi": "10.1103/1xgg-qdyd",
+      "title": "Mendonça, Jachymski, and Wang Reply",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-19",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "219302"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-23c1-33d4",
+      "doi": "10.1103/23c1-33d4",
+      "title": "Geometric Confinement Enhances Bacterial Transport by Accelerating Surface-Bulk Exchange",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-25",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "228301"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    }
+  ],
+  "arxiv_candidates": [
+    {
+      "decision": "no_announcements_in_window",
+      "announcement_date": "2026-11-27",
+      "evidence_url": "https://arxiv.org/catchup/cond-mat/2026-11-27",
+      "window": {
+        "version": "la-0600-arxiv24h-previous-journal-day-v1",
+        "timezone": "America/Los_Angeles",
+        "arxiv_start": "2026-11-26T14:00:00+00:00",
+        "arxiv_end": "2026-11-27T14:00:00+00:00",
+        "journal_publication_date": "2026-11-26"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "doi-10-1038-s41563-026-02815-z",
+      "doi": "10.1038/s41563-026-02815-z",
+      "title": "Tunable diffusive memristor arrays for neuromorphic temporal computing",
+      "type": "Journal",
+      "journal": "Nature Materials",
+      "authors": "Yunzhi Ling, Zheshun Xiong, Yi Huang, Alireza Jaberi Rad, Jiacheng Wang, Wuyu Zhao, Koushik Kumar, Zhizheng Wang, Jieun Park, Stephen S. Nonnenmann, Peng Bai, Lichun Zhang, Haiyan Tan, Qiangfei Xia",
+      "abstract": "The dynamic behaviour of diffusive memristors enables bio-realistic emulation of artificial neurons and synapses, yet scaling from individual devices to neuromorphic systems remains challenging. Stochasticity in ionic motion and filament evolution limits both the uniformity and tunability of these devices, hindering reliable system-level implementation. Here we present a framework for tailoring the relaxation dynamics of diffusive memristors via intrinsic and extrinsic tuning. Percolation in a thin platinum interfacial layer and grain boundaries in a polycrystalline hafnium oxide matrix spatially confine active metal-ion migration; this guided transport substantially improves device uniformity. Purpose-designed programming protocols enable tuning of relaxation time over two orders of magnitude. A prototype hardware system integrating a 28 × 14 array of tailored diffusive memristors and a memristive system-on-chip implements the hierarchy-of-time-surfaces algorithm, achieving 91.14% recognition accuracy on a downsampled neuromorphic-MNIST dataset. These results demonstrate a scalable approach towards robust and energy-efficient neuromorphic hardware for next-generation artificial intelligence. Scaling diffusive memristors from single devices to integrated systems has been hindered by stochastic ionic motion and filament evolution. Here confined metal-ion migration enables controlled relaxation dynamics, as demonstrated in a 28 × 14 array for neuromorphic computing.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          26
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41563-026-02815-z",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-26",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41563-026-02815-z"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "The dynamic behaviour of diffusive memristors enables bio-realistic emulation of artificial neurons and synapses, yet scaling from individual devices to neuromorphic systems remains challenging. Stochasticity in ionic motion and filament evolution limits both the uniformity and tunability of these devices, hindering reliable system-level implementation. Here we present a framework for tailoring th",
+      "summary": "The dynamic behaviour of diffusive memristors enables bio-realistic emulation of artificial neurons and synapses, yet scaling from individual devices to neuromorphic systems remains challenging. Stochasticity in ionic motion and filament evolution limits both the uniformity and tunability of these devices, hindering reliable system-level implementation. Here we present a framework for tailoring th",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41563-026-02815-z",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 28,
+        "feature_candidate": false,
+        "reason": "The primary contribution is improving memristor uniformity and neuromorphic-computing performance, not establishing a substantial condensed-matter physics result.",
+        "physics_advance": "Confined ion migration and programming protocols enable more uniform, tunable relaxation dynamics in diffusive memristors."
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "Confined ion migration and programming protocols enable more uniform, tunable relaxation dynamics in diffusive memristors.",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary contribution is improving memristor uniformity and neuromorphic-computing performance, not establishing a substantial condensed-matter physics result.",
+      "relevance_method": "semantic",
+      "relevance_score": 28,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79655-7",
+      "doi": "10.1038/s41467-026-79655-7",
+      "title": "Targeting chemotherapy-induced CD200 via a nucleoside-enhanced nanocarrier for cancer immunochemotherapy",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Shangyu Chen, Hua Zhang, Yiqing Mu, Chien-Yu Chen, Sheida Dabiri, Bei Zhang, Shichen Li, Yixian Huang, Xiaofei Wang, Yichen Xu, Zehua Wang, Daniel J. Bain, Da Yang, Song Li",
+      "abstract": "Immune checkpoint blockade has transformed cancer therapy, yet its efficacy is frequently undermined by an immunosuppressive tumor microenvironment. In addition, the immune-related toxicities restrict combination therapy targeting several immune checkpoints. Here, we identify chemotherapy-induced CD200 upregulation as a stress-adaptive resistance mechanism that reinforces tumor immune evasion under treatment pressure. Leveraging a tumor-restricted, nucleoside-enhanced nanocarrier, we achieve spatially selective silencing of tumor-intrinsic CD200, thereby reprogramming the tumor immune microenvironment, enhancing antitumor efficacy, and enabling effective combination with PD-1 blockade. Importantly, this strategy minimizes the colitis exacerbation associated with systemic CD200/PD-1 dual blockade in a DSS-induced susceptibility model, suggesting its potential to preserve immune homeostasis while reducing immune-related toxicity. Together, our findings establish CD200 as a context-dependent immune resistance node and demonstrate a nanotechnology-based framework for precise and safe immune checkpoint modulation. The efficacy of immune checkpoint blockade therapy is limited by the immunosuppressive tumor microenvironment (TME). Here this group identifies the chemotherapy-induced CD200 upregulation as a resistance mechanism then develops a nanotechnology-based framework for spatially selective CD200 silencing, thereby reprogramming TME and enhancing antitumor efficacy.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          26
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79655-7",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-26",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79655-7"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Immune checkpoint blockade has transformed cancer therapy, yet its efficacy is frequently undermined by an immunosuppressive tumor microenvironment. In addition, the immune-related toxicities restrict combination therapy targeting several immune checkpoints. Here, we identify chemotherapy-induced CD200 upregulation as a stress-adaptive resistance mechanism that reinforces tumor immune evasion unde",
+      "summary": "Immune checkpoint blockade has transformed cancer therapy, yet its efficacy is frequently undermined by an immunosuppressive tumor microenvironment. In addition, the immune-related toxicities restrict combination therapy targeting several immune checkpoints. Here, we identify chemotherapy-induced CD200 upregulation as a stress-adaptive resistance mechanism that reinforces tumor immune evasion unde",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79655-7",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 3,
+        "feature_candidate": false,
+        "reason": "This is cancer immunotherapy research focused on tumor immune responses and nanocarrier delivery, outside condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is cancer immunotherapy research focused on tumor immune responses and nanocarrier delivery, outside condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 3,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79798-7",
+      "doi": "10.1038/s41467-026-79798-7",
+      "title": "Dynamic B–OH intermediates enable photocatalytic conversion of CO2 into formic acid",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Jiazhen Cao, Yukun Pan, Yinan Song, Zesheng Deng, Meizhen Li, Yue Jiang, Yayun Zhang, Mingyang Xing",
+      "abstract": "Remediating of flue gas pollutants and the mitigation of carbon emissions represent two interconnected yet often conflicting challenges in environmental management. Here we report a borane-assisted photocatalytic system that achieves synergistic co-conversion of CO2, NOx, and SO2 from flue gas into valuable liquid products-formic, nitric, and sulfuric acids-with near-complete selectivity and high stability. Central to this process is the in situ generation of dynamic B-OH intermediates at the borane-catalyst interface, which serve as proton relays to activate water-derived protons for CO2 reduction while promoting reactive oxygen species for pollutant oxidation. This mechanism enables approximately 77.02% of the hydrogen in formic acid to originate from water. The system demonstrates broad applicability across diverse photocatalysts and borane reagents, and exhibits sustained performance under simulated flue gas conditions. Our work establishes a sustainable and economically viable pathway for integrated carbon and pollutant valorization, offering a scalable strategy toward circular carbon economies. Dynamic B–OH intermediates act as proton relays to harness water-derived protons for highly selective photocatalytic CO2 conversion to formic acid, enabling synergistic carbon mitigation and pollutant removal from flue.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          26
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79798-7",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-26",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79798-7"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Topology & Transport",
+      "summary_en": "Remediating of flue gas pollutants and the mitigation of carbon emissions represent two interconnected yet often conflicting challenges in environmental management. Here we report a borane-assisted photocatalytic system that achieves synergistic co-conversion of CO2, NOx, and SO2 from flue gas into valuable liquid products-formic, nitric, and sulfuric acids-with near-complete selectivity and high ",
+      "summary": "Remediating of flue gas pollutants and the mitigation of carbon emissions represent two interconnected yet often conflicting challenges in environmental management. Here we report a borane-assisted photocatalytic system that achieves synergistic co-conversion of CO2, NOx, and SO2 from flue gas into valuable liquid products-formic, nitric, and sulfuric acids-with near-complete selectivity and high ",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79798-7",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 17,
+        "feature_candidate": false,
+        "reason": "The central advance is a photocatalytic chemical conversion process and its pollutant-removal performance, not condensed-matter physics.",
+        "physics_advance": "Dynamic B–OH intermediates at the borane-catalyst interface act as proton relays in the reported photocatalytic conversion."
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "Dynamic B–OH intermediates at the borane-catalyst interface act as proton relays in the reported photocatalytic conversion.",
+      "ai_in_scope": false,
+      "relevance_reason": "The central advance is a photocatalytic chemical conversion process and its pollutant-removal performance, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 17,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79426-4",
+      "doi": "10.1038/s41467-026-79426-4",
+      "title": "A quasi-particle theory for the dynamics of polycatenated architected materials",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Hujie Yan, Ziran Zhou, Zhiqiang Meng, Chiara Daraio",
+      "abstract": "Architected materials derive unusual mechanical responses from geometry rather than mostly by their chemistry. Polycatenated architected materials (PAMs), composed of interlinked rigid units, have been shown to display hybrid solid–fluid behaviors. Frequency-sweep rheological experiments have revealed a transition from strong shear thinning at low frequencies to pronounced shear thickening above a critical frequency. Because neighboring PAM units are connected, rather than freely rearranging, conventional granular theories do not readily explain their behavior. Here, we develop a one-dimensional analytical model to capture the frequency-response of PAMs based on a quasi-particle description. Quasi-particles are defined as segments of PAMs that are either fully stretched or fully compressed. Modeling their interactions produces an effective viscosity that captures both asymptotic scaling laws and the critical frequency. These predictions agree quantitatively with simulations and experiments. Our results reveal that PAM’s frequency-dependent response arises from competing effects between dissipation and inertia. More broadly, our results establish an analytical foundation for understanding the dynamics of PAMs and provide design principles for tuning their responses. Polycatenated architected materials (PAMs), composed of interlinked rigid units, exhibit complex frequency-dependent shear-thinning and shear-thickening behaviors that are not easily explained by traditional granular or continuum mechanics. Here, the authors develop a one-dimensional quasi-particle analytical model that captures the dynamic response of PAMs, successfully predicting their critical transition frequency and nonlinear rheological behaviors.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          26
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79426-4",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-26",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79426-4"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Architected materials derive unusual mechanical responses from geometry rather than mostly by their chemistry. Polycatenated architected materials (PAMs), composed of interlinked rigid units, have been shown to display hybrid solid–fluid behaviors. Frequency-sweep rheological experiments have revealed a transition from strong shear thinning at low frequencies to pronounced shear thickening above a",
+      "summary": "Architected materials derive unusual mechanical responses from geometry rather than mostly by their chemistry. Polycatenated architected materials (PAMs), composed of interlinked rigid units, have been shown to display hybrid solid–fluid behaviors. Frequency-sweep rheological experiments have revealed a transition from strong shear thinning at low frequencies to pronounced shear thickening above a",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79426-4",
+        "in_scope": false,
+        "soft_matter": true,
+        "quantum_materials": false,
+        "research_type": "mixed",
+        "score": 34,
+        "feature_candidate": false,
+        "reason": "The paper addresses rheology of interlinked architected materials, a soft-matter/mechanical-materials problem rather than condensed-matter physics under this scope.",
+        "physics_advance": "A quasi-particle model attributes the frequency-dependent shear response to competing dissipation and inertia and captures its critical transition frequency."
+      },
+      "soft_matter": true,
+      "quantum_materials": false,
+      "research_type": "mixed",
+      "screening_decision": "soft_matter",
+      "physics_advance": "A quasi-particle model attributes the frequency-dependent shear response to competing dissipation and inertia and captures its critical transition frequency.",
+      "ai_in_scope": false,
+      "relevance_reason": "The paper addresses rheology of interlinked architected materials, a soft-matter/mechanical-materials problem rather than condensed-matter physics under this scope.",
+      "relevance_method": "semantic",
+      "relevance_score": 34,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79152-x",
+      "doi": "10.1038/s41467-026-79152-x",
+      "title": "A bacteriocin from the commensal Streptococcus mitis prevents influenza infection-driven pneumococcal lung dissemination",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Catarina Candeias, João Lança, Marta Alenquer, Daniela Brás, Carina Valente, Maria João Amorim, Raquel Sá-Leão",
+      "abstract": "Abstract Streptococcus pneumoniae remains a major public health threat despite widespread use of vaccines and antibiotics. Its synergy with influenza A virus (IAV) often leads to secondary bacterial pneumonia, causing significant morbidity and mortality mainly in vulnerable populations such as children under 5 years old and adults over 65 years old. As pneumococcal pneumonia is preceded by nasopharyngeal colonization, preventing colonization represents a promising intervention strategy. While current interventions are somewhat effective, their impact is limited by serotype replacement and antimicrobial resistance. Here we show that colonization with the commensal S. mitis strain F22 Ad significantly reduces pneumococcal density in the nasopharynx by day 10 post-infection and prevents dissemination to the lungs following IAV infection. This protective effect depends on bacteriocins encoded at the blp1 locus. Among these, Bac2v1 alone or in combination with Bac1 significantly reduces pneumococcal colonization. Notably, Bac2v1 exerts broad, serotype-independent inhibitory activity, impairing the growth of diverse epidemiologically relevant pneumococcal strains. These findings establish two precision-based, serotype-independent approaches to target pneumococcal colonization: using S. mitis F22 Ad as a live biotherapeutic or administering a bacteriocin mixture produced by this strain. Both approaches have the potential to prevent pneumococcal disease and complement existing strategies.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          26
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79152-x",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-26",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79152-x"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Superconductivity",
+      "summary_en": "Abstract Streptococcus pneumoniae remains a major public health threat despite widespread use of vaccines and antibiotics. Its synergy with influenza A virus (IAV) often leads to secondary bacterial pneumonia, causing significant morbidity and mortality mainly in vulnerable populations such as children under 5 years old and adults over 65 years old. As pneumococcal pneumonia is preceded by nasopha",
+      "summary": "Abstract Streptococcus pneumoniae remains a major public health threat despite widespread use of vaccines and antibiotics. Its synergy with influenza A virus (IAV) often leads to secondary bacterial pneumonia, causing significant morbidity and mortality mainly in vulnerable populations such as children under 5 years old and adults over 65 years old. As pneumococcal pneumonia is preceded by nasopha",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79152-x",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 2,
+        "feature_candidate": false,
+        "reason": "This is microbiology research on bacteriocins and prevention of pneumococcal infection, unrelated to condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is microbiology research on bacteriocins and prevention of pneumococcal infection, unrelated to condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 2,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78743-y",
+      "doi": "10.1038/s41467-026-78743-y",
+      "title": "Impact-stiffening materials modulated by host–guest interactions in polypseudorotaxanes",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Menghao Ji, Xue Wang, Jiheng Hu, Siyu Jin, Jianfei Ma, Dianteng Zhao, Haiyun Zhang, Bo Zheng, Feng Wang, Lingyan Gao",
+      "abstract": "The development of high-performance impact-stiffening materials is critical for applications spanning personal protection to military defense. Conventional designs of such materials relying on strong noncovalent interactions often face a strength–toughness trade‑off. To overcome this limitation, we introduce a strategy that utilizes the dynamic threading–dethreading kinetics of host–guest complexes in polypseudorotaxanes to fabricate impact‑stiffening materials. Unlike binding‑strength‑governed designs, this approach is governed by kinetic mismatch between the dethreading time of the macrocycle and the external deformation time. This kinetic control decouples the static compliance from the dynamic stiffening threshold, enabling pronounced impact‑stiffening even with a modest solution‑phase binding constant. Under low shear rates, the macrocycles gradually slide from the polymer backbone, preserving flexibility. Upon high-speed impact, the dethreading of host–guest complexes cannot occur within the ultrashort loading window of deformation, kinetically freezing the network and increasing the storage modulus by 48‑fold (0.1–100 Hz, 25 °C). The material also exhibits self-healing, reprocessability, and strong adhesion. This work demonstrates rate-dependent host–guest disassembly as a design principle for adaptive impact-protective materials. “Designing impact-stiffening materials is critical for personal protective equipment, though it is challenging to optimize the strength-toughness trade-off using conventional methods. Here the authors design an impact stiffening material using host-guest polypseudorotaxanes.”",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          26
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-78743-y",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-26",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78743-y"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Topology & Transport",
+      "summary_en": "The development of high-performance impact-stiffening materials is critical for applications spanning personal protection to military defense. Conventional designs of such materials relying on strong noncovalent interactions often face a strength–toughness trade‑off. To overcome this limitation, we introduce a strategy that utilizes the dynamic threading–dethreading kinetics of host–guest complexe",
+      "summary": "The development of high-performance impact-stiffening materials is critical for applications spanning personal protection to military defense. Conventional designs of such materials relying on strong noncovalent interactions often face a strength–toughness trade‑off. To overcome this limitation, we introduce a strategy that utilizes the dynamic threading–dethreading kinetics of host–guest complexe",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-78743-y",
+        "in_scope": false,
+        "soft_matter": true,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 22,
+        "feature_candidate": false,
+        "reason": "This is an experimental study of polymer-based impact-protective soft materials, a soft-matter and materials-engineering topic excluded from the condensed-matter digest.",
+        "physics_advance": "Host–guest dethreading kinetics can kinetically freeze a polypseudorotaxane network under rapid deformation, producing pronounced impact stiffening despite modest binding strength."
+      },
+      "soft_matter": true,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "soft_matter",
+      "physics_advance": "Host–guest dethreading kinetics can kinetically freeze a polypseudorotaxane network under rapid deformation, producing pronounced impact stiffening despite modest binding strength.",
+      "ai_in_scope": false,
+      "relevance_reason": "This is an experimental study of polymer-based impact-protective soft materials, a soft-matter and materials-engineering topic excluded from the condensed-matter digest.",
+      "relevance_method": "semantic",
+      "relevance_score": 22,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79361-4",
+      "doi": "10.1038/s41467-026-79361-4",
+      "title": "Sustained changes to urban mobility after COVID-19 reinforced socioeconomic inequalities in Argentina, Chile and Colombia",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Carmen Cabrera, Miguel González-Leonardo, Andrea Nasuto, Ruth Neville, Francisco Rowe",
+      "abstract": "Abstract Urban mobility is central to economic activity, social inclusion and access to services. COVID-19 caused disruptions to mobility globally, yet its long-term impacts in Latin America remain poorly understood. Using &gt; 170 million anonymised and aggregated location records from Meta-Facebook users in Argentina, Chile and Colombia (April 2020-May 2022), we examine changes in overall mobility volume relative to pre-pandemic baselines across socioeconomic and rural-urban gradients. Two years after the pandemic onset, mobility in the highest-density urban cores remained ~ 25–50% below baseline across the three countries, while the top 33% most affluent communities had not returned to baseline. These differences are explained by the scale of the initial mobility shock rather than by subsequent recovery rates. Our findings reveal how a global shock can entrench disparities in human mobility, with implications for urban resilience and planning in unequal nations. Our study underscores the need for proactive policies to prevent long-lasting mobility inequalities.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          26
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79361-4",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-26",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79361-4"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Abstract Urban mobility is central to economic activity, social inclusion and access to services. COVID-19 caused disruptions to mobility globally, yet its long-term impacts in Latin America remain poorly understood. Using &gt; 170 million anonymised and aggregated location records from Meta-Facebook users in Argentina, Chile and Colombia (April 2020-May 2022), we examine changes in overall mobili",
+      "summary": "Abstract Urban mobility is central to economic activity, social inclusion and access to services. COVID-19 caused disruptions to mobility globally, yet its long-term impacts in Latin America remain poorly understood. Using &gt; 170 million anonymised and aggregated location records from Meta-Facebook users in Argentina, Chile and Colombia (April 2020-May 2022), we examine changes in overall mobili",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79361-4",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 3,
+        "feature_candidate": false,
+        "reason": "The paper studies post-pandemic urban mobility and socioeconomic inequality, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The paper studies post-pandemic urban mobility and socioeconomic inequality, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 3,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79571-w",
+      "doi": "10.1038/s41467-026-79571-w",
+      "title": "Learning beyond rigid manipulation with hybrid soft-rigid robots",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Mariano Ramírez Montero, Ebrahim Shahabi, Giovanni Franzese, Jens Kober, Barbara Mazzolai, Cosimo Della Santina",
+      "abstract": "Abstract Rigid-soft robot hybrids promise to unite the precision and repeatability of rigid manipulators with the compliance and adaptability of soft structures. Yet, full-fledged rigid-soft manipulators remain largely unexplored, in part because the intelligence required to exploit this combination is still missing. Here, we introduce a hybrid robotic system obtained by the series interconnection of a rigid arm and a soft manipulator, and systematically examine its ability to perform both established and previously inaccessible manipulation tasks. We show that a tailored imitation learning algorithm–generally applicable to this class of hybrid systems–leverages the complementary roles of rigid precision and soft embodiment to acquire manipulation skills and generalize them in a single shot across task variations. As a result, the system matches or exceeds the performance of rigid robots in classical tasks such as stacking, while enabling qualitatively new behaviors, including grasping objects through narrow openings.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          26
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79571-w",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-26",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79571-w"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Magnetism",
+      "summary_en": "Abstract Rigid-soft robot hybrids promise to unite the precision and repeatability of rigid manipulators with the compliance and adaptability of soft structures. Yet, full-fledged rigid-soft manipulators remain largely unexplored, in part because the intelligence required to exploit this combination is still missing. Here, we introduce a hybrid robotic system obtained by the series interconnection",
+      "summary": "Abstract Rigid-soft robot hybrids promise to unite the precision and repeatability of rigid manipulators with the compliance and adaptability of soft structures. Yet, full-fledged rigid-soft manipulators remain largely unexplored, in part because the intelligence required to exploit this combination is still missing. Here, we introduce a hybrid robotic system obtained by the series interconnection",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79571-w",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 15,
+        "feature_candidate": false,
+        "reason": "The primary contribution is robotic manipulation and imitation learning rather than research on soft-matter physics or condensed-matter materials.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary contribution is robotic manipulation and imitation learning rather than research on soft-matter physics or condensed-matter materials.",
+      "relevance_method": "semantic",
+      "relevance_score": 15,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79499-1",
+      "doi": "10.1038/s41467-026-79499-1",
+      "title": "Development and clinical validation of a multimodal AI framework to predict persistent fever during antibiotic therapy in hospitalized patients with cancer",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Gernot Pucher, Kevin Kopp, Aman Deep, Anna M. Stark, Marcel Wiesweg, Martin Schuler, Felix Nensa, H. Christian Reinhardt, Jens Kleesiek, Christopher M. Sauer",
+      "abstract": "Abstract Among hospitalized cancer patients, persistent fever despite intravenous antibiotics often triggers treatment escalation and additional diagnostics. Earlier identification of patients at low risk for ongoing fever could support more selective decision-making. We developed and compared multimodal AI frameworks to predict persistent fever at the 48–72-hour reassessment window. Models integrated structured variables, time-series, notes, and chest imaging. Models were developed in a University Hospital Essen cohort and evaluated using holdout validation, two pooled regional hospitals, and MIMIC-IV ICU. A feature-level tabularized multimodal TabPFN model showed consistent discrimination, with AUC 0.84 (95% CI, 0.81–0.86) in cross-validation, 0.82 (95% CI, 0.77–0.87) in holdout validation, and 0.78 (95% CI, 0.74–0.81) in MIMIC-IV; other multimodal strategies showed comparable but more variable performance. Performance was primarily driven by temperature dynamics, while chest-radiograph imaging provided no incremental predictive value. In a clinician validation study, the multimodal model outperformed clinicians (Trial 1 balanced accuracy: 0.77 vs 0.60; Trial 2: 0.79 vs 0.57), while clinician balanced accuracy reached 0.71 (95% CI 0.67–0.75) in the AI-assisted condition, suggesting potential benefit of AI support. Overall, multimodal AI demonstrates potential to support 48-hour antibiotic reassessment and stewardship-oriented decision-making, although further prospective studies are needed.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          26
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79499-1",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-26",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79499-1"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Abstract Among hospitalized cancer patients, persistent fever despite intravenous antibiotics often triggers treatment escalation and additional diagnostics. Earlier identification of patients at low risk for ongoing fever could support more selective decision-making. We developed and compared multimodal AI frameworks to predict persistent fever at the 48–72-hour reassessment window. Models integr",
+      "summary": "Abstract Among hospitalized cancer patients, persistent fever despite intravenous antibiotics often triggers treatment escalation and additional diagnostics. Earlier identification of patients at low risk for ongoing fever could support more selective decision-making. We developed and compared multimodal AI frameworks to predict persistent fever at the 48–72-hour reassessment window. Models integr",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79499-1",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 2,
+        "feature_candidate": false,
+        "reason": "This is a clinical AI prediction and validation study, outside condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is a clinical AI prediction and validation study, outside condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 2,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79471-z",
+      "doi": "10.1038/s41467-026-79471-z",
+      "title": "A long-read based haplotype panel enhances imputation and discovery of functional small and structural variants",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Tingting Gong, Yulu Zhou, Junfan Zhao, Yechao Huang, Jiao Gong, Jinxi Li, Qianqian Peng, Huidan Chang, Liyun Yuan, Guoqing Zhang, Sijia Wang, Li Jin, Shaohua Fan",
+      "abstract": "Haplotype reference panels are commonly used for genotype imputation in genome-wide association studies (GWAS). Although structural variants (SVs) are recognized as major contributors to human phenotypes, they are often excluded from GWAS analyses. Here, we integrate long-read-based and statistical methods to provide a comprehensive haplotype reference panel (Han-SV panel) incorporating 32,603,300 single nucleotide variants, 3,180,227 small deletions and insertions and 172,569 SVs derived from 943 Han Chinese individuals. Our hybrid phasing approach had a 2 to 5-fold reduction in phasing error for small variants and 2 to 9-fold for SVs compared to conventional statistical phasing. This Han-SV panel enabled a more than two-fold in amount and 9-22% in accuracy improvement of SV imputation compared to the expanded 1000 Genomes Project panel. Two GWASs using our panel-imputed variants identified 69 associated SVs and 101 previously unreported regions associated with skin-related and fingerprint phenotypes—substantially outperforming both short-read and array-based GWAS. This Han-SV panel offers a valuable resource for variant imputation and SV-included association studies to further uncover the novel phenotype associations and address critical gaps in missing heritability. An imputation server was provided for the use of the Han-SV panel (https://www.biosino.org/svrp). Here, the authors integrate long-read sequencing and statistical phasing to create the Han-SV panel, a comprehensive haplotype reference resource comprising 32.6 million SNVs, 3.2 million indels, and 172,569 structural variants from 943 Han Chinese individuals.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          26
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79471-z",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-26",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79471-z"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Haplotype reference panels are commonly used for genotype imputation in genome-wide association studies (GWAS). Although structural variants (SVs) are recognized as major contributors to human phenotypes, they are often excluded from GWAS analyses. Here, we integrate long-read-based and statistical methods to provide a comprehensive haplotype reference panel (Han-SV panel) incorporating 32,603,300",
+      "summary": "Haplotype reference panels are commonly used for genotype imputation in genome-wide association studies (GWAS). Although structural variants (SVs) are recognized as major contributors to human phenotypes, they are often excluded from GWAS analyses. Here, we integrate long-read-based and statistical methods to provide a comprehensive haplotype reference panel (Han-SV panel) incorporating 32,603,300",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79471-z",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 5,
+        "feature_candidate": false,
+        "reason": "The work develops a human-genetics variant reference panel and GWAS resource, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The work develops a human-genetics variant reference panel and GWAS resource, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 5,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79543-0",
+      "doi": "10.1038/s41467-026-79543-0",
+      "title": "Disagreements in global urban growth projections amplify uncertainties in deforestation and carbon emissions",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Xia Liao, Jasper van Vliet, Yuyu Zhou, Yan Liu, Maria Eugenia Correa-Cano, Robert Mangani, Sven Anders, Joseph Awetori Yaro, Qiming Zheng",
+      "abstract": "Abstract Global urbanization is profoundly reshaping 21st-century land systems, yet its future trajectory remains highly uncertain. Existing projections exhibit divergent urban growth patterns even under identical socioeconomic scenarios. Here, by synthesizing six urban growth projections, we reveal substantial disagreements in the extent and location of urban growth by 2100. These disagreements are amplified by land-system feedbacks, driving cross-dataset variation in urban-induced deforestation (1.75–4.91 million km 2 ) through direct forest conversion and indirect cropland displacement, assuming lost production is compensated by cropland expansion elsewhere. The associated emissions exhibit an absolute range of 29 to 76 GtCO 2 by 2100. Across 100 countries, this range accounts for an average of 3% of unconditional Nationally Determined Contribution emission budgets, reaching 26% in specific countries. Our findings establish cross-dataset disagreement as an important source of uncertainty in land and climate assessments, highlighting the need for robust spatial planning across plausible urban futures.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          26
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79543-0",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-26",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79543-0"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Abstract Global urbanization is profoundly reshaping 21st-century land systems, yet its future trajectory remains highly uncertain. Existing projections exhibit divergent urban growth patterns even under identical socioeconomic scenarios. Here, by synthesizing six urban growth projections, we reveal substantial disagreements in the extent and location of urban growth by 2100. These disagreements a",
+      "summary": "Abstract Global urbanization is profoundly reshaping 21st-century land systems, yet its future trajectory remains highly uncertain. Existing projections exhibit divergent urban growth patterns even under identical socioeconomic scenarios. Here, by synthesizing six urban growth projections, we reveal substantial disagreements in the extent and location of urban growth by 2100. These disagreements a",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79543-0",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 12,
+        "feature_candidate": false,
+        "reason": "This is a land-use and climate-assessment study of urbanization projections, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is a land-use and climate-assessment study of urbanization projections, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 12,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79752-7",
+      "doi": "10.1038/s41467-026-79752-7",
+      "title": "Choline kinase α promotes glycolysis and tumor growth by phosphorylating and activating enolase 1",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Qingxia Ma, Qianqian Xu, Xuan Xia, Rongxuan Zhu, Gaoxiang Zhao, Heng Zhang, Zheng Wang, Dong Guo, Zhaoyuan Meng, Yixin Duan, Qian Lin, Ying Meng, Shudi Luo, Fan Yang, Hongfei Jiang, Jing Fang, Zhimin Lu",
+      "abstract": "Tumor cells exhibit aberrantly upregulated glycolysis, in which glycolytic enzyme enolase 1 (ENO1) plays a critical role. However, how ENO1 activity is dynamically regulated in tumor cells remains elusive. Here, we demonstrate that hypoxic stimulation promotes the binding of p38 MAP kinase to choline kinase α (CHKα). p38 phosphorylates CHKα at S114, subsequently leading to CHKα to interact with ENO1. Importantly, CHKα functions as a protein kinase and phosphorylates ENO1 Y44 thereby enhancing the metabolic activity of ENO1 to increase glycolysis. Knock-in expression of CHKα S114A or ENO1 Y44F inhibits brain tumor cell glycolysis and proliferation, blunts brain tumor growth in mice with inhibited lactate production, and prolongs mouse survival. In addition, CHKα S114 and ENO1 Y44 phosphorylation levels are positively correlated with each other and associated with poor prognosis in glioblastoma patients. These findings highlight the critical regulation of glycolysis by the noncanonical function of CHKα and underscore the potential to target the moonlighting function of CHKα for cancer treatment. Tumor cells rely on increased glycolysis for growth. Here, authors show that choline kinase α activates enolase 1 through phosphorylation, promoting glycolysis and tumor progression in glioblastoma.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          26
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79752-7",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-26",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79752-7"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Tumor cells exhibit aberrantly upregulated glycolysis, in which glycolytic enzyme enolase 1 (ENO1) plays a critical role. However, how ENO1 activity is dynamically regulated in tumor cells remains elusive. Here, we demonstrate that hypoxic stimulation promotes the binding of p38 MAP kinase to choline kinase α (CHKα). p38 phosphorylates CHKα at S114, subsequently leading to CHKα to interact with EN",
+      "summary": "Tumor cells exhibit aberrantly upregulated glycolysis, in which glycolytic enzyme enolase 1 (ENO1) plays a critical role. However, how ENO1 activity is dynamically regulated in tumor cells remains elusive. Here, we demonstrate that hypoxic stimulation promotes the binding of p38 MAP kinase to choline kinase α (CHKα). p38 phosphorylates CHKα at S114, subsequently leading to CHKα to interact with EN",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79752-7",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 8,
+        "feature_candidate": false,
+        "reason": "The primary advance concerns cancer-cell biochemistry and tumor growth, not the physics of condensed matter.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary advance concerns cancer-cell biochemistry and tumor growth, not the physics of condensed matter.",
+      "relevance_method": "semantic",
+      "relevance_score": 8,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79508-3",
+      "doi": "10.1038/s41467-026-79508-3",
+      "title": "Bacterial whole-cell biosensors uncover spatially variable sialic acid availability within the inflamed mammalian gut",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "David Carreño, Clare M. Robinson, Raphaella Jackson, Peirong Li, Vanessa Nunes, Susana A. Palma-Duran, Emma Nye, James I. Macrae, David T. Riglar",
+      "abstract": "Abstract Host mucin-derived sialic acids are key drivers of microbial colonisation, growth and pathogenicity within the mammalian gut. However, their study is hindered by complex host-microbiome interactions and rapid metabolite turnover, meaning that conventional measurements of faeces or bulk digesta often fail to capture their local availability. Here, we use an engineered Escherichia coli whole-cell biosensor, based on a NanR-regulated transcriptional circuit, to report in situ sialic acid bioavailability in the inflamed mouse gut. The biosensor robustly colonises the mouse gut and remains functional for at least six weeks. Organ-scale imaging at single-bacterial resolution reveals strong correlations between disease status and biosensor response in two murine inflammation models. Spatial profiling in a murine colitis model further identifies unexpected separation between peak microbial sialic acid sensing and the primary site of host inflammatory injury. Simultaneous tracking of host and microbial inflammatory markers also helps interpret the response to sialidase inhibition, which in this setting accelerates disease recovery. Together, these data reveal complex spatial dynamics of shared host-microbiome metabolism and establish engineered bacterial biosensors as a useful approach for monitoring the in situ bioavailability of rapidly turned-over gut metabolites.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          26
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79508-3",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-26",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79508-3"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Abstract Host mucin-derived sialic acids are key drivers of microbial colonisation, growth and pathogenicity within the mammalian gut. However, their study is hindered by complex host-microbiome interactions and rapid metabolite turnover, meaning that conventional measurements of faeces or bulk digesta often fail to capture their local availability. Here, we use an engineered Escherichia coli whol",
+      "summary": "Abstract Host mucin-derived sialic acids are key drivers of microbial colonisation, growth and pathogenicity within the mammalian gut. However, their study is hindered by complex host-microbiome interactions and rapid metabolite turnover, meaning that conventional measurements of faeces or bulk digesta often fail to capture their local availability. Here, we use an engineered Escherichia coli whol",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79508-3",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 7,
+        "feature_candidate": false,
+        "reason": "This is a microbiology study using engineered bacterial biosensors to map gut metabolites, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is a microbiology study using engineered bacterial biosensors to map gut metabolites, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 7,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79443-3",
+      "doi": "10.1038/s41467-026-79443-3",
+      "title": "The nature of the phase transition in VO2 B-phase and a quantum entanglement perspective",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Banabir Pal, Amar Srivastava, Abhinav Kumar, Sumanta Mukherjee, Indranil Sarkar, Suman Mandal, Mihaela Gorgoi, Paola Di Pietro, Stefano Lupi, W. Drube, E. Arenholz, J. Chakhalian, A. Perucchi, Stuart S. P. Parkin, T. Venkatesan, S. Biermann, Jan M. Tomczak, D. D. Sarma",
+      "abstract": "The well-known metal-to-insulator transition in rutile/monoclinic VO2 has been understood as a correlation-enhanced Peierls phenomenon. The lesser-known B-polymorph exhibits a similar resistivity jump, assumed to arise from an analogous transition. However, unlike rutile/monoclinic VO2, here the transition is isostructural, with dimers persisting both above and below the transition, challenging established interpretations. Here, we show that the phase transition in the B-polymorph is qualitatively different. Despite high conductivity and finite spectral weight at the chemical potential, the high-temperature phase lacks standard metallic screening and Drude peaks. Our theoretical analysis reveals that while the low-temperature insulating phase is driven by both Peierls and Mott physics, the high-temperature state is an anomalous insulator whose apparent metallicity arises from incoherent in-gap states that mimic a metal. We relate this unusual growth of incoherent states to temperature-dependent intra-dimer charge transfers. Finally, we propose a unified framework using an Einstein-Podolsky-Rosen-like quantum-entanglement measure to characterize and distinguish between different VO2 phases hosting dimers. VO2 can exist in various polymorphs. Here, the authors show that the phase transition in the B-phase of VO2 shows qualitatively different behavior from that of the well-known VO2 rutile-to-monoclinic metal-to-insulator transition.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          26
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79443-3",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-26",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79443-3"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "The well-known metal-to-insulator transition in rutile/monoclinic VO2 has been understood as a correlation-enhanced Peierls phenomenon. The lesser-known B-polymorph exhibits a similar resistivity jump, assumed to arise from an analogous transition. However, unlike rutile/monoclinic VO2, here the transition is isostructural, with dimers persisting both above and below the transition, challenging es",
+      "summary": "The well-known metal-to-insulator transition in rutile/monoclinic VO2 has been understood as a correlation-enhanced Peierls phenomenon. The lesser-known B-polymorph exhibits a similar resistivity jump, assumed to arise from an analogous transition. However, unlike rutile/monoclinic VO2, here the transition is isostructural, with dimers persisting both above and below the transition, challenging es",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79443-3",
+        "in_scope": true,
+        "soft_matter": false,
+        "quantum_materials": true,
+        "research_type": "mixed",
+        "score": 79,
+        "feature_candidate": true,
+        "reason": "The study establishes a distinct electronic and structural interpretation of a correlated-oxide phase transition through material analysis and theoretical modeling.",
+        "physics_advance": "In VO₂ B-phase, the high-temperature state is an anomalous insulator whose incoherent in-gap spectral weight mimics metallicity without conventional screening or a Drude peak, while the low-temperature insulating state involves both Peierls and Mott physics."
+      },
+      "soft_matter": false,
+      "quantum_materials": true,
+      "research_type": "mixed",
+      "screening_decision": "selected",
+      "physics_advance": "In VO₂ B-phase, the high-temperature state is an anomalous insulator whose incoherent in-gap spectral weight mimics metallicity without conventional screening or a Drude peak, while the low-temperature insulating state involves both Peierls and Mott physics.",
+      "ai_in_scope": true,
+      "relevance_reason": "The study establishes a distinct electronic and structural interpretation of a correlated-oxide phase transition through material analysis and theoretical modeling.",
+      "relevance_method": "semantic",
+      "relevance_score": 79,
+      "feature_candidate": true
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79503-8",
+      "doi": "10.1038/s41467-026-79503-8",
+      "title": "A noncanonical reducing-domain architecture defines a distinct class of modular polyketide synthases",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Jinwoo Kim, Byeongsub Lee, Jongseok Park, Hyeongwoo Kim, Minjae Kim, Gyu Sung Lee, Chung Sub Kim, Hyun Uk Kim, Jin Young Kang",
+      "abstract": "Colibactin is a microbiome-derived genotoxin that damages the genomes of intestinal epithelial cells and has been linked to colorectal cancer. Its biosynthesis is encoded by a large gene cluster (pks/clb) that functions as a hybrid nonribosomal peptide synthetase - polyketide synthase assembly line, yet the structural basis of its assembly remains poorly understood. Here we show cryo-electron microscopy structures of colibactin biosynthetic enzyme ClbB that uncover a noncanonical architecture for a fully-reducing polyketide synthase module. Unlike metazoan fatty acid synthases and iterative polyketide synthases, ClbB arranges its condensing and reducing regions in a crossed configuration. Within its reducing region, the enoylreductase forms an inverted dimer and the dehydratase is positioned peripherally as monomers. Moreover, the dehydratase-enoylreductase unit is embedded within the ketoreductase fold. Bioinformatic analyses combined with deep-learning-based structure prediction indicate that this domain-embedding logic is broadly distributed across diverse bacterial phyla. These findings define a structurally distinct class of reducing polyketide synthase modules and provide an expanded structural framework for understanding how modular polyketide synthases coordinate multi-step chemistry. The work also extends design principles for engineering megasynthases for chemical biosynthesis and synthetic biology. Colibactin is a microbiome-derived genotoxin linked to colorectal cancer. Here the authors use cryo-EM to reveal a distinct configuration of the polyketide synthase module of its biosynthetic enzyme ClbB, and show that it is widespread across diverse bacteria.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          26
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79503-8",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-26",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79503-8"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Colibactin is a microbiome-derived genotoxin that damages the genomes of intestinal epithelial cells and has been linked to colorectal cancer. Its biosynthesis is encoded by a large gene cluster (pks/clb) that functions as a hybrid nonribosomal peptide synthetase - polyketide synthase assembly line, yet the structural basis of its assembly remains poorly understood. Here we show cryo-electron micr",
+      "summary": "Colibactin is a microbiome-derived genotoxin that damages the genomes of intestinal epithelial cells and has been linked to colorectal cancer. Its biosynthesis is encoded by a large gene cluster (pks/clb) that functions as a hybrid nonribosomal peptide synthetase - polyketide synthase assembly line, yet the structural basis of its assembly remains poorly understood. Here we show cryo-electron micr",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79503-8",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 9,
+        "feature_candidate": false,
+        "reason": "The primary contribution is structural biology of a bacterial biosynthetic enzyme, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary contribution is structural biology of a bacterial biosynthetic enzyme, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 9,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79148-7",
+      "doi": "10.1038/s41467-026-79148-7",
+      "title": "Extending frequency metrology to increasingly complex molecules: SI-traceable sub-Doppler mid-IR spectroscopy of trioxane",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Dang-Bao-An Tran, Mathieu Manceau, Olivier Lopez, Andrey Goncharov, Pierre Asselin, Anne Amy-Klein, Benoît Darquié",
+      "abstract": "Abstract Bringing increasingly complex polyatomic molecules within reach of precision measurement experiments opens new prospects ranging from Earth sciences and astrophysics, to metrology and quantum sciences. Here, we demonstrate sub-Doppler mid-IR spectroscopic measurements of, to our knowledge, the largest molecule to date, 1,3,5-trioxane, (H 2 CO) 3 , in its ν 5 CO stretching mode. To this end, we use an ultra-high-resolution ~10.3 µm spectrometer based on a sub-Hz quantum cascade laser remotely calibrated against state-of-the-art primary frequency standards via a metrology-grade fibre link. We perform saturated absorption spectroscopy at low pressure with ~100 kHz resolution. This allows measuring the absolute frequency of hundreds of rovibrational transitions at unprecedented statistical and systematic uncertainties for such a complex species, as low as 4.6 kHz and 6.2 kHz respectively. In addition to providing new spectroscopic information on trioxane, our work extends frequency metrology methodologies to ever larger molecular systems, confirming the potential of our technologies for bringing increasingly complex species within reach of ultra-precise measurement experiments.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          26
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79148-7",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-26",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79148-7"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Abstract Bringing increasingly complex polyatomic molecules within reach of precision measurement experiments opens new prospects ranging from Earth sciences and astrophysics, to metrology and quantum sciences. Here, we demonstrate sub-Doppler mid-IR spectroscopic measurements of, to our knowledge, the largest molecule to date, 1,3,5-trioxane, (H 2 CO) 3 , in its ν 5 CO stretching mode. To this en",
+      "summary": "Abstract Bringing increasingly complex polyatomic molecules within reach of precision measurement experiments opens new prospects ranging from Earth sciences and astrophysics, to metrology and quantum sciences. Here, we demonstrate sub-Doppler mid-IR spectroscopic measurements of, to our knowledge, the largest molecule to date, 1,3,5-trioxane, (H 2 CO) 3 , in its ν 5 CO stretching mode. To this en",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79148-7",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 18,
+        "feature_candidate": false,
+        "reason": "This is molecular rovibrational spectroscopy and precision-frequency metrology, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is molecular rovibrational spectroscopy and precision-frequency metrology, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 18,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79550-1",
+      "doi": "10.1038/s41467-026-79550-1",
+      "title": "Plant protoplasts display phytopodia",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Johanna E. M. Dickmann, Marjolaine Martin, Claire Lionnet, Zoe Nemec-Venza, Olivier Hamant",
+      "abstract": "Plant cells are encased in cell walls and are usually thought to behave like stiff, pressurized vessels. When the cell wall is digested, plant protoplasts form spherical shapes, further consolidating this model. Here we show that plant protoplasts can form phytopodia. More precisely, using plasma membrane markers, we reveal that 27 ± 1% of protoplasts from Arabidopsis seedlings show dot-like protrusions and 16 ± 7% of protoplasts show long (typically 1-20 μm, up to 200 μm) protrusions, hence the name “phytopodia”. We demonstrate that this behavior is independent of the plant species, the membrane marker or the osmolyte. Phytopodia can host microtubule bundles, which in turn can impact their shape. Actin is not required for the presence of phytopodia, and consistently, the movement of phytopodia is passive. Phytopodia can form de novo when increasing osmolarity and they can attach to artificial surfaces. Altogether, this calls for revisiting the dynamics and probing ability of the plant cell cortex in different osmotic and mechanical environments. Plant cells are encased in cell walls that when digested leave spherical protoplasts. Here the authors report long, thin membrane protrusions from protoplasts termed phytopodia and discuss their potential role in the probing behaviour of the cell cortex.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          26
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79550-1",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-26",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79550-1"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Plant cells are encased in cell walls and are usually thought to behave like stiff, pressurized vessels. When the cell wall is digested, plant protoplasts form spherical shapes, further consolidating this model. Here we show that plant protoplasts can form phytopodia. More precisely, using plasma membrane markers, we reveal that 27 ± 1% of protoplasts from Arabidopsis seedlings show dot-like protr",
+      "summary": "Plant cells are encased in cell walls and are usually thought to behave like stiff, pressurized vessels. When the cell wall is digested, plant protoplasts form spherical shapes, further consolidating this model. Here we show that plant protoplasts can form phytopodia. More precisely, using plasma membrane markers, we reveal that 27 ± 1% of protoplasts from Arabidopsis seedlings show dot-like protr",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79550-1",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 17,
+        "feature_candidate": false,
+        "reason": "The primary contribution concerns plant-cell biology and membrane protrusions, not condensed-matter physics or a soft-matter study.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary contribution concerns plant-cell biology and membrane protrusions, not condensed-matter physics or a soft-matter study.",
+      "relevance_method": "semantic",
+      "relevance_score": 17,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79694-0",
+      "doi": "10.1038/s41467-026-79694-0",
+      "title": "Nuclear factor I connects H3K27M to a targetable purine dependency in diffuse intrinsic pontine glioma",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Ian Mersich, Sunny Congrove, Matthew Horchar, Roman Caceres, Ranjithmenon Muraleedharan, Janki Desai, Pankaj Desai, Larry Sallans, Julie A. Reisz, Abby Grier, Matthew R. Hass, Omer Donmez, Cailing Yin, Skyler Beaber, Matthew T. Weirauch, Leah Kottyan, Charles B. Stevenson, Claire Sun, Peter de Blank, Natasha Pillay-Smiley, Trent R. Hummel, Nagarajan Elumalai, Ali Tavassoli, Ron Firestein, Timothy N. Phoenix, Angelo D’Alessandro, Biplab Dasgupta",
+      "abstract": "Diffuse intrinsic pontine glioma is a lethal pediatric brainstem cancer with few effective treatments. Here, we integrate metabolomic, transcriptomic, chromatin, genetic and in vivo analyses to identify a purine-metabolic dependency associated with the H3K27M histone mutation. The histone H3 lysine 27-to-methionine substitution increases Nuclear Factor I transcriptional activity, which promotes coordinated expression of enzymes involved in purine biosynthesis and degradation, including 5-aminoimidazole-4-carboxamide ribonucleotide formyltransferase/inosine monophosphate cyclohydrolase and purine nucleoside phosphorylase. Sustained purine degradation limits feedback inhibition of purine synthesis, enabling continued purine production, utilization and catabolism. Genetic or pharmacological inhibition of the terminal de novo purine biosynthesis enzyme reduces tumor-cell fitness, slows orthotopic tumor progression and extends survival in mice. These results connect histone-mutation-associated chromatin remodeling to a Nuclear Factor I-regulated, therapeutically targetable purine dependency in diffuse intrinsic pontine glioma. Diffuse intrinsic pontine glioma is an aggressive childhood cancer commonly driven by H3K27M with few treatment options. This study links H3K27M-driven chromatin remodelling to NFI-dependent purine metabolism, causing ATIC/PNP-mediated metabolic rewiring and ATIC-targetable tumour dependence.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          26
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79694-0",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-26",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79694-0"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Diffuse intrinsic pontine glioma is a lethal pediatric brainstem cancer with few effective treatments. Here, we integrate metabolomic, transcriptomic, chromatin, genetic and in vivo analyses to identify a purine-metabolic dependency associated with the H3K27M histone mutation. The histone H3 lysine 27-to-methionine substitution increases Nuclear Factor I transcriptional activity, which promotes co",
+      "summary": "Diffuse intrinsic pontine glioma is a lethal pediatric brainstem cancer with few effective treatments. Here, we integrate metabolomic, transcriptomic, chromatin, genetic and in vivo analyses to identify a purine-metabolic dependency associated with the H3K27M histone mutation. The histone H3 lysine 27-to-methionine substitution increases Nuclear Factor I transcriptional activity, which promotes co",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79694-0",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "mixed",
+        "score": 20,
+        "feature_candidate": false,
+        "reason": "This study investigates cancer-cell metabolism and a therapeutic target, rather than condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "mixed",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This study investigates cancer-cell metabolism and a therapeutic target, rather than condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 20,
+      "feature_candidate": false
+    }
+  ],
+  "pending_journal_records": [],
+  "selected_ids": [
+    "doi-10-1038-s41467-026-79443-3"
+  ],
+  "stats": {
+    "scanned": 18,
+    "first_pass_selected": 1,
+    "selected": 1,
+    "rejected": 17,
+    "ai_assessed": 18,
+    "ai_cached": 0,
+    "ai_unscored": 0,
+    "global_editorial": true,
+    "field_scope_excluded": 0,
+    "duplicate_work_excluded": 0,
+    "arxiv_selected": 0,
+    "journal_selected": 1,
+    "arxiv_harvest_excluded": 0,
+    "pending_journal_abstracts": 0,
+    "non_original_excluded": 8,
+    "publication_not_eligible": 33
+  }
+}

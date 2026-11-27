@@ -1,0 +1,109 @@
+{
+  "date": "2026-11-27",
+  "title": "Daily Condensed Matter Literature",
+  "generated_at": "2026-11-27T06:00:38.856786-08:00",
+  "screening_version": "quantum-materials-v1-formal-research-v5",
+  "screening_config": {
+    "arxiv_min_score": 70,
+    "journal_min_score": 55,
+    "max_papers": 30,
+    "arxiv_versions": [
+      1
+    ],
+    "exclude_soft_matter": true,
+    "journals": [
+      "Science",
+      "Science Advances",
+      "Nature",
+      "Nature Physics",
+      "Nature Materials",
+      "Nature Communications",
+      "PRL",
+      "PRX",
+      "PNAS"
+    ],
+    "journal_publication": "publisher-verified formal online publication on the previous Los Angeles calendar day",
+    "arxiv_intake": "first announcement in the fixed 24 hours ending at 06:00 America/Los_Angeles",
+    "journal_document_types": "research article or research letter; no accepted papers, essays, replies or comments",
+    "editorial_interest": "experimental quantum materials; original theory and experiment"
+  },
+  "intake_window": {
+    "version": "la-0600-arxiv24h-previous-journal-day-v1",
+    "timezone": "America/Los_Angeles",
+    "arxiv_start": "2026-11-26T14:00:00+00:00",
+    "arxiv_end": "2026-11-27T14:00:00+00:00",
+    "journal_publication_date": "2026-11-26"
+  },
+  "sources_complete": true,
+  "papers": [
+    {
+      "id": "doi-10-1038-s41467-026-79443-3",
+      "doi": "10.1038/s41467-026-79443-3",
+      "title": "The nature of the phase transition in VO2 B-phase and a quantum entanglement perspective",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Banabir Pal, Amar Srivastava, Abhinav Kumar, Sumanta Mukherjee, Indranil Sarkar, Suman Mandal, Mihaela Gorgoi, Paola Di Pietro, Stefano Lupi, W. Drube, E. Arenholz, J. Chakhalian, A. Perucchi, Stuart S. P. Parkin, T. Venkatesan, S. Biermann, Jan M. Tomczak, D. D. Sarma",
+      "abstract": "The well-known metal-to-insulator transition in rutile/monoclinic VO2 has been understood as a correlation-enhanced Peierls phenomenon. The lesser-known B-polymorph exhibits a similar resistivity jump, assumed to arise from an analogous transition. However, unlike rutile/monoclinic VO2, here the transition is isostructural, with dimers persisting both above and below the transition, challenging established interpretations. Here, we show that the phase transition in the B-polymorph is qualitatively different. Despite high conductivity and finite spectral weight at the chemical potential, the high-temperature phase lacks standard metallic screening and Drude peaks. Our theoretical analysis reveals that while the low-temperature insulating phase is driven by both Peierls and Mott physics, the high-temperature state is an anomalous insulator whose apparent metallicity arises from incoherent in-gap states that mimic a metal. We relate this unusual growth of incoherent states to temperature-dependent intra-dimer charge transfers. Finally, we propose a unified framework using an Einstein-Podolsky-Rosen-like quantum-entanglement measure to characterize and distinguish between different VO2 phases hosting dimers. VO2 can exist in various polymorphs. Here, the authors show that the phase transition in the B-phase of VO2 shows qualitatively different behavior from that of the well-known VO2 rutile-to-monoclinic metal-to-insulator transition.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          26
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79443-3",
+      "level": "Feature",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-26",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79443-3"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "This study argues that the isostructural transition in the B polymorph of VO₂ is qualitatively different from the rutile-to-monoclinic transition. It identifies the high-temperature phase as an anomalous insulator whose incoherent in-gap spectral weight produces an apparent metallic response.",
+      "summary": "The well-known metal-to-insulator transition in rutile/monoclinic VO2 has been understood as a correlation-enhanced Peierls phenomenon. The lesser-known B-polymorph exhibits a similar resistivity jump, assumed to arise from an analogous transition. However, unlike rutile/monoclinic VO2, here the transition is isostructural, with dimers persisting both above and below the transition, challenging es",
+      "soft_matter": false,
+      "quantum_materials": true,
+      "research_type": "mixed",
+      "screening_decision": "selected",
+      "physics_advance": "In VO₂ B-phase, the high-temperature state is an anomalous insulator whose incoherent in-gap spectral weight mimics metallicity without conventional screening or a Drude peak, while the low-temperature insulating state involves both Peierls and Mott physics.",
+      "ai_in_scope": true,
+      "relevance_reason": "The study establishes a distinct electronic and structural interpretation of a correlated-oxide phase transition through material analysis and theoretical modeling.",
+      "relevance_method": "semantic",
+      "relevance_score": 79,
+      "feature_candidate": true,
+      "summary_zh": "本文指出，VO₂ 的 B 相中同结构相变的性质与金红石相到单斜相的转变显著不同。研究将高温相界定为一种反常绝缘体，其非相干带隙内谱权重造成了表观金属性。",
+      "method_en": "The authors conduct a theoretical analysis of the electronic states across the B-phase transition, considering conductivity, spectral weight at the chemical potential, metallic screening, and Drude response. They relate the temperature-dependent growth of incoherent in-gap states to intra-dimer charge transfer and propose an Einstein–Podolsky–Rosen-like entanglement measure for distinguishing dimer-hosting VO₂ phases.",
+      "method_zh": "作者通过理论分析研究 B 相转变前后的电子态，并考察电导率、化学势处的谱权重、金属屏蔽及 Drude 响应。研究将非相干带隙内态随温度增长的现象与二聚体内电荷转移联系起来，并提出一种类 Einstein–Podolsky–Rosen 的量子纠缠度量，用于区分含二聚体的 VO₂ 各相。",
+      "result_en": "The low-temperature insulating phase is attributed to both Peierls and Mott physics. Although the high-temperature phase has high conductivity and finite spectral weight at the chemical potential, it lacks standard metallic screening and a Drude peak. The authors therefore identify it as an anomalous insulator, with incoherent in-gap states mimicking metallicity. They associate the growth of these states with temperature-dependent intra-dimer charge transfers and propose an entanglement-based framework to characterize and distinguish dimer-hosting VO₂ phases.",
+      "result_zh": "研究将低温绝缘相归因于 Peierls 与 Mott 两种物理机制的共同作用。尽管高温相具有较高电导率，且化学势处存在有限谱权重，但它缺少典型的金属屏蔽和 Drude 峰。作者因此将其判定为反常绝缘体，认为非相干带隙内态造成了金属性的表象。研究还将这些态的增长与随温度变化的二聚体内电荷转移联系起来，并提出以纠缠为基础的框架来表征和区分含二聚体的 VO₂ 各相。",
+      "future_en": "Further work could experimentally test whether the high-temperature B phase indeed lacks conventional metallic screening and a Drude response despite its high conductivity. Measurements that track intra-dimer charge transfer and the proposed entanglement-based phase distinctions across temperature would also test the suggested interpretation.",
+      "future_zh": "后续研究可通过实验检验：尽管高温 B 相电导率较高，它是否确实缺少常规金属屏蔽和 Drude 响应。随温度追踪二聚体内电荷转移，并检验所提出的基于纠缠的相区分方法，也有助于验证这一解释。"
+    }
+  ],
+  "stats": {
+    "scanned": 18,
+    "first_pass_selected": 1,
+    "selected": 1,
+    "rejected": 17,
+    "ai_assessed": 18,
+    "ai_cached": 0,
+    "ai_unscored": 0,
+    "global_editorial": true,
+    "field_scope_excluded": 0,
+    "duplicate_work_excluded": 0,
+    "arxiv_selected": 0,
+    "journal_selected": 1,
+    "arxiv_harvest_excluded": 0,
+    "pending_journal_abstracts": 0,
+    "non_original_excluded": 8,
+    "publication_not_eligible": 33
+  }
+}
