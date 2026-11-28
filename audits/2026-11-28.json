@@ -1,0 +1,2478 @@
+{
+  "date": "2026-11-28",
+  "generated_at": "2026-11-28T06:00:39.074394-08:00",
+  "screening_version": "quantum-materials-v1-formal-research-v5",
+  "assessment_version": "quantum-materials-v1-only-no-soft-v3",
+  "screening_config": {
+    "arxiv_min_score": 70,
+    "journal_min_score": 55,
+    "max_papers": 30,
+    "arxiv_versions": [
+      1
+    ],
+    "exclude_soft_matter": true,
+    "journals": [
+      "Science",
+      "Science Advances",
+      "Nature",
+      "Nature Physics",
+      "Nature Materials",
+      "Nature Communications",
+      "PRL",
+      "PRX",
+      "PNAS"
+    ],
+    "journal_publication": "publisher-verified formal online publication on the previous Los Angeles calendar day",
+    "arxiv_intake": "first announcement in the fixed 24 hours ending at 06:00 America/Los_Angeles",
+    "journal_document_types": "research article or research letter; no accepted papers, essays, replies or comments",
+    "editorial_interest": "experimental quantum materials; original theory and experiment"
+  },
+  "intake_window": {
+    "version": "la-0600-arxiv24h-previous-journal-day-v1",
+    "timezone": "America/Los_Angeles",
+    "arxiv_start": "2026-11-27T14:00:00+00:00",
+    "arxiv_end": "2026-11-28T14:00:00+00:00",
+    "journal_publication_date": "2026-11-27"
+  },
+  "sources": [
+    {
+      "source": "arXiv",
+      "status": "ok",
+      "eligible_v1": 0
+    },
+    {
+      "source": "Science",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-27",
+        "2026-11-27"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Science Advances",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-27",
+        "2026-11-27"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Nature",
+      "status": "ok",
+      "fetched": 8,
+      "window": [
+        "2026-11-27",
+        "2026-11-27"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Nature Physics",
+      "status": "ok",
+      "fetched": 2,
+      "window": [
+        "2026-11-27",
+        "2026-11-27"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Nature Materials",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-27",
+        "2026-11-27"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "Nature Communications",
+      "status": "ok",
+      "fetched": 21,
+      "window": [
+        "2026-11-27",
+        "2026-11-27"
+      ],
+      "publication_proof": "publisher article metadata"
+    },
+    {
+      "source": "PRL",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-27",
+        "2026-11-27"
+      ],
+      "publication_proof": "publisher RSS",
+      "feed_urls": [
+        "https://feeds.aps.org/rss/recent/prl.xml",
+        "https://feeds.aps.org/rss/tocsec/PRL-CondensedMatterStructureetc.xml",
+        "https://feeds.aps.org/rss/recent/prlsuggestions.xml"
+      ],
+      "latest_formal_publication_date": "2026-11-25",
+      "publication_note": "Publisher feeds have no final citation for the requested publication date; unverified records remain excluded"
+    },
+    {
+      "source": "PRX",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-27",
+        "2026-11-27"
+      ],
+      "publication_proof": "publisher RSS",
+      "feed_urls": [
+        "https://feeds.aps.org/rss/recent/prx.xml"
+      ],
+      "latest_formal_publication_date": "2026-11-25",
+      "publication_note": "Publisher feeds have no final citation for the requested publication date; unverified records remain excluded"
+    },
+    {
+      "source": "PNAS",
+      "status": "ok",
+      "fetched": 0,
+      "window": [
+        "2026-11-27",
+        "2026-11-27"
+      ],
+      "publication_proof": "publisher article metadata"
+    }
+  ],
+  "journal_candidates": [
+    {
+      "id": "doi-10-1038-d41586-026-03800-x",
+      "doi": "10.1038/d41586-026-03800-x",
+      "title": "Brain area’s mysterious role in speech decoded at last",
+      "journal": "Nature",
+      "article_kind": "Research Highlight",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/d41586-026-03800-x"
+      },
+      "has_abstract": false,
+      "decision": "non_original_article"
+    },
+    {
+      "id": "doi-10-1038-d41586-026-03849-8",
+      "doi": "10.1038/d41586-026-03849-8",
+      "title": "Why the incoming US Congress should ban the development of self-improving AI",
+      "journal": "Nature",
+      "article_kind": "World View",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/d41586-026-03849-8"
+      },
+      "has_abstract": false,
+      "decision": "non_original_article"
+    },
+    {
+      "id": "doi-10-1038-d41586-026-03523-z",
+      "doi": "10.1038/d41586-026-03523-z",
+      "title": "Postcards from your graves",
+      "journal": "Nature",
+      "article_kind": "Futures",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/d41586-026-03523-z"
+      },
+      "has_abstract": false,
+      "decision": "non_original_article"
+    },
+    {
+      "id": "doi-10-1038-d41586-026-03885-4",
+      "doi": "10.1038/d41586-026-03885-4",
+      "title": "The haunting loveliness of boglands: Books in brief",
+      "journal": "Nature",
+      "article_kind": "Book Review",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/d41586-026-03885-4"
+      },
+      "has_abstract": false,
+      "decision": "non_original_article"
+    },
+    {
+      "id": "doi-10-1038-d41586-026-03801-w",
+      "doi": "10.1038/d41586-026-03801-w",
+      "title": "Life-saving cancer drug pumped out by a plant",
+      "journal": "Nature",
+      "article_kind": "Research Highlight",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/d41586-026-03801-w"
+      },
+      "has_abstract": false,
+      "decision": "non_original_article"
+    },
+    {
+      "id": "doi-10-1038-s41586-026-11411-9",
+      "doi": "10.1038/s41586-026-11411-9",
+      "title": "Author Correction: Artificial intelligence-enabled clinical phenotyping of human brown fat",
+      "journal": "Nature",
+      "article_kind": "",
+      "publication_status": "unverified",
+      "publication_date": "",
+      "publication_evidence": {},
+      "has_abstract": false,
+      "decision": "non_original_article"
+    },
+    {
+      "id": "doi-10-1038-d41586-026-03754-0",
+      "doi": "10.1038/d41586-026-03754-0",
+      "title": "Want your research cited in patents? Publishing open access increases your chances",
+      "journal": "Nature",
+      "article_kind": "Nature Index",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/d41586-026-03754-0"
+      },
+      "has_abstract": false,
+      "decision": "non_original_article"
+    },
+    {
+      "id": "doi-10-1038-d41586-026-03900-8",
+      "doi": "10.1038/d41586-026-03900-8",
+      "title": "Audio long read: The world’s most precious brain samples — and what they teach us about being human",
+      "journal": "Nature",
+      "article_kind": "Nature Podcast",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/d41586-026-03900-8"
+      },
+      "has_abstract": false,
+      "decision": "non_original_article"
+    },
+    {
+      "id": "doi-10-1038-s41567-026-03530-x",
+      "doi": "10.1038/s41567-026-03530-x",
+      "title": "Differential active adhesion and a capillary instability drive global eversion and dissemination of bacterial colonies",
+      "journal": "Nature Physics",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41567-026-03530-x"
+      },
+      "has_abstract": true,
+      "decision": "soft_matter",
+      "score": 35,
+      "in_scope": false,
+      "soft_matter": true,
+      "quantum_materials": false,
+      "reason": "This is a study of active biological colonies and their mechanical instability, which falls under excluded biological soft matter rather than condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41567-026-03531-w",
+      "doi": "10.1038/s41567-026-03531-w",
+      "title": "Chemical gradients turn bacterial aggregates inside out",
+      "journal": "Nature Physics",
+      "article_kind": "News & Views",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41567-026-03531-w"
+      },
+      "has_abstract": false,
+      "decision": "non_original_article"
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78497-7",
+      "doi": "10.1038/s41467-026-78497-7",
+      "title": "Transcriptional nodes governing diversity and effector rewiring of a plastic liver invariant natural killer T cell ecosystem",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78497-7"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 10,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary contribution is immunological characterization of liver-resident T-cell subsets and their transcriptional regulation, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79826-6",
+      "doi": "10.1038/s41467-026-79826-6",
+      "title": "Rigidity-driven molecular assembly for high-efficiency flexible perovskite/CIGS tandems",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79826-6"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 25,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The work optimizes molecular contacts and device efficiency and durability in tandem solar cells without establishing an independent quantum-materials phenomenon."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79675-3",
+      "doi": "10.1038/s41467-026-79675-3",
+      "title": "Identification and functional characterization of bacterial bilirubin vinyl reductase across vertebrate gut microbiomes",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79675-3"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 10,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is a microbiome enzymology and biochemistry study, outside condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79812-y",
+      "doi": "10.1038/s41467-026-79812-y",
+      "title": "A membrane-active cationic supramolecule to treat both fungal and bacterial keratitis",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79812-y"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 15,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The central advance is an antimicrobial therapeutic tested in animal models, a biomedical and chemical contribution rather than condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79601-7",
+      "doi": "10.1038/s41467-026-79601-7",
+      "title": "Anyone can be the best depending on how structural variant callers are evaluated",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79601-7"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 18,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary contribution is benchmarking genomic-variant detection methods, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79605-3",
+      "doi": "10.1038/s41467-026-79605-3",
+      "title": "Buried stochastic interfaces enabling depth-multiplexed optical physical unclonable functions",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79605-3"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 25,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The work engineers an optical authentication device and evaluates its performance rather than investigating condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79635-x",
+      "doi": "10.1038/s41467-026-79635-x",
+      "title": "Control of out-of-plane anti-damping spin torque with a canted ferromagnetic spin source",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79635-x"
+      },
+      "has_abstract": true,
+      "decision": "selected",
+      "score": 66,
+      "in_scope": true,
+      "soft_matter": false,
+      "quantum_materials": true,
+      "reason": "This experimental study investigates magnetic spin transport in ferromagnetic SrRuO3 and identifies mechanisms that generate a tunable out-of-plane anti-damping torque."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78959-y",
+      "doi": "10.1038/s41467-026-78959-y",
+      "title": "Expanding antimicrobial chemical space by engineering drug safety",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78959-y"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 5,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary advance is an antimicrobial drug-safety strategy tested in biological systems, outside condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79288-w",
+      "doi": "10.1038/s41467-026-79288-w",
+      "title": "Changing mercury exposure in the Yukon Watershed linked to traditional diet shifts and permafrost thaw",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79288-w"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 5,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The study concerns environmental exposure, diet, and public health rather than condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79339-2",
+      "doi": "10.1038/s41467-026-79339-2",
+      "title": "The human hypothalamus encodes prediction errors during sensory–nutrient inference",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79339-2"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 8,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This is a human neuroscience study of sensory inference and hypothalamic activity, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79346-3",
+      "doi": "10.1038/s41467-026-79346-3",
+      "title": "An all-in-one wearable platform offers continuous assessment and early diagnosis of acute kidney injury for outdoor workers",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79346-3"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 8,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary contribution is a wearable medical-monitoring platform and AKI prediction, not new physics of condensed matter."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79660-w",
+      "doi": "10.1038/s41467-026-79660-w",
+      "title": "Molecular basis for thermoresponsive protein condensation in plants",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79660-w"
+      },
+      "has_abstract": true,
+      "decision": "soft_matter",
+      "score": 12,
+      "in_scope": false,
+      "soft_matter": true,
+      "quantum_materials": false,
+      "reason": "The study concerns phase separation of plant proteins, a biological soft-matter system excluded from this digest."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79825-7",
+      "doi": "10.1038/s41467-026-79825-7",
+      "title": "Dual-comb photoacoustic Brillouin spectroscopy of optomechanical dynamics in gas-filled microstructured hollow-core fibers",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79825-7"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 7,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "This work develops photonic-fiber spectroscopy for gas sensing and optomechanical device characterization rather than condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79424-6",
+      "doi": "10.1038/s41467-026-79424-6",
+      "title": "Complement as an evolutionary driver of vector-microbe immune evasion enabling pathogen transmission",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79424-6"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 5,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary advance is in pathogen transmission and immune evasion, a subject in biology and immunology rather than condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79822-w",
+      "doi": "10.1038/s41467-026-79822-w",
+      "title": "Interstitial fluid regime transition shapes ovarian follicle morphogenesis",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79822-w"
+      },
+      "has_abstract": true,
+      "decision": "soft_matter",
+      "score": 18,
+      "in_scope": false,
+      "soft_matter": true,
+      "quantum_materials": false,
+      "reason": "This is a biological study of ovarian follicle development and fluid-network mechanics, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79495-5",
+      "doi": "10.1038/s41467-026-79495-5",
+      "title": "Crystal structures of tetraketide synthase reveal the mechanistic basis for partitioning products in cannabinoid biosynthesis",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79495-5"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 12,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary contribution is structural enzymology of cannabinoid biosynthesis, outside condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79654-8",
+      "doi": "10.1038/s41467-026-79654-8",
+      "title": "Room-temperature continuous-wave mid-infrared microdisk laser on InP enabled by InAs quantum dots",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79654-8"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 28,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "Although it uses a semiconductor quantum-dot gain medium, the main advance is mid-infrared laser-device performance rather than a discovery about quantum-material physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78841-x",
+      "doi": "10.1038/s41467-026-78841-x",
+      "title": "Evolution tunes functional sub-state interconversion to boost enzyme function",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78841-x"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 12,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The study concerns enzyme conformational dynamics and antibiotic hydrolysis, a biochemical research question outside condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79520-7",
+      "doi": "10.1038/s41467-026-79520-7",
+      "title": "Task-similarity dependent reconfiguration of compositional modules and geometry in frontal cortex",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79520-7"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 10,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary subject is neural coding and behavior in mouse cortex, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79584-5",
+      "doi": "10.1038/s41467-026-79584-5",
+      "title": "Identification of fibril-forming antimicrobial peptides reveals structural plasticity and diverse amyloid architectures",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79584-5"
+      },
+      "has_abstract": true,
+      "decision": "soft_matter",
+      "score": 24,
+      "in_scope": false,
+      "soft_matter": true,
+      "quantum_materials": false,
+      "reason": "This study concerns biological antimicrobial peptides and amyloid fibrils, a biological soft-matter system rather than condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79364-1",
+      "doi": "10.1038/s41467-026-79364-1",
+      "title": "Distinct SMARCAD1 domains enable R-loop binding and facilitate R-loop-associated conflict resolution at active replication forks",
+      "journal": "Nature Communications",
+      "article_kind": "Article",
+      "publication_status": "published",
+      "publication_date": "2026-11-27",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79364-1"
+      },
+      "has_abstract": true,
+      "decision": "out_of_scope",
+      "score": 12,
+      "in_scope": false,
+      "soft_matter": false,
+      "quantum_materials": false,
+      "reason": "The primary contribution is a molecular-biology finding about DNA replication, chromatin remodeling, and R-loop resolution, not condensed-matter physics."
+    },
+    {
+      "id": "doi-10-1103-3x42-zb9r",
+      "doi": "10.1103/3x42-zb9r",
+      "title": "Odd-Even Parity of Nonlinear Hall Effects in Bilayer Graphene",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-10-29",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/tocsec/PRL-CondensedMatterStructureetc.xml",
+        "volume": "137",
+        "article_number": "186302"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-ctkf-wz2d",
+      "doi": "10.1103/ctkf-wz2d",
+      "title": "Plasmascopy of Ultrafast Hot Charge Carriers",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-10-30",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "186906"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-yfc3-ny3b",
+      "doi": "10.1103/yfc3-ny3b",
+      "title": "Experimental Observation of Erratic Non-Hermitian Skin Effect in Phononic Crystals",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-10-30",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "186602"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-17nh-csbr",
+      "doi": "10.1103/17nh-csbr",
+      "title": "Atomic-Scale Visualization of Quantum Phase Transition in Mixed-Valence Regime",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-10-30",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "186201"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-vl6b-y5gz",
+      "doi": "10.1103/vl6b-y5gz",
+      "title": "When Liquids Form Membranes: Entropy-Dominated Bending Dynamics in Coacervate Vesicles",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-02",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "198201"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-k5r2-q11w",
+      "doi": "10.1103/k5r2-q11w",
+      "title": "Kekulé Superconductivity Induced by Quantum Geometry in Haldane Phases",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-03",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "196002"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-ngfq-f3t7",
+      "doi": "10.1103/ngfq-f3t7",
+      "title": "First Amplitude Analysis of ${D}^{0}→{K}^{−}{π}^{0}{e}^{+}{ν}_{e}$ and Observation of ${D}^{0}→{K}_{2}^{*}(1430{)}^{−}{e}^{+}{ν}_{e}$",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-03",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "191903"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-b28p-yb2t",
+      "doi": "10.1103/b28p-yb2t",
+      "title": "Time-Dependent Density Functional Theory of Electrons and Quantum Nuclei",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-04",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "193001"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-m9hp-5h28",
+      "doi": "10.1103/m9hp-5h28",
+      "title": "Anomalously Low Thermal Conductivity in Undercoordinated Amorphous Silicon",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-05",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "196302"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-qx3f-85mf",
+      "doi": "10.1103/qx3f-85mf",
+      "title": "Spatiotemporal Architecture of Energy Transfer in Wall-Bounded Turbulence",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-05",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "194001"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-z6d8-2q1g",
+      "doi": "10.1103/z6d8-2q1g",
+      "title": "Classification of Scissors Rotational Bands in Deformed Nuclei",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-05",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "192501"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-t87j-1ngl",
+      "doi": "10.1103/t87j-1ngl",
+      "title": "Intracycle Interference in Strong-Field Photoemission from a Tungsten Needle Tip",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-09",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206901"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-f92d-w6fn",
+      "doi": "10.1103/f92d-w6fn",
+      "title": "Superparamagnetism in an Interacting Nanomagnet Array: A Tale of Three Temperatures",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-09",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206701"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-g9x1-wnnd",
+      "doi": "10.1103/g9x1-wnnd",
+      "title": "Atomistic Simulation of Subcritical Crack Growth in Glass in Vacuum",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-09",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206101"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-kj1q-h9pw",
+      "doi": "10.1103/kj1q-h9pw",
+      "title": "Terahertz Switching of Two-dimensional Antiferromagnetic Order",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-09",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206702"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-zpbg-7137",
+      "doi": "10.1103/zpbg-7137",
+      "title": "Many-Body-Driven Ultrafast Exciton Relaxation Enabled by Phonon-Activated Coulomb Coupling",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-10",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206401"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-l5j1-7b4d",
+      "doi": "10.1103/l5j1-7b4d",
+      "title": "Long-Range and Short-Range Longitudinal Flow Decorrelations in the Quark-Gluon Plasma",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-12",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "202301"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-y95w-7ztb",
+      "doi": "10.1103/y95w-7ztb",
+      "title": "Lower Limit on the Double-Alpha Decay of Ra 224",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-12",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "202501"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-nn1b-pxhf",
+      "doi": "10.1103/nn1b-pxhf",
+      "title": "Grain-Scale Origin of Stick-Slip Waves in Silo Discharge: Influence of Cohesion",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-12",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "208202"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-99gj-qpbv",
+      "doi": "10.1103/99gj-qpbv",
+      "title": "Walk-on-Spheres Solution to Heterogeneous Transport Phenomena",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-12",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "207102"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-qqpd-92fb",
+      "doi": "10.1103/qqpd-92fb",
+      "title": "Open-Boundary-Condition-Persistent Point-Gap Bound States in the Non-Hermitian Continuum",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-13",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "206603"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-1lmr-876g",
+      "doi": "10.1103/1lmr-876g",
+      "title": "High-Heating Efficiency and Reproducibility in Double-Cone Ignition Experiments",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-16",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "215101"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-8bqv-q7xn",
+      "doi": "10.1103/8bqv-q7xn",
+      "title": "Multimode Squeezing and Multipartite Entanglement Generations with Topological Protection",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-16",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "213601"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-6bb2-hy7q",
+      "doi": "10.1103/6bb2-hy7q",
+      "title": "Transformation-Induced Plasticity in Metals Activated by Shape-Memory Ceramics",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-17",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "216101"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-tzk8-nqby",
+      "doi": "10.1103/tzk8-nqby",
+      "title": "Strain-Tunable Competing Polar Orders in NbOCl 2",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-17",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "216801"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-ljsf-xwz9",
+      "doi": "10.1103/ljsf-xwz9",
+      "title": "Dual Relaxation Modes Control Polymer Crystallization",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-17",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "218102"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-yk31-1s6y",
+      "doi": "10.1103/yk31-1s6y",
+      "title": "Experimental Bounds on Phonon Tunneling across Nanoscale Vacuum Gaps",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-17",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "216302"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-4wrm-gr4b",
+      "doi": "10.1103/4wrm-gr4b",
+      "title": "Two-Fluid Effects in Z-Pinch Ablation Characterized by Unified Bayesian Inversion",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-17",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "215102"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-1xgg-qdyd",
+      "doi": "10.1103/1xgg-qdyd",
+      "title": "Mendonça, Jachymski, and Wang Reply",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-19",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "219302"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    },
+    {
+      "id": "doi-10-1103-23c1-33d4",
+      "doi": "10.1103/23c1-33d4",
+      "title": "Geometric Confinement Enhances Bacterial Transport by Accelerating Surface-Bulk Exchange",
+      "journal": "PRL",
+      "article_kind": "article",
+      "publication_status": "published",
+      "publication_date": "2026-11-25",
+      "publication_evidence": {
+        "source": "APS RSS",
+        "url": "https://feeds.aps.org/rss/recent/prl.xml",
+        "volume": "137",
+        "article_number": "228301"
+      },
+      "has_abstract": false,
+      "decision": "not_published_today"
+    }
+  ],
+  "arxiv_candidates": [
+    {
+      "decision": "no_announcements_in_window",
+      "announcement_date": "2026-11-28",
+      "evidence_url": "https://arxiv.org/catchup/cond-mat/2026-11-28",
+      "window": {
+        "version": "la-0600-arxiv24h-previous-journal-day-v1",
+        "timezone": "America/Los_Angeles",
+        "arxiv_start": "2026-11-27T14:00:00+00:00",
+        "arxiv_end": "2026-11-28T14:00:00+00:00",
+        "journal_publication_date": "2026-11-27"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "doi-10-1038-s41567-026-03530-x",
+      "doi": "10.1038/s41567-026-03530-x",
+      "title": "Differential active adhesion and a capillary instability drive global eversion and dissemination of bacterial colonies",
+      "type": "Journal",
+      "journal": "Nature Physics",
+      "authors": "Stephan Wimmi, Isabelle Wielert, Kai Zhou, Marc Hennes, Benedikt Sabass, Berenike Maier",
+      "abstract": "Abstract Attractive forces between cells can determine the shape and sorting behaviour of bacterial colonies. During colony development, chemical gradients form within the colony, but it is unclear how they affect cohesion. Here we discover that such gradients trigger global eversion of proliferating colonies formed by the human pathogen Neisseria gonorrhoeae . Like a jet, the inner core flows towards the periphery where it is partially dispersed and partially spreads around the core of the colony. Living dispersed cells reform colonies, leading to rapid dissemination. The eversion depends on local oxygen depletion, which reduces the activity of the molecular motors that govern self-attraction: before the eversion, the colony consists of a weakly cohesive spherical core surrounded by a strongly cohesive shell. An idealized computational model reveals that, in this configuration, an instability analogous to a capillary instability emerges when the thickness of the strongly interacting shell falls below a critical value. We show that the probability for eversion strongly depends on the motor-generated attractive force between bacteria. Overall, our results indicate that chemical gradients induce spontaneous symmetry breaking in a mechanically active colony, thereby triggering a nonlinear shape instability. This instability generates large-scale cellular fluxes that redistribute bacteria towards environments more favourable for their growth.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41567-026-03530-x",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41567-026-03530-x"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Abstract Attractive forces between cells can determine the shape and sorting behaviour of bacterial colonies. During colony development, chemical gradients form within the colony, but it is unclear how they affect cohesion. Here we discover that such gradients trigger global eversion of proliferating colonies formed by the human pathogen Neisseria gonorrhoeae . Like a jet, the inner core flows tow",
+      "summary": "Abstract Attractive forces between cells can determine the shape and sorting behaviour of bacterial colonies. During colony development, chemical gradients form within the colony, but it is unclear how they affect cohesion. Here we discover that such gradients trigger global eversion of proliferating colonies formed by the human pathogen Neisseria gonorrhoeae . Like a jet, the inner core flows tow",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41567-026-03530-x",
+        "in_scope": false,
+        "soft_matter": true,
+        "quantum_materials": false,
+        "research_type": "mixed",
+        "score": 35,
+        "feature_candidate": false,
+        "reason": "This is a study of active biological colonies and their mechanical instability, which falls under excluded biological soft matter rather than condensed-matter physics.",
+        "physics_advance": "Chemical gradients weaken bacterial self-attraction in the colony core, creating a weakly cohesive core and strongly cohesive shell whose instability drives global eversion and cell dispersal."
+      },
+      "soft_matter": true,
+      "quantum_materials": false,
+      "research_type": "mixed",
+      "screening_decision": "soft_matter",
+      "physics_advance": "Chemical gradients weaken bacterial self-attraction in the colony core, creating a weakly cohesive core and strongly cohesive shell whose instability drives global eversion and cell dispersal.",
+      "ai_in_scope": false,
+      "relevance_reason": "This is a study of active biological colonies and their mechanical instability, which falls under excluded biological soft matter rather than condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 35,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78497-7",
+      "doi": "10.1038/s41467-026-78497-7",
+      "title": "Transcriptional nodes governing diversity and effector rewiring of a plastic liver invariant natural killer T cell ecosystem",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Jun Yamanouchi, Josep Garnica, Enric Canut, Shari Thiessen, Thomas Papp-Simon, Joel Moro, Debajyoti Mondal, Pau Serra, Pere Santamaria",
+      "abstract": "Invariant natural killer T (iNKT) cells are thought to exit the thymus as terminally differentiated subsets that seed tissues with fixed effector biases. However, the composition, regulatory architecture and plasticity of tissue-resident iNKT cell compartments remain ill-defined. Here, we chart the cellular diversity and transcription-factor (TF) circuitry of mouse liver-resident iNKT (LiNKT) cells and delineate intrahepatic differentiation at steady state and following repeated intravascular αGalCer/CD1d stimulation. Single-cell profiling identifies eight subsets with distinct transcriptional signatures—LiNKT2 (IL-4/IL-13-biased), LiNKT17 (IL-17A-biased), LiNKTR1 (TR1-like, IL-10-biased), and five NKT1-like (IFNγ-biased) states including LiNKT1.1, LiNKT1.2, LiNKT1.3, Klrg1lowCx3cr1low Effector and Klrg1highCx3cr1high Effector populations. Trajectory and compositional analyses reveal that iterative stimulation expands LiNKT2 and drives their conversion into LiNKTR1, while LiNKT1.1 seeds Effector and Klrg1⁺Cx3cr1⁺ Effector states, revealing local specification layered atop thymic priming. Conditional deletion across seven signature TFs associated with each subset maps subset dependencies and fate transitions: BCL-6 and TCF-1 sustain global iNKT output and, together with T-BET, license all NKT1-like states. BCL-6, ID3, and IRF4 drive Effector LiNKT1; BCL-6 and c-MAF specify LiNKT17; BLIMP-1 promotes LiNKT2 and, with c-MAF and IRF4, enforces LiNKTR1 specification. BLIMP-1 and ID3 oppose each other in LiNKTR1 versus Effector LiNKT1 differentiation. Thus, the hepatic iNKT compartment emerges as a TF-wired, plastic network in which local cues and subset-specific TF combinations govern lineage progression, nominating actionable nodes for tuning liver inflammation and repair. The transcriptional diversity of liver-resident invariant natural killer T (LiNKT) cells remains incompletely understood. Here, the authors map eight mouse LiNKT cell subsets and show how transcription factors guide their conversion into inflammatory or regulatory states, revealing targets for controlling liver inflammation and repair.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-78497-7",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78497-7"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Invariant natural killer T (iNKT) cells are thought to exit the thymus as terminally differentiated subsets that seed tissues with fixed effector biases. However, the composition, regulatory architecture and plasticity of tissue-resident iNKT cell compartments remain ill-defined. Here, we chart the cellular diversity and transcription-factor (TF) circuitry of mouse liver-resident iNKT (LiNKT) cell",
+      "summary": "Invariant natural killer T (iNKT) cells are thought to exit the thymus as terminally differentiated subsets that seed tissues with fixed effector biases. However, the composition, regulatory architecture and plasticity of tissue-resident iNKT cell compartments remain ill-defined. Here, we chart the cellular diversity and transcription-factor (TF) circuitry of mouse liver-resident iNKT (LiNKT) cell",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-78497-7",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 10,
+        "feature_candidate": false,
+        "reason": "The primary contribution is immunological characterization of liver-resident T-cell subsets and their transcriptional regulation, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary contribution is immunological characterization of liver-resident T-cell subsets and their transcriptional regulation, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 10,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79826-6",
+      "doi": "10.1038/s41467-026-79826-6",
+      "title": "Rigidity-driven molecular assembly for high-efficiency flexible perovskite/CIGS tandems",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Libing Yao, Enbing Bi, Qingqing Liu, Ke Zhao, Caner Değer, Ilhan Yavuz, Jingjing Zhou, Weizhong Tian, Xiaohe Miao, Jiahui Shen, Yang Gui, Yixin Luo, Jiazhe Xu, Xu Zhang, Tie Guo, Jingjing Xue, Rui Wang",
+      "abstract": "Monolithic flexible perovskite/Cu(In,Ga)Se2 (CIGS) tandem solar cells (TSCs) are pivotal for next-generation flexible photovoltaics, owing to their high power-to-weight ratio and mechanical compliance. However, their development is constrained by the challenge of depositing high-quality hole-selective contacts (HSCs) onto intrinsically rough CIGS bottom cells. Conventional molecular interlayers often exhibit poor packing on such surfaces, leading to interfacial defects that compromise both efficiency and stability. Here, we report Py6, a rigid molecule engineered with an enforced vinylene (C = C) bridge to ensure molecular planarity and extended π-conjugation. This structural rigidity fosters a highly ordered nanoscale assembly that effectively templates the growth of dense, void-free perovskite layers while optimizing interfacial energetic alignment. Consequently, our champion flexible TSC achieved a power conversion efficiency (PCE) of 28.21% (0.0749 cm2, certified 27.58%), while large-area devices (1.010 cm2) reached 25.63%, with a certified PCE of 25.19% and a certified stabilized PCE of 25.16%. Furthermore, the resulting devices exhibit exceptional durability, retaining 93.8% of their initial PCE after 400 hours of continuous 1-sun operation and 94.2% after 5000 rigorous bending cycles. Our rigidity-driven molecular design overcomes the critical interfacial bottlenecks of non-planar photovoltaics, providing a robust pathway for high-performance, mechanically resilient flexible tandem technologies. Flexible perovskite and copper indium gallium selenide tandem solar cells are hindered by rough interfaces that reduce efficiency and stability. Yao et al. designed a rigid molecular contact enabling efficient, durable devices that withstand prolonged operation and bending.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79826-6",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79826-6"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Monolithic flexible perovskite/Cu(In,Ga)Se2 (CIGS) tandem solar cells (TSCs) are pivotal for next-generation flexible photovoltaics, owing to their high power-to-weight ratio and mechanical compliance. However, their development is constrained by the challenge of depositing high-quality hole-selective contacts (HSCs) onto intrinsically rough CIGS bottom cells. Conventional molecular interlayers of",
+      "summary": "Monolithic flexible perovskite/Cu(In,Ga)Se2 (CIGS) tandem solar cells (TSCs) are pivotal for next-generation flexible photovoltaics, owing to their high power-to-weight ratio and mechanical compliance. However, their development is constrained by the challenge of depositing high-quality hole-selective contacts (HSCs) onto intrinsically rough CIGS bottom cells. Conventional molecular interlayers of",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79826-6",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 25,
+        "feature_candidate": false,
+        "reason": "The work optimizes molecular contacts and device efficiency and durability in tandem solar cells without establishing an independent quantum-materials phenomenon.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The work optimizes molecular contacts and device efficiency and durability in tandem solar cells without establishing an independent quantum-materials phenomenon.",
+      "relevance_method": "semantic",
+      "relevance_score": 25,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79675-3",
+      "doi": "10.1038/s41467-026-79675-3",
+      "title": "Identification and functional characterization of bacterial bilirubin vinyl reductase across vertebrate gut microbiomes",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Angela K. Jiang, Maggie R. Grant, Gabriela Arp, Keith Dufault-Thompson, Alexandra M. Clarke, Yue Li, Danielle Lehman, Alan K. Jarmusch, Brantley Hall, Xiaofang Jiang",
+      "abstract": "Abstract Gut bacteria reduce bilirubin to urobilinogen, allowing it to be excreted through feces and urine, but studies have long noted a heterogeneous mixture of partially reduced bilirubin-derived intermediates, suggesting that multiple enzymes are involved. Here we identify bilirubin vinyl reductase (BilV), an Old Yellow Enzyme family reductase encoded in the genomic neighborhood of the known bilirubin reductase ( bilR ). Using heterologous expression and LC–MS/MS, we show that BilR acts on the methine bridges in the bilirubin reduction pathway; co-expression with BilV enables vinyl-group reduction and complete conversion to urobilinogen. In bacterial genomes, bilV co-occurs primarily with the bilR -insertion subtype and is largely absent alongside bilR -short. Analysis of 1,197 gut metagenomes across 14 vertebrate species reveals that this differential co-occurrence shapes pathway availability across hosts: carnivores and omnivores carry balanced bilR and bilV , whereas avian microbiomes, dominated by bilR -short, are depleted for bilV . These findings establish that bilirubin reduction to urobilinogen involves two enzymes with complementary regioselectivity, revising the previous model, and that their distribution across vertebrate gut microbiomes varies in relation to host bile pigment chemistry.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79675-3",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79675-3"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Abstract Gut bacteria reduce bilirubin to urobilinogen, allowing it to be excreted through feces and urine, but studies have long noted a heterogeneous mixture of partially reduced bilirubin-derived intermediates, suggesting that multiple enzymes are involved. Here we identify bilirubin vinyl reductase (BilV), an Old Yellow Enzyme family reductase encoded in the genomic neighborhood of the known b",
+      "summary": "Abstract Gut bacteria reduce bilirubin to urobilinogen, allowing it to be excreted through feces and urine, but studies have long noted a heterogeneous mixture of partially reduced bilirubin-derived intermediates, suggesting that multiple enzymes are involved. Here we identify bilirubin vinyl reductase (BilV), an Old Yellow Enzyme family reductase encoded in the genomic neighborhood of the known b",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79675-3",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 10,
+        "feature_candidate": false,
+        "reason": "This is a microbiome enzymology and biochemistry study, outside condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is a microbiome enzymology and biochemistry study, outside condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 10,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79812-y",
+      "doi": "10.1038/s41467-026-79812-y",
+      "title": "A membrane-active cationic supramolecule to treat both fungal and bacterial keratitis",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Adrielle Xianwen Chen, Thet Tun Aung, Tianjiao Dai, Eve Wai Ling Chow, Jianguo Li, Keefe Oei, Venkatesh Mayandi, Sai Bo Bo Tun, Amutha Veluchamy Barathi, Darren Shu Jeng Ting, Yi Yan Yang, Chandra Shekhar Verma, Rajamani Lakshminarayanan, Yue Wang, Ning Li",
+      "abstract": "Rising antimicrobial resistance (AMR) underscores the urgent need for new antimicrobial strategies. We report here a membrane-active cationic supramolecule and its strong therapeutic efficacy against both fungal and bacterial keratitis in animal models. The lead Y8 design displayed broad-spectrum activity against various fungal pathogens, with low-µM MIC90, rapid action kinetics, and resistance evasion. Mechanistically, it disrupts the fungal cytoplasmic membrane and interacts with the cell wall glucan. Y8 is ocular compatible and, more importantly, shows higher/comparable efficacy to voriconazole, natamycin and amphotericin B in treating Candida, Fusarium and Aspergillus keratitis in mice or rabbits, respectively. It further displays strong activity against pathogenic bacteria, including methicillin-resistant Staphylococcus aureus (MRSA), with markedly better treatment outcomes than vancomycin in a mouse MRSA keratitis model. Overall, here we demonstrate a safe, potent, and cross-kingdom antimicrobial strategy, which may potentially contribute to the frontline infection management and AMR crisis mitigation. In this work, authors report a membrane-active cationic supramolecule, Y8, with potent cross-kingdom activity against vision-threatening fungal and bacterial keratitis. It is ocular-compatible and outperforms or matches standard therapies in animal models.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79812-y",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79812-y"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Rising antimicrobial resistance (AMR) underscores the urgent need for new antimicrobial strategies. We report here a membrane-active cationic supramolecule and its strong therapeutic efficacy against both fungal and bacterial keratitis in animal models. The lead Y8 design displayed broad-spectrum activity against various fungal pathogens, with low-µM MIC90, rapid action kinetics, and resistance ev",
+      "summary": "Rising antimicrobial resistance (AMR) underscores the urgent need for new antimicrobial strategies. We report here a membrane-active cationic supramolecule and its strong therapeutic efficacy against both fungal and bacterial keratitis in animal models. The lead Y8 design displayed broad-spectrum activity against various fungal pathogens, with low-µM MIC90, rapid action kinetics, and resistance ev",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79812-y",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 15,
+        "feature_candidate": false,
+        "reason": "The central advance is an antimicrobial therapeutic tested in animal models, a biomedical and chemical contribution rather than condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The central advance is an antimicrobial therapeutic tested in animal models, a biomedical and chemical contribution rather than condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 15,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79601-7",
+      "doi": "10.1038/s41467-026-79601-7",
+      "title": "Anyone can be the best depending on how structural variant callers are evaluated",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Luca Denti, Thomas Krannich, Tomas Vinar, Rayan Chikhi, Paola Bonizzoni, Brona Brejova, Fereydoun Hormozdiari",
+      "abstract": "Abstract Structural variants (SVs) are medium- and large-scale genomic alterations that shape phenotypic diversity and disease risk. Numerous methods have been proposed for discovering SVs, however their benchmarking has been inconsistent across studies, often resulting in contradictory findings. We evaluate the performance of several SV discovery methods for detecting unbalanced SVs from long-read sequencing data and observe substantial variation in performance and ranking depending on the choice of ground truth, reference genome, and genomic regions used for evaluation. Our results indicate that these discrepancies largely arise from inconsistencies among SV callsets used as ground truth, ranging from consortium-curated benchmarks to callsets derived from high-quality assemblies. These discrepancies call for additional caution in downstream analyses and in drawing conclusions based on predicted SVs. Our findings underscore the complexity of evaluating SV detection methods and highlight the need for careful consideration and field-standard practices when reporting performance metrics.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79601-7",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79601-7"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Abstract Structural variants (SVs) are medium- and large-scale genomic alterations that shape phenotypic diversity and disease risk. Numerous methods have been proposed for discovering SVs, however their benchmarking has been inconsistent across studies, often resulting in contradictory findings. We evaluate the performance of several SV discovery methods for detecting unbalanced SVs from long-rea",
+      "summary": "Abstract Structural variants (SVs) are medium- and large-scale genomic alterations that shape phenotypic diversity and disease risk. Numerous methods have been proposed for discovering SVs, however their benchmarking has been inconsistent across studies, often resulting in contradictory findings. We evaluate the performance of several SV discovery methods for detecting unbalanced SVs from long-rea",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79601-7",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 18,
+        "feature_candidate": false,
+        "reason": "The primary contribution is benchmarking genomic-variant detection methods, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary contribution is benchmarking genomic-variant detection methods, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 18,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79605-3",
+      "doi": "10.1038/s41467-026-79605-3",
+      "title": "Buried stochastic interfaces enabling depth-multiplexed optical physical unclonable functions",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Taeyeong Kim, Kibum Jung, Jungchul Lee",
+      "abstract": "Physical unclonable functions (PUFs) convert irreproducible physical disorder into device-unique responses for hardware authentication. However, many optical PUFs rely on surface- or near-surface-accessible features, coupling optical readability to vulnerability to inspection, replication, and data-driven inference. Here we introduce optically hidden silicon PUFs that encode physically protected entropy at buried membrane–cavity interfaces and enable its readout through depth-selective optical gating. Annealing of high-aspect-ratio hole arrays produces multilayer silicon architectures with device-specific buried interfacial roughness concealed beneath a planarized, optically featureless surface. Spectro-angular- and polarization-selective illumination enables deterministic readout across eight buried interfaces in the primary configuration. The responses exhibit an inter-device Hamming distance of 0.5011 ± 0.0060 (mean ± s.d.), depth-plane discrimination accuracies of 98.9−99.4%, and 0.080% generated-response acceptance under a challenge-held-out best-of-Ksearch = 64 spoofing evaluation at a fixed impostor false-positive rate of 10−3. Redundancy-aware depth multiplexing yields a pairwise-redundancy-screened, spatial-predictability-adjusted effective pre-ECC response budget of ~0.74×108 bits per 200×200μm2 pattern while retaining wafer-scale manufacturability. These results establish buried-interface depth multiplexing as a scalable route to physically protected optical authentication. Optical physical unclonable functions often rely on surface-accessible features. Here, the authors conceal stochastic nanotexture at vertically stacked silicon interfaces beneath a planarized surface and use depth-selective optical gating to read eight planes for reliable hardware authentication.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79605-3",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79605-3"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Topology & Transport",
+      "summary_en": "Physical unclonable functions (PUFs) convert irreproducible physical disorder into device-unique responses for hardware authentication. However, many optical PUFs rely on surface- or near-surface-accessible features, coupling optical readability to vulnerability to inspection, replication, and data-driven inference. Here we introduce optically hidden silicon PUFs that encode physically protected e",
+      "summary": "Physical unclonable functions (PUFs) convert irreproducible physical disorder into device-unique responses for hardware authentication. However, many optical PUFs rely on surface- or near-surface-accessible features, coupling optical readability to vulnerability to inspection, replication, and data-driven inference. Here we introduce optically hidden silicon PUFs that encode physically protected e",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79605-3",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 25,
+        "feature_candidate": false,
+        "reason": "The work engineers an optical authentication device and evaluates its performance rather than investigating condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The work engineers an optical authentication device and evaluates its performance rather than investigating condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 25,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79635-x",
+      "doi": "10.1038/s41467-026-79635-x",
+      "title": "Control of out-of-plane anti-damping spin torque with a canted ferromagnetic spin source",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Xiaoxi Huang, Daniel A. Pharis, Hang Zhou, Zishen Tian, Thow Min Jerald Cham, Zhaoyang Wang, Yuhan Liang, Kyoungjun Lee, Yilin Evan Li, Maciej Olszewski, Di Yi, Chang-Beom Eom, Darrell G. Schlom, Lane W. Martin, Ding-Fu Shao, Daniel C. Ralph",
+      "abstract": "To achieve efficient anti-damping switching of nanoscale magnetic memories with perpendicular magnetic anisotropy using spin-orbit torque requires that the anti-damping spin-orbit torque have a strong out-of-plane component. The spin anomalous Hall effect and the planar Hall effect spin current produced by a ferromagnetic layer are candidate mechanisms for producing such an out-of-plane anti-damping torque, but both require that the magnetic moment of the spin source layer be canted partly out of the sample plane at zero applied magnetic field. Here we demonstrate such a canted configuration for a ferromagnetic SrRuO3 layer, and we characterize all vector components of the torque that it produces, including non-zero out-of-plane anti-damping torques. We verify that the out-of-plane spin component can be tuned by the orientation of the magnetic moment, with significant contributions from both the spin anomalous Hall effect and the planar Hall effect spin current. Huang et al. show that canted magnetization in SrRuO3 generates a sizable out-of-plane damping-like torque without relying on low crystal symmetry, offering a strategy toward scalable magnetic-memory devices with perpendicular magnetic anisotropy.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79635-x",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79635-x"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Magnetism",
+      "summary_en": "To achieve efficient anti-damping switching of nanoscale magnetic memories with perpendicular magnetic anisotropy using spin-orbit torque requires that the anti-damping spin-orbit torque have a strong out-of-plane component. The spin anomalous Hall effect and the planar Hall effect spin current produced by a ferromagnetic layer are candidate mechanisms for producing such an out-of-plane anti-dampi",
+      "summary": "To achieve efficient anti-damping switching of nanoscale magnetic memories with perpendicular magnetic anisotropy using spin-orbit torque requires that the anti-damping spin-orbit torque have a strong out-of-plane component. The spin anomalous Hall effect and the planar Hall effect spin current produced by a ferromagnetic layer are candidate mechanisms for producing such an out-of-plane anti-dampi",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79635-x",
+        "in_scope": true,
+        "soft_matter": false,
+        "quantum_materials": true,
+        "research_type": "experiment",
+        "score": 66,
+        "feature_candidate": false,
+        "reason": "This experimental study investigates magnetic spin transport in ferromagnetic SrRuO3 and identifies mechanisms that generate a tunable out-of-plane anti-damping torque.",
+        "physics_advance": "Canted magnetization in SrRuO3 produces a tunable out-of-plane anti-damping torque, with contributions from both the spin anomalous Hall effect and planar Hall effect spin current."
+      },
+      "soft_matter": false,
+      "quantum_materials": true,
+      "research_type": "experiment",
+      "screening_decision": "selected",
+      "physics_advance": "Canted magnetization in SrRuO3 produces a tunable out-of-plane anti-damping torque, with contributions from both the spin anomalous Hall effect and planar Hall effect spin current.",
+      "ai_in_scope": true,
+      "relevance_reason": "This experimental study investigates magnetic spin transport in ferromagnetic SrRuO3 and identifies mechanisms that generate a tunable out-of-plane anti-damping torque.",
+      "relevance_method": "semantic",
+      "relevance_score": 66,
+      "feature_candidate": true
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78959-y",
+      "doi": "10.1038/s41467-026-78959-y",
+      "title": "Expanding antimicrobial chemical space by engineering drug safety",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Tahoura Samad, Chayanon Ngambenjawong, Henry Ko, Savan Patel, Cristiana DeAgazio, Heather E. Fleming, Sangeeta N. Bhatia",
+      "abstract": "Abstract Antimicrobial-resistant (AMR) infections are a major health threat. Although advances in high-throughput screening, genome mining, and machine learning have accelerated antimicrobial discovery, insufficient separation between antibacterial efficacy and host toxicity remains a bottleneck to the clinical development of new antimicrobial compounds. Here, we establish a generalizable, two-component strategy to engineer drug safety and mobilize otherwise inaccessible chemical space for antimicrobial therapy, using calicheamicin, a potent cytotoxin with unacceptable host toxicity, as a proof of concept. First, we engineer a conditionally active drug conjugate that limits calicheamicin activity to infected tissue, thereby reducing systemic toxicity. Second, we engineer a self-resistance enzyme from Micromonospora echinospora , the natural producer of calicheamicin, as a long-circulating antidote to neutralize calicheamicin outside infected tissue, further reducing off-target toxicity. The conjugate exhibits activity against Gram-positive and Gram-negative pathogens upon exposure to a protease present within the infected microenvironment. When delivered with the antidote, antibacterial efficacy is maintained while off-target toxicity is reduced in mouse models of Gram-positive and Gram-negative bacterial pneumonia. We anticipate that our dual strategy, which engineers drug safety rather than selecting for it, provides a generalizable framework for mobilizing promising but toxic compounds as antimicrobials.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-78959-y",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78959-y"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Abstract Antimicrobial-resistant (AMR) infections are a major health threat. Although advances in high-throughput screening, genome mining, and machine learning have accelerated antimicrobial discovery, insufficient separation between antibacterial efficacy and host toxicity remains a bottleneck to the clinical development of new antimicrobial compounds. Here, we establish a generalizable, two-com",
+      "summary": "Abstract Antimicrobial-resistant (AMR) infections are a major health threat. Although advances in high-throughput screening, genome mining, and machine learning have accelerated antimicrobial discovery, insufficient separation between antibacterial efficacy and host toxicity remains a bottleneck to the clinical development of new antimicrobial compounds. Here, we establish a generalizable, two-com",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-78959-y",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 5,
+        "feature_candidate": false,
+        "reason": "The primary advance is an antimicrobial drug-safety strategy tested in biological systems, outside condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary advance is an antimicrobial drug-safety strategy tested in biological systems, outside condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 5,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79288-w",
+      "doi": "10.1038/s41467-026-79288-w",
+      "title": "Changing mercury exposure in the Yukon Watershed linked to traditional diet shifts and permafrost thaw",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "M. Isabel Smith, Emily A. Seelen, Edda A. Mutter, Anna R. Godduhn, Marie E. Lowe, John S. Magyar, A. Joshua West",
+      "abstract": "Abstract Rapid Arctic warming is disrupting ecosystems and traditional subsistence resources, and simultaneously may release toxic mercury into aquatic ecosystems. Together, these changes threaten food security and public health. In the Yukon River Basin of Alaska, many Indigenous communities that traditionally rely on subsistence fishing are facing precipitous declines in salmon populations. Alternative protein sources can contain up to eight times more mercury, with burbot, northern pike, and beluga being major dietary mercury contributors. More reliance on these proteins could increase mercury exposure, while permafrost thaw is projected to increase mercury concentrations in fish by 21–175% by 2100. Here, we combine diet surveys and subsistence harvest data to develop a hypothetical dietary mercury model. Dietary shifts and permafrost-driven increases in fish mercury could increase mercury intake up to 486%, potentially exceeding public health guidelines and highlighting the vulnerability of Arctic food systems to interacting environmental and ecological change.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79288-w",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79288-w"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Abstract Rapid Arctic warming is disrupting ecosystems and traditional subsistence resources, and simultaneously may release toxic mercury into aquatic ecosystems. Together, these changes threaten food security and public health. In the Yukon River Basin of Alaska, many Indigenous communities that traditionally rely on subsistence fishing are facing precipitous declines in salmon populations. Alte",
+      "summary": "Abstract Rapid Arctic warming is disrupting ecosystems and traditional subsistence resources, and simultaneously may release toxic mercury into aquatic ecosystems. Together, these changes threaten food security and public health. In the Yukon River Basin of Alaska, many Indigenous communities that traditionally rely on subsistence fishing are facing precipitous declines in salmon populations. Alte",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79288-w",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "other",
+        "score": 5,
+        "feature_candidate": false,
+        "reason": "The study concerns environmental exposure, diet, and public health rather than condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "other",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The study concerns environmental exposure, diet, and public health rather than condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 5,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79339-2",
+      "doi": "10.1038/s41467-026-79339-2",
+      "title": "The human hypothalamus encodes prediction errors during sensory–nutrient inference",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Putu A. Khorisantono, Fei-Yang Huang, Michael P. F. Sutcliffe, Paul C. Fletcher, I. Sadaf Farooqi, Fabian Grabenhorst",
+      "abstract": "Abstract Humans infer the nutrient content of foods from sensory cues, yet the neural and computational basis of these inferences remains unclear. Here we show how oral texture contributes to judgements of fat content by combining purpose-designed foods that dissociated fat from texture with behavioural testing, computational modelling, functional neuroimaging during consumption, and a naturalistic feeding assay. Judgements of fat content reflected established relationships between oral texture and fat and became systematically less accurate when these relationships were violated. A computational model formalized these failures as prediction errors—discrepancies between fat content predicted from texture and actual fat content. During food consumption, the hypothalamus encoded these model-derived prediction errors, responding most strongly when texture predicted more fat than the food contained. Individual differences in hypothalamic sensitivity to texture predicted fat intake during an ad libitum meal. These findings show how sensory inference of fat content engages hypothalamic signals predicting food intake.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79339-2",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79339-2"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Abstract Humans infer the nutrient content of foods from sensory cues, yet the neural and computational basis of these inferences remains unclear. Here we show how oral texture contributes to judgements of fat content by combining purpose-designed foods that dissociated fat from texture with behavioural testing, computational modelling, functional neuroimaging during consumption, and a naturalisti",
+      "summary": "Abstract Humans infer the nutrient content of foods from sensory cues, yet the neural and computational basis of these inferences remains unclear. Here we show how oral texture contributes to judgements of fat content by combining purpose-designed foods that dissociated fat from texture with behavioural testing, computational modelling, functional neuroimaging during consumption, and a naturalisti",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79339-2",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "mixed",
+        "score": 8,
+        "feature_candidate": false,
+        "reason": "This is a human neuroscience study of sensory inference and hypothalamic activity, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "mixed",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is a human neuroscience study of sensory inference and hypothalamic activity, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 8,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79346-3",
+      "doi": "10.1038/s41467-026-79346-3",
+      "title": "An all-in-one wearable platform offers continuous assessment and early diagnosis of acute kidney injury for outdoor workers",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Hoon Yi, Roxana C. Chicas, Hyunwoo Seo, Yixuan Liu, Seunghyeb Ban, Hodam Kim, Tae Woog Kang, Jimin Lee, Ka Ram Kim, Ernesto Ruiz, Jeff M. Sands, Chiehyeon Lim, Li Xiong, Vicki Hertzberg, Woon-Hong Yeo",
+      "abstract": "Outdoor workers are at a significantly higher risk of acute kidney injury (AKI). Efficient noninvasive monitoring of physiological changes plays a crucial role in the proactive assessment of AKI risk. Here, we introduce an all-in-one wearable platform that presents a class of translational technologies of multimodal sensors, multifunctional materials, snap-on modular electronics, and an AI-based predictive model for continuous renal function assessment and AKI risk. The wearable patch is designed to simultaneously measure temperature, skin hydration, cardiac activities, physical activities, and blood oxygen saturation, and to detect continuous changes in serum creatinine, the clinical standard for diagnosing AKI. The self-supervised learning framework integrates a clinically informed pretext deep learning task to extract features indicating the worker’s physiological change over time. An in vivo study involving 110 outdoor workers demonstrates that the real-time collection of multiple physiological parameters combined with integrated AI can facilitate early diagnosis of AKI with modest discrimination (AUC 0.60). Real-time monitoring of occupational stress remains challenging. Here, the authors develop an integrated wearable platform to continuously track multimodal biomarkers and predict serum creatinine changes across outdoor workers",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79346-3",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79346-3"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Topology & Transport",
+      "summary_en": "Outdoor workers are at a significantly higher risk of acute kidney injury (AKI). Efficient noninvasive monitoring of physiological changes plays a crucial role in the proactive assessment of AKI risk. Here, we introduce an all-in-one wearable platform that presents a class of translational technologies of multimodal sensors, multifunctional materials, snap-on modular electronics, and an AI-based p",
+      "summary": "Outdoor workers are at a significantly higher risk of acute kidney injury (AKI). Efficient noninvasive monitoring of physiological changes plays a crucial role in the proactive assessment of AKI risk. Here, we introduce an all-in-one wearable platform that presents a class of translational technologies of multimodal sensors, multifunctional materials, snap-on modular electronics, and an AI-based p",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79346-3",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "mixed",
+        "score": 8,
+        "feature_candidate": false,
+        "reason": "The primary contribution is a wearable medical-monitoring platform and AKI prediction, not new physics of condensed matter.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "mixed",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary contribution is a wearable medical-monitoring platform and AKI prediction, not new physics of condensed matter.",
+      "relevance_method": "semantic",
+      "relevance_score": 8,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79660-w",
+      "doi": "10.1038/s41467-026-79660-w",
+      "title": "Molecular basis for thermoresponsive protein condensation in plants",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Sunita Pathak, Ananya Chakravarti, Carissa Bersche, David A. Korasick, Yuren Cao, Jerelle A. Joseph, Lucia C. Strader",
+      "abstract": "Plants continuously experience temperature fluctuations that shape their physiology, development, and survival. Yet, how plants sense and adapt to elevated temperatures at the molecular level remains only partially understood. Here, we uncover a sequence-encoded mechanism by which plant proteins directly sense temperature through condensation. Focusing on prion-like low-complexity domains (PLCDs) in Arabidopsis thaliana, we combine cellular imaging, quantitative biophysics, and coarse-grained molecular dynamics simulations to show that numerous PLCDs undergo reversible lower critical solution temperature (LCST)-type phase transitions. We find that PLCDs that are sufficient and necessary for condensation confer thermoresponsive variability to full-length proteins. Sequence analysis and simulations reveal that thermoresponsiveness is encoded in compositional heuristics, with sufficient PLCDs enriched in aliphatic and aromatic residues, enabling accurate prediction and rational tuning of condensation thresholds. Engineered variants with altered sequence composition exhibit predictable shifts in thermoresponsive condensation, confirming a direct, sequence-level encoding of temperature sensitivity. Our findings establish LCST-driven phase transitions as common amongst plant PLCD-containing proteins and provide a molecular framework for designing synthetic biomolecules with programmable temperature responses. Molecular temperature sensing is not fully understood. Here, the authors show that many Arabidopsis prion-like low-complexity domain-containing proteins undergo phase transitions which might act as temperature sensors.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79660-w",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79660-w"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Plants continuously experience temperature fluctuations that shape their physiology, development, and survival. Yet, how plants sense and adapt to elevated temperatures at the molecular level remains only partially understood. Here, we uncover a sequence-encoded mechanism by which plant proteins directly sense temperature through condensation. Focusing on prion-like low-complexity domains (PLCDs) ",
+      "summary": "Plants continuously experience temperature fluctuations that shape their physiology, development, and survival. Yet, how plants sense and adapt to elevated temperatures at the molecular level remains only partially understood. Here, we uncover a sequence-encoded mechanism by which plant proteins directly sense temperature through condensation. Focusing on prion-like low-complexity domains (PLCDs) ",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79660-w",
+        "in_scope": false,
+        "soft_matter": true,
+        "quantum_materials": false,
+        "research_type": "mixed",
+        "score": 12,
+        "feature_candidate": false,
+        "reason": "The study concerns phase separation of plant proteins, a biological soft-matter system excluded from this digest.",
+        "physics_advance": ""
+      },
+      "soft_matter": true,
+      "quantum_materials": false,
+      "research_type": "mixed",
+      "screening_decision": "soft_matter",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The study concerns phase separation of plant proteins, a biological soft-matter system excluded from this digest.",
+      "relevance_method": "semantic",
+      "relevance_score": 12,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79825-7",
+      "doi": "10.1038/s41467-026-79825-7",
+      "title": "Dual-comb photoacoustic Brillouin spectroscopy of optomechanical dynamics in gas-filled microstructured hollow-core fibers",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Zihang Peng, Hanyu Liao, Haihong Bao, Feifan Chen, Ziqi Yin, Hoi Lut Ho, Shoufei Gao, Yingying Wang, Wei Ren, Wei Jin",
+      "abstract": "Absorption-driven photoacoustic interactions in gas-filled hollow-core fibers enable strong optomechanical coupling between gas molecules and the micro-structured cladding, offering a sensitive platform for trace-gas detection and characterization of the microstructure. Here, we report dual-comb photoacoustic Brillouin spectroscopy for scan-free measurement within the dual-comb bandwidth and time-resolved interrogation of gas-cladding optomechanical dynamics in an anti-resonant hollow-core fiber. Two electro-optic frequency combs generate multi-heterodyne beats that drive photoacoustic excitation and cladding-supported acoustic resonances. The resulting photoacoustic response encodes molecular absorption into the acoustic amplitude, while the resonance frequency and linewidth of the acoustic modes reveal mechanical properties. Exploiting the resonantly enhanced photoacoustic interaction, ultrasensitive trace-gas detection at parts-per-billion level is achieved. Furthermore, millisecond-resolution probing of acoustic resonance dynamics enables real-time characterization of transient pressure changes inside the fiber. These results establish a versatile platform for time-resolved optomechanical spectroscopy in microstructured photonic devices, enabling simultaneous chemical sensing and dynamic mechanical characterization. Dual-comb photoacoustic Brillouin spectroscopy in a gas-filled anti-resonant hollow core fiber enables scan-free, time-resolved characterization of gas–cladding optomechanics, as well as ppb-level trace-gas detection.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79825-7",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79825-7"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Absorption-driven photoacoustic interactions in gas-filled hollow-core fibers enable strong optomechanical coupling between gas molecules and the micro-structured cladding, offering a sensitive platform for trace-gas detection and characterization of the microstructure. Here, we report dual-comb photoacoustic Brillouin spectroscopy for scan-free measurement within the dual-comb bandwidth and time-",
+      "summary": "Absorption-driven photoacoustic interactions in gas-filled hollow-core fibers enable strong optomechanical coupling between gas molecules and the micro-structured cladding, offering a sensitive platform for trace-gas detection and characterization of the microstructure. Here, we report dual-comb photoacoustic Brillouin spectroscopy for scan-free measurement within the dual-comb bandwidth and time-",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79825-7",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 7,
+        "feature_candidate": false,
+        "reason": "This work develops photonic-fiber spectroscopy for gas sensing and optomechanical device characterization rather than condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This work develops photonic-fiber spectroscopy for gas sensing and optomechanical device characterization rather than condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 7,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79424-6",
+      "doi": "10.1038/s41467-026-79424-6",
+      "title": "Complement as an evolutionary driver of vector-microbe immune evasion enabling pathogen transmission",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Carly Fernandes, Ashley L. Marcinkiewicz, Jill Malfetano, Sergio A. Hernández, Miranda McCarty, Daniel Palmer, Alan Wang, Tristan A. Nowak, Fuming Zhang, Robert J. Linhardt, Erica Lasek-Nesselquist, Peter Kraiczy, Klemen Strle, Gregers R. Andersen, Sergios-Orestis Kolokotronis, Yi-Pin Lin",
+      "abstract": "Overcoming a robust host immunity at initial infection sites is the prerequisite of pathogen invasion. For vector-borne pathogens, vector saliva is known to inhibit immune responses at the bite site, which supports the concept of vector-microbe synergy to facilitate pathogen transmission. The causative agent of Lyme disease, Borrelia burgdorferi (Bb), invades hosts through blood feeding by Ixodes ticks. This process is multimodal, requiring naïve larvae feeding simultaneously with physically close Bb-infected nymphs or subsequently to Bb-persistent hosts. Bb produces an outer surface protein, CspZ, binding to complement factor H (FH), a negative regulator of the alternative complement pathway (AP). Similarly, ticks secrete the Salp20 protein in saliva, binding to properdin, preventing AP activation. By modeling the structure of the Salp20-properdin complex, we mapped the properdin-binding functions to a Salp20 loop. We found CspZ-Salp20 collaboratively conferring multimodal Bb transmission by promoting AP inactivation and bite site infection. We also observed CspZ and Salp20 to collaboratively reduce Bb-triggered bite site inflammations by transcriptomics. We attribute this collaborative immunomodulation to the natural selection of Salp20 loop and the CspZ FH-binding pocket. These findings thus tested the concept of vector-pathogen synergy, providing candidate targets for transmission-disrupting public health interventions. Overcoming the host immunity at initial infection sites is the prerequisite of pathogen invasion. Here, the authors show that CspZ and Salp20 synergistically confer co-feeding- and dissemination-mediated transmission, and lead to alternative complement pathway inactivation and skin immunomodulation at tick bite sites.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79424-6",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79424-6"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Overcoming a robust host immunity at initial infection sites is the prerequisite of pathogen invasion. For vector-borne pathogens, vector saliva is known to inhibit immune responses at the bite site, which supports the concept of vector-microbe synergy to facilitate pathogen transmission. The causative agent of Lyme disease, Borrelia burgdorferi (Bb), invades hosts through blood feeding by Ixodes ",
+      "summary": "Overcoming a robust host immunity at initial infection sites is the prerequisite of pathogen invasion. For vector-borne pathogens, vector saliva is known to inhibit immune responses at the bite site, which supports the concept of vector-microbe synergy to facilitate pathogen transmission. The causative agent of Lyme disease, Borrelia burgdorferi (Bb), invades hosts through blood feeding by Ixodes ",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79424-6",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 5,
+        "feature_candidate": false,
+        "reason": "The primary advance is in pathogen transmission and immune evasion, a subject in biology and immunology rather than condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary advance is in pathogen transmission and immune evasion, a subject in biology and immunology rather than condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 5,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79822-w",
+      "doi": "10.1038/s41467-026-79822-w",
+      "title": "Interstitial fluid regime transition shapes ovarian follicle morphogenesis",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Kim Whye Leong, Yuting Lou, Jue Yu Kelly Tan, Arikta Biswas, Boon Heng Ng, Zixuan Zhao, Xixun Lu, Xin Ping Joan Teo, Thong Beng Lu, Ling Wang, Carlo Bevilacqua, Isabelle Bonne, Robert Prevedel, Tetsuya Hiraiwa, Chii Jou Chan",
+      "abstract": "The formation of fluid cavities in ovarian follicles is critical for mammalian reproduction, yet its mechanism and functions remain poorly understood. Here, we showed that the interstitial fluid in secondary follicles forms an interconnected network near the oocyte in a dynamically critical regime, facilitating chemical transport across the follicle. Transitioning into tertiary follicles, we observed the emergence of cell death and stably growing fluid cavities, resembling phase separation. Using a binary fluid model, we revealed that a gradient of intercellular tension, as observed experimentally, is sufficient to robustly maintain the dynamically critical regime through the competition between fluid coalescence near the oocyte and percolation throughout the follicle. Decreased gradient triggers a transition into a phase separated regime, recapitulating observations in tertiary follicles. Perturbing N-cadherin led to fragmentation of fluid network, attenuated oocyte-granulosa cell signalling, and impaired oocyte growth. Together, these findings demonstrate that cell junction mechanics regulate follicular fluid configuration and its regime transition to support functional follicle growth. Early ovarian follicle development is characterized by distinct fluid regime transition, regulated by cell junction mechanics. Dynamic fluid network promotes granulosa cell-oocyte metabolic crosstalk, thereby supporting oocyte maturation and follicle development.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79822-w",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79822-w"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "The formation of fluid cavities in ovarian follicles is critical for mammalian reproduction, yet its mechanism and functions remain poorly understood. Here, we showed that the interstitial fluid in secondary follicles forms an interconnected network near the oocyte in a dynamically critical regime, facilitating chemical transport across the follicle. Transitioning into tertiary follicles, we obser",
+      "summary": "The formation of fluid cavities in ovarian follicles is critical for mammalian reproduction, yet its mechanism and functions remain poorly understood. Here, we showed that the interstitial fluid in secondary follicles forms an interconnected network near the oocyte in a dynamically critical regime, facilitating chemical transport across the follicle. Transitioning into tertiary follicles, we obser",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79822-w",
+        "in_scope": false,
+        "soft_matter": true,
+        "quantum_materials": false,
+        "research_type": "mixed",
+        "score": 18,
+        "feature_candidate": false,
+        "reason": "This is a biological study of ovarian follicle development and fluid-network mechanics, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": true,
+      "quantum_materials": false,
+      "research_type": "mixed",
+      "screening_decision": "soft_matter",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "This is a biological study of ovarian follicle development and fluid-network mechanics, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 18,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79495-5",
+      "doi": "10.1038/s41467-026-79495-5",
+      "title": "Crystal structures of tetraketide synthase reveal the mechanistic basis for partitioning products in cannabinoid biosynthesis",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Kristofer R. Gonzalez-DeWhitt, Cameron W. Flowers, Natalia Ermolova, Anthony N. Farina, Jeff Abramson",
+      "abstract": "Abstract Tetraketide synthase (TKS), a plant type III polyketide synthase, catalyzes the iterative condensation of hexanoyl-CoA and three malonyl-CoAs to generate a linear tetraketide-CoA that is cyclized to olivetolic acid (OA), an essential intermediate in cannabinoid biosynthesis. TKS also produces abundant tri- and tetraketide lactones that divert flux from OA. Here, we report crystal structures of TKS in complex with mono-, di-, tri-, and tetraketide intermediates that reflect relevant catalytic states in substrate loading, chain elongation, and cyclization. Met187 acts as a dynamic steric gate governing substrate tolerance and elongation, while adjacent residues maintain intermediates in an extended, linear conformation. Ser332-mediated interactions promote lactonization through C5-O-C1 ring closure, implicating lactonization as an enzyme-controlled process. Recapture-versus-release of the tetraketide intermediate determines whether linear or cyclized products are formed. These findings establish a framework for engineering TKS variants with improved OA production and advance chemoenzymatic methods for producing cannabinoids and structurally diverse polyketides.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79495-5",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79495-5"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Abstract Tetraketide synthase (TKS), a plant type III polyketide synthase, catalyzes the iterative condensation of hexanoyl-CoA and three malonyl-CoAs to generate a linear tetraketide-CoA that is cyclized to olivetolic acid (OA), an essential intermediate in cannabinoid biosynthesis. TKS also produces abundant tri- and tetraketide lactones that divert flux from OA. Here, we report crystal structur",
+      "summary": "Abstract Tetraketide synthase (TKS), a plant type III polyketide synthase, catalyzes the iterative condensation of hexanoyl-CoA and three malonyl-CoAs to generate a linear tetraketide-CoA that is cyclized to olivetolic acid (OA), an essential intermediate in cannabinoid biosynthesis. TKS also produces abundant tri- and tetraketide lactones that divert flux from OA. Here, we report crystal structur",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79495-5",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 12,
+        "feature_candidate": false,
+        "reason": "The primary contribution is structural enzymology of cannabinoid biosynthesis, outside condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary contribution is structural enzymology of cannabinoid biosynthesis, outside condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 12,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79654-8",
+      "doi": "10.1038/s41467-026-79654-8",
+      "title": "Room-temperature continuous-wave mid-infrared microdisk laser on InP enabled by InAs quantum dots",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Haotian Zeng, Yangqian Wang, Hui Jia, Jae-Seong Park, Igor P. Marko, Dominic A. Duffy, Mengxun Bai, Yutong Zhang, Hexing Wang, Jun Li, Chong Chen, Huiwen Deng, Richard Beanland, Stephen J. Sweeney, Mingchu Tang, Alwyn Seeds, Moustapha El Kurdi, Huiyun Liu",
+      "abstract": "Abstract Mid-infrared photonics is important for gas monitoring, non-invasive medical diagnostics, and free-space optical links. Realizing high-density photonic integrated circuits in the short-wave mid-infrared (SW-MIR, 2–3 μm) requires compact, efficient microscale lasers that can be integrated on standard platforms. Conventional quantum-well microcavity lasers cannot sustain efficient operation as cavities shrink because lateral carrier diffusion and surface recombination impose a fundamental limit on the threshold, while Auger recombination and thermal carrier leakage losses severely compromise thermal stability in the SW-MIR window. Here, we demonstrate that the strong carrier localization in self-assembled InAs quantum-dot (QD) gain medium circumvents these limitations. A five-stack InAs/InP QD active region achieves room-temperature continuous-wave single-mode lasing in a suspended 5.5 µm microdisk at 2.064 µm. The device also sustains lasing up to 110 °C under pulsed excitation. Temperature-dependent spectra and electronic structure analysis reveal ground-to-excited state dynamics and suppression of thermal carrier leakage. These results demonstrate the potential of QD gain media for compact SW-MIR light sources on InP and Si photonic platforms.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79654-8",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79654-8"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Thermal & Thermoelectric",
+      "summary_en": "Abstract Mid-infrared photonics is important for gas monitoring, non-invasive medical diagnostics, and free-space optical links. Realizing high-density photonic integrated circuits in the short-wave mid-infrared (SW-MIR, 2–3 μm) requires compact, efficient microscale lasers that can be integrated on standard platforms. Conventional quantum-well microcavity lasers cannot sustain efficient operation",
+      "summary": "Abstract Mid-infrared photonics is important for gas monitoring, non-invasive medical diagnostics, and free-space optical links. Realizing high-density photonic integrated circuits in the short-wave mid-infrared (SW-MIR, 2–3 μm) requires compact, efficient microscale lasers that can be integrated on standard platforms. Conventional quantum-well microcavity lasers cannot sustain efficient operation",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79654-8",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 28,
+        "feature_candidate": false,
+        "reason": "Although it uses a semiconductor quantum-dot gain medium, the main advance is mid-infrared laser-device performance rather than a discovery about quantum-material physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "Although it uses a semiconductor quantum-dot gain medium, the main advance is mid-infrared laser-device performance rather than a discovery about quantum-material physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 28,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-78841-x",
+      "doi": "10.1038/s41467-026-78841-x",
+      "title": "Evolution tunes functional sub-state interconversion to boost enzyme function",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Daniel Salamonsen, Andrea Pierangelini, Karol Buda, Daojiong Wang, Felix Schwab, Marc W. van der Kamp, Nobuhiko Tokuriki, H. Adrian Bunzel, Christopher Frøhlich",
+      "abstract": "Abstract Enzymes do not operate as static structures, but continuously sample an ensemble of conformational sub-states with distinct catalytic activities. Yet whether evolution can exploit the transitions between sub-states to improve activity remains largely unexplored. Here, we dissect an evolutionary trajectory of β-lactamase OXA-48 toward enhanced ceftazidime hydrolysis. OXA-48 is well suited for studying sub-state evolution, as equilibria between sub-states can be directly interrogated through substrate-induced inactivation and binding kinetics. Steady-state and pre-steady-state kinetic analyses reveal that evolution perturbed the conformational equilibrium and gradually shifted the rate-limiting step from substrate binding through sub-state interconversion to the chemical step. Kinetics with the native substrate meropenem, confirmed coexisting sub-states with markedly different reactivity to ceftazidime, demonstrating that remodeling the conformational landscape introduced a catalytic trade-off rooted in an incompatibility between the native and evolved sub-state populations. Hydrogen/deuterium exchange mass spectrometry independently corroborated these coexisting sub-states, while molecular dynamics simulations traced the activity trade-off to increased active-site flexibility around the catalytic base. Together, our findings establish sub-state interconversion as a direct target of evolutionary selection, shaping functional divergence and offering distinct strategies for enzyme engineering and drug design.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-78841-x",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-78841-x"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Abstract Enzymes do not operate as static structures, but continuously sample an ensemble of conformational sub-states with distinct catalytic activities. Yet whether evolution can exploit the transitions between sub-states to improve activity remains largely unexplored. Here, we dissect an evolutionary trajectory of β-lactamase OXA-48 toward enhanced ceftazidime hydrolysis. OXA-48 is well suited ",
+      "summary": "Abstract Enzymes do not operate as static structures, but continuously sample an ensemble of conformational sub-states with distinct catalytic activities. Yet whether evolution can exploit the transitions between sub-states to improve activity remains largely unexplored. Here, we dissect an evolutionary trajectory of β-lactamase OXA-48 toward enhanced ceftazidime hydrolysis. OXA-48 is well suited ",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-78841-x",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "mixed",
+        "score": 12,
+        "feature_candidate": false,
+        "reason": "The study concerns enzyme conformational dynamics and antibiotic hydrolysis, a biochemical research question outside condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "mixed",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The study concerns enzyme conformational dynamics and antibiotic hydrolysis, a biochemical research question outside condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 12,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79520-7",
+      "doi": "10.1038/s41467-026-79520-7",
+      "title": "Task-similarity dependent reconfiguration of compositional modules and geometry in frontal cortex",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Xia Chen, Xiao Yao, Xinxin Yin, Zengcai V. Guo",
+      "abstract": "Task rules critically shape how neural populations encode information and generalize across cognitive demands, yet the mechanisms linking rule structure, neural dynamics, and behavior remain poorly understood. Here we investigate how rule congruence modulates neural-ensemble compositionality, geometry and cross-task generalizability in mouse anterior lateral motor cortex (ALM). Male mice switched between tactile and auditory delayed-response tasks with aligned (congruent) or conflicting (incongruent) sensory-motor contingencies. Recording from 11,000 ALM neurons revealed rule-dependent compositional coding of stimulus, choice, and outcome. In contrast to congruent switching, incongruent rules reduced cross-task generalizability of these representations, expanded population dimensionality, increased reliance on nonlinear mixed-selectivity, and produced more complex coding geometry. These neural changes paralleled behavioral costs during task transitions. Moreover, congruence-dependent reconfiguration of sensory-choice subspaces in ALM predicted differences in transition costs, implicating ALM in resolving conflicting contingencies. Together, these results show that task congruence regulates neural coding geometry and population dynamics, linking rule-switching complexity to dimensionality of neural resource allocation and cognitive flexibility. How neural populations dynamically reconfigure across tasks is not fully understood. Here authors show that task-rule similarity shapes neural coding and geometry in mouse frontal cortex. Conflicting rules increase dimensionality, reduce cross-task generalization and reshape coding geometry in ways that predict task-switching costs.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79520-7",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79520-7"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "Task rules critically shape how neural populations encode information and generalize across cognitive demands, yet the mechanisms linking rule structure, neural dynamics, and behavior remain poorly understood. Here we investigate how rule congruence modulates neural-ensemble compositionality, geometry and cross-task generalizability in mouse anterior lateral motor cortex (ALM). Male mice switched ",
+      "summary": "Task rules critically shape how neural populations encode information and generalize across cognitive demands, yet the mechanisms linking rule structure, neural dynamics, and behavior remain poorly understood. Here we investigate how rule congruence modulates neural-ensemble compositionality, geometry and cross-task generalizability in mouse anterior lateral motor cortex (ALM). Male mice switched ",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79520-7",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 10,
+        "feature_candidate": false,
+        "reason": "The primary subject is neural coding and behavior in mouse cortex, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary subject is neural coding and behavior in mouse cortex, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 10,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79584-5",
+      "doi": "10.1038/s41467-026-79584-5",
+      "title": "Identification of fibril-forming antimicrobial peptides reveals structural plasticity and diverse amyloid architectures",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Peleg Ragonis-Bachar, Fabio Strati, Emil Gustavsson, Alexander Khokhlov, Janine-Denise Kopicki, Sambhasan Banerjee, Eilon Barnea, Bader Rayan, Alexander Upcher, Thomas Gutsmann, Charlotte Uetrecht, Meytal Landau",
+      "abstract": "Abstract Amyloid formation, in which peptides and proteins self-assemble into ordered fibrils, is increasingly recognized as a functional property of antimicrobial and virulence-associated peptides. However, how widespread these assemblies are and how their structures relate to biological activity remain unclear. Here we show that computationally selected antimicrobial and virulence-associated peptides frequently form fibrils and can access multiple, environmentally regulated structural states. Many peptides switched between α-helical and β-rich conformations in response to changes in their environment. High-resolution cryogenic electron microscopy of aurein 1.2 and brevinin-1OKc revealed polymorphic cross-β amyloid structures, including kinked peptide chains and a radially symmetric six-chain architecture. Native mass spectrometry further revealed distinct assembly pathways: aurein 1.2 accumulated soluble oligomeric intermediates, whereas brevinin-1OKc remained predominantly monomeric before fibril formation. Together, these findings expand the known structural repertoire of antimicrobial amyloids and suggest that structural plasticity and alternative assembly pathways enable antimicrobial peptides to respond dynamically to their biological environment.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79584-5",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79584-5"
+      },
+      "abstract_source": "Crossref",
+      "abstract_status": "available",
+      "topic": "Materials & Growth",
+      "summary_en": "Abstract Amyloid formation, in which peptides and proteins self-assemble into ordered fibrils, is increasingly recognized as a functional property of antimicrobial and virulence-associated peptides. However, how widespread these assemblies are and how their structures relate to biological activity remain unclear. Here we show that computationally selected antimicrobial and virulence-associated pep",
+      "summary": "Abstract Amyloid formation, in which peptides and proteins self-assemble into ordered fibrils, is increasingly recognized as a functional property of antimicrobial and virulence-associated peptides. However, how widespread these assemblies are and how their structures relate to biological activity remain unclear. Here we show that computationally selected antimicrobial and virulence-associated pep",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79584-5",
+        "in_scope": false,
+        "soft_matter": true,
+        "quantum_materials": false,
+        "research_type": "mixed",
+        "score": 24,
+        "feature_candidate": false,
+        "reason": "This study concerns biological antimicrobial peptides and amyloid fibrils, a biological soft-matter system rather than condensed-matter physics.",
+        "physics_advance": "Antimicrobial peptides can form polymorphic cross-β fibrils, including a six-chain radial architecture, and exhibit distinct assembly pathways."
+      },
+      "soft_matter": true,
+      "quantum_materials": false,
+      "research_type": "mixed",
+      "screening_decision": "soft_matter",
+      "physics_advance": "Antimicrobial peptides can form polymorphic cross-β fibrils, including a six-chain radial architecture, and exhibit distinct assembly pathways.",
+      "ai_in_scope": false,
+      "relevance_reason": "This study concerns biological antimicrobial peptides and amyloid fibrils, a biological soft-matter system rather than condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 24,
+      "feature_candidate": false
+    },
+    {
+      "id": "doi-10-1038-s41467-026-79364-1",
+      "doi": "10.1038/s41467-026-79364-1",
+      "title": "Distinct SMARCAD1 domains enable R-loop binding and facilitate R-loop-associated conflict resolution at active replication forks",
+      "type": "Journal",
+      "journal": "Nature Communications",
+      "authors": "Sidrit Uruci, Nicole. M. Hoitsma, Diana van den Heuvel, Collin Bakker, Aleix Bayona-Feliu, Carmen. S. Fonseca, Vincent Gaggioli, María. L. García-Rubio, Calvin. S. Y. Lo, Sophie-Marie Pasewald, María. E. Soler-Oliva, Jessica Marinello, Eleni M. Manolika, Giovanni Capranico, Andrés Aguilera, Karolin Luger, Martijn. S. Luijsterburg, Nitika Taneja",
+      "abstract": "DNA replication encounters obstacles such as stalled transcription complexes and R-loops. Although ribonucleases and RNA:DNA helicases remove these obstacles from genomic DNA, how this occurs in a chromatin context remains understudied. Using in vitro and cellular approaches, we show that the chromatin remodeler SMARCAD1, which associates with active replication forks, resolves R-loops near nascent DNA to maintain fork stability. SMARCAD1 binds RNA:DNA hybrids and R-loop structures in vitro, and its ATPase-dependent catalytic activity promotes R-loop resolution when tethered to an R-loop hotspot locus. SMARCAD1 binds R-loops through its ATPase domain and associates with the replisome through its N-terminal region, with both interactions required for efficient R-loop resolution in cells. Quantitative image-based cytometry, single-molecule chromatin-fiber and proximity-labeling assays show that R-loops significantly accumulate near nascent DNA in SMARCAD1 mutant cells. Genome-wide DRIP analysis further reveals significant R-loop accumulation at highly expressed genes. Together, these findings identify SMARCAD1 as an early responder to R-loop-mediated transcription-replication conflicts (TRCs) that safeguards the integrity of active replication forks. During DNA replication stalled transcription and R-loops need to be removed to allow replication fork progression. Here the authors show that the chromatin remodeler SMARCAD1, which associates with active replication forks, resolves R-loops near nascent DNA to maintain fork stability.",
+      "crossref_online_date": [
+        [
+          2026,
+          11,
+          27
+        ]
+      ],
+      "corresponding": "",
+      "url": "https://doi.org/10.1038/s41467-026-79364-1",
+      "level": "Brief",
+      "method": "",
+      "result": "",
+      "future": "",
+      "article_kind": "Article",
+      "publication_date": "2026-11-27",
+      "publication_status": "published",
+      "publication_evidence": {
+        "source": "publisher",
+        "url": "https://www.nature.com/articles/s41467-026-79364-1"
+      },
+      "abstract_source": "publisher",
+      "abstract_status": "available",
+      "topic": "Other Condensed Matter",
+      "summary_en": "DNA replication encounters obstacles such as stalled transcription complexes and R-loops. Although ribonucleases and RNA:DNA helicases remove these obstacles from genomic DNA, how this occurs in a chromatin context remains understudied. Using in vitro and cellular approaches, we show that the chromatin remodeler SMARCAD1, which associates with active replication forks, resolves R-loops near nascen",
+      "summary": "DNA replication encounters obstacles such as stalled transcription complexes and R-loops. Although ribonucleases and RNA:DNA helicases remove these obstacles from genomic DNA, how this occurs in a chromatin context remains understudied. Using in vitro and cellular approaches, we show that the chromatin remodeler SMARCAD1, which associates with active replication forks, resolves R-loops near nascen",
+      "_ai_assessment": {
+        "id": "doi-10-1038-s41467-026-79364-1",
+        "in_scope": false,
+        "soft_matter": false,
+        "quantum_materials": false,
+        "research_type": "experiment",
+        "score": 12,
+        "feature_candidate": false,
+        "reason": "The primary contribution is a molecular-biology finding about DNA replication, chromatin remodeling, and R-loop resolution, not condensed-matter physics.",
+        "physics_advance": ""
+      },
+      "soft_matter": false,
+      "quantum_materials": false,
+      "research_type": "experiment",
+      "screening_decision": "out_of_scope",
+      "physics_advance": "",
+      "ai_in_scope": false,
+      "relevance_reason": "The primary contribution is a molecular-biology finding about DNA replication, chromatin remodeling, and R-loop resolution, not condensed-matter physics.",
+      "relevance_method": "semantic",
+      "relevance_score": 12,
+      "feature_candidate": false
+    }
+  ],
+  "pending_journal_records": [],
+  "selected_ids": [
+    "doi-10-1038-s41467-026-79635-x"
+  ],
+  "stats": {
+    "scanned": 22,
+    "first_pass_selected": 1,
+    "selected": 1,
+    "rejected": 21,
+    "ai_assessed": 22,
+    "ai_cached": 0,
+    "ai_unscored": 0,
+    "global_editorial": true,
+    "field_scope_excluded": 0,
+    "duplicate_work_excluded": 0,
+    "arxiv_selected": 0,
+    "journal_selected": 1,
+    "arxiv_harvest_excluded": 0,
+    "pending_journal_abstracts": 0,
+    "non_original_excluded": 9,
+    "publication_not_eligible": 30
+  }
+}
